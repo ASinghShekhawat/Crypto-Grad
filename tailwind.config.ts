@@ -13,7 +13,9 @@ const config: Config = {
         themeBlue: "#5E5AFF",
         themeBorderBlue: "#6754F8",
         themeBlack: "#191A21",
-        themeBgBlack: "#20222B"
+        themeBgBlack: "#20222B",
+        themeGrey: "#3C3C3C",
+        themeTextGrey: "#777777"
       },
     },
   },
