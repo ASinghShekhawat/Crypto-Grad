@@ -12,7 +12,8 @@ const config: Config = {
         themePurple: "#743FE0",
         themeBlue: "#5E5AFF",
         themeBorderBlue: "#6754F8",
-        themeBlack: "#191A21"
+        themeBlack: "#191A21",
+        themeBgBlack: "#20222B"
       },
     },
   },
