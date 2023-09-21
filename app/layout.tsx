@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import Providers from "./providers";
+import NftDroppingNav from "@/components/Navbar/NftDroppingNav";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <Providers>
           <div className="max-w-[1730px] mx-auto relative w-full flex flex-col">
+            <NftDroppingNav />
             <Navbar />
             {children}
           </div>

@@ -24,7 +24,7 @@ const Button = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`bg-themeBlack justify-center hover:text-themeVioletText flex items-center gap-2 border-2 border-themeBlue transition-all rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
+      className={`bg-themeBlack justify-center hover:text-themeVioletText flex items-center gap-2 border-2 border-themeBlue transition-all rounded-lg px-8 min-h-[2.5rem] font-medium text-lg ${className}`}
     >
       {children} {loading && <CgSpinner className="animate-spin" />}
     </button>

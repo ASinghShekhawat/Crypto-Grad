@@ -15,6 +15,7 @@ const config: Config = {
         themeBorderBlue: "#6754F8",
         themeBlack: "#191A21",
         themeBgBlack: "#20222B",
+        themeDialogBlack: "#23232E",
         themeGrey: "#3C3C3C",
         themeTextGrey: "#777777",
         themeNavBlack: "#131722",
@@ -23,6 +24,9 @@ const config: Config = {
       screens: {
         mmd: "992px",
       },
+      fontSize: {
+        "2xs": "0.6rem"
+      }
     },
   },
   plugins: [],
