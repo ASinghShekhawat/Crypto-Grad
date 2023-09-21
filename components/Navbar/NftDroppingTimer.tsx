@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import NftDroppedDialog from "./NftDroppedDialog";
 
 const NftDroppingTimer = () => {
-  const [timer, setTimer] = useState(Date.now() + 5000);
+  const [timer, setTimer] = useState(Date.now() + 500000000);
 
   const makeMeTwoDigits = (n: number) => {
     return n < 10 ? `0${n}` : n;
