@@ -1,6 +1,8 @@
+import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import Providers from "./providers";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -19,7 +21,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={dmSans.className}>{children}</body>
+      <body className={dmSans.className}>
+        <Providers>
+          <div className="max-w-[1730px] mx-auto relative w-full flex flex-col">
+            <Navbar />
+            {children}
+          </div>
+        </Providers>
+      </body>
     </html>
   );
 }

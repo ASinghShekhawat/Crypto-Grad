@@ -9,20 +9,30 @@ interface IButton extends Children {
   className?: string;
   disabled?: boolean;
   loading?: boolean;
+  onClick?: () => void;
 }
 
-const Button = ({ children, type, className, disabled, loading }: IButton) => {
+const Button = ({
+  children,
+  type,
+  className,
+  disabled,
+  loading,
+  onClick,
+}: IButton) => {
   return type === ButtonType.SECONDARY ? (
     <button
       disabled={disabled}
-      className={`bg-themeBlack flex items-center gap-2 border-2 border-themeBlue transition-all duration-700 rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
+      onClick={onClick}
+      className={`bg-themeBlack justify-center hover:text-themeVioletText flex items-center gap-2 border-2 border-themeBlue transition-all rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
     >
       {children} {loading && <CgSpinner className="animate-spin" />}
     </button>
   ) : (
     <button
       disabled={disabled}
-      className={`bg-gradient-to-r flex items-center gap-2 from-themePurple to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
+      onClick={onClick}
+      className={`bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
     >
       {children} {loading && <CgSpinner className="animate-spin" />}
     </button>
