@@ -6,7 +6,7 @@ import { BsDiscord, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const HeroSectionActions = () => {
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center md:gap-4 gap-2 mt-8 relative z-10">
       <Button
       // onClick={() => {}}
       >
