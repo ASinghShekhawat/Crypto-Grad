@@ -5,7 +5,7 @@ import HeroSectionActions from './HeroSectionActions'
 const HeroSection = () => {
   return (
     <>
-      <Animated className="relative z-[1] flex flex-col items-center justify-center px-8 md:py-32 py-16">
+      <Animated className="relative z-1 flex flex-col items-center justify-center px-8 md:py-32 py-16">
         <Image
           src="/effects/hero-eff-1.svg"
           className="absolute z-0"
@@ -36,7 +36,7 @@ const HeroSection = () => {
         />
         <Image
           src="/Homepage/Hero/hero (1).png"
-          className="floating absolute bottom-0 left-8 z-[1] w-1/4"
+          className="floating absolute bottom-0 left-8 z-1 w-1/4"
           alt=""
           width={414}
           height={430}
@@ -45,14 +45,14 @@ const HeroSection = () => {
 
         <Image
           src="/Homepage/Hero/hero (2).png"
-          className="floating absolute bottom-0 z-[3] w-1/3"
+          className="floating absolute bottom-0 z-3 w-1/3"
           alt=""
           width={566}
           height={567}
         />
         <Image
           src="/Homepage/Hero/hero (3).png"
-          className="floating left-[18%] absolute bottom-0 z-[2] w-[28%]"
+          className="floating left-[18%] absolute bottom-0 z-2 w-[28%]"
           alt=""
           width={462}
           height={463}
@@ -60,7 +60,7 @@ const HeroSection = () => {
         />
         <Image
           src="/Homepage/Hero/hero (4).png"
-          className="floating right-8 absolute bottom-0 z-[1] w-1/4"
+          className="floating right-8 absolute bottom-0 z-1 w-1/4"
           alt=""
           width={356}
           height={372}
@@ -68,7 +68,7 @@ const HeroSection = () => {
         />
         <Image
           src="/Homepage/Hero/hero (5).png"
-          className="floating right-[18%] absolute bottom-0 z-[2] w-[28%]"
+          className="floating right-[18%] absolute bottom-0 z-2 w-[28%]"
           alt=""
           width={434}
           height={435}
