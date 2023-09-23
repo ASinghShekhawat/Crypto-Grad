@@ -59,6 +59,9 @@ dependencies:
   sass:
     specifier: ^1.68.0
     version: 1.68.0
+  swiper:
+    specifier: ^10.3.0
+    version: 10.3.0
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -4132,6 +4135,11 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: false
+
+  /swiper@10.3.0:
+    resolution: {integrity: sha512-o81KZH4phL/dJxKFWpZ/zf78QxOyFMood+c86vJJO0ZeSOoniyzV8HWDsw12KOlQdm4WRxrc/6kfGImAcxcS3w==}
+    engines: {node: '>= 4.7.0'}
     dev: false
 
   /tailwindcss@3.3.3:
