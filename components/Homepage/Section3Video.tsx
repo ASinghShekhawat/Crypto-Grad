@@ -14,7 +14,7 @@ const Section3Video = () => {
         />
         <div className="text-sm font-medium">CRYPTOGRD</div>
       </div>
-      <button className="absolute bottom-8 right-8 text-themeViolet">
+      <button className="absolute bottom-8 right-8 text-themeBorderBlue">
         <FaCirclePlay className="text-3xl" />
       </button>
     </div>
