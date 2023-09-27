@@ -21,10 +21,13 @@ const config: Config = {
         themeNavBlack: "#131722",
         themeBorder: "#FDFDFD",
         themeVideoBgGrey: "#22222C",
-        themeTextInputBg: "#070B16"
+        themeTextInputBg: "#070B16",
+        themeErr: "#CC2B2D",
+        themePositionBg: "#2C2E34"
       },
       screens: {
         mmd: "992px",
+        mmmd:"1400px",
       },
       fontSize: {
         "2xs": "0.6rem"
