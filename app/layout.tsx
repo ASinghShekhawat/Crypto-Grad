@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar/Navbar'
 import './globals.scss'
+import 'swiper/css'
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Providers from './providers'

@@ -1,10 +1,9 @@
-"use client";
+'use client'
 
-import { WalletProvider } from "@/context/WalletContext";
-import { Children } from "@/types/generics";
+import { Children } from '@/types/generics'
 
 const Providers = ({ children }: Children) => {
-  return <WalletProvider>{children}</WalletProvider>;
-};
+  return <>{ children }</>
+}
 
-export default Providers;
+export default Providers

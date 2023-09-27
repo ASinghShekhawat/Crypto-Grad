@@ -1,11 +1,9 @@
 "use client";
-import { useWallet } from "@/hooks/useWallet";
 import Button from "../shared/Button";
 import { ButtonType } from "@/types/buttton";
 import { IDrawerGeneric } from "@/types/navbar";
 
 const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
-  const { loading, isLoggedIn, connectWallet } = useWallet();
   return (
     <div
       className={`flex items-center ${
@@ -13,8 +11,8 @@ const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
       }`}
     >
       <Button
-        loading={loading}
-        onClick={connectWallet}
+        // loading={loading}
+        // onClick={connectWallet}
         className={drawer ? "w-full" : ""}
       >
         Connect Wallet

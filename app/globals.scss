@@ -120,6 +120,57 @@ $max: 10;
   }
 }
 
+.partneredNftsSwiper {
+  max-width: 100%;
+  .swiper-wrapper {
+    height: 500px;
+  }
+  .swiper-slide {
+    max-width: 192px;
+    width: 192px;
+    margin-left: 15px;
+    margin-right: 15px;
+    transition: all 0.3s ease-in-out;
+    &.swiper-slide-active {
+      max-width: 378px !important;
+      width: 378px !important;
+    }
+  }
+  @media screen and (max-width: 992px) and (min-width: 767px) {
+    max-width: fit-content;
+    width: fit-content;
+    .swiper-wrapper {
+      height: 400px;
+    }
+    .swiper-slide {
+      max-width: 132px;
+      width: 132px;
+      transition: all 0.3s ease-in-out;
+      &.swiper-slide-active {
+        max-width: 278px !important;
+        width: 278px !important;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    min-width: 582px;
+    max-width: fit-content;
+    width: fit-content;
+    .swiper-wrapper {
+      height: 300px;
+    }
+    .swiper-slide {
+      max-width: 132px;
+      width: 132px;
+      transition: all 0.3s ease-in-out;
+      &.swiper-slide-active {
+        max-width: 228px !important;
+        width: 228px !important;
+      }
+    }
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 8px;

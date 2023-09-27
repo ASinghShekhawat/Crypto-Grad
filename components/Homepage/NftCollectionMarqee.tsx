@@ -4,8 +4,6 @@ import NftCard from '../shared/NftCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 
-import 'swiper/css'
-
 const NftCollectionMarqee = () => {
   return (
     <Swiper
