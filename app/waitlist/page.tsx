@@ -1,96 +1,95 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect } from "react";
-import Page from "@/components/shared/Page";
-import { X } from "react-feather";
-import VerifiedPage from "@/components/Waitlist/VerifiedPage";
-import OTPfield from "@/components/Waitlist/Otp";
-import Button from "@/components/shared/Button";
-import EmailInput from "@/components/Waitlist/EmailInput";
-
+import React, { useState } from 'react'
+import Page from '@/components/shared/Page'
+import { X } from 'react-feather'
+import VerifiedPage from '@/components/Waitlist/VerifiedPage'
+import OTPfield from '@/components/Waitlist/Otp'
+import Button from '@/components/shared/Button'
+import EmailInput from '@/components/Waitlist/EmailInput'
+import Countdown, { CountdownRenderProps } from 'react-countdown'
 
 const WaitlistPage = () => {
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
-  const [showOTPForm, setShowOTPForm] = useState(false);
-  const [verifyOTP, setVerifyOTP] = useState(false);
-  const [resendTimer, setResendTimer] = useState(60);
-  const [otpVerified, setOtpVerified] = useState(false);
-
-  useEffect(() => {
-
-    if (resendTimer > 0 && showOTPForm) {
-      setInterval(() => {
-        setResendTimer((prevTimer) => prevTimer - 1);
-      }, 1000);
-    }
-
-  }, [resendTimer, showOTPForm]);
-
-  const handleRequestOTP = () => {
-    setShowOTPForm(true);
-    setVerifyOTP(false);
-    setResendTimer(60);
-  };
+  const [email, setEmail] = useState('')
+  const [otp, setOtp] = useState('')
+  const [showOTPForm, setShowOTPForm] = useState(false)
+  const [otpErr, setOtpErr] = useState(false)
+  const [err, setErr] = useState(false)
+  const [resendTimer, setResendTimer] = useState(60000)
+  const [otpVerified, setOtpVerified] = useState(false)
 
   const handleVerifyOTP = () => {
-    setVerifyOTP(true);
-    setOtpVerified(true);
-  };
+    setOtpVerified(true)
+  }
 
   const handleResendOTP = () => {
-    setResendTimer(60);
-  };
+    setResendTimer(60000)
+  }
 
+  const handleRequestOTP = () => {
+    setShowOTPForm(true)
+  }
+
+  const renderer = ({
+    seconds,
+    completed,
+  }: CountdownRenderProps) => {
+    if (completed) {
+      return (
+        <span
+          className="ml-2 cursor-pointer text-themeTextGrey underline"
+          onClick={handleResendOTP}
+        >
+          Resend now
+        </span>
+      )
+    } else {
+      return (
+        <span className="mt-2 text-sm text-themeTextGrey">
+          Resend OTP in {seconds} seconds
+        </span>
+      )
+    }
+  }
 
   if (otpVerified) {
-    return <VerifiedPage />;
+    return <VerifiedPage />
   }
 
   return (
-    <Page className="flex justify-center mmd:items-center items-start ">
+    <Page className="flex items-start justify-center md:items-center ">
       <div className="relative w-fit">
-        <button className="bg-themeBgBlack text-white py-2 px-2 rounded-full absolute top-0 right-0 -mt-12 -mr-0 hidden mmd:block">
+        <button className="absolute right-0 top-0 -mr-0 -mt-12 hidden rounded-full bg-themeBgBlack px-2 py-2 text-white md:block">
           <X size={20} />
         </button>
-        <div className="mmd:bg-themeBlack mmd:p-14 p-0 rounded-3xl ">
-          <h1 className="text-3xl text-white font-semibold mb-4 mt-4">
-            {showOTPForm ? "Enter 6-digit OTP" : "Check Your Rank"}
+        <div className="flex flex-col gap-4 rounded-3xl p-0 md:w-[400px] md:bg-themeBlack md:p-8">
+          <h1 className="text-3xl font-semibold text-white">
+            {showOTPForm ? 'Enter 6-digit OTP' : 'Check Your Rank'}
           </h1>
           {showOTPForm ? (
             <span className="text-sm font-light text-white opacity-90">
               Your Code Was Sent To {email}
             </span>
           ) : (
-            <span className="text-sm font-light text-white opacity-90 visible mmd:hidden">
+            <span className="visible text-sm font-light text-white opacity-90 md:hidden">
               Discover Where You Stand Among The Top Performers On Our
-              Leaderboard Page. Check Your Rank And Celebrate Your
-              Achievements!
+              Leaderboard Page. Check Your Rank And Celebrate Your Achievements!
             </span>
           )}
           {showOTPForm ? (
-            <OTPfield setOtp={setOtp} otp={otp} />
+            <OTPfield err={otpErr} setOtp={setOtp} otp={otp} />
           ) : (
-            <EmailInput value={email} setValue={setEmail} />
+            <EmailInput err={err} value={email} setValue={setEmail} />
           )}
 
           {showOTPForm ? (
             <>
-              <p className="text-themeTextGrey text-sm mt-2">
-                Resend OTP in {resendTimer} seconds
-                {resendTimer === 0 && (
-                  <span
-                    className="text-themeTextGrey cursor-pointer ml-2 underline"
-                    onClick={handleResendOTP}
-                  >
-                    Resend now
-                  </span>
-                )}
-              </p>
+              <Countdown renderer={renderer} date={Date.now() + resendTimer} />
 
               <Button
                 onClick={handleVerifyOTP}
-                disabled={otp.length === 0}
+                disabled={otp.length < 6}
+                className="md:w-fit"
               >
                 Verify OTP
               </Button>
@@ -99,6 +98,7 @@ const WaitlistPage = () => {
             <Button
               onClick={handleRequestOTP}
               disabled={email.length === 0}
+              className="md:w-fit"
             >
               Request OTP
             </Button>
@@ -106,7 +106,7 @@ const WaitlistPage = () => {
         </div>
       </div>
     </Page>
-  );
-};
+  )
+}
 
-export default WaitlistPage;
+export default WaitlistPage

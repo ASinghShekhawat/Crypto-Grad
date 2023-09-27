@@ -74,6 +74,9 @@ dependencies:
   react-otp-input:
     specifier: ^3.0.4
     version: 3.0.4(react-dom@18.2.0)(react@18.2.0)
+  react-social-icons:
+    specifier: ^6.3.0
+    version: 6.3.0(react-dom@18.2.0)(react@18.2.0)
   sass:
     specifier: ^1.68.0
     version: 1.68.0
@@ -4256,6 +4259,17 @@ packages:
       react: '>=16.8.6 || ^17.0.0 || ^18.0.0'
       react-dom: '>=16.8.6 || ^17.0.0 || ^18.0.0'
     dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-social-icons@6.3.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-g9+KnKsMYk2tJIyxHcTJ5rIqvNhRMTwM6c5CksLResbD2uZvsBawTnV1YXQ23V4xyZP6HPQCHG6epVlyv2mrgg==}
+    peerDependencies:
+      react: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+      react-dom: 15.x.x || 16.x.x || 17.x.x || 18.x.x
+    dependencies:
+      '@babel/runtime': 7.22.15
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false

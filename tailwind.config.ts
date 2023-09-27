@@ -20,7 +20,9 @@ const config: Config = {
         themeTextGrey: "#777777",
         themeNavBlack: "#131722",
         themeBorder: "#FDFDFD",
-        themeVideoBgGrey: "#22222C"
+        themeVideoBgGrey: "#22222C",
+        themeErr: "#CC2B2D",
+        themePositionBg: "#2C2E34"
       },
       screens: {
         mmd: "992px",

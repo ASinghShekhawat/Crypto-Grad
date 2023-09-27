@@ -120,6 +120,15 @@ $max: 10;
   }
 }
 
+.MuiInputLabel-root {
+  color: rgba($color: #fff, $alpha: 0.7) !important;
+}
+
+.css-px39cz-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: #6754f899 !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 8px;
