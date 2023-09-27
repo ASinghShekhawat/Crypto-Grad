@@ -26,6 +26,11 @@ body {
   min-height: calc(100vh - 4rem);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 @keyframes fadeInUp {
   from {
     transform: translate3d(0, 60px, 0);

@@ -15,29 +15,27 @@ const WaitlistPage = () => {
   const [showOTPForm, setShowOTPForm] = useState(false)
   const [otpErr, setOtpErr] = useState(false)
   const [err, setErr] = useState(false)
-  const [resendTimer, setResendTimer] = useState(60000)
   const [otpVerified, setOtpVerified] = useState(false)
+  const [k, setK] = useState(0)
 
   const handleVerifyOTP = () => {
     setOtpVerified(true)
   }
 
   const handleResendOTP = () => {
-    setResendTimer(60000)
+    setK((i) => i + 1)
+    // setResendTimer(Date.now() + 60000)
   }
 
   const handleRequestOTP = () => {
     setShowOTPForm(true)
   }
 
-  const renderer = ({
-    seconds,
-    completed,
-  }: CountdownRenderProps) => {
+  const renderer = ({ seconds, completed }: CountdownRenderProps) => {
     if (completed) {
       return (
         <span
-          className="ml-2 cursor-pointer text-themeTextGrey underline"
+          className="mt-2 cursor-pointer text-themeTextGrey underline"
           onClick={handleResendOTP}
         >
           Resend now
@@ -84,8 +82,11 @@ const WaitlistPage = () => {
 
           {showOTPForm ? (
             <>
-              <Countdown renderer={renderer} date={Date.now() + resendTimer} />
-
+              <Countdown
+                key={k}
+                renderer={renderer}
+                date={Date.now() + 60000}
+              />
               <Button
                 onClick={handleVerifyOTP}
                 disabled={otp.length < 6}
