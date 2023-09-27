@@ -6,9 +6,10 @@ import { usePathname } from 'next/navigation'
 
 const NftDroppingNav = () => {
   const pathname = usePathname()
+  console.log(pathname)
   return (
-    pathname === '' && (
-      <div className="hidden h-16 items-center justify-between bg-gradient-to-r from-themeViolet to-themeBlue px-8 md:flex">
+    pathname === '/' && (
+      <div className="hidden h-16 items-center justify-between bg-gradient-to-r from-themeViolet to-themeBlue px-8 mmd:px-16 md:flex">
         <Image
           src="/Navbar/nft-wait-head.png"
           className="h-full object-contain object-left"

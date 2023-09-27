@@ -20,7 +20,7 @@ const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
       <Button
         type={ButtonType.SECONDARY}
         onClick={() => {}}
-        className={drawer ? "w-full" : ""}
+        className={drawer ? "w-full" : "!px-10"}
       >
         Log In
       </Button>

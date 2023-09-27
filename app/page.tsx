@@ -7,6 +7,7 @@ import NativeToken from '@/components/Homepage/NativeToken'
 import NeverMissABeat from '@/components/Homepage/NeverMissABeat'
 import NftCollection from '@/components/Homepage/NftCollection'
 import PartneredNfts from '@/components/Homepage/PartneredNfts'
+import Roadmap from '@/components/Homepage/Roadmap'
 import Section3 from '@/components/Homepage/Section3'
 import Waitlist from '@/components/Homepage/Waitlist'
 import Page from '@/components/shared/Page'
@@ -26,6 +27,7 @@ export default function Home() {
       <CgBenefits />
       <Waitlist />
       <PartneredNfts />
+      <Roadmap />
     </Page>
   )
 }

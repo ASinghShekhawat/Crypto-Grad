@@ -23,7 +23,10 @@ body {
 }
 
 .pageHeight {
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 5rem);
+  @media screen and (max-width: 992px) {
+    min-height: calc(100vh - 4rem);
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -112,9 +115,9 @@ $max: 10;
 .marqueeSwiper {
   max-width: 100%;
   .swiper-slide {
-    max-width: 330px;
+    max-width: 280px;
     @media screen and (max-width: 768px) {
-      max-width: 280px;
+      max-width: 180px;
     }
   }
 
@@ -131,14 +134,14 @@ $max: 10;
     height: 500px;
   }
   .swiper-slide {
-    max-width: 192px;
-    width: 192px;
+    max-width: 252px;
+    width: 252px;
     margin-left: 15px;
     margin-right: 15px;
     transition: all 0.3s ease-in-out;
     &.swiper-slide-active {
-      max-width: 378px !important;
-      width: 378px !important;
+      max-width: 338px !important;
+      width: 338px !important;
     }
   }
   @media screen and (max-width: 992px) and (min-width: 767px) {
@@ -148,8 +151,8 @@ $max: 10;
       height: 400px;
     }
     .swiper-slide {
-      max-width: 132px;
-      width: 132px;
+      max-width: 208px;
+      width: 208px;
       transition: all 0.3s ease-in-out;
       &.swiper-slide-active {
         max-width: 278px !important;
@@ -165,8 +168,8 @@ $max: 10;
       height: 300px;
     }
     .swiper-slide {
-      max-width: 132px;
-      width: 132px;
+      max-width: 152px;
+      width: 152px;
       transition: all 0.3s ease-in-out;
       &.swiper-slide-active {
         max-width: 228px !important;

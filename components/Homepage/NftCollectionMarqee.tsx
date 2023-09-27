@@ -20,7 +20,7 @@ const NftCollectionMarqee = () => {
       allowTouchMove={false}
       breakpoints={{
         768: {
-          spaceBetween: 40,
+          spaceBetween: 30,
         },
       }}
       className='marqueeSwiper'

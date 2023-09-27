@@ -5,7 +5,7 @@ interface IPage extends Children {
 }
 
 const Page = ({ children, className }: IPage) => {
-  return <div className={`p-8 ${className} pageHeight`}>{children}</div>;
+  return <div className={`px-8 py-8 mmd:px-16 ${className} pageHeight`}>{children}</div>;
 };
 
 export default Page;

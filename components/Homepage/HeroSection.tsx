@@ -5,7 +5,7 @@ import HeroSectionActions from './HeroSectionActions'
 const HeroSection = () => {
   return (
     <>
-      <Animated className="relative z-1 flex flex-col items-center justify-center px-8 md:py-32 py-16">
+      <Animated className="relative z-1 flex flex-col items-center justify-center px-8 mmd:px-16 md:py-32 py-16">
         <Image
           src="/effects/hero-eff-1.svg"
           className="absolute z-0"
@@ -25,7 +25,7 @@ const HeroSection = () => {
       </Animated>
       <Animated
         delay={100}
-        className="relative z-0 flex h-[30vw] w-full flex-col items-center justify-center px-8 mmd:py-20 py-10"
+        className="relative z-0 flex h-[30vw] w-full flex-col items-center justify-center px-8 mmd:px-16 mmd:py-20 py-10"
       >
         <Image
           src="/effects/hero-eff-2.svg"

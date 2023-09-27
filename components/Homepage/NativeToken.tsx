@@ -4,14 +4,14 @@ import Button from '../shared/Button'
 
 const NativeToken = () => {
   return (
-    <Animated className="w-ful relative z-1 flex flex-col items-center gap-8 px-8 py-20 md:min-w-fit mmd:flex-row">
-      <div className="relative z-1 w-full">
+    <Animated className="w-ful relative z-1 flex flex-col items-center gap-8 px-8 mmd:px-16 py-20 md:min-w-fit mmd:flex-row">
+      <div className="relative z-1 mmd:w-2/5 w-full">
         <Image
           src="/Homepage/NativeToken/nativeToken.png"
           alt=""
           width={343}
           height={552}
-          className="sm:w-1/2 w-full object-contain md:h-[50vh] mx-auto"
+          className="sm:w-3/5 w-full object-contain md:h-[50vh] mx-auto"
         />
       </div>
       <Image
@@ -21,7 +21,7 @@ const NativeToken = () => {
         width={635}
         height={840}
       />
-      <div className="flex w-full flex-col gap-8">
+      <div className="flex mmd:w-3/5 w-full flex-col gap-8">
         <div className="text-3xl font-bold md:text-5xl">
           <span className="text-themeBorderBlue">
             CryptoGrad&apos;s Native Token

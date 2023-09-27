@@ -10,7 +10,7 @@ interface INftCard {
 
 const NftCard = ({ id, imageUrl, name, price }: INftCard) => {
   return (
-    <div className="relative z-1 aspect-[11/13] w-[px] md:w-[330px] overflow-hidden rounded-2xl">
+    <div className="relative z-1 aspect-[11/13] w-[180px] md:w-[280px] overflow-hidden rounded-2xl">
       <Image
         // src="/Nft/nft1.png"
         src={imageUrl}
