@@ -20,6 +20,7 @@ const config: Config = {
         themeTextGrey: "#777777",
         themeNavBlack: "#131722",
         themeBorder: "#FDFDFD",
+        themeVideoBgGrey: "#22222C"
       },
       screens: {
         mmd: "992px",
@@ -27,6 +28,13 @@ const config: Config = {
       },
       fontSize: {
         "2xs": "0.6rem"
+      },
+      zIndex: {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
       }
     },
   },

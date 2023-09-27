@@ -24,7 +24,7 @@ const Button = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`bg-themeBlack justify-center hover:text-themeVioletText flex items-center gap-2 border-2 border-themeBlue transition-all rounded-lg px-8 min-h-[2.5rem] font-medium text-lg ${className}`}
+      className={`bg-themeBlack justify-center hover:text-themeVioletText flex items-center gap-2 border-2 border-themeBlue transition-all rounded-lg md:px-8 px-4 min-h-[2.5rem] font-medium text-lg ${className}`}
     >
       {children} {loading && <CgSpinner className="animate-spin" />}
     </button>
@@ -32,7 +32,7 @@ const Button = ({
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg px-8 min-h-[2.5rem] font-semibold text-lg ${className}`}
+      className={`bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg md:px-8 px-4 min-h-[2.5rem] font-semibold text-lg ${className}`}
     >
       {children} {loading && <CgSpinner className="animate-spin" />}
     </button>

@@ -1,21 +1,35 @@
-import Navbar from "@/components/Navbar/Navbar";
-import "./globals.scss";
-import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
-import Providers from "./providers";
-import NftDroppingNav from "@/components/Navbar/NftDroppingNav";
+import Navbar from '@/components/Navbar/Navbar'
+import './globals.scss'
+import type { Metadata } from 'next'
+import { DM_Sans } from 'next/font/google'
+import Providers from './providers'
+import NftDroppingNav from '@/components/Navbar/NftDroppingNav'
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: [
+    '100',
+    '200',
+    '300',
+    '400',
+    '500',
+    '600',
+    '700',
+    '800',
+    '900',
+    '1000',
+  ],
+})
 
 export const metadata: Metadata = {
-  title: "Cryptograd",
-  description: "Cryptograd",
-};
+  title: 'Cryptograd',
+  description: 'Cryptograd',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -24,7 +38,7 @@ export default function RootLayout({
       </head>
       <body className={dmSans.className}>
         <Providers>
-          <div className="max-w-[1730px] mx-auto relative w-full flex flex-col">
+          <div className="relative mx-auto flex w-full max-w-[1730px] flex-col">
             <NftDroppingNav />
             <Navbar />
             {children}
@@ -32,5 +46,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  );
+  )
 }
