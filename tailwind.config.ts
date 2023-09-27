@@ -23,6 +23,7 @@ const config: Config = {
       },
       screens: {
         mmd: "992px",
+        mmmd:"1400px",
       },
       fontSize: {
         "2xs": "0.6rem"
