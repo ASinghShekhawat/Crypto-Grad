@@ -41,57 +41,57 @@ const MembershipPlanCard = ({
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
             {trial ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>7 days Free trial</div>
           </div>
           <div className="flex items-center gap-2">
             {signals ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>Signals</div>
           </div>
           <div className="flex items-center gap-2">
             {videos ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>Videos</div>
           </div>
           <div className="flex items-center gap-2">
             {aiBot ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>General AI Bot</div>
           </div>
           <div className="flex items-center gap-2">
             {community ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>Community</div>
           </div>
           <div className="flex items-center gap-2">
             {goLive ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>GO LIVE Feature</div>
           </div>
           <div className="flex items-center gap-2">
             {vip ? (
-              <BsCheckLg className="w-6 !text-xl !text-themeBorderBlue" />
+              <BsCheckLg className="w-6 h-6 !text-xl !text-themeBorderBlue" />
             ) : (
-              <BsX className="!text-themeRed w-6 !text-3xl" />
+              <BsX className="!text-themeRed w-6 h-6 !text-3xl" />
             )}
             <div>VIP Whale Room</div>
           </div>
