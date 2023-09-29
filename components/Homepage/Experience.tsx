@@ -1,7 +1,6 @@
 'use client'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import Animated from '../shared/Animated'
 import { Navigation } from 'swiper/modules'
 import Image from 'next/image'
 import { FaPlay } from 'react-icons/fa'
@@ -9,7 +8,7 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 const Experience = () => {
   return (
-    <Animated className="flex w-full flex-col items-center justify-center overflow-hidden px-8 py-20 text-center mmd:px-16">
+    <div className="flex w-full flex-col items-center justify-center overflow-hidden px-8 py-20 text-center mmd:px-16">
       <div className="mb-16 text-3xl font-bold md:text-5xl">
         Hear Voices of Experience
       </div>
@@ -44,7 +43,7 @@ const Experience = () => {
                 <FaPlay /> View Live
               </button>
             </div>
-            <div className="absolute right-0 top-[95%] w-full rounded-3xl border-2 border-themeTextGrey/80 bg-themeBlack/70 p-6 text-left backdrop-blur-lg md:p-8 md:text-xl mmd:w-[700px]">
+            <div className="absolute right-0 top-[95%] md:top-[80%] w-full rounded-3xl border-2 border-themeTextGrey/80 bg-themeBlack/70 p-6 text-left backdrop-blur-lg md:p-8 md:text-xl mmd:w-[700px]">
               Cryptograd paves the way for effortless learning in the
               cryptocurrency space, granting every user the ability to learn. By
               seamlessly blending AI and the camaraderie of the community, it
@@ -75,7 +74,7 @@ const Experience = () => {
           <BiChevronRight className="!text-5xl" />
         </button>
       </div>
-    </Animated>
+    </div>
   )
 }
 
