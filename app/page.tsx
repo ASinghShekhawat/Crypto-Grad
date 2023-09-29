@@ -1,6 +1,7 @@
 import AiSection from '@/components/Homepage/AiSection'
 import AiSection5 from '@/components/Homepage/AiSection5'
 import CgBenefits from '@/components/Homepage/CgBenefits'
+import Experience from '@/components/Homepage/Experience'
 import Growth from '@/components/Homepage/Growth'
 import HeroSection from '@/components/Homepage/HeroSection'
 import LiveEducator from '@/components/Homepage/LiveEducator'
@@ -23,7 +24,7 @@ export default function Home() {
       <NftCollection />
       <AiSection5 />
       <LiveEducator />
-      {/* //!pending one */}
+      <Experience />
       <NeverMissABeat />
       <NativeToken />
       <CgBenefits />
