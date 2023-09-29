@@ -96,7 +96,7 @@ const MembershipPlanCard = ({
             <div>VIP Whale Room</div>
           </div>
         </div>
-        <Button>
+        <Button className='!px-4'>
           Get Started <BsArrowRight />
         </Button>
       </div>
