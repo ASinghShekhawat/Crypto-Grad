@@ -4,7 +4,7 @@ import Button from '../shared/Button'
 
 const NativeToken = () => {
   return (
-    <Animated className="w-ful relative z-1 flex flex-col items-center gap-8 px-8 mmd:px-16 py-20 md:min-w-fit mmd:flex-row">
+    <Animated className="w-full relative z-1 flex flex-col items-center gap-8 px-8 mmd:px-16 py-20 md:min-w-fit mmd:flex-row">
       <div className="relative z-1 mmd:w-2/5 w-full">
         <Image
           src="/Homepage/NativeToken/nativeToken.png"

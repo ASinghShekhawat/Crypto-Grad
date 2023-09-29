@@ -5,6 +5,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
 const darkTheme = createTheme({
+  typography:{
+    fontFamily: `'DM Sans', sans-serif`
+  },
   palette: {
     mode: 'dark',
     primary: {

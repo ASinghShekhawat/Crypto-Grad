@@ -4,7 +4,7 @@ import AiSectionImage from './AiSectionImage'
 
 const AiSection = () => {
   return (
-    <Animated className="relative z-[1] flex mmd:flex-row flex-col w-full items-center px-8 mmd:px-16 py-20 md:min-w-fit">
+    <Animated className="relative z-1 flex mmd:flex-row flex-col w-full items-center px-8 mmd:px-16 py-20 md:min-w-fit">
       <Image
         src="/effects/ai-eff-1.svg"
         className="absolute right-0 z-0"

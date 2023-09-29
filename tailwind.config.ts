@@ -23,7 +23,9 @@ const config: Config = {
         themeVideoBgGrey: "#22222C",
         themeTextInputBg: "#070B16",
         themeErr: "#CC2B2D",
-        themePositionBg: "#2C2E34"
+        themePositionBg: "#2C2E34",
+        themeWebBg: "#0d0d17",
+        themeRed: "#C93030"
       },
       screens: {
         mmd: "992px",

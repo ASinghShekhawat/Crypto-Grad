@@ -1,8 +1,10 @@
 import AiSection from '@/components/Homepage/AiSection'
 import AiSection5 from '@/components/Homepage/AiSection5'
 import CgBenefits from '@/components/Homepage/CgBenefits'
+import Growth from '@/components/Homepage/Growth'
 import HeroSection from '@/components/Homepage/HeroSection'
 import LiveEducator from '@/components/Homepage/LiveEducator'
+import Membership from '@/components/Homepage/Membership'
 import NativeToken from '@/components/Homepage/NativeToken'
 import NeverMissABeat from '@/components/Homepage/NeverMissABeat'
 import NftCollection from '@/components/Homepage/NftCollection'
@@ -28,6 +30,8 @@ export default function Home() {
       <Waitlist />
       <PartneredNfts />
       <Roadmap />
+      <Membership />
+      <Growth />
     </Page>
   )
 }
