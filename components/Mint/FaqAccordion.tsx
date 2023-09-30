@@ -7,11 +7,11 @@ const FaqAccordion = ({ title, body }: { title: string; body: string }) => {
   return (
     <Disclosure>
       {({ open }) => (
-        <div className="flex w-full xl:max-w-[80%] flex-col gap-2 rounded-lg bg-themeDialogBlack px-4 py-2">
+        <div className="flex w-full flex-col gap-2 rounded-lg bg-themeDialogBlack px-4 py-2 xl:max-w-[80%]">
           <Disclosure.Button className="group flex w-full items-center justify-between text-left text-xl font-medium transition-all hover:text-themeVioletText">
             {title}
             <FaChevronDown
-              className={`text-sm !min-w-[1rem] transition-all group-hover:text-themeVioletText ${
+              className={`!min-w-[1rem] text-sm transition-all group-hover:text-themeVioletText ${
                 open && 'rotate-180 text-themeBorderBlue'
               }`}
             />
