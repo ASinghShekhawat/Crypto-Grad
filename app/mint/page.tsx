@@ -1,5 +1,4 @@
 import HeroSectionHoveringNfts from '@/components/Homepage/HeroSectionHoveringNfts'
-import MintPageBtn from '@/components/Mint/MIntPageBtn'
 import MintFaq from '@/components/Mint/MintFaq'
 import MintPacks from '@/components/Mint/MintPacks'
 import MintPanel from '@/components/Mint/MintPanel'

@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import Providers from './providers'
 import NftDroppingNav from '@/components/Navbar/NftDroppingNav'
+import Footer from '@/components/Footer/Footer'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -43,6 +44,7 @@ export default function RootLayout({
             <NftDroppingNav />
             <Navbar />
             {children}
+            <Footer />
           </div>
         </Providers>
       </body>
