@@ -25,7 +25,8 @@ const config: Config = {
         themeErr: "#CC2B2D",
         themePositionBg: "#2C2E34",
         themeWebBg: "#0d0d17",
-        themeRed: "#C93030"
+        themeRed: "#C93030",
+        themeMintBg: "#14170D"
       },
       screens: {
         mmd: "992px",

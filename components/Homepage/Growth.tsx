@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Animated from '../shared/Animated'
 import GrowthActions from './GrowthActions'
 import GrowthImage from './GrowthImage'
@@ -14,8 +13,9 @@ const Growth = () => {
           Be a Part of <br /> Something Special
         </div>
         <div className="mt-4">
-          Step into a space where ideas flourish, like minds connect, and
-          inspiration knows no bounds. Join us now!
+          Step into a space where ideas flourish, like minds{' '}
+          <br className="hidden md:block" /> connect, and inspiration knows no
+          bounds. Join us now!
         </div>
         <GrowthActions />
       </div>
