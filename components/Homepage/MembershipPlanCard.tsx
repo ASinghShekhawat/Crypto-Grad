@@ -27,7 +27,7 @@ const MembershipPlanCard = ({
   popular,
 }: IMembershipPlanCard) => {
   return (
-    <div className="flex h-full w-full flex-col justify-end overflow-hidden md:rounded-[2.5rem] rounded-3xl">
+    <div className="flex w-full flex-col justify-end overflow-hidden md:rounded-[2.5rem] rounded-3xl">
       {popular && (
         <div className="to bg-themeBlue text-center w-full bg-gradient-to-r from-themeViolet px-8 py-4 text-2xl font-bold">
           Most Popular
