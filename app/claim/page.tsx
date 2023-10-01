@@ -1,10 +1,6 @@
-import HeroSectionHoveringNfts from '@/components/Homepage/HeroSectionHoveringNfts'
+import ClaimAction from '@/components/Claim/ClaimAction'
 import NftCollectionMarqee from '@/components/Homepage/NftCollectionMarqee'
-import MintFaq from '@/components/Mint/MintFaq'
-import MintPacks from '@/components/Mint/MintPacks'
-import MintPanel from '@/components/Mint/MintPanel'
 import Animated from '@/components/shared/Animated'
-import Button from '@/components/shared/Button'
 import Page from '@/components/shared/Page'
 import Image from 'next/image'
 
@@ -18,7 +14,7 @@ const ClaimPage = () => {
         <div className="relative z-1 mb-12 mt-4">
           Claim early access CryptoGrad Pass to gain access to the platform
         </div>
-        <Button className='relative z-1'>Claim Now</Button>
+        <ClaimAction />
         <Animated className="absolute left-0 top-[15%] z-0 w-1/3 sm:w-1/4 lg:w-1/5 xl:top-[35%]">
           <div className="floating">
             <Image
@@ -49,7 +45,7 @@ const ClaimPage = () => {
           height={609}
         />
       </div>
-      <div className="hidden flex-col items-center justify-center gap-16 md:flex py-32 w-full">
+      <div className="hidden w-full flex-col items-center justify-center gap-16 py-32 md:flex">
         <div className="relative z-1 text-3xl font-bold md:text-5xl">
           Trending Cryptograd NFTs
         </div>

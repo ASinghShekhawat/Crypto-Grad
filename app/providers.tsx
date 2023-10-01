@@ -3,10 +3,11 @@
 import { Children } from '@/types/generics'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import { WalletProvider } from '@/context/WalletContext'
 
 const darkTheme = createTheme({
-  typography:{
-    fontFamily: `'DM Sans', sans-serif`
+  typography: {
+    fontFamily: `'DM Sans', sans-serif`,
   },
   palette: {
     mode: 'dark',
@@ -19,10 +20,12 @@ const darkTheme = createTheme({
 const Providers = ({ children }: Children) => {
   return (
     <>
-      <ThemeProvider theme={darkTheme}>
-        <CssBaseline />
-        {children}
-      </ThemeProvider>
+      <WalletProvider>
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
+          {children}
+        </ThemeProvider>
+      </WalletProvider>
     </>
   )
 }

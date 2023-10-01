@@ -18,9 +18,9 @@ export default function OTPfield({
       numInputs={6}
       renderSeparator={<span className="ml-1 mr-1"></span>}
       renderInput={(props) => <input {...props} />}
-      containerStyle={{
-        margin: '20px 0px',
-      }}
+      // containerStyle={{
+      //   margin: '20px 0px',
+      // }}
       inputStyle={{
         background: 'transparent',
         color: 'white',
