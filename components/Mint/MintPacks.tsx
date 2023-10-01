@@ -24,7 +24,7 @@ const MintPacks = () => {
               <li>Get access to beginner level perks</li>
             </ul>
             <MintPageBtn
-              className="mt-4 !w-fit !px-12"
+              className="mt-4 !w-fit !px-8 !bg-themeBlack !h-12"
               active={true}
               onClick={() => {}}
             >
@@ -55,7 +55,7 @@ const MintPacks = () => {
               <li>Get access to beginner level perks</li>
             </ul>
             <MintPageBtn
-              className="mt-4 !w-fit !px-12"
+              className="mt-4 !w-fit !px-8 !bg-themeBlack !h-12"
               active={true}
               onClick={() => {}}
             >
@@ -71,7 +71,7 @@ const MintPacks = () => {
               <li>Get access to beginner level perks</li>
             </ul>
             <MintPageBtn
-              className="mt-4 !w-fit !px-12"
+              className="mt-4 !w-fit !px-8 !bg-themeBlack !h-12"
               active={true}
               onClick={() => {}}
             >
@@ -103,7 +103,7 @@ const MintPacks = () => {
               <li>Get access to beginner level perks</li>
             </ul>
             <MintPageBtn
-              className="mt-4 !w-fit !px-12"
+              className="mt-4 !w-fit !px-8 !bg-themeBlack !h-12"
               active={true}
               onClick={() => {}}
             >
