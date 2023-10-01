@@ -15,8 +15,8 @@ const MintPacks = () => {
         utility-backed governance <br className="hidden md:block" /> token,
         limited edition NFT launch, poker room and tournament play
       </div>
-      <div className="mt-16 flex flex-col gap-16 text-left">
-        <Animated className="flex flex-col-reverse items-center gap-12 md:flex-row">
+      <div className="mt-16 flex flex-col text-left">
+        <Animated className="flex py-16 flex-col-reverse items-center gap-12 md:flex-row">
           <div className="flex w-full flex-col gap-2">
             <div className="text-2xl font-bold">Pack of 1 NFT</div>
             <ul className="list-inside list-disc font-light">
@@ -39,7 +39,7 @@ const MintPacks = () => {
             alt="1 nft pack"
           />
         </Animated>
-        <Animated className="flex flex-col items-center gap-12 md:flex-row">
+        <Animated className="flex py-16 flex-col items-center gap-12 md:flex-row">
           <Image
             className="w-full object-contain floating"
             src="/Mint/Packs/pack (3).png"
@@ -63,7 +63,7 @@ const MintPacks = () => {
             </MintPageBtn>
           </div>
         </Animated>
-        <Animated className="flex flex-col-reverse items-center gap-12 md:flex-row">
+        <Animated className="flex py-16 flex-col-reverse items-center gap-12 md:flex-row">
           <div className="flex w-full flex-col gap-2">
             <div className="text-2xl font-bold">Pack of 5 NFT</div>
             <ul className="list-inside list-disc font-light">
@@ -87,7 +87,7 @@ const MintPacks = () => {
             data-delay={400}
           />
         </Animated>
-        <Animated className="flex flex-col items-center gap-12 md:flex-row">
+        <Animated className="flex pt-16 flex-col items-center gap-12 md:flex-row">
           <Image
             className="w-full object-contain floating"
             src="/Mint/Packs/pack (10).png"
