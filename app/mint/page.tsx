@@ -68,7 +68,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={169}
                     height={154}
                     alt=""
-                    className="absolute -left-16 bottom-0 top-0 h-full w-fit object-contain"
+                    className="absolute -left-20 sm:-left-16 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
                   />
                   Unlock the Ultimate <br /> Strategy
                 </div>
@@ -80,7 +80,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={134}
                     height={156}
                     alt=""
-                    className="absolute -left-8 bottom-0 top-0 h-full w-fit object-contain"
+                    className="absolute -left-12 sm:-left-8 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
                   />
                   Master Trading for <br /> Superior Performance
                 </div>
@@ -92,7 +92,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={177}
                     height={156}
                     alt=""
-                    className="absolute -left-16 bottom-0 top-0 h-full w-fit object-contain"
+                    className="absolute -left-20 sm:-left-16 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
                   />
                   Get predictive results <br /> with AI
                 </div>
@@ -104,7 +104,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={145}
                     height={175}
                     alt=""
-                    className="absolute -left-8 bottom-0 top-0 h-full w-fit object-contain"
+                    className="absolute -left-12 sm:-left-8 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
                   />
                   Discover data about <br /> the market
                 </div>

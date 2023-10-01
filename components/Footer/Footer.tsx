@@ -27,7 +27,7 @@ const Footer = () => {
           height={23}
           width={30}
           alt="brand-logo"
-          className="h-20 w-20 object-cover"
+          className="w-20 object-cover"
         />
         {footerLinks.map((column) => (
           <div key={column.column} className="hidden flex-col gap-6 mmd:flex">
