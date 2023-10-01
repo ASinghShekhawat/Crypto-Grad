@@ -4,9 +4,9 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Dispatch, Fragment } from 'react'
 import Button from '../shared/Button'
 import { IoClose } from 'react-icons/io5'
-import ClaimDialogImage from './ClaimDialogImage'
+import Image from 'next/image'
 
-export default function ClaimDialog({
+export default function InsufficientBalanceDialog({
   isOpen,
   setIsOpen,
 }: {
@@ -29,7 +29,7 @@ export default function ClaimDialog({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black  backdrop-blur-lg bg-opacity-25" />
+          <div className="fixed inset-0 bg-black  bg-opacity-25 backdrop-blur-lg" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto">
@@ -52,10 +52,20 @@ export default function ClaimDialog({
                 </button>
                 <div className="flex flex-col items-center justify-center">
                   <div className="flex flex-col items-center justify-center text-center text-2xl font-semibold">
-                    Congratulations, You <br /> successfully claimed your NFT!
+                    Sorry, you don&apos;t have <br /> sufficient balance
                   </div>
-                  <ClaimDialogImage />
-                  <Button className='!px-8 !h-12'>View in OpenSea</Button>
+                  <div className="relative mx-auto w-fit">
+                    <Image
+                      src="/WLPictures/coin1.png"
+                      width={190}
+                      height={191}
+                      alt=""
+                    />
+                    <span className="absolute bottom-12 right-8 flex h-6 w-6 items-center justify-center rounded-full border border-themeRed bg-themeRed/30">
+                      !
+                    </span>
+                  </div>
+                  <Button className="!h-12 !px-8">View in OpenSea</Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
