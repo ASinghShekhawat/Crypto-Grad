@@ -12,7 +12,7 @@ const VerifiedPage = () => {
   }
 
   return showInviteDialog ? (
-    <InviteFriendDialog onClose={handleInviteButtonClick} />
+    <InviteFriendDialog  />
   ) : (
     <Page className="flex h-full items-start justify-center md:items-center">
       <div className="relative overflow-hidden md:w-[500px] md:rounded-3xl md:bg-themeBlack md:p-8">
