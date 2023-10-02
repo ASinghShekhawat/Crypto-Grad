@@ -29,7 +29,7 @@ const ClaimPage = () => {
           alt=""
           className="absolute w-20 h-fit hidden left-[10%] top-[15%] -z-1 xl:top-[30%] md:block"
         />
-        <Animated className="absolute left-0 top-[15%] z-0 w-1/3 sm:w-1/4 lg:w-1/5 xl:top-[35%]">
+        <Animated className="absolute -left-4 top-[15%] z-0 w-1/3 sm:w-1/4 lg:w-1/5 xl:top-[35%]">
           <div className="floating">
             <Image
               src="/Mint/nft1.png"
@@ -40,7 +40,7 @@ const ClaimPage = () => {
             />
           </div>
         </Animated>
-        <Animated className="absolute right-0 top-[70%] z-0 w-1/3 sm:w-1/4 md:top-[60%] lg:w-1/5">
+        <Animated className="absolute -right-8 top-[70%] z-0 w-1/3 sm:w-1/4 md:top-[60%] lg:w-1/5">
           <div className="floating" data-delay={600}>
             <Image
               src="/Mint/nft2.png"
@@ -53,7 +53,7 @@ const ClaimPage = () => {
         </Animated>
         <Image
           src="/effects/hero-eff-1.svg"
-          className="absolute -top-[10%] left-0 right-0 z-0 m-auto h-fit w-fit mmd:bottom-[10%] mmd:top-auto"
+          className="absolute bottom-[50%] left-0 right-0 z-0 m-auto h-fit w-fit md:bottom-[10%]"
           alt=""
           width={870}
           height={609}

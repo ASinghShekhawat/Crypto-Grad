@@ -16,7 +16,7 @@ const NativeToken = () => {
       </div>
       <Image
         src="/effects/ai-eff-1.svg"
-        className="absolute -bottom-64 -left-[20%] z-0 h-full object-bottom"
+        className="absolute -bottom-64 -left-[20%] z-0 h-full md:h-[100vh] object-bottom"
         alt=""
         width={635}
         height={840}

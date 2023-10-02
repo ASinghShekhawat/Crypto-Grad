@@ -3,7 +3,7 @@ import Animated from '../shared/Animated'
 
 const LiveEducator = () => {
   return (
-    <Animated className="w-full relative z-1 flex flex-col items-center gap-8 px-8 mmd:px-16 py-20 md:min-w-fit mmd:flex-row">
+    <Animated className="relative z-1 flex w-full flex-col items-center gap-8 px-8 py-20 md:min-w-fit mmd:flex-row mmd:px-16">
       <div className="relative z-1 w-full">
         <Image
           src="/Homepage/LiveEducator/liveEdu.webp"
@@ -21,9 +21,9 @@ const LiveEducator = () => {
         height={840}
       />
       <div className="flex w-full flex-col gap-8">
-        <div className="whitespace-nowrap text-3xl font-bold md:text-5xl">
-          <span className="text-themeBorderBlue">With AI, </span>
-          It&apos;s possible
+        <div className="text-3xl font-bold mmd:whitespace-nowrap md:text-5xl">
+          <span className="text-themeBorderBlue">Trade in Stride </span>
+          with <br className='mmd:block hidden' /> Educator by Your Side
         </div>
         <div className="flex flex-col gap-2 text-lg">
           <div className="flex gap-2">

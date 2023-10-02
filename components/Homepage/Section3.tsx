@@ -4,7 +4,7 @@ import Section3Video from './Section3Video'
 
 const Section3 = () => {
   return (
-    <Animated className="relative pb-16 pt-0 md:pt-16">
+    <Animated className="relative !py-16">
       <Image
         src="/effects/sec3-eff.svg"
         className="absolute z-0"

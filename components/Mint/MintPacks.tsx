@@ -16,7 +16,7 @@ const MintPacks = () => {
         limited edition NFT launch, poker room and tournament play
       </div>
       <div className="mt-16 flex flex-col text-left">
-        <Animated className="flex py-16 flex-col-reverse items-center gap-12 md:flex-row">
+        <Animated className="flex py-16 flex-col-reverse md:items-center gap-12 md:flex-row">
           <div className="flex w-full flex-col gap-2">
             <div className="text-2xl font-bold">Pack of 1 NFT</div>
             <ul className="list-inside list-disc font-light">
@@ -32,16 +32,16 @@ const MintPacks = () => {
             </MintPageBtn>
           </div>
           <Image
-            className="w-full object-contain floating"
+            className="md:w-full object-contain floating w-2/3"
             src="/Mint/Packs/pack (1).png"
             width={484}
             height={486}
             alt="1 nft pack"
           />
         </Animated>
-        <Animated className="flex py-16 flex-col items-center gap-12 md:flex-row">
+        <Animated className="flex py-16 flex-col md:items-center gap-12 md:flex-row">
           <Image
-            className="w-full object-contain floating"
+            className="md:w-full object-contain floating w-2/3"
             src="/Mint/Packs/pack (3).png"
             width={766}
             height={485}
@@ -63,7 +63,7 @@ const MintPacks = () => {
             </MintPageBtn>
           </div>
         </Animated>
-        <Animated className="flex py-16 flex-col-reverse items-center gap-12 md:flex-row">
+        <Animated className="flex py-16 flex-col-reverse md:items-center gap-12 md:flex-row">
           <div className="flex w-full flex-col gap-2">
             <div className="text-2xl font-bold">Pack of 5 NFT</div>
             <ul className="list-inside list-disc font-light">
@@ -79,7 +79,7 @@ const MintPacks = () => {
             </MintPageBtn>
           </div>
           <Image
-            className="w-full object-contain floating"
+            className="md:w-full object-contain floating w-2/3"
             src="/Mint/Packs/pack (5).png"
             width={754}
             height={587}
@@ -87,9 +87,9 @@ const MintPacks = () => {
             data-delay={400}
           />
         </Animated>
-        <Animated className="flex pt-16 flex-col items-center gap-12 md:flex-row">
+        <Animated className="flex pt-16 flex-col md:items-center gap-12 md:flex-row">
           <Image
-            className="w-full object-contain floating"
+            className="md:w-full object-contain floating w-2/3"
             src="/Mint/Packs/pack (10).png"
             width={790}
             height={682}

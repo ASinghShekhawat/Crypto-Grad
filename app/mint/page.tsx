@@ -9,7 +9,7 @@ import Image from 'next/image'
 const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
   return (
     <Page className="flex flex-col items-center overflow-hidden !p-0">
-      <div className="flex w-full flex-col items-center !px-4 text-center md:!px-8 mmd:!px-16 mmd:!pt-20">
+      <div className="flex w-full flex-col items-center !px-4 text-center pt-12 md:!px-8 mmd:!px-16 mmd:!pt-20">
         <div className="text-3xl font-bold md:text-5xl">MINT CG NFTs</div>
         <div className="mb-32 mt-4 mmd:mb-12">
           Your gateway to exclusive NFTs that grant access to our
@@ -68,7 +68,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={169}
                     height={154}
                     alt=""
-                    className="absolute -left-20 sm:-left-16 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
+                    className="absolute -left-20 bottom-0 top-0 m-auto h-[80%] w-fit object-contain sm:-left-16 sm:h-full"
                   />
                   Unlock the Ultimate <br /> Strategy
                 </div>
@@ -80,7 +80,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={134}
                     height={156}
                     alt=""
-                    className="absolute -left-12 sm:-left-8 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
+                    className="absolute -left-12 bottom-0 top-0 m-auto h-[80%] w-fit object-contain sm:-left-8 sm:h-full"
                   />
                   Master Trading for <br /> Superior Performance
                 </div>
@@ -92,7 +92,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={177}
                     height={156}
                     alt=""
-                    className="absolute -left-20 sm:-left-16 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
+                    className="absolute -left-20 bottom-0 top-0 m-auto h-[80%] w-fit object-contain sm:-left-16 sm:h-full"
                   />
                   Get predictive results <br /> with AI
                 </div>
@@ -104,7 +104,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={145}
                     height={175}
                     alt=""
-                    className="absolute -left-12 sm:-left-8 bottom-0 top-0 h-[80%] m-auto sm:h-full w-fit object-contain"
+                    className="absolute -left-12 bottom-0 top-0 m-auto h-[80%] w-fit object-contain sm:-left-8 sm:h-full"
                   />
                   Discover data about <br /> the market
                 </div>
@@ -146,11 +146,15 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
               width={132}
               height={132}
               alt=""
-              className="absolute -top-2 left-0 h-20 w-20 md:-left-12"
+              className="absolute -left-4 top-2 h-20 w-20 md:-left-12"
             />
           </div>
         </Animated>
-        <HeroSectionHoveringNfts />
+        <div className="relative w-[120vw] h-[30vh] md:pt-0 pt-32 md:h-full md:w-full overflow-hidden">
+          <div className="absolute  bottom-0 left-0 right-0 top-16 m-auto md:static">
+            <HeroSectionHoveringNfts />
+          </div>
+        </div>
         {!searchParams.discord && <MintFaq />}
       </div>
     </Page>

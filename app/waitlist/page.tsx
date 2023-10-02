@@ -100,7 +100,7 @@ const WaitlistPage = () => {
               <div className="flex flex-col gap-2">
                 <EmailInput err={err} value={email} setValue={setEmail} />
                 <button className="flex items-center gap-2 text-xs font-light underline opacity-50">
-                  <BiPencil /> Edit Email
+                  <BiPencil /> Edit Email ID
                 </button>
               </div>
               <Button

@@ -10,7 +10,7 @@ export default function HeroSectionHoveringNfts({ bg }: { bg?: boolean }) {
       {bg && (
         <Image
           src="/effects/hero-eff-2.svg"
-          className="absolute z-0 w-full"
+          className="absolute z-0 w-full opacity-80"
           alt=""
           width={870}
           height={609}

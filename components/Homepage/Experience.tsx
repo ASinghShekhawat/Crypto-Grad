@@ -12,12 +12,12 @@ const Experience = () => {
       <div className="mb-16 text-3xl font-bold md:text-5xl">
         Hear Voices of Experience
       </div>
-      <div className="grid max-w-full grid-cols-2 items-center md:gap-x-4 gap-x-20 gap-y-8 md:flex">
+      <div className="grid max-w-full grid-cols-2 items-center md:gap-x-4 gap-x-12 gap-y-8 md:flex">
         <button
           id="experienceSwiperNavigationLeft"
-          className="row-start-2 flex !aspect-square h-16 w-16 items-center justify-center place-self-end rounded-full border border-themeGrey/40 bg-themeBlack/80 md:place-self-center"
+          className="row-start-2 flex !aspect-square md:h-16 md:w-16 h-8 w-8 items-center justify-center place-self-end rounded-full border border-themeGrey/40 bg-themeBlack/80 md:place-self-center"
         >
-          <BiChevronLeft className="!text-5xl" />
+          <BiChevronLeft className="text-2xl md:!text-5xl" />
         </button>
         <Swiper
           spaceBetween={40}
@@ -43,7 +43,7 @@ const Experience = () => {
                 <FaPlay /> View Live
               </button>
             </div>
-            <div className="absolute right-0 top-[95%] md:top-[80%] w-full rounded-3xl border-2 border-themeTextGrey/80 bg-themeBlack/70 p-6 text-left backdrop-blur-lg md:p-8 md:text-xl mmd:w-[700px]">
+            <div className="absolute right-0 top-[95%] md:top-[80%] rounded-3xl border-2 border-themeTextGrey/80 bg-themeBlack/70 p-6 text-left backdrop-blur-lg md:p-8 md:text-xl mmd:w-[700px]">
               Cryptograd paves the way for effortless learning in the
               cryptocurrency space, granting every user the ability to learn. By
               seamlessly blending AI and the camaraderie of the community, it
@@ -69,9 +69,9 @@ const Experience = () => {
         </Swiper>
         <button
           id="experienceSwiperNavigationRight"
-          className="flex !aspect-square h-16 w-16 items-center justify-center place-self-start rounded-full border border-themeGrey/40 bg-themeBlack/80 md:place-self-center"
+          className="flex !aspect-square md:h-16 md:w-16 h-8 w-8 items-center justify-center place-self-start rounded-full border border-themeGrey/40 bg-themeBlack/80 md:place-self-center"
         >
-          <BiChevronRight className="!text-5xl" />
+          <BiChevronRight className="text-2xl md:!text-5xl" />
         </button>
       </div>
     </div>

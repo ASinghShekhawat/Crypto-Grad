@@ -14,6 +14,13 @@ const HeroSection = () => {
           width={870}
           height={609}
         />
+        <Image
+          src="/effects/hero-eff-2.svg"
+          className="absolute right-0 top-0 z-0 block w-full md:hidden"
+          alt=""
+          width={870}
+          height={609}
+        />
         <div className="relative z-10 mb-2 text-center text-3xl font-bold md:text-5xl">
           Your Solution To Everything Crypto
         </div>
