@@ -68,7 +68,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
                     width={169}
                     height={154}
                     alt=""
-                    className="absolute -left-20 bottom-0 top-0 m-auto h-[80%] w-fit object-contain sm:-left-16 sm:h-full"
+                    className="absolute bottom-0 top-0 m-auto h-[80%] w-fit object-contain -left-16 sm:h-full"
                   />
                   Unlock the Ultimate <br /> Strategy
                 </div>
