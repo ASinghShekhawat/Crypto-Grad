@@ -2,7 +2,7 @@
 
 import { ButtonType } from '@/types/buttton'
 import Button from '../shared/Button'
-import { BsTelegram, BsTwitter } from 'react-icons/bs'
+import { BsDiscord, BsTwitter } from 'react-icons/bs'
 import { BiLogoInstagramAlt } from 'react-icons/bi'
 
 const GrowthActions = () => {
@@ -12,7 +12,7 @@ const GrowthActions = () => {
         // onClick={() => {}}
         className="!h-12"
       >
-        <BsTelegram className="!text-2xl" /> Open Telegram
+        <BsDiscord className="!text-2xl" /> Open Discord
       </Button>
       <Button className="aspect-square !h-12 !px-0" type={ButtonType.SECONDARY}>
         <BsTwitter className="!text-2xl" />

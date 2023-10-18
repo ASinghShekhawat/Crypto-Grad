@@ -3,7 +3,7 @@ import RoadmapImage from './RoadmapImage'
 
 const Roadmap = () => {
   return (
-    <Animated className="flex flex-col items-center justify-center px-8 py-20 text-center mmd:px-16 overflow-hidden">
+    <Animated className="flex flex-col items-center justify-center overflow-hidden px-8 pt-20 text-center md:py-20 mmd:px-16">
       <div className="text-3xl font-bold md:text-5xl">Road to Conquest</div>
       <div className="mt-4">
         An all-encompassing AI-powered learning platform, featuring a

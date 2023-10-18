@@ -27,7 +27,7 @@ const ClaimPage = () => {
           width={107}
           height={87}
           alt=""
-          className="absolute w-20 h-fit hidden left-[10%] top-[15%] -z-1 xl:top-[30%] md:block"
+          className="absolute left-[10%] top-[15%] -z-1 hidden h-fit w-20 md:block xl:top-[30%]"
         />
         <Animated className="absolute -left-4 top-[15%] z-0 w-1/3 sm:w-1/4 lg:w-1/5 xl:top-[35%]">
           <div className="floating">
@@ -59,8 +59,8 @@ const ClaimPage = () => {
           height={609}
         />
       </div>
-      <div className="hidden w-full flex-col items-center justify-center gap-16 py-32 md:flex">
-        <div className="relative z-1 text-3xl font-bold md:text-5xl">
+      <div className="flex w-full flex-col items-center justify-center gap-16 pb-16 md:py-32">
+        <div className="relative z-1 px-8 text-center text-3xl font-bold md:text-5xl">
           Trending Cryptograd NFTs
         </div>
         <NftCollectionMarqee />
