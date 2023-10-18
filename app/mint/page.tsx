@@ -140,7 +140,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
         />
         <Animated className="mb-12 flex flex-col gap-2 px-8 text-center">
           <div className="text-lg font-semibold uppercase">Cryptograd</div>
-          <div className="relative aspect-square max-h-[6rem] text-3xl font-medium italic md:max-h-full">
+          <div className="relative text-3xl font-medium italic md:max-h-full">
             The Key to Crypto Harmony
             <Image
               src="/Mint/coin (4).png"
