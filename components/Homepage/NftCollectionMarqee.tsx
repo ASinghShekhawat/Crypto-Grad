@@ -27,7 +27,7 @@ const NftCollectionMarqee = () => {
     >
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (1).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}
@@ -35,7 +35,7 @@ const NftCollectionMarqee = () => {
       </SwiperSlide>
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (2).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}
@@ -43,7 +43,7 @@ const NftCollectionMarqee = () => {
       </SwiperSlide>
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (3).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}
@@ -51,7 +51,7 @@ const NftCollectionMarqee = () => {
       </SwiperSlide>
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (4).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}
@@ -59,7 +59,7 @@ const NftCollectionMarqee = () => {
       </SwiperSlide>
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (5).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}
@@ -67,31 +67,7 @@ const NftCollectionMarqee = () => {
       </SwiperSlide>
       <SwiperSlide>
         <NftCard
-          imageUrl="/Nft/nft1.png"
-          id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
-          name="CyberTek"
-          price={4.4}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NftCard
-          imageUrl="/Nft/nft1.png"
-          id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
-          name="CyberTek"
-          price={4.4}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NftCard
-          imageUrl="/Nft/nft1.png"
-          id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
-          name="CyberTek"
-          price={4.4}
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NftCard
-          imageUrl="/Nft/nft1.png"
+          imageUrl="/Nft/nft (6).png"
           id="ajfp90834hpf9ha047fgaio3w4fbnop9a87wg4f"
           name="CyberTek"
           price={4.4}

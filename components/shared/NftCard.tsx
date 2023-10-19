@@ -14,8 +14,8 @@ const NftCard = ({ id, imageUrl, name, price }: INftCard) => {
       <Image
         // src="/Nft/nft1.png"
         src={imageUrl}
-        width={1080}
-        height={1087}
+        width={1000}
+        height={1001}
         className="relative z-0 h-full object-cover"
         alt=""
       />
