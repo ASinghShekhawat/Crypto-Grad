@@ -7,12 +7,12 @@ import ClaimDialog from './ClaimDialog'
 import InsufficientBalanceDialog from '../shared/InsufficientBalanceDialog'
 
 const ClaimAction = () => {
-  const { isLogged, connectWallet } = useWallet()
+  const { isConnected, connectWallet } = useWallet()
   const [dialog, setDialog] = useState(false)
   const [balDialog, setBalDialog] = useState(false)
 
   const handleClaim = () => {
-    if (!isLogged) return connectWallet()
+    if (!isConnected) return connectWallet()
     setDialog(true)
   }
   return (
