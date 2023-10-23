@@ -5,9 +5,11 @@ import Button from '../shared/Button'
 import { useState } from 'react'
 import ClaimDialog from './ClaimDialog'
 import InsufficientBalanceDialog from '../shared/InsufficientBalanceDialog'
+import { useAccount } from 'wagmi'
 
 const ClaimAction = () => {
-  const { isConnected, connectWallet } = useWallet()
+  const { connectWallet } = useWallet()
+  const { isConnected } = useAccount()
   const [dialog, setDialog] = useState(false)
   const [balDialog, setBalDialog] = useState(false)
 
