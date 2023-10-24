@@ -34,7 +34,7 @@ const MintPanel = ({ discord }: { discord?: boolean }) => {
         <div className="font-semibold">4000/5200</div>
       </div>
       <div className="flex flex-col gap-2">
-        <div className="bg-themeMintBg relative flex h-16 items-center justify-between rounded-xl pl-4 pr-3 md:h-24 md:pl-8 md:pr-6">
+        <div className="relative flex h-16 items-center justify-between rounded-xl bg-themeMintBg pl-4 pr-3 md:h-24 md:pl-8 md:pr-6">
           <div className="text-xl font-semibold opacity-50">
             Quantity (Max 5)
           </div>
@@ -50,10 +50,19 @@ const MintPanel = ({ discord }: { discord?: boolean }) => {
               -
             </button>
             <span>{quantity}</span>
-            <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
+            <button
+              onClick={() =>
+                setQuantity((prev) => {
+                  if (prev === 5) return 5
+                  return prev + 1
+                })
+              }
+            >
+              +
+            </button>
           </div>
         </div>
-        <div className="bg-themeMintBg relative flex h-16 items-center justify-between rounded-xl px-4 md:h-24 md:px-8">
+        <div className="relative flex h-16 items-center justify-between rounded-xl bg-themeMintBg px-4 md:h-24 md:px-8">
           <div className="text-xl font-semibold opacity-50">Total</div>
           <div className="text-xl font-semibold">
             {total} {currency}
