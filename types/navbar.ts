@@ -1,11 +1,12 @@
 export interface INavDropdown {
-  title: string;
+  title: string
   menuItems: {
-    title: string;
-    path: string;
-  }[];
+    title: string
+    path: string
+    target: boolean
+  }[]
 }
 
 export interface IDrawerGeneric {
-  drawer?: boolean;
+  drawer?: boolean
 }

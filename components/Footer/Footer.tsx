@@ -69,7 +69,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-xs !font-extralight italic opacity-50">
-            © Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            © 2023 Cryptograd. All Rights Reserved.
           </div>
         </div>
       </div>

@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { INavDropdown } from "@/types/navbar";
-import { Menu, Transition } from "@headlessui/react";
-import Link from "next/link";
-import { Fragment } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import { INavDropdown } from '@/types/navbar'
+import { Menu, Transition } from '@headlessui/react'
+import Link from 'next/link'
+import { Fragment } from 'react'
+import { FaChevronDown } from 'react-icons/fa'
 
 const NavDropdown = ({ title, menuItems }: INavDropdown) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="flex w-full justify-center font-medium items-center hover:text-themeVioletText transition-all">
+        <Menu.Button className="flex w-full items-center justify-center font-medium transition-all hover:text-themeVioletText">
           {title}
           <FaChevronDown className="ml-1.5 !text-sm hover:text-themeVioletText" />
         </Menu.Button>
@@ -31,9 +31,10 @@ const NavDropdown = ({ title, menuItems }: INavDropdown) => {
                 {({ active }) => (
                   <Link
                     href={item.path}
+                    target={item.target ? '_blank' : '_self'}
                     className={`${
-                      active ? "bg-themeViolet text-white" : "text-white"
-                    } group flex w-full transition-all items-center rounded-md px-2 py-2 text-sm`}
+                      active ? 'bg-themeViolet text-white' : 'text-white'
+                    } group flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
                   >
                     {item.title}
                   </Link>
@@ -44,7 +45,7 @@ const NavDropdown = ({ title, menuItems }: INavDropdown) => {
         </Menu.Items>
       </Transition>
     </Menu>
-  );
-};
+  )
+}
 
-export default NavDropdown;
+export default NavDropdown

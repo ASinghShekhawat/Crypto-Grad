@@ -27,7 +27,7 @@ const NativeToken = () => {
             CryptoGrad&apos;s Native Token
           </span>
         </div>
-        <div className="flex flex-col gap-2 text-lg">
+        <div className="flex flex-col gap-4 text-lg">
           Designed with real-world utility in mind, $CG powers our AI-driven
           learning platform, fuels trading opportunities, and unlocks a world of
           exclusive benefit

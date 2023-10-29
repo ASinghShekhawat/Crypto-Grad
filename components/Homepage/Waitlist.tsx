@@ -6,7 +6,7 @@ const Waitlist = () => {
   return (
     <Animated className="flex flex-col items-center justify-center px-8 mmd:px-16 pt-16 pb-8 text-center">
       <div className="text-3xl font-bold md:text-5xl">
-        Join the waitlist and invite your friends to{' '}
+        Join the beta and invite your friends to{' '}
         <br className="hidden mmd:block" />
         Win CG Tokens
       </div>
@@ -23,7 +23,7 @@ const Waitlist = () => {
           className="h-12 w-fit object-contain"
         />
         <span className="font-extralight">
-          +200 people are already in the waitlist
+          +200 people are already in the beta
         </span>
       </div>
     </Animated>

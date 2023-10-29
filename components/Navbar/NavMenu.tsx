@@ -1,65 +1,88 @@
-import Link from "next/link";
-import NavDropdown from "./NavDropdown";
-import NavAccordion from "./NavAccordion";
-import { IDrawerGeneric } from "@/types/navbar";
+import Link from 'next/link'
+import NavDropdown from './NavDropdown'
+import NavAccordion from './NavAccordion'
+import { IDrawerGeneric } from '@/types/navbar'
 
 const navMenuDropdowns = [
   {
-    title: "Crypto",
+    title: 'Courses',
     menuItems: [
       {
-        title: "Crypto",
-        path: "/",
+        title: 'Novice',
+        path: '/',
+        target: false
       },
       {
-        title: "Crypto",
-        path: "/",
+        title: 'Intermediate',
+        path: '/',
+        target: false
+      },
+      {
+        title: 'Experienced',
+        path: '/',
+        target: false
+      },
+      {
+        title: 'Master',
+        path: '/',
+        target: false
       },
     ],
   },
   {
-    title: "Market",
+    title: 'Crypto',
     menuItems: [
       {
-        title: "Crypto",
-        path: "/",
+        title: 'Blogs',
+        path: '/',
+        target: false
       },
       {
-        title: "Crypto",
-        path: "/",
+        title: 'News',
+        path: '/',
+        target: false
+      },
+      {
+        title: 'Swap',
+        path: '/',
+        target: false
+      },
+      {
+        title: 'Mint',
+        path: '/mint',
+        target: false
       },
     ],
   },
   {
-    title: "Community",
+    title: 'Community',
     menuItems: [
       {
-        title: "Crypto",
-        path: "/",
+        title: 'Discord',
+        path: 'https://twitter.com/cgradofficial',
+        target: true
       },
       {
-        title: "Crypto",
-        path: "/",
+        title: 'Instagram',
+        path: 'https://www.instagram.com/cryptogradofficial/',
+        target: true
+      },
+      {
+        title: 'Twitter ',
+        path: 'https://twitter.com/cgradofficial',
+        target: true
       },
     ],
   },
-];
+]
 
 const NavMenu = ({ drawer }: IDrawerGeneric) => {
   return (
     <div
       className={`flex ${
-        drawer ? "flex-col" : "flex-row"
-      } items-center font-medium gap-4`}
+        drawer ? 'flex-col' : 'flex-row'
+      } items-center gap-4 font-medium`}
     >
-      <Link
-        href="/swap"
-        className={`hover:text-themeVioletText transition-all ${
-          drawer && "px-2 py-1 hover:bg-themeBgBlack w-full rounded-md"
-        }`}
-      >
-        Courses
-      </Link>
       {!drawer &&
         navMenuDropdowns.map((item) => (
           <NavDropdown
@@ -76,8 +99,16 @@ const NavMenu = ({ drawer }: IDrawerGeneric) => {
             menuItems={item.menuItems}
           />
         ))}
+      <Link
+        href="/"
+        className={`transition-all hover:text-themeVioletText ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        Market
+      </Link>
     </div>
-  );
-};
+  )
+}
 
-export default NavMenu;
+export default NavMenu

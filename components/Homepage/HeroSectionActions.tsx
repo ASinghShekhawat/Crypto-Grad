@@ -12,7 +12,7 @@ const HeroSectionActions = () => {
       // onClick={() => {}}
       className="!h-12"
       >
-        Join The Waitlist
+        Join The Beta
       </Button>
       <Button className="!px-0 aspect-square !h-12" type={ButtonType.SECONDARY}>
         <BsDiscord className="!text-2xl" />

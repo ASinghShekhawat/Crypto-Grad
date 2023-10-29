@@ -25,7 +25,7 @@ const LiveEducator = () => {
           <span className="text-themeBorderBlue">Trade in Stride </span>
           with <br className='mmd:block hidden' /> Educator by Your Side
         </div>
-        <div className="flex flex-col gap-2 text-lg">
+        <div className="flex flex-col gap-4 text-lg">
           <div className="flex gap-2">
             <span>📈 </span>Receive up-to-the-minute market analysis and trends
           </div>

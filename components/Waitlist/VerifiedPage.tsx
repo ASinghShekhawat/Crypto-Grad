@@ -60,7 +60,7 @@ const VerifiedPage = () => {
           <div className="flex items-center justify-center">
             <div className="w-full items-center justify-center rounded-md p-2 px-2 py-4 text-center md:mb-4 md:bg-themePositionBg">
               <p className="text-base font-light md:text-sm">
-                Total in waitlist
+                Total in beta
               </p>
               <p className="text-lg font-semibold md:text-2xl">9,828</p>
             </div>
@@ -84,7 +84,7 @@ const VerifiedPage = () => {
                   className="a absolute left-7 mb-0 -translate-x-1/2 transform md:mb-[40px]"
                 />
                 <p className="ml-auto w-5/6 text-left  text-sm font-light md:text-base">
-                  Invite more friends to join the waitlist and get on the top 3
+                  Invite more friends to join the beta and get on the top 3
                   rank
                 </p>
               </div>

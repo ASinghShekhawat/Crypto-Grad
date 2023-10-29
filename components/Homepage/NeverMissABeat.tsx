@@ -9,7 +9,7 @@ const NeverMissABeat = () => {
           <span className="text-themeBorderBlue">Never Miss a Beat </span>
           in Crypto
         </div>
-        <div className="flex flex-col gap-2 text-lg">
+        <div className="flex flex-col gap-4 text-lg">
           <div className="flex gap-2">
             <span>📈 </span>Resurrect timely market insights with alerts
           </div>

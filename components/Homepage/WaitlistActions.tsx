@@ -35,7 +35,7 @@ const WaitlistActions = () => {
   return (
     <>
       <div className="flex gap-4 py-8">
-        <Button onClick={() => setOpenJoin(true)}>Join the Waitlist</Button>
+        <Button onClick={() => setOpenJoin(true)}>Join the Beta</Button>
         <Button type={ButtonType.SECONDARY}>Check Your Rank</Button>
       </div>
       <WaitlistDialogJoin

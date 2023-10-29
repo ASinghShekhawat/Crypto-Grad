@@ -11,7 +11,7 @@ const AiSection5 = () => {
           <span className="text-themeBorderBlue">With Cryptograd AI, </span>
           It&apos;s possible
         </div>
-        <div className="flex flex-col gap-2 text-lg">
+        <div className="flex flex-col gap-4 text-lg">
           <div>⚙️ Get proactive and predictive results</div>
           <div>📈 Discover data about the market 24/7</div>
           <div>✨ Transform dreams into decisions</div>

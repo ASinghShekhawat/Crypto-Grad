@@ -67,7 +67,7 @@ const WaitlistDialogJoin = ({
                 </button>
                 <form autoComplete='off' onSubmit={next} className="flex flex-col gap-6">
                   <div>
-                    <div className="text-xl font-bold">Join the waitlist!</div>
+                    <div className="text-xl font-bold">Join the beta!</div>
                     <div className="font-extralight">
                       And get an early access to the exciting world of crypto!
                     </div>

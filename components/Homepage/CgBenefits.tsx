@@ -9,7 +9,7 @@ const CgBenefits = () => {
         <div className="text-3xl font-bold md:text-5xl">
           <span className="text-themeBorderBlue">Benefits </span>for CG holders
         </div>
-        <div className="flex flex-col gap-2 text-lg">
+        <div className="flex flex-col gap-4 text-lg">
         Holders get early and discounted access to the platform, as well as priority to review and make key decisions for CryptoGrad&apos;s growth
         </div>
         <Button className="h-12 w-fit text-xl">Swap Now</Button>

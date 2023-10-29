@@ -38,7 +38,7 @@ const RoadmapImage = () => {
             width={523}
             height={175}
             alt=""
-            className="bg-themeWebBg/60 absolute -left-[8%] -top-[8%] z-1 w-full backdrop-blur-lg md:-left-[10%] md:-top-[13%] md:w-[50%]"
+            className="absolute -left-[8%] -top-[8%] z-1 w-full bg-themeWebBg/60 backdrop-blur-lg md:-left-[10%] md:-top-[13%] md:w-[50%]"
           />
         </Tooltip>
         <Tooltip
@@ -48,9 +48,9 @@ const RoadmapImage = () => {
                 Phase 2: Innovation & Expansion
               </div>
               <ul className="list-inside list-disc">
-                <li>Building a strong base of users</li>
-                <li>Onboarding educators and partners</li>
-                <li>CG AI Beta Live for early adopters</li>
+                <li>Develop B2B trading tools</li>
+                <li>Aim for 15,000 user onboard</li>
+                <li>Strengthen educational collaborations</li>
               </ul>
             </div>
           }
@@ -70,9 +70,9 @@ const RoadmapImage = () => {
                 Phase 3: Tech Integration
               </div>
               <ul className="list-inside list-disc">
-                <li>Building a strong base of users</li>
-                <li>Onboarding educators and partners</li>
-                <li>CG AI Beta Live for early adopters</li>
+                <li>Advance AI & OCR capabilities</li>
+                <li>Collaborate with trading institutes</li>
+                <li>Introduce user-driven AI content</li>
               </ul>
             </div>
           }
@@ -82,7 +82,7 @@ const RoadmapImage = () => {
             width={563}
             height={283}
             alt=""
-            className="bg-themeWebBg/60 absolute -left-[18%] bottom-[22%] z-1 w-full backdrop-blur-lg md:bottom-[9%] md:left-[5%] md:w-[53%]"
+            className="absolute -left-[18%] bottom-[22%] z-1 w-full bg-themeWebBg/60 backdrop-blur-lg md:bottom-[9%] md:left-[5%] md:w-[53%]"
           />
         </Tooltip>
         <Tooltip
@@ -92,9 +92,9 @@ const RoadmapImage = () => {
                 Phase 4: Advanced Development
               </div>
               <ul className="list-inside list-disc">
-                <li>Building a strong base of users</li>
-                <li>Onboarding educators and partners</li>
-                <li>CG AI Beta Live for early adopters</li>
+                <li>Strengthen platform security</li>
+                <li>Expand user community networks</li>
+                <li>Implement user-trained AI features</li>
               </ul>
             </div>
           }

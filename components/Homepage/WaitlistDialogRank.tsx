@@ -59,10 +59,10 @@ const WaitlistDialogRank = ({ isOpen, setIsOpen }: IWaitlistDialogRank) => {
                 <div className="flex flex-col items-center justify-center gap-6">
                   <div className="flex flex-col items-center justify-center text-center">
                     <div className="text-2xl font-semibold">
-                      Congratulations! You have joined the waitlist!
+                      Congratulations! You have joined the beta!
                     </div>
                     <div className="text-sm font-extralight">
-                      Refer your friends to the waitlist to earn CG tokens and
+                      Refer your friends to the beta to earn CG tokens and
                       get a chance at win one of three valuable project NFTs!
                     </div>
                   </div>
