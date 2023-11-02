@@ -1,7 +1,6 @@
 import { SocialIcon } from 'react-social-icons'
 import { X } from 'react-feather'
-import 'react-social-icons/whatsapp'
-import 'react-social-icons/facebook'
+import 'react-social-icons/discord'
 import 'react-social-icons/twitter'
 import 'react-social-icons/linkedin'
 import 'react-social-icons/instagram'
@@ -28,11 +27,10 @@ const InviteFriendDialog = () => {
 
           <Button className="w-full md:w-fit">Copy Invite Code</Button>
           <div className="flex justify-center gap-4 md:justify-start">
-            <SocialIcon className="md:!h-8 md:!w-8" url="www.whatsapp.com" />
-            <SocialIcon className="md:!h-8 md:!w-8" url="www.facebook.com" />
-            <SocialIcon className="md:!h-8 md:!w-8" url="www.twitter.com" />
-            <SocialIcon className="md:!h-8 md:!w-8" url="www.linkedin.com" />
-            <SocialIcon className="md:!h-8 md:!w-8" url="www.instagram.com" />
+            <SocialIcon className="md:!h-8 md:!w-8" url="https://www.linkedin.com/company/cryptograd" />
+            <SocialIcon className="md:!h-8 md:!w-8" url="https://twitter.com/cgradofficial" />
+            <SocialIcon className="md:!h-8 md:!w-8" url="https://discord.gg/M9dNdA4FWW" />
+            <SocialIcon className="md:!h-8 md:!w-8" url="https://www.instagram.com/cryptogradofficial/" />
           </div>
         </div>
       </div>

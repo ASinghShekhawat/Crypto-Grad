@@ -1,30 +1,45 @@
-"use client";
+'use client'
 
-import { ButtonType } from "@/types/buttton";
-import Button from "../shared/Button";
-import { BsDiscord, BsTwitter } from "react-icons/bs";
+import { ButtonType } from '@/types/buttton'
+import Button from '../shared/Button'
+import { BsDiscord, BsTwitter } from 'react-icons/bs'
 import { BiLogoInstagramAlt } from 'react-icons/bi'
 
 const HeroSectionActions = () => {
   return (
-    <div className="flex items-center justify-center md:gap-4 gap-2 mt-8 relative z-5">
+    <div className="relative z-5 mt-8 flex items-center justify-center gap-2 md:gap-4">
       <Button
-      // onClick={() => {}}
-      className="!h-12"
+        // onClick={() => {}}
+        className="!h-12"
       >
         Join The Beta
       </Button>
-      <Button className="!px-0 aspect-square !h-12" type={ButtonType.SECONDARY}>
+      <a
+        href="https://discord.gg/M9dNdA4FWW"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="flex aspect-square !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBlue bg-themeBlack !px-0 text-lg  font-medium transition-all hover:text-themeVioletText"
+      >
         <BsDiscord className="!text-2xl" />
-      </Button>
-      <Button className="!px-0 aspect-square !h-12" type={ButtonType.SECONDARY}>
+      </a>
+      <a
+        href="https://twitter.com/cgradofficial"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="flex aspect-square !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBlue bg-themeBlack !px-0 text-lg  font-medium transition-all hover:text-themeVioletText"
+      >
         <BsTwitter className="!text-2xl" />
-      </Button>
-      <Button className="!px-0 aspect-square !h-12" type={ButtonType.SECONDARY}>
+      </a>
+      <a
+        href="https://www.instagram.com/cryptogradofficial/"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="flex aspect-square !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBlue bg-themeBlack !px-0 text-lg  font-medium transition-all hover:text-themeVioletText"
+      >
         <BiLogoInstagramAlt className="!text-3xl" />
-      </Button>
+      </a>
     </div>
-  );
-};
+  )
+}
 
-export default HeroSectionActions;
+export default HeroSectionActions

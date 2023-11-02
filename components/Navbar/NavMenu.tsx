@@ -59,7 +59,7 @@ const navMenuDropdowns = [
     menuItems: [
       {
         title: 'Discord',
-        path: 'https://twitter.com/cgradofficial',
+        path: 'https://discord.gg/M9dNdA4FWW',
         target: true
       },
       {

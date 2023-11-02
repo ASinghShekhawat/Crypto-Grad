@@ -2,7 +2,7 @@ import { footerLinks } from '@/utils/footer'
 import Image from 'next/image'
 import { FaSquareXTwitter } from 'react-icons/fa6'
 import {
-  RiFacebookBoxFill,
+  RiDiscordFill,
   RiInstagramFill,
   RiLinkedinBoxFill,
 } from 'react-icons/ri'
@@ -54,16 +54,32 @@ const Footer = () => {
           <div className="flex items-center gap-4 md:gap-8">
             <span className="text-xl font-medium">Follow Us On</span>
             <div className="flex items-center gap-2 md:gap-4">
-              <a href="">
-                <RiFacebookBoxFill className="!text-4xl" />
+              <a
+                href="https://discord.gg/M9dNdA4FWW"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <RiDiscordFill className="!text-4xl" />
               </a>
-              <a href="">
+              <a
+                href="https://www.linkedin.com/company/cryptograd"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <RiLinkedinBoxFill className="!text-4xl" />
               </a>
-              <a href="">
+              <a
+                href="https://twitter.com/cgradofficial"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <RiInstagramFill className="!text-4xl" />
               </a>
-              <a href="">
+              <a
+                href="https://twitter.com/cgradofficial"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <FaSquareXTwitter className="!text-3xl" />
               </a>
             </div>
