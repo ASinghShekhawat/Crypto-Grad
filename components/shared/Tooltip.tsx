@@ -1,10 +1,16 @@
 'use client'
 
-import MUITooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
-import { styled } from '@mui/material/styles';
+import MUITooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip'
+import { styled } from '@mui/material/styles'
 
 const Tooltip = styled(({ className, ...props }: TooltipProps) => (
-  <MUITooltip disableFocusListener {...props} arrow classes={{ popper: className }} />
+  <MUITooltip
+    disableFocusListener
+    enterTouchDelay={0}
+    {...props}
+    arrow
+    classes={{ popper: className }}
+  />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.arrow}`]: {
     color: '#20222B',
@@ -14,8 +20,8 @@ const Tooltip = styled(({ className, ...props }: TooltipProps) => (
     color: '#fff',
     maxWidth: 420,
     fontSize: theme.typography.pxToRem(16),
-    borderRadius: theme.typography.pxToRem(8)
+    borderRadius: theme.typography.pxToRem(8),
   },
-}));
+}))
 
 export default Tooltip

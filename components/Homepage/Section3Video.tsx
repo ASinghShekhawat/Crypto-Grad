@@ -1,11 +1,22 @@
 'use client'
 
 import Image from 'next/image'
-import { useRef } from 'react'
-import { FaCirclePlay } from 'react-icons/fa6'
+import { useRef, useState } from 'react'
+import { FaCirclePause, FaCirclePlay } from 'react-icons/fa6'
 
 const Section3Video = () => {
+  const [playing, setPlaying] = useState(false)
   const videoRef = useRef<any>(null)
+
+  const control = () => {
+    if (videoRef.current.currentTime > 0 && !videoRef.current.paused) {
+      videoRef.current.pause()
+      setPlaying(false)
+    } else {
+      videoRef.current.play()
+      setPlaying(true)
+    }
+  }
 
   return (
     <div className="relative aspect-video w-full overflow-hidden rounded-3xl bg-themeVideoBgGrey">
@@ -23,10 +34,14 @@ const Section3Video = () => {
         <source src="/video.mp4" type="video/mp4" />
       </video>
       <button
-        onClick={() => videoRef.current.play()}
+        onClick={control}
         className="absolute bottom-4 right-4 z-5 text-themeBorderBlue md:bottom-8 md:right-8"
       >
-        <FaCirclePlay className="text-4xl mmd:text-7xl" />
+        {playing ? (
+          <FaCirclePause className="text-4xl mmd:text-7xl" />
+        ) : (
+          <FaCirclePlay className="text-4xl mmd:text-7xl" />
+        )}
       </button>
     </div>
   )
