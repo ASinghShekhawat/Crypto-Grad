@@ -1,19 +1,13 @@
 'use client'
 
-import { ButtonType } from '@/types/buttton'
-import Button from '../shared/Button'
 import { BsDiscord, BsTwitter } from 'react-icons/bs'
 import { BiLogoInstagramAlt } from 'react-icons/bi'
+import JoinTheBeta from '../shared/JoinTheBets'
 
 const HeroSectionActions = () => {
   return (
     <div className="relative z-5 mt-8 flex items-center justify-center gap-2 md:gap-4">
-      <Button
-        // onClick={() => {}}
-        className="!h-12"
-      >
-        Join The Beta
-      </Button>
+      <JoinTheBeta />
       <a
         href="https://discord.gg/M9dNdA4FWW"
         target="_blank"
