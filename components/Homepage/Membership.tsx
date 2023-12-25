@@ -4,13 +4,17 @@ import MembershipPlans from './MembershipPlans'
 
 const Membership = () => {
   return (
-    <Animated className="relative overflow-x-clip flex flex-col items-center justify-center w-full px-8 md:py-20 text-center mmd:px-16">
-      <div className="text-3xl font-bold md:text-5xl relative z-1">Become A Member</div>
-      <div className="mt-4">
-        Embark on a transformative journey within our AI-powered learning
-        platform, unlocking invaluable trading{' '}
-        <br className="hidden mmd:block" />
-        insights and exclusive resources upon membership. Join now!
+    <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-8 text-center md:py-20 mmd:px-16">
+      <div className="relative z-1 text-lg font-medium text-themeBlue">
+        Platform Goes Live Once Presale is Concluded
+      </div>
+      <div className="relative z-1 text-3xl font-bold md:text-5xl">
+        Become A Member
+      </div>
+      <div className="mt-4 mmd:max-w-[60%] font-light">
+        An all encompassing metaverse platform offering a propriety,
+        utility-backed governance token, limited edition NFT launch, poker room
+        and tournament play
       </div>
       <MembershipPlans />
       <Image

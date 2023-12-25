@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         themeViolet: "#743FE0",
         themeVioletText: "#cbb2fd",
+        themeBlackBg: "#1D1E28",
+        themeBlackDeep: "#000017",
         themeBlue: "#5E5AFF",
         themeBorderBlue: "#6754F8",
         themeBlack: "#191A21",
@@ -18,6 +20,7 @@ const config: Config = {
         themeDialogBlack: "#23232E",
         themeGrey: "#3C3C3C",
         themeTextGrey: "#777777",
+        themeLightGrey: "#7E7E7E",
         themeNavBlack: "#131722",
         themeBorder: "#FDFDFD",
         themeVideoBgGrey: "#22222C",

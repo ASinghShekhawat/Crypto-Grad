@@ -8,7 +8,7 @@ const AiSection5 = () => {
       <AiSection5Image />
       <div className="flex w-full flex-col gap-8">
         <div className="text-3xl font-bold md:text-5xl">
-          <span className="text-themeBorderBlue">With Cryptograd AI, </span>
+          <span className="text-themeBorderBlue">With AI, </span>
           It&apos;s possible
         </div>
         <div className="flex flex-col gap-4 text-lg">

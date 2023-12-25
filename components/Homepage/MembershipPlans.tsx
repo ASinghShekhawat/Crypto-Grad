@@ -1,9 +1,13 @@
+import MembershipNewCard from './MembershipNewCard'
 import MembershipPlanCard from './MembershipPlanCard'
 
 const MembershipPlans = () => {
   return (
-    <div className="mt-16 grid grid-cols-1 gap-4 w-full md:w-fit mmd:grid-cols-4 relative z-1">
-      <MembershipPlanCard
+    <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 md:w-fit mmd:grid-cols-3">
+      <MembershipNewCard price={199} planType={1} />
+      <MembershipNewCard price={199} planType={3} />
+      <MembershipNewCard price={199} planType={12} />
+      {/* <MembershipPlanCard
         month={29.99}
         year={249.99}
         trial
@@ -30,18 +34,7 @@ const MembershipPlans = () => {
         aiBot
         goLive
         community
-      />
-      <MembershipPlanCard
-        month={129.99}
-        year={999.99}
-        trial
-        signals
-        videos
-        community
-        goLive
-        aiBot
-        vip
-      />
+      /> */}
     </div>
   )
 }

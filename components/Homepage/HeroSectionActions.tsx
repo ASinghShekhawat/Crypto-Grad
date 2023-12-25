@@ -16,7 +16,7 @@ const HeroSectionActions = () => {
       >
         <BsDiscord className="!text-2xl" />
       </a>
-      <a
+      {/* <a
         href="https://twitter.com/cgradofficial"
         target="_blank"
         rel="noreferrer noopener"
@@ -31,7 +31,7 @@ const HeroSectionActions = () => {
         className="flex aspect-square !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBlue bg-themeBlack !px-0 text-lg  font-medium transition-all hover:text-themeVioletText"
       >
         <BiLogoInstagramAlt className="!text-3xl" />
-      </a>
+      </a> */}
     </div>
   )
 }

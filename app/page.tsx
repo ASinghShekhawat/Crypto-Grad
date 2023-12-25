@@ -1,9 +1,11 @@
 import AiSection from '@/components/Homepage/AiSection'
 import AiSection5 from '@/components/Homepage/AiSection5'
 import CgBenefits from '@/components/Homepage/CgBenefits'
+import Community from '@/components/Homepage/Community'
 import Experience from '@/components/Homepage/Experience'
 import Growth from '@/components/Homepage/Growth'
 import HeroSection from '@/components/Homepage/HeroSection'
+import LargeToken from '@/components/Homepage/LargeToken'
 import LiveEducator from '@/components/Homepage/LiveEducator'
 import Membership from '@/components/Homepage/Membership'
 import NativeToken from '@/components/Homepage/NativeToken'
@@ -19,20 +21,23 @@ export default function Home() {
   return (
     <Page className="!p-0">
       <HeroSection />
+      <LargeToken />
       <AiSection />
-      <Section3 />
-      <NftCollection />
+      {/* <Section3 /> */}
+      {/* <NftCollection /> */}
       <AiSection5 />
-      <LiveEducator />
+      {/* ! Discord */}
+      {/* <LiveEducator /> */}
       <Experience />
-      <NeverMissABeat />
+      <Membership />
+      {/* <NeverMissABeat />
       <NativeToken />
       <CgBenefits />
       <Waitlist />
-      <PartneredNfts />
+      <PartneredNfts /> */}
       <Roadmap />
-      <Membership />
       <Growth />
+      <Community />
     </Page>
   )
 }

@@ -32,7 +32,8 @@ const JoinTheBeta = () => {
   }
   return (
     <>
-      <Button onClick={() => setOpenJoin(true)}>Join the Beta</Button>
+      {/* <Button onClick={() => setOpenJoin(true)} className='!h-12 min-h-[2.5rem]'>Join the Beta</Button> */}
+      <Button className='!h-12 min-h-[2.5rem]'>Get Started</Button>
       <WaitlistDialogJoin
         isOpen={openJoin}
         setIsOpen={setOpenJoin}
