@@ -37,7 +37,7 @@ const HeroSection = () => {
           <button className={`bg-themeBlackDeep rounded-full px-4 py-2`}>
             CG AI
           </button>
-          <button className={`rounded-full px-4 py-2`}>NFT's</button>
+          <button className={`rounded-full px-4 py-2`}>NFT&apos;s</button>
           <button className={`rounded-full px-4 py-2`}>
             Discord Community
           </button>

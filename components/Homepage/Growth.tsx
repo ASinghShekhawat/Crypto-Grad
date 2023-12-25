@@ -17,7 +17,7 @@ const Growth = () => {
           Double the joy by inviting friends to our presale! Share the
           excitement, expand our community, and enjoy exclusive referral
           rewards. More friends mean more perks - tokens, NFTs, and discounts
-          await. Let's grow and thrive together at Cryptoland!
+          await. Let&apos;s grow and thrive together at Cryptoland!
         </div>
         {/* <GrowthActions /> */}
         <Button className='!font-light !text-base'>Connect Wallet & Generate Referal link</Button>
