@@ -4,13 +4,10 @@ import Button from "../shared/Button";
 import { ButtonType } from "@/types/buttton";
 import { useEffect, useState } from "react";
 import NftDroppedDialog from "./NftDroppedDialog";
+import { makeMeTwoDigits } from "@/utils/numberFix";
 
 const NftDroppingTimer = () => {
   const [timer, setTimer] = useState(Date.now() + 500000000);
-
-  const makeMeTwoDigits = (n: number) => {
-    return n < 10 ? `0${n}` : n;
-  };
 
   useEffect(() => {}, []);
 
