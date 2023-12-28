@@ -81,12 +81,17 @@ export default function Hero() {
           All facilitated by a single game-changing platform. Experience the
           revolution of blockchain in an unparalleled way.
         </div>
-        <Button className="mt-4 h-12 w-fit !font-normal">
-          Buy & Stake Now
-        </Button>
+        <div className="mdm:justify-start flex w-full justify-center">
+          <Button className="mt-4 h-12 w-fit !font-normal">
+            Buy & Stake Now
+          </Button>
+        </div>
       </div>
       <div className="relative z-1 flex w-full items-center justify-center">
-        <div className="mt-4 flex w-full flex-col gap-6 rounded-xl border border-[#6754F842] presaleCardBg p-4 pt-6">
+        <div className="presaleCardBg relative mt-4 flex w-full flex-col gap-6 rounded-xl border border-[#6754F842] p-4 pt-6">
+          <div className="absolute w-fit rounded-full bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-lg px-3 py-1 -top-4 border-themeBorderBlue/25 border">
+            Token Presale
+          </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="text-sm font-medium">Presale ends in:</div>
             <Countdown date={timer} renderer={renderer} />
@@ -110,7 +115,7 @@ export default function Hero() {
               )}
               <input
                 type="number"
-                placeholder='100'
+                placeholder="100"
                 value={amount}
                 onChange={(e) =>
                   setAmount(
@@ -202,7 +207,7 @@ export default function Hero() {
               <div>CG</div>
             </div>
           </div>
-          <Button className='!font-normal h-12'>Connect Your Wallet</Button>
+          <Button className="h-12 !font-normal">Connect Your Wallet</Button>
         </div>
       </div>
     </Animated>
