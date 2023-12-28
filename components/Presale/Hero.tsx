@@ -71,7 +71,7 @@ export default function Hero() {
   }
 
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 px-8 py-16 md:py-32 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 px-8 pt-16 md:pt-24 pb-0 mmd:flex-row mmd:px-16">
       <div className="flex w-full flex-col text-left">
         <div className="relative z-10 mb-2 text-center text-3xl font-bold md:text-5xl mmd:text-left">
           Cryptograd Presale: <br />

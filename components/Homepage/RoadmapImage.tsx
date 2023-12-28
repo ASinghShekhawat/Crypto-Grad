@@ -3,7 +3,7 @@ import Tooltip from '../shared/Tooltip'
 
 const RoadmapImage = () => {
   return (
-    <div className="relative w-full py-32 md:px-16">
+    <div className="relative w-full pb-24 pt-20 md:px-16">
       <div className="relative mx-auto w-fit">
         <Image
           src="/Homepage/Roadmap/line.svg"
@@ -38,7 +38,7 @@ const RoadmapImage = () => {
             width={523}
             height={175}
             alt=""
-            className="absolute -left-[8%] -top-[8%] z-1 w-full bg-themeWebBg/60 backdrop-blur-lg md:-left-[10%] md:-top-[13%] md:w-[50%]"
+            className="absolute -left-[8%] -top-[8%] z-1 w-full bg-themeWebBg/60 backdrop-blur-lg md:-left-[10%] md:-top-[2%] md:w-[50%]"
           />
         </Tooltip>
         <Tooltip
@@ -60,7 +60,7 @@ const RoadmapImage = () => {
             width={512}
             height={265}
             alt=""
-            className="absolute -right-[15%] top-[15%] z-1 w-full md:-right-[12%] md:-top-[5%] md:w-[48%]"
+            className="absolute -right-[15%] top-[10%] z-1 w-full md:-right-[12%] md:top-[5%] md:w-[48%]"
           />
         </Tooltip>
         <Tooltip
