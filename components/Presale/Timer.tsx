@@ -1,10 +1,11 @@
 'use client'
 
+import { makeMeTwoDigits } from '@/utils/numberFix'
+import Image from 'next/image'
+import { useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
-import { makeMeTwoDigits } from '@/utils/numberFix'
-import { useState } from 'react'
 
 export default function Timer() {
   const [timer, setTimer] = useState(Date.now() + 5000000)
@@ -51,6 +52,24 @@ export default function Timer() {
   }
   return (
     <Animated className="relative z-1 flex flex-col items-center justify-center gap-8 px-8 pb-16 pt-8 mmd:px-16">
+      <div className="floating absolute left-8 top-0 z-0">
+        <Image
+          src="/Presale/nfts (1).png"
+          width={800}
+          height={737}
+          alt=""
+          className="h-48 w-fit -rotate-12 object-contain"
+        />
+      </div>
+      <div className="floating absolute bottom-8 right-8 z-0" data-delay={1000}>
+        <Image
+          src="/Presale/nfts (2).png"
+          width={800}
+          height={803}
+          alt=""
+          className="h-48 w-fit rotate-12 object-contain"
+        />
+      </div>
       <div className="flex flex-col items-center justify-center">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Time is ticking fast!
@@ -60,7 +79,7 @@ export default function Timer() {
         </div>
       </div>
       <Countdown date={timer} renderer={renderer} />
-      <div className='text-lg'>Lets get going with the Presale!</div>
+      <div className="text-lg">Lets get going with the Presale!</div>
       <Button className="h-12 !font-light capitalize">buy & Stake Now</Button>
     </Animated>
   )
