@@ -4,31 +4,31 @@ import NavAccordion from './NavAccordion'
 import { IDrawerGeneric } from '@/types/navbar'
 
 const navMenuDropdowns = [
-  {
-    title: 'Courses',
-    menuItems: [
-      {
-        title: 'Novice',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'Intermediate',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'Experienced',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'Master',
-        path: '/',
-        target: false,
-      },
-    ],
-  },
+  // {
+  //   title: 'Courses',
+  //   menuItems: [
+  //     {
+  //       title: 'Novice',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'Intermediate',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'Experienced',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'Master',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //   ],
+  // },
   {
     title: 'Crypto',
     menuItems: [
@@ -76,29 +76,41 @@ const navMenuDropdowns = [
   },
 ]
 
-const NavMenu = ({ drawer }: IDrawerGeneric) => {
+const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
   return (
     <div
       className={`flex ${
         drawer ? 'flex-col' : 'flex-row'
       } items-center gap-4 font-medium`}
     >
-      {/* {!drawer &&
-        navMenuDropdowns.map((item) => (
-          <NavDropdown
-            key={item.title}
-            title={item.title}
-            menuItems={item.menuItems}
-          />
-        ))}
-      {drawer &&
-        navMenuDropdowns.map((item) => (
-          <NavAccordion
-            key={item.title}
-            title={item.title}
-            menuItems={item.menuItems}
-          />
-        ))} */}
+      {pathname === '/' && (
+        <>
+          <Link
+            href="/presale"
+            className={`transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            Pre-Sale
+          </Link>
+          {!drawer &&
+            navMenuDropdowns.map((item) => (
+              <NavDropdown
+                key={item.title}
+                title={item.title}
+                menuItems={item.menuItems}
+              />
+            ))}
+          {drawer &&
+            navMenuDropdowns.map((item) => (
+              <NavAccordion
+                key={item.title}
+                title={item.title}
+                menuItems={item.menuItems}
+              />
+            ))}
+        </>
+      )}
 
       {/* <Link
         href="/"
@@ -108,46 +120,50 @@ const NavMenu = ({ drawer }: IDrawerGeneric) => {
       >
         Market
       </Link> */}
-      <Link
-        href="/"
-        className={`transition-all hover:text-themeVioletText text-sm font-light ${
-          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-        }`}
-      >
-        How to Buy
-      </Link>
-      <Link
-        href="/presale#tokenomics"
-        className={`transition-all hover:text-themeVioletText text-sm font-light ${
-          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-        }`}
-      >
-        Tokenomics
-      </Link>
-      <Link
-        href="/presale#roadmap"
-        className={`transition-all hover:text-themeVioletText text-sm font-light ${
-          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-        }`}
-      >
-        Roadmap
-      </Link>
-      <Link
-        href="/presale#growth"
-        className={`transition-all hover:text-themeVioletText text-sm font-light ${
-          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-        }`}
-      >
-        Refer & Earn
-      </Link>
-      <Link
-        href="/help/FAQ"
-        className={`transition-all hover:text-themeVioletText text-sm font-light ${
-          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-        }`}
-      >
-        FAQ
-      </Link>
+      {pathname.includes('/presale') && (
+        <>
+          <Link
+            href="/"
+            className={`text-sm font-light transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            How to Buy
+          </Link>
+          <Link
+            href="/presale#tokenomics"
+            className={`text-sm font-light transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            Tokenomics
+          </Link>
+          <Link
+            href="/presale#roadmap"
+            className={`text-sm font-light transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            Roadmap
+          </Link>
+          <Link
+            href="/presale#growth"
+            className={`text-sm font-light transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            Refer & Earn
+          </Link>
+          <Link
+            href="/help/FAQ"
+            className={`text-sm font-light transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            FAQ
+          </Link>
+        </>
+      )}
     </div>
   )
 }

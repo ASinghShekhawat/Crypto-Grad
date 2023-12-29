@@ -50,7 +50,7 @@ export default function StakingBenefits({
               for a Set Period of Time
             </div>
             <div className="text-center text-sm text-themeLightGrey">
-              Stake the token for rewards, locking in gains and maximizing your
+              Stake $CG for rewards, locking in gains and maximizing your
               investment potential. Your path to growth starts here!
             </div>
           </div>
@@ -69,8 +69,9 @@ export default function StakingBenefits({
               Comes With Patience
             </div>
             <div className="text-center text-sm text-themeLightGrey">
-              Stake patiently, unlock exclusives—NFTs, resources, courses, and
-              more. Elevate your rewards, embrace the extraordinary.
+              Stake patiently, unlock exclusives: CG AI tools, resources,
+              courses, and more. Elevate your rewards, embrace the
+              extraordinary.
             </div>
           </div>
         </div>

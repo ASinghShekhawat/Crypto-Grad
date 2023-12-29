@@ -19,39 +19,39 @@ export default function Timer() {
   }: CountdownRenderProps) => {
     if (completed) return <>Presale Ended!</>
     return (
-      <div className="flex items-start gap-4 font-bold relative z-1">
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-lg border border-themeBorderBlue/25 px-3 py-4 md:w-[4.12rem]">
-          <span className="text-xl leading-7 md:text-3xl">
+      <div className="relative z-1 flex items-start gap-4 font-bold">
+        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(days)}
           </span>
-          <span className="text-xs">Days</span>
+          <span className="md:pt-2 md:text-xl text-xs">Days</span>
         </div>
-        <span className="mt-2 text-3xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-lg border border-themeBorderBlue/25 px-3 py-4 md:w-[4.12rem]">
-          <span className="text-xl leading-7 md:text-3xl">
+        <span className="mt-2 text-xl md:text-6xl">:</span>
+        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(hours)}
           </span>
-          <span className="text-xs">Hours</span>
+          <span className="md:pt-2 md:text-xl text-xs">Hours</span>
         </div>
-        <span className="mt-2 text-3xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-lg border border-themeBorderBlue/25 px-3 py-4 md:w-[4.12rem]">
-          <span className="text-xl leading-7 md:text-3xl">
+        <span className="mt-2 text-xl md:text-6xl">:</span>
+        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(minutes)}
           </span>
-          <span className="text-xs">Mins</span>
+          <span className="md:pt-2 md:text-xl text-xs">Mins</span>
         </div>
-        <span className="mt-2 text-3xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-lg border border-themeBorderBlue/25 px-3 py-4 md:w-[4.12rem]">
-          <span className="text-xl leading-7 md:text-3xl">
+        <span className="mt-2 text-xl md:text-6xl">:</span>
+        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(seconds)}
           </span>
-          <span className="text-xs">Secs</span>
+          <span className="md:pt-2 md:text-xl text-xs">Secs</span>
         </div>
       </div>
     )
   }
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center overflow-hidden gap-8 px-8 pb-16 pt-24 mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center gap-8 overflow-hidden px-8 pb-16 pt-24 mmd:px-16">
       <div className="floating absolute -left-8 top-0 z-0 md:left-8">
         <Image
           src="/Presale/nfts (1).png"
@@ -62,7 +62,7 @@ export default function Timer() {
         />
       </div>
       <div
-        className="floating absolute -right-8 bottom-0 md:bottom-8 z-0 md:right-8"
+        className="floating absolute -right-8 bottom-0 z-0 md:bottom-8 md:right-8"
         data-delay={1000}
       >
         <Image
@@ -73,7 +73,7 @@ export default function Timer() {
           className="h-36 w-fit rotate-12 object-contain mmd:h-48"
         />
       </div>
-      <div className="flex flex-col items-center justify-center relative z-1">
+      <div className="relative z-1 flex flex-col items-center justify-center">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Time is ticking fast!
         </div>
@@ -82,8 +82,12 @@ export default function Timer() {
         </div>
       </div>
       <Countdown date={timer} renderer={renderer} />
-      <div className="text-lg relative z-1">Lets get going with the Presale!</div>
-      <Button className="h-12 !font-light capitalize relative z-1">buy & Stake Now</Button>
+      <div className="relative z-1 text-lg">
+        Lets get going with the Presale!
+      </div>
+      <Button className="relative z-1 h-12 !font-light capitalize">
+        buy & Stake Now
+      </Button>
     </Animated>
   )
 }

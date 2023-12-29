@@ -6,10 +6,11 @@ import { useRef } from 'react'
 
 interface IAnimated extends Children {
   className?: string
+  id?: string
   delay?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 1000
 }
 
-const Animated = ({ children, className, delay }: IAnimated) => {
+const Animated = ({ children, className, delay, id }: IAnimated) => {
   const ref = useRef<HTMLDivElement | null>(null)
   const entry = useIntersectionObserver(ref, {})
   const isVisible = !!entry?.isIntersecting
@@ -17,6 +18,7 @@ const Animated = ({ children, className, delay }: IAnimated) => {
   return (
     <div
       ref={ref}
+      id={id}
       data-delay={delay ? delay : 0}
       className={`${
         isVisible ? `animated animationDelay animatedFadeInUp fadeInUp` : ''

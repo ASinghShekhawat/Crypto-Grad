@@ -15,27 +15,42 @@ export default function BackedBy() {
       </div>
       <div className="hidden items-center justify-center gap-6 mmd:flex">
         <Image
-          src="/Homepage/Hero/webflow.svg"
-          width={140}
-          height={56}
+          src="/Homepage/Hero/backers (1).png"
+          width={443}
+          height={185}
           alt=""
+          className="w-28"
         />
-        <Image src="/Homepage/Hero/relume.svg" width={140} height={56} alt="" />
         <Image
-          src="/Homepage/Hero/webflow.svg"
-          width={140}
-          height={56}
+          src="/Homepage/Hero/backers (2).png"
+          width={410}
+          height={90}
           alt=""
+          className="w-28"
         />
-        <Image src="/Homepage/Hero/relume.svg" width={140} height={56} alt="" />
         <Image
-          src="/Homepage/Hero/webflow.svg"
-          width={140}
-          height={56}
+          src="/Homepage/Hero/backers (3).png"
+          width={298}
+          height={58}
           alt=""
+          className="w-28"
+        />
+        <Image
+          src="/Homepage/Hero/backers (4).png"
+          width={229}
+          height={61}
+          alt=""
+          className="w-28"
+        />
+        <Image
+          src="/Homepage/Hero/backers (5).png"
+          width={305}
+          height={241}
+          alt=""
+          className="w-28"
         />
       </div>
-      <div className="block w-full mmd:hidden">
+      <div className="mt-8 block w-full mmd:hidden">
         <Swiper
           spaceBetween={20}
           slidesPerView={'auto'}
@@ -51,44 +66,59 @@ export default function BackedBy() {
           className="marqueeSwiperBackers"
         >
           <SwiperSlide>
-            <Image
-              src="/Homepage/Hero/webflow.svg"
-              width={140}
-              height={56}
-              alt=""
-            />
+            <div className="flex h-full items-center justify-center">
+              <Image
+                src="/Homepage/Hero/backers (1).png"
+                width={443}
+                height={185}
+                alt=""
+                className="w-28"
+              />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/Homepage/Hero/relume.svg"
-              width={140}
-              height={56}
-              alt=""
-            />
+            <div className="flex h-full items-center justify-center">
+              <Image
+                src="/Homepage/Hero/backers (2).png"
+                width={410}
+                height={90}
+                alt=""
+                className="w-28"
+              />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/Homepage/Hero/webflow.svg"
-              width={140}
-              height={56}
-              alt=""
-            />
+            <div className="flex h-full items-center justify-center">
+              <Image
+                src="/Homepage/Hero/backers (3).png"
+                width={298}
+                height={58}
+                alt=""
+                className="w-28"
+              />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/Homepage/Hero/relume.svg"
-              width={140}
-              height={56}
-              alt=""
-            />
+            <div className="flex h-full items-center justify-center">
+              <Image
+                src="/Homepage/Hero/backers (4).png"
+                width={229}
+                height={61}
+                alt=""
+                className="w-28"
+              />
+            </div>
           </SwiperSlide>
           <SwiperSlide>
-            <Image
-              src="/Homepage/Hero/webflow.svg"
-              width={140}
-              height={56}
-              alt=""
-            />
+            <div className="flex h-full items-center justify-center">
+              <Image
+                src="/Homepage/Hero/backers (5).png"
+                width={305}
+                height={241}
+                alt=""
+                className="w-28"
+              />
+            </div>
           </SwiperSlide>
         </Swiper>
       </div>

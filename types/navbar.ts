@@ -9,4 +9,5 @@ export interface INavDropdown {
 
 export interface IDrawerGeneric {
   drawer?: boolean
+  pathname: string
 }

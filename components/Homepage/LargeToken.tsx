@@ -5,7 +5,7 @@ import Button from '../shared/Button'
 const LargeToken = () => {
   return (
     <Animated className="relative z-1 flex w-full flex-col items-center px-8 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
-      <div className='w-full flex items-center justify-center'>
+      <div className="flex w-full items-center justify-center">
         <Image
           src="/Homepage/LargeToken/largeToken.png"
           className="object-contain"
@@ -19,10 +19,9 @@ const LargeToken = () => {
           Cryptograd Presale: Secure Your Tokens Now!
         </div>
         <div className="font-light">
-          Discover CG Token: Your key to a secure, decentralized future. Powered
-          by cutting-edge blockchain tech, CG Token provides a seamless, secure
-          platform for transactions in the Cryptograd community. Join us in
-          shaping the future of digital assets!
+          Discover CG Token: Where Cutting-Edge AI Meets Blockchain Excellence.
+          Join Our Thriving Community and Discover the Power of AI-Driven Crypto
+          Mastery Today
         </div>
         <Button className="!h-12 min-h-[2.5rem]">Buy & Stake Now</Button>
       </div>
