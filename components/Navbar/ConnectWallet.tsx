@@ -53,19 +53,13 @@ const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
           </Menu>
         ) : (
           <>
+            <button onClick={() => {}}>Log In</button>
             <Button
               // loading={loading}
               onClick={connectWallet}
               className={drawer ? 'w-full' : ''}
             >
               Connect Wallet
-            </Button>
-            <Button
-              type={ButtonType.SECONDARY}
-              onClick={() => {}}
-              className={drawer ? 'w-full' : '!px-10'}
-            >
-              Log In
             </Button>
           </>
         )}

@@ -10,22 +10,22 @@ const navMenuDropdowns = [
       {
         title: 'Novice',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'Intermediate',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'Experienced',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'Master',
         path: '/',
-        target: false
+        target: false,
       },
     ],
   },
@@ -35,22 +35,22 @@ const navMenuDropdowns = [
       {
         title: 'Blogs',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'News',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'Swap',
         path: '/',
-        target: false
+        target: false,
       },
       {
         title: 'Mint',
         path: '/mint',
-        target: false
+        target: false,
       },
     ],
   },
@@ -60,17 +60,17 @@ const navMenuDropdowns = [
       {
         title: 'Discord',
         path: 'https://discord.gg/M9dNdA4FWW',
-        target: true
+        target: true,
       },
       {
         title: 'Instagram',
         path: 'https://www.instagram.com/cryptogradofficial/',
-        target: true
+        target: true,
       },
       {
         title: 'Twitter ',
         path: 'https://twitter.com/cgradofficial',
-        target: true
+        target: true,
       },
     ],
   },
@@ -83,7 +83,7 @@ const NavMenu = ({ drawer }: IDrawerGeneric) => {
         drawer ? 'flex-col' : 'flex-row'
       } items-center gap-4 font-medium`}
     >
-      {!drawer &&
+      {/* {!drawer &&
         navMenuDropdowns.map((item) => (
           <NavDropdown
             key={item.title}
@@ -98,14 +98,55 @@ const NavMenu = ({ drawer }: IDrawerGeneric) => {
             title={item.title}
             menuItems={item.menuItems}
           />
-        ))}
-      <Link
+        ))} */}
+
+      {/* <Link
         href="/"
         className={`transition-all hover:text-themeVioletText ${
           drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
         }`}
       >
         Market
+      </Link> */}
+      <Link
+        href="/"
+        className={`transition-all hover:text-themeVioletText text-sm font-light ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        How to Buy
+      </Link>
+      <Link
+        href="/presale#tokenomics"
+        className={`transition-all hover:text-themeVioletText text-sm font-light ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        Tokenomics
+      </Link>
+      <Link
+        href="/presale#roadmap"
+        className={`transition-all hover:text-themeVioletText text-sm font-light ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        Roadmap
+      </Link>
+      <Link
+        href="/presale#growth"
+        className={`transition-all hover:text-themeVioletText text-sm font-light ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        Refer & Earn
+      </Link>
+      <Link
+        href="/help/FAQ"
+        className={`transition-all hover:text-themeVioletText text-sm font-light ${
+          drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+        }`}
+      >
+        FAQ
       </Link>
     </div>
   )

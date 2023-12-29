@@ -2,23 +2,28 @@ import Image from 'next/image'
 import Animated from './Animated'
 import JoinTheBeta from './JoinTheBets'
 
-export default function StakingBenefits() {
+export default function StakingBenefits({
+  buttonText,
+}: {
+  buttonText?: string
+}) {
   return (
     <Animated className="relative z-1 flex flex-col items-center justify-center px-8 pt-16 md:pt-32 mmd:px-16">
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Staking Benefits
       </div>
-      <div className="relative z-10 py-8 text-center text-3xl font-bold md:text-5xl">
+      <div className="relative z-10 pb-8 pt-4 text-center text-3xl font-bold md:text-5xl">
         Obtain, Stake, Unlock Rewards
       </div>
-      <JoinTheBeta />
-      <div className="grid grid-cols-1 gap-4 py-8 mmd:grid-cols-3">
+      <JoinTheBeta buttonText={buttonText} />
+      <div className="grid max-w-[1200px] grid-cols-1 gap-4 py-8 mmd:grid-cols-3">
         <div className="flex flex-col items-center justify-between rounded-lg bg-themeBgBlack pt-8">
           <Image
             src="/Homepage/Hero/stake1.svg"
             alt=""
             width={300}
             height={300}
+            className="h-full object-contain"
           />
           <div className="flex flex-col gap-2 p-8">
             <div className="text-center text-xl">
@@ -37,6 +42,7 @@ export default function StakingBenefits() {
             alt=""
             width={1219}
             height={634}
+            className="h-full object-cover"
           />
           <div className="flex flex-col gap-2 p-8">
             <div className="text-center text-xl">
@@ -53,7 +59,7 @@ export default function StakingBenefits() {
           <Image
             src="/Homepage/Hero/stake2.png"
             alt=""
-            className="ml-4"
+            className="ml-4 h-full object-cover"
             width={792}
             height={402}
           />

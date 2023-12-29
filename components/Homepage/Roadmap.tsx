@@ -7,7 +7,7 @@ const Roadmap = () => {
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Our Roadmap
       </div>
-      <div className="text-3xl font-bold md:text-5xl">Road to Conquest</div>
+      <div className="text-3xl font-bold pt-4 md:text-5xl">Road to Conquest</div>
       <div className="mt-4 mmd:w-4/5">
         A metaverse hub in accord with an exclusive governance token supported
         by real-world utility, a release of limited edition NFTs, and a poker

@@ -81,7 +81,7 @@ export default function Hero() {
           All facilitated by a single game-changing platform. Experience the
           revolution of blockchain in an unparalleled way.
         </div>
-        <div className="mdm:justify-start flex w-full justify-center">
+        <div className="mmd:justify-start flex w-full justify-center">
           <Button className="mt-4 h-12 w-fit !font-normal">
             Buy & Stake Now
           </Button>

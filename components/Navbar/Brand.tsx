@@ -10,7 +10,7 @@ const Brand = () => {
         width={30}
         alt="brand-logo"
       />
-      <div className="font-semibold">Cryptograd</div>
+      <div className="font-semibold">Cryptograd <sup className="text-2xs">TM</sup></div>
     </Link>
   );
 };

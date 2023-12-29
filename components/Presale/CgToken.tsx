@@ -24,7 +24,7 @@ const CgToken = () => {
                 alt=""
                 width={56}
                 height={56}
-                className="h-12 w-12"
+                // className="h-12 w-12"
               />
               <div>Uniswap</div>
             </div>
@@ -34,7 +34,7 @@ const CgToken = () => {
                 alt=""
                 width={56}
                 height={56}
-                className="h-12 w-12"
+                // className="h-12 w-12"
               />
               <div>Solana</div>
             </div>
@@ -44,7 +44,7 @@ const CgToken = () => {
                 alt=""
                 width={56}
                 height={56}
-                className="h-12 w-12"
+                // className="h-12 w-12"
               />
               <div>
                 Revealing <br />
