@@ -16,7 +16,7 @@ export default function PresalePage() {
     <Page className="relative !p-0">
       <Image
         src="/Presale/bg.svg"
-        className="absolute -top-[3rem] left-0 right-0 z-0 w-full"
+        className="absolute -top-[3rem] left-0 right-0 z-0 hidden w-full md:block"
         alt=""
         width={1550}
         height={124}
@@ -25,7 +25,7 @@ export default function PresalePage() {
       <BackedBy />
       <CgToken />
       <ExtendedTab />
-      <StakingBenefits buttonText='Buy & Stake' />
+      <StakingBenefits buttonText="Buy & Stake" />
       <Tokenomics />
       <Roadmap />
       <Growth />

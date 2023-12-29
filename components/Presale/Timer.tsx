@@ -19,7 +19,7 @@ export default function Timer() {
   }: CountdownRenderProps) => {
     if (completed) return <>Presale Ended!</>
     return (
-      <div className="flex items-start gap-4 font-bold">
+      <div className="flex items-start gap-4 font-bold relative z-1">
         <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-lg border border-themeBorderBlue/25 px-3 py-4 md:w-[4.12rem]">
           <span className="text-xl leading-7 md:text-3xl">
             {makeMeTwoDigits(days)}
@@ -51,26 +51,29 @@ export default function Timer() {
     )
   }
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center gap-8 px-8 pb-16 pt-8 mmd:px-16">
-      <div className="floating absolute left-8 top-0 z-0">
+    <Animated className="relative z-1 flex flex-col items-center justify-center overflow-hidden gap-8 px-8 pb-16 pt-24 mmd:px-16">
+      <div className="floating absolute -left-8 top-0 z-0 md:left-8">
         <Image
           src="/Presale/nfts (1).png"
           width={800}
           height={737}
           alt=""
-          className="h-48 w-fit -rotate-12 object-contain"
+          className="h-36 w-fit -rotate-12 object-contain mmd:h-48"
         />
       </div>
-      <div className="floating absolute bottom-8 right-8 z-0" data-delay={1000}>
+      <div
+        className="floating absolute -right-8 bottom-0 md:bottom-8 z-0 md:right-8"
+        data-delay={1000}
+      >
         <Image
           src="/Presale/nfts (2).png"
           width={800}
           height={803}
           alt=""
-          className="h-48 w-fit rotate-12 object-contain"
+          className="h-36 w-fit rotate-12 object-contain mmd:h-48"
         />
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center relative z-1">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Time is ticking fast!
         </div>
@@ -79,8 +82,8 @@ export default function Timer() {
         </div>
       </div>
       <Countdown date={timer} renderer={renderer} />
-      <div className="text-lg">Lets get going with the Presale!</div>
-      <Button className="h-12 !font-light capitalize">buy & Stake Now</Button>
+      <div className="text-lg relative z-1">Lets get going with the Presale!</div>
+      <Button className="h-12 !font-light capitalize relative z-1">buy & Stake Now</Button>
     </Animated>
   )
 }

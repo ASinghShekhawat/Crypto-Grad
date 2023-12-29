@@ -71,17 +71,17 @@ export default function Hero() {
   }
 
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 px-8 pt-16 md:pt-24 pb-0 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 bg-gradient-to-b from-[#6754f82b] via-transparent to-transparent px-8 pb-0 pt-16 md:from-transparent md:pt-24 mmd:flex-row mmd:px-16">
       <div className="flex w-full flex-col text-left">
         <div className="relative z-10 mb-2 text-center text-3xl font-bold md:text-5xl mmd:text-left">
           Cryptograd Presale: <br />
           Secure Your Tokens Now!
         </div>
-        <div className="z-10 text-center font-light mmd:text-left">
+        <div className="z-10 text-center font-light text-white/80 mmd:text-left">
           All facilitated by a single game-changing platform. Experience the
           revolution of blockchain in an unparalleled way.
         </div>
-        <div className="mmd:justify-start flex w-full justify-center">
+        <div className="flex w-full justify-center mmd:justify-start">
           <Button className="mt-4 h-12 w-fit !font-normal">
             Buy & Stake Now
           </Button>
@@ -89,7 +89,7 @@ export default function Hero() {
       </div>
       <div className="relative z-1 flex w-full items-center justify-center">
         <div className="presaleCardBg relative mt-4 flex w-full flex-col gap-6 rounded-xl border border-[#6754F842] p-4 pt-6">
-          <div className="absolute w-fit rounded-full bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-lg px-3 py-1 -top-4 border-themeBorderBlue/25 border">
+          <div className="absolute -top-4 w-fit rounded-full border border-themeBorderBlue/25 bg-gradient-to-b from-white/5 to-white/0 px-3 py-1 backdrop-blur-lg">
             Token Presale
           </div>
           <div className="flex flex-col items-center justify-center gap-4">

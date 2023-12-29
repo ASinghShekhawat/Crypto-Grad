@@ -11,12 +11,25 @@ export default function Tokenomics() {
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Innovate, Govern, Grow - Unleash the Potential with CG Token
         </div>
-        <div className="relative z-10 text-center text-3xl pt-4 font-bold md:text-5xl">
+        <div className="relative z-10 pt-4 text-center text-3xl font-bold md:text-5xl">
           CG Tokenomics
         </div>
       </div>
-      <Image src="/Presale/tokenomics.png" alt="" width={1074} height={603} />
-      <Button type={ButtonType.SECONDARY}>
+      <Image
+        src="/Presale/tokenomics.png"
+        alt=""
+        width={1074}
+        height={603}
+        className="hidden md:block"
+      />
+      <Image
+        src="/Presale/tokenomics-mobile.png"
+        alt=""
+        width={338}
+        height={307}
+        className="md:hidden"
+      />
+      <Button type={ButtonType.SECONDARY} className="h-12">
         View Docs <FiArrowUpRight />
       </Button>
     </Animated>

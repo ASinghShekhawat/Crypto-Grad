@@ -9,7 +9,7 @@ const CgToken = () => {
           Token Presale
         </div>
         <div className="mt-2 text-3xl font-bold md:text-5xl">CG Tokens</div>
-        <div className="font-light">
+        <div className="font-light text-white/80">
           Discover CG Token: Your key to a secure, decentralized future. Powered
           by cutting-edge blockchain tech, CG Token provides a seamless, secure
           platform for transactions in the Cryptograd community. Join us in
