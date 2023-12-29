@@ -28,7 +28,7 @@ export default function Home() {
       <AiSection5 />
       {/* ! Discord */}
       {/* <LiveEducator /> */}
-      <Experience />
+      {/* <Experience /> */}
       <Membership />
       {/* <NeverMissABeat />
       <NativeToken />
