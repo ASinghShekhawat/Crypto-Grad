@@ -8,7 +8,7 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 
 const Experience = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-center overflow-hidden px-8 py-20 text-center mmd:px-16">
+    <div className="flex w-full flex-col items-center justify-center overflow-hidden px-4 py-20 text-center mmd:px-16">
       <div className="mb-16 text-3xl font-bold md:text-5xl">
         Hear Voices of Experience
       </div>

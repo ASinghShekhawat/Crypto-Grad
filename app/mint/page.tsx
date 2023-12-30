@@ -9,7 +9,7 @@ import Image from 'next/image'
 const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
   return (
     <Page className="flex flex-col items-center overflow-hidden !p-0">
-      <div className="flex w-full flex-col items-center !px-4 pt-12 text-center md:!px-8 mmd:!px-16 mmd:!pt-20">
+      <div className="flex w-full flex-col items-center !px-4 pt-12 text-center md:!px-4 mmd:!px-16 mmd:!pt-20">
         <div className="text-3xl font-bold md:text-5xl">MINT CG NFTs</div>
         <div className="mb-32 mt-4 mmd:mb-12">
           Your gateway to exclusive NFTs that grant access to our
@@ -51,7 +51,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
       </div>
       {!searchParams.discord && (
         <>
-          <div className="flex w-full flex-col items-center px-8 pt-20 text-center mmd:!px-16">
+          <div className="flex w-full flex-col items-center px-4 pt-20 text-center mmd:!px-16">
             <div className="text-3xl font-bold md:text-5xl">
               Cryptograd Perks
             </div>
@@ -138,7 +138,7 @@ const MintPage = ({ searchParams }: { searchParams: { discord: boolean } }) => {
           alt=""
           className="absolute right-0 top-0 hidden md:block"
         />
-        <Animated className="mb-12 flex flex-col gap-2 px-8 text-center">
+        <Animated className="mb-12 flex flex-col gap-2 px-4 text-center">
           <div className="text-lg font-semibold uppercase">Cryptograd</div>
           <div className="relative text-3xl font-medium italic md:max-h-full">
             The Key to Crypto Harmony

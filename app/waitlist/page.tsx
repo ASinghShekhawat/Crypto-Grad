@@ -105,7 +105,7 @@ const WaitlistPage = () => {
               </div>
               <Button
                 disabled={email.length === 0}
-                className="md:w-fit !px-8"
+                className="md:w-fit !px-4"
               >
                 Request OTP
               </Button>

@@ -9,7 +9,7 @@ import TabInfo from '../shared/TabInfo'
 const HeroSection = () => {
   return (
     <>
-      <Animated className="relative z-1 flex flex-col items-center justify-center from-[#6754f82b] via-transparent to-transparent px-8 py-16 md:bg-gradient-to-tl md:py-32 mmd:px-16">
+      <Animated className="relative z-1 flex flex-col items-center justify-center from-[#6754f82b] via-transparent to-transparent px-4 py-16 md:bg-gradient-to-tl md:py-32 mmd:px-16">
         <Image
           src="/effects/hero-eff-1.svg"
           className="absolute bottom-[70%] z-0 hidden md:block"

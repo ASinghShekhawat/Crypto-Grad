@@ -2,7 +2,7 @@ import Accordion from "../shared/policy/Accordion";
 
 export default function Faq() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[960px] flex-col items-center gap-12 overflow-hidden px-8 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24">
+    <div className="relative mx-auto flex w-full max-w-[960px] flex-col items-center gap-12 overflow-hidden px-4 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24">
       <h1 className="relative z-1 text-center text-4xl font-semibold md:text-5xl">
         Frequently Asked Questions
       </h1>

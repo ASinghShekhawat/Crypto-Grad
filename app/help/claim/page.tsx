@@ -7,7 +7,7 @@ import Image from 'next/image'
 const ClaimPage = () => {
   return (
     <Page className="flex flex-col items-center overflow-hidden !p-0">
-      <div className="relative flex w-full flex-col items-center justify-center !px-4 py-48 text-center md:!px-8 mmd:!px-16">
+      <div className="relative flex w-full flex-col items-center justify-center !px-4 py-48 text-center md:!px-4 mmd:!px-16">
         <div className="relative z-1 text-3xl font-bold md:text-5xl">
           Your Gateway to Crypto Awaits.
           <Image
@@ -60,7 +60,7 @@ const ClaimPage = () => {
         />
       </div>
       <div className="flex w-full flex-col items-center justify-center gap-16 pb-16 md:py-32">
-        <div className="relative z-1 px-8 text-center text-3xl font-bold md:text-5xl">
+        <div className="relative z-1 px-4 text-center text-3xl font-bold md:text-5xl">
           Trending Cryptograd NFTs
         </div>
         <NftCollectionMarqee />

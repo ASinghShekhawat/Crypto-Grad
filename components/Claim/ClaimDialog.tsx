@@ -55,7 +55,7 @@ export default function ClaimDialog({
                     Congratulations, You <br /> successfully claimed your NFT!
                   </div>
                   <ClaimDialogImage />
-                  <Button className='!px-8 !h-12'>View in OpenSea</Button>
+                  <Button className='!px-4 !h-12'>View in OpenSea</Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

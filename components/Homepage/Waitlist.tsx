@@ -4,7 +4,7 @@ import WaitlistActions from './WaitlistActions'
 
 const Waitlist = () => {
   return (
-    <Animated className="flex flex-col items-center justify-center px-8 mmd:px-16 pt-16 pb-8 text-center">
+    <Animated className="flex flex-col items-center justify-center px-4 mmd:px-16 pt-16 pb-8 text-center">
       <div className="text-3xl font-bold md:text-5xl">
         Join the beta and invite your friends to{' '}
         <br className="hidden mmd:block" />

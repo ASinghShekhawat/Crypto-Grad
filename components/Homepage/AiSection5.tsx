@@ -4,7 +4,7 @@ import AiSection5Image from './AiSEction5Image'
 
 const AiSection5 = () => {
   return (
-    <Animated className="relative z-1 flex w-full flex-col items-center px-8 md:py-20 md:min-w-fit mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex w-full flex-col items-center px-4 md:py-20 md:min-w-fit mmd:flex-row mmd:px-16">
       <AiSection5Image />
       <div className="flex w-full flex-col gap-8">
         <div className="text-3xl font-bold md:text-5xl">

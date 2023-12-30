@@ -3,7 +3,7 @@ import RoadmapImage from './RoadmapImage'
 
 const Roadmap = () => {
   return (
-    <Animated id='roadmap' className="flex flex-col items-center justify-center overflow-hidden px-8 pt-20 text-center md:py-20 mmd:px-16">
+    <Animated id='roadmap' className="flex flex-col items-center justify-center overflow-hidden px-4 pt-20 text-center md:py-20 mmd:px-16">
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Our Roadmap
       </div>

@@ -2,7 +2,7 @@ import FaqAccordion from './FaqAccordion'
 
 const MintFaq = () => {
   return (
-    <div className="flex w-full flex-col items-center gap-4 px-8 mmd:px-16">
+    <div className="flex w-full flex-col items-center gap-4 px-4 mmd:px-16">
       <div className="mb-8 text-3xl font-bold md:text-5xl">FAQ</div>
       <FaqAccordion
         title="What's is the criteria to receive free CryptoGrad NFTs?"

@@ -4,7 +4,7 @@ import MembershipPlans from './MembershipPlans'
 
 const Membership = () => {
   return (
-    <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-8 pt-16 text-center md:py-20 mmd:px-16">
+    <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 pt-16 text-center md:py-20 mmd:px-16">
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Platform Goes Live Once Presale is Concluded
       </div>
@@ -16,7 +16,7 @@ const Membership = () => {
         education and guidance in crypto in an unparalleled way.
       </div>
       <MembershipPlans />
-      <div className="mx-auto mt-4 w-full max-w-[900px] px-8 text-left text-xs font-light">
+      <div className="mx-auto mt-4 w-full max-w-[900px] px-4 text-left text-xs font-light">
         Disclaimer: All prices given are in USDT, user will have to stake a
         minimum of $129.99 worth of CryptoGrad Native Tokens to get access to
         features given above

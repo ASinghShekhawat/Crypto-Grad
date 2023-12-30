@@ -10,7 +10,7 @@ import Page from '../shared/Page'
 const InviteFriendDialog = () => {
   return (
     <Page className="flex items-end justify-center !px-0 !py-0 md:items-center md:!p-8">
-      <div className="relative rounded-t-xl border-t border-themeTextGrey/80 bg-[#2F2F37] px-8 pb-20 pt-8 md:border-none md:bg-transparent">
+      <div className="relative rounded-t-xl border-t border-themeTextGrey/80 bg-[#2F2F37] px-4 pb-20 pt-8 md:border-none md:bg-transparent">
         <button className="absolute right-8 top-8 -mr-0 -mt-12 hidden rounded-full bg-themeBgBlack px-2 py-2 text-white md:block">
           <X size={20} />
         </button>

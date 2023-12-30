@@ -51,7 +51,7 @@ export default function Timer() {
     )
   }
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center gap-8 overflow-hidden px-8 pb-16 pt-24 mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center gap-8 overflow-hidden px-4 pb-16 pt-24 mmd:px-16">
       <div className="floating absolute -left-8 top-0 z-0 md:left-8">
         <Image
           src="/Presale/nfts (1).png"

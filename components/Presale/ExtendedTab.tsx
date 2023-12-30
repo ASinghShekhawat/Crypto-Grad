@@ -5,7 +5,7 @@ import TabInfo from '../shared/TabInfo'
 export default function ExtendedTab() {
   return (
     <Animated className="flex flex-col items-center justify-center gap-4 pt-16">
-      <div className="flex flex-col items-center justify-center px-8">
+      <div className="flex flex-col items-center justify-center px-4">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Over 5000 Early Adopters Already Onboard!
         </div>

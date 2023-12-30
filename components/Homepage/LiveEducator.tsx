@@ -3,7 +3,7 @@ import Animated from '../shared/Animated'
 
 const LiveEducator = () => {
   return (
-    <Animated className="relative z-1 flex w-full flex-col items-center gap-8 px-8 py-20 md:min-w-fit mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex w-full flex-col items-center gap-8 px-4 py-20 md:min-w-fit mmd:flex-row mmd:px-16">
       <div className="relative z-1 w-full">
         <Image
           src="/Homepage/LiveEducator/liveEdu.webp"

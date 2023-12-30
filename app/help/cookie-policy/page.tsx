@@ -1,6 +1,6 @@
 const CookiePolicy = () => {
   return (
-    <div className="mx-auto flex max-w-[960px] flex-col items-center gap-12 px-8 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24">
+    <div className="mx-auto flex max-w-[960px] flex-col items-center gap-12 px-4 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24">
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-center text-4xl font-semibold md:text-5xl">
           Cookie Policy

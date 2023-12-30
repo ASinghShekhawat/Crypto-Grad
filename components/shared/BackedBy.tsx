@@ -8,7 +8,7 @@ import 'swiper/css/autoplay'
 
 export default function BackedBy() {
   return (
-    <Animated className="relative z-5 flex flex-col items-center justify-between px-8 py-16 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-5 flex flex-col items-center justify-between px-4 py-16 mmd:flex-row mmd:px-16">
       <div className="text-lg font-medium text-themeLightGrey">
         We are <br className="hidden mmd:block" />
         Backed by

@@ -4,7 +4,7 @@ import Button from '../shared/Button'
 
 const LargeToken = () => {
   return (
-    <Animated className="relative z-1 flex w-full flex-col items-center px-8 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex w-full flex-col items-center px-4 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
       <div className="flex w-full items-center justify-center">
         <Image
           src="/Homepage/LargeToken/largeToken.png"

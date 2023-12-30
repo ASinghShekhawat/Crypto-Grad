@@ -6,7 +6,7 @@ import { ButtonType } from '@/types/buttton'
 
 export default function Tokenomics() {
   return (
-    <Animated id='tokenomics' className="relative z-1 flex flex-col items-center justify-center gap-16 px-8 py-16 mmd:px-16">
+    <Animated id='tokenomics' className="relative z-1 flex flex-col items-center justify-center gap-16 px-4 py-16 mmd:px-16">
       <div className="flex flex-col">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Innovate, Govern, Grow - Unleash the Potential with CG Token

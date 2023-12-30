@@ -12,7 +12,7 @@ const Section3 = () => {
         width={870}
         height={609}
       />
-      <div className="relative z-1 px-8 mmd:px-16 w-full flex flex-col items-center gap-8 mmd:flex-row">
+      <div className="relative z-1 px-4 mmd:px-16 w-full flex flex-col items-center gap-8 mmd:flex-row">
         <div className="w-full text-3xl font-bold md:text-5xl">
           Get A Glimpse Of the <br className="hidden md:block" /> CG Member
           experience

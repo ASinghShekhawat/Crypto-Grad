@@ -3,7 +3,7 @@ import Animated from '../shared/Animated'
 
 const CgToken = () => {
   return (
-    <Animated className="relative z-1 flex w-full flex-col items-center px-8 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex w-full flex-col items-center px-4 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
       <div className="flex w-full flex-col items-start gap-8">
         <div className="w-fit rounded-full border border-themeBorderBlue/25 bg-gradient-to-b from-white/5 to-white/0 px-3 py-1 backdrop-blur-lg">
           Token Presale

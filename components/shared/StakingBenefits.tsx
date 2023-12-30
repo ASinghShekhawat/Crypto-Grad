@@ -8,7 +8,7 @@ export default function StakingBenefits({
   buttonText?: string
 }) {
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center px-8 pt-16 md:pt-32 mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center px-4 pt-16 md:pt-32 mmd:px-16">
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Staking Benefits
       </div>

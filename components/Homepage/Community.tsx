@@ -6,7 +6,7 @@ import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 const Community = () => {
   return (
     <div className="relative overflow-hidden">
-      <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-8 !pb-32 text-center md:py-20 mmd:px-16">
+      <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 !pb-32 text-center md:py-20 mmd:px-16">
         <div className="relative z-1 text-lg font-medium text-themeBlue">
           CryptoGrad Incubator Lab
         </div>
@@ -65,27 +65,27 @@ const Community = () => {
         height={1920}
         alt=""
       />
-      <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-8 pb-20 text-center md:py-20 mmd:px-16">
+      <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 pb-20 text-center md:py-20 mmd:px-16">
         <div className="relative z-1 text-3xl font-bold capitalize md:text-5xl">
           join a passionate, <br />
           global community of crypto
         </div>
-        <div className="relative z-1 mt-16 grid w-fit grid-cols-1 gap-4 mmd:grid-cols-3">
-          <div className="flex h-48 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+        <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 md:w-fit mmd:grid-cols-3">
+          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Twitter</div>
               <div className="text-sm font-light">General Announcements</div>
             </div>
             <FaTwitter className="!text-4xl !text-[#1D9BF0] md:!text-7xl" />
           </div>
-          <div className="flex h-48 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Telegram</div>
               <div className="text-sm font-light">Live Chat</div>
             </div>
             <FaTelegramPlane className="!text-4xl !text-[#229ED9] md:!text-7xl" />
           </div>
-          <div className="flex h-48 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Discord</div>
               <div className="text-sm font-light">

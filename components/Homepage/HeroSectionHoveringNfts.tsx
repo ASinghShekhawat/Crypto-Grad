@@ -5,7 +5,7 @@ export default function HeroSectionHoveringNfts({ bg }: { bg?: boolean }) {
   return (
     <Animated
       delay={100}
-      className="relative z-0 flex h-[30vw] w-full flex-col items-center justify-center px-8 py-10 mmd:px-16 mmd:py-20"
+      className="relative z-0 flex h-[30vw] w-full flex-col items-center justify-center px-4 py-10 mmd:px-16 mmd:py-20"
     >
       {bg && (
         <Image
