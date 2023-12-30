@@ -9,10 +9,11 @@ export default function Sidebar() {
   console.log(params.get('tab'), 'tabb')
   return (
     <div className="hidden min-h-full w-[300px] flex-col gap-5 bg-[#131722CC] py-12 mmd:flex">
-      {sidebarItems.map((item) => (
+      {sidebarItems.map((item, i) => (
         <Link
+          key={item.path + i}
           href={`/dashboard?tab=${item.path}`}
-          className={`relative flex items-center text-xl gap-4 pl-6 ${
+          className={`relative flex items-center gap-4 pl-6 text-xl ${
             params.get('tab') === item.path
               ? 'after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:rounded after:bg-themeViolet'
               : ''

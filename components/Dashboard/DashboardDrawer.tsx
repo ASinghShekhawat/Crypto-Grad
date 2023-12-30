@@ -62,8 +62,9 @@ const DashboardDrawer = () => {
                 </Dialog.Title>
                 <Dialog.Description className="flex h-full flex-col justify-between gap-8">
                   <div className="flex flex-col gap-5">
-                    {sidebarItems.map((item) => (
+                    {sidebarItems.map((item, i) => (
                       <Link
+                        key={item.path + i}
                         href={`/dashboard?tab=${item.path}`}
                         className={`relative flex items-center gap-4 pl-6 ${
                           params.get('tab') === item.path

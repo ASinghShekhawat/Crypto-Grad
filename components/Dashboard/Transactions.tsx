@@ -72,8 +72,11 @@ export default function Transactions() {
             Hash
           </div>
         </div>
-        {reportData.map((data) => (
-          <div className="grid min-w-[800px] grid-cols-5 rounded-xl p-4 font-light md:min-w-0">
+        {reportData.map((data, i) => (
+          <div
+            key={data.hash + 1}
+            className="grid min-w-[800px] grid-cols-5 rounded-xl p-4 font-light md:min-w-0"
+          >
             <div>{data.timestamp}</div>
             <div className="truncate">{data.wallet}</div>
             <div className="truncate">{data.amount}</div>
