@@ -1,21 +1,23 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { HiOutlineMenu } from "react-icons/hi";
-import { IoClose } from "react-icons/io5";
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import Brand from "./Brand";
-import NavMenu from "./NavMenu";
-import ConnectWallet from "./ConnectWallet";
+import { useState } from 'react'
+import { HiOutlineMenu } from 'react-icons/hi'
+import { IoClose } from 'react-icons/io5'
+import { Dialog, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import Brand from './Brand'
+import NavMenu from './NavMenu'
+import ConnectWallet from './ConnectWallet'
+import { usePathname } from 'next/navigation'
 
 const Drawer = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname()
   return (
     <>
       <button
         onClick={() => setOpen(true)}
-        className="mmd:hidden hover:text-themeVioletText transition-all"
+        className="transition-all hover:text-themeVioletText mmd:hidden"
       >
         <HiOutlineMenu className="text-3xl" />
       </button>
@@ -46,19 +48,19 @@ const Drawer = () => {
               leaveTo="transform translate-x-[-280px] opacity-0"
               as={Fragment}
             >
-              <Dialog.Panel className="flex h-screen overflow-y-auto w-[280px] flex-col gap-8 bg-gradient-to-br from-themeNavBlack to-themeBgBlack p-8">
-                <Dialog.Title className="flex items-center gap-8 justify-between">
+              <Dialog.Panel className="flex h-screen w-[280px] flex-col gap-8 overflow-y-auto bg-gradient-to-br from-themeNavBlack to-themeBgBlack p-8">
+                <Dialog.Title className="flex items-center justify-between gap-8">
                   <Brand />
                   <button
                     onClick={() => setOpen(false)}
                     className="border-none outline-none"
                   >
-                    <IoClose className="text-2xl hover:text-themeVioletText transition-all " />
+                    <IoClose className="text-2xl transition-all hover:text-themeVioletText " />
                   </button>
                 </Dialog.Title>
-                <Dialog.Description className="flex flex-col gap-8 justify-between h-full">
-                  <NavMenu drawer />
-                  <ConnectWallet drawer />
+                <Dialog.Description className="flex h-full flex-col justify-between gap-8">
+                  <NavMenu drawer pathname={pathname} />
+                  <ConnectWallet drawer pathname={pathname} />
                 </Dialog.Description>
               </Dialog.Panel>
             </Transition.Child>
@@ -66,7 +68,7 @@ const Drawer = () => {
         </Dialog>
       </Transition>
     </>
-  );
-};
+  )
+}
 
-export default Drawer;
+export default Drawer

@@ -5,7 +5,7 @@ import GrowthImage from './GrowthImage'
 
 const Growth = () => {
   return (
-    <Animated className="relative z-1 flex w-full flex-col items-center gap-8 px-8 py-20 md:min-w-fit mmd:flex-row mmd:px-16">
+    <Animated id='growth' className="relative z-1 flex w-full flex-col items-center gap-8 px-8 py-20 md:min-w-fit mmd:flex-row mmd:px-16">
       <div className="w-full">
         <div className="relative z-1 text-xl font-semibold text-themeBlue">
           Refer & Earn
