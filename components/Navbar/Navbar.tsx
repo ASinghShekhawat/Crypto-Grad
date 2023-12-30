@@ -5,12 +5,18 @@ import Brand from './Brand'
 import ConnectWallet from './ConnectWallet'
 import Drawer from './Drawer'
 import NavMenu from './NavMenu'
+import DashboardDrawer from '../Dashboard/DashboardDrawer'
 
 const Navbar = () => {
   const pathname = usePathname()
   return (
-    <nav className="sticky top-0 z-10 mx-auto flex h-16 w-full items-center justify-between border-themeBorder/30 bg-themeNavBlack/80 bg-opacity-80 px-8 backdrop-blur-lg mmd:h-20 mmd:px-16">
-      <Brand />
+    <nav className="sticky top-0 z-10 mx-auto flex h-16 w-full items-center justify-between border-themeBorder/30 bg-themeNavBlack/80 bg-opacity-80 px-4 backdrop-blur-lg mmd:h-20 mmd:px-16">
+      <div className="flex items-center gap-4">
+        <Brand />
+        {pathname.includes('/dashboard') && (
+          <div className="rounded-full bg-[#20222B] px-4 py-2 text-xs font-light">Private Sale</div>
+        )}
+      </div>
       {pathname.includes('/presale') && (
         <>
           <div className="hidden mmd:flex">
@@ -27,7 +33,8 @@ const Navbar = () => {
           <ConnectWallet pathname={pathname} />
         </div>
       )}
-      <Drawer />
+      {!pathname.includes('/dashboard') && <Drawer />}
+      {pathname.includes('/dashboard') && <DashboardDrawer />}
     </nav>
   )
 }

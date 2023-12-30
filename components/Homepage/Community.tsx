@@ -71,21 +71,36 @@ const Community = () => {
           global community of crypto
         </div>
         <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 md:w-fit mmd:grid-cols-3">
-          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+          <a
+            href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+          >
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Twitter</div>
               <div className="text-sm font-light">General Announcements</div>
             </div>
             <FaTwitter className="!text-4xl !text-[#1D9BF0] md:!text-7xl" />
-          </div>
-          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+          </a>
+          <a
+            href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+          >
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Telegram</div>
               <div className="text-sm font-light">Live Chat</div>
             </div>
             <FaTelegramPlane className="!text-4xl !text-[#229ED9] md:!text-7xl" />
-          </div>
-          <div className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]">
+          </a>
+          <a
+            href="https://discord.gg/M9dNdA4FWW"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+          >
             <div className="flex flex-col items-start text-left">
               <div className="text-xl font-semibold md:text-3xl">Discord</div>
               <div className="text-sm font-light">
@@ -94,7 +109,7 @@ const Community = () => {
               </div>
             </div>
             <FaDiscord className="!text-4xl !text-[#5865F2] md:!text-7xl" />
-          </div>
+          </a>
         </div>
       </Animated>
     </div>
