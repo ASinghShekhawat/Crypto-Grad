@@ -10,6 +10,7 @@ import { makeMeTwoDigits } from '@/utils/numberFix'
 import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -206,7 +207,7 @@ export default function DashboardHome() {
                 <div className="text-xl font-semibold md:text-3xl">Twitter</div>
                 <div className="text-sm font-light">General Announcements</div>
               </div>
-              <FaTwitter className="!text-4xl !text-[#1D9BF0] md:!text-7xl" />
+              <FaXTwitter className="!text-4xl !text-white md:!text-7xl" />
             </a>
             <a
               href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"

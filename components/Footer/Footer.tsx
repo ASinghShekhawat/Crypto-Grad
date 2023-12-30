@@ -8,6 +8,7 @@ import {
 } from 'react-icons/ri'
 import localFont from 'next/font/local'
 import FooterAccordion from './FooterAccordion'
+import { FaTelegram, FaTelegramPlane } from 'react-icons/fa'
 
 const larsseit = localFont({
   src: '../../fonts/Larsseit.otf',
@@ -61,19 +62,19 @@ const Footer = () => {
               >
                 <RiDiscordFill className="!text-4xl" />
               </a>
-              <a
+              {/* <a
                 href="https://www.linkedin.com/company/cryptograd"
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 <RiLinkedinBoxFill className="!text-4xl" />
-              </a>
+              </a> */}
               <a
                 href="https://twitter.com/cgradofficial"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <RiInstagramFill className="!text-4xl" />
+                <FaTelegramPlane className="!text-4xl" />
               </a>
               <a
                 href="https://twitter.com/cgradofficial"
@@ -85,7 +86,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-xs !font-extralight italic opacity-50">
-            © 2023 Cryptograd. All Rights Reserved.
+            © {new Date().getFullYear()} Cryptograd. All Rights Reserved.
           </div>
         </div>
       </div>

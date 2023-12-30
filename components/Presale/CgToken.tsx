@@ -60,7 +60,7 @@ const CgToken = () => {
           alt=""
           width={127}
           height={127}
-          className="absolute right-0 top-0 hidden mmd:block"
+          className="absolute right-0 top-0 hidden mmd:block spinner"
         />
         <Image
           src="/Homepage/LargeToken/largeToken.png"

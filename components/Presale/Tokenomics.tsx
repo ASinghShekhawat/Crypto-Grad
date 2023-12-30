@@ -6,7 +6,10 @@ import { ButtonType } from '@/types/buttton'
 
 export default function Tokenomics() {
   return (
-    <Animated id='tokenomics' className="relative z-1 flex flex-col items-center justify-center gap-16 px-4 py-16 mmd:px-16">
+    <Animated
+      id="tokenomics"
+      className="relative z-1 flex flex-col items-center justify-center gap-16 px-4 py-16 mmd:px-16"
+    >
       <div className="flex flex-col">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
           Innovate, Govern, Grow - Unleash the Potential with CG Token
@@ -29,9 +32,14 @@ export default function Tokenomics() {
         height={307}
         className="md:hidden"
       />
-      <Button type={ButtonType.SECONDARY} className="h-12">
+      <a
+        href="https://app.gitbook.com/invite/42NMOhVCI8zEWVh1qo3k/dLCemiOMlKmIGBcqFEWF"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="flex h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBorderBlue bg-themeBlack px-4 text-lg font-medium transition-all hover:text-themeVioletText md:px-6"
+      >
         View Docs <FiArrowUpRight />
-      </Button>
+      </a>
     </Animated>
   )
 }

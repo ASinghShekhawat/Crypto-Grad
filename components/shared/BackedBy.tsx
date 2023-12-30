@@ -8,8 +8,8 @@ import 'swiper/css/autoplay'
 
 export default function BackedBy() {
   return (
-    <Animated className="relative z-5 flex flex-col items-center justify-between px-4 py-16 mmd:flex-row mmd:px-16">
-      <div className="text-lg font-medium text-themeLightGrey">
+    <div className="relative z-5 flex flex-col items-center justify-between px-4 py-16 mmd:flex-row mmd:px-16">
+      <div className="text-lg font-bold text-themeLightGrey md:text-xl">
         We are <br className="hidden mmd:block" />
         Backed by
       </div>
@@ -19,35 +19,35 @@ export default function BackedBy() {
           width={443}
           height={185}
           alt=""
-          className="w-28"
+          className="w-36"
         />
         <Image
           src="/Homepage/Hero/backers (2).png"
           width={410}
           height={90}
           alt=""
-          className="w-28"
+          className="w-36"
         />
         <Image
           src="/Homepage/Hero/backers (3).png"
           width={298}
           height={58}
           alt=""
-          className="w-28"
+          className="w-36"
         />
         <Image
           src="/Homepage/Hero/backers (4).png"
           width={229}
           height={61}
           alt=""
-          className="w-28"
+          className="w-36"
         />
         <Image
           src="/Homepage/Hero/backers (5).png"
           width={305}
           height={241}
           alt=""
-          className="w-28"
+          className="h-20 w-fit object-contain"
         />
       </div>
       <div className="mt-8 block w-full mmd:hidden">
@@ -122,6 +122,6 @@ export default function BackedBy() {
           </SwiperSlide>
         </Swiper>
       </div>
-    </Animated>
+    </div>
   )
 }

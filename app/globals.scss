@@ -23,6 +23,18 @@ body {
   --themeNavBlack: #131722;
 }
 
+.spinner {
+  animation: spin 5s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .pageHeight {
   min-height: calc(100vh - 5rem);
   @media screen and (max-width: 992px) {

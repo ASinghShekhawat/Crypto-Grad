@@ -1,17 +1,38 @@
 export const footerLinks = [
+  // {
+  //   column: 'Courses',
+  //   links: [
+  //     {
+  //       title: 'Beginner',
+  //       url: '#',
+  //     },
+  //     {
+  //       title: 'Intermediate',
+  //       url: '#',
+  //     },
+  //     {
+  //       title: 'Advanced',
+  //       url: '#',
+  //     },
+  //   ],
+  // },
   {
-    column: 'Courses',
+    column: 'CG AI',
     links: [
       {
-        title: 'Beginner',
+        title: 'ChatGenius',
         url: '#',
       },
       {
-        title: 'Intermediate',
+        title: 'TradeAnalyzer',
         url: '#',
       },
       {
-        title: 'Advanced',
+        title: 'ContractInsight',
+        url: '#',
+      },
+      {
+        title: 'CryptoBuzz',
         url: '#',
       },
     ],
@@ -20,11 +41,15 @@ export const footerLinks = [
     column: 'Community',
     links: [
       {
-        title: 'Feed',
+        title: 'Discord',
         url: '#',
       },
       {
-        title: 'Channels',
+        title: 'Telegram',
+        url: '#',
+      },
+      {
+        title: 'Twitter',
         url: '#',
       },
     ],
@@ -64,7 +89,19 @@ export const footerLinks = [
       },
       {
         title: 'Privacy Policy',
-        url: '#',
+        url: '/help/privacy-policy',
+      },
+      {
+        title: 'Cookie Policy',
+        url: '/help/privacy-policy',
+      },
+      {
+        title: 'Safe Harbour & Disclaimer',
+        url: '/help/disclaimer',
+      },
+      {
+        title: 'FAQ',
+        url: '/help/FAQ',
       },
     ],
   },

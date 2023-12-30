@@ -28,7 +28,7 @@ const RoadmapImage = () => {
               <ul className="list-inside list-disc">
                 <li>Launch CG AI Beta</li>
                 <li>Set up E-Learning Platform</li>
-                <li>CG AI Beta Live for early adopters</li>
+                {/* <li>CG AI Beta Live for early adopters</li> */}
                 <li>Web3 Referral Model Initiation</li>
                 <li>Launch CG Token </li>
                 <li>Launch of CG Launchpad</li>

@@ -8,16 +8,16 @@ export default function TabInfo() {
         <button
           className={`rounded-full bg-themeBlackDeep px-2.5 py-2 text-xs md:text-base`}
         >
-          CG AI
+          Chat Genius
         </button>
         <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
-          NFT&apos;s
+          Trade Analyzer
         </button>
         <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
-          Discord Community
+          Contract Insight
         </button>
         <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
-          CoursesI
+          Crypto Buzz
         </button>
       </div>
       <Image

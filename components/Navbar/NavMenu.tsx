@@ -30,7 +30,32 @@ const navMenuDropdowns = [
   //   ],
   // },
   {
-    title: 'Crypto',
+    title: 'CG AI',
+    menuItems: [
+      {
+        title: 'ChatGenius ',
+        path: '/',
+        target: false,
+      },
+      {
+        title: 'TradeAnalyzer',
+        path: '/',
+        target: false,
+      },
+      {
+        title: 'ContractInsight',
+        path: '/',
+        target: false,
+      },
+      {
+        title: 'CryptoBuzz ',
+        path: '/',
+        target: false,
+      },
+    ],
+  },
+  {
+    title: 'Dapps',
     menuItems: [
       {
         title: 'Blogs',
@@ -63,12 +88,17 @@ const navMenuDropdowns = [
         target: true,
       },
       {
-        title: 'Instagram',
-        path: 'https://www.instagram.com/cryptogradofficial/',
+        title: 'Telegram',
+        path: 'https://discord.gg/M9dNdA4FWW',
         target: true,
       },
+      // {
+      //   title: 'Instagram',
+      //   path: 'https://www.instagram.com/cryptogradofficial/',
+      //   target: true,
+      // },
       {
-        title: 'Twitter ',
+        title: 'Twitter',
         path: 'https://twitter.com/cgradofficial',
         target: true,
       },
@@ -109,6 +139,22 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
                 menuItems={item.menuItems}
               />
             ))}
+          <Link
+            href="/"
+            className={`transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            Swap
+          </Link>
+          <Link
+            href="/"
+            className={`transition-all hover:text-themeVioletText ${
+              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+            }`}
+          >
+            CG NFTs
+          </Link>
         </>
       )}
 

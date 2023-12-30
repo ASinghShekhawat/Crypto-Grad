@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const Community = () => {
   return (
@@ -70,26 +71,26 @@ const Community = () => {
           join a passionate, <br />
           global community of crypto
         </div>
-        <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 md:w-fit mmd:grid-cols-3">
+        <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 mmd:grid-cols-3">
           <a
             href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
             target="_blank"
             rel="noreferrer noopener"
-            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+            className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
           >
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="text-xl font-semibold md:text-3xl">Twitter</div>
               <div className="text-sm font-light">General Announcements</div>
             </div>
-            <FaTwitter className="!text-4xl !text-[#1D9BF0] md:!text-7xl" />
+            <FaXTwitter className="!text-4xl !text-white md:!text-7xl" />
           </a>
           <a
             href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
             target="_blank"
             rel="noreferrer noopener"
-            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+            className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
           >
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="text-xl font-semibold md:text-3xl">Telegram</div>
               <div className="text-sm font-light">Live Chat</div>
             </div>
@@ -99,9 +100,9 @@ const Community = () => {
             href="https://discord.gg/M9dNdA4FWW"
             target="_blank"
             rel="noreferrer noopener"
-            className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeNavBlack p-8 md:h-64 2xl:w-[400px]"
+            className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
           >
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="text-xl font-semibold md:text-3xl">Discord</div>
               <div className="text-sm font-light">
                 Technical support, signals, investor . <br /> backroom and much

@@ -71,13 +71,13 @@ const AiSectionImage = () => {
               </Button>
               <Button
                 type={ButtonType.SECONDARY}
-                className="!min-h-fit !gap-1 !px-3 !py-2 !text-xs !font-light"
+                className="flex !min-h-fit items-center justify-center !gap-1 rounded-lg from-themeViolet to-themeBlue !px-3 !py-2 !text-xs !font-light transition-all duration-700 hover:!bg-gradient-to-r hover:from-themeBlue hover:to-themeBlue hover:!text-white disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
               >
                 Balanced
               </Button>
               <Button
                 type={ButtonType.SECONDARY}
-                className="!min-h-fit !gap-1 !px-3 !py-2 !text-xs !font-light"
+                className="flex !min-h-fit items-center justify-center !gap-1 rounded-lg from-themeViolet to-themeBlue !px-3 !py-2 !text-xs !font-light transition-all duration-700 hover:!bg-gradient-to-r hover:from-themeBlue hover:to-themeBlue hover:!text-white disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
               >
                 Aggresive
               </Button>

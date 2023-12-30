@@ -14,11 +14,11 @@ const LargeToken = () => {
           height={492}
         />
       </div>
-      <div className="flex w-full flex-col items-start gap-8">
-        <div className="mt-2 text-3xl font-bold md:text-5xl">
-          Cryptograd Presale: Secure Your Tokens Now!
+      <div className="flex w-full flex-col items-center gap-8 mmd:items-start">
+        <div className="mt-2 text-center text-3xl font-bold md:text-5xl mmd:text-left">
+          Cryptograd Presale: <br /> Secure Your Tokens Now!
         </div>
-        <div className="font-light">
+        <div className="text-center font-light mmd:text-left">
           Discover CG Token: Where Cutting-Edge AI Meets Blockchain Excellence.
           Join Our Thriving Community and Discover the Power of AI-Driven Crypto
           Mastery Today

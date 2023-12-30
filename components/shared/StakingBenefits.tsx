@@ -23,7 +23,7 @@ export default function StakingBenefits({
             alt=""
             width={300}
             height={300}
-            className="h-full object-contain"
+            className="h-[40%] max-h-[190px] object-contain"
           />
           <div className="flex flex-col gap-2 p-8">
             <div className="text-center text-xl">
@@ -42,7 +42,7 @@ export default function StakingBenefits({
             alt=""
             width={1219}
             height={634}
-            className="h-full object-cover"
+            className="h-full max-h-[190px] object-cover"
           />
           <div className="flex flex-col gap-2 p-8">
             <div className="text-center text-xl">
@@ -55,11 +55,11 @@ export default function StakingBenefits({
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between overflow-hidden rounded-lg bg-themeBgBlack pt-8">
+        <div className="flex flex-col items-center justify-between overflow-hidden rounded-lg bg-themeBgBlack">
           <Image
-            src="/Homepage/Hero/stake2.png"
+            src="/Homepage/Hero/stake2.svg"
             alt=""
-            className="ml-4 h-full object-cover"
+            className="h-full object-contain"
             width={792}
             height={402}
           />
