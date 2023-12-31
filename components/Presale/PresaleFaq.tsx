@@ -29,9 +29,9 @@ export default function PresaleFaq() {
           className="!border-[#5D5AFF8E]"
           title="How do I get access to what Cryptograd offers?"
         >
-          To access Cryptograd's offerings, including our cutting-edge
+          To access Cryptograd&apos;s offerings, including our cutting-edge
           technology and educational resources, you can participate in our
-          presale. By joining the presale, you'll gain early access and
+          presale. By joining the presale, you&apos;ll gain early access and
           exclusive benefits.
         </Accordion>
         <Accordion
@@ -52,7 +52,7 @@ export default function PresaleFaq() {
           purchase CG tokens, you will receive a reward in CG tokens as a
           percentage of their contribution. This referral system is designed to
           incentivize and reward you for spreading the word about Cryptograd and
-          contributing to our community's growth. A more detailed guide on
+          contributing to our community&apos;s growth. A more detailed guide on
           referral can be seen here-{' '}
           <Link
             href="/referral"
@@ -66,8 +66,8 @@ export default function PresaleFaq() {
           title="is there vesting for CG tokens?
           "
         >
-          Yes, Cryptograd's vesting schedule for CG tokens starts with an
-          initial allocation of 15% at the token's launch. Afterward, the
+          Yes, Cryptograd&apos;s vesting schedule for CG tokens starts with an
+          initial allocation of 15% at the token&apos;s launch. Afterward, the
           remaining tokens will unlock gradually on a daily basis over a span of
           12 months.
         </Accordion>
