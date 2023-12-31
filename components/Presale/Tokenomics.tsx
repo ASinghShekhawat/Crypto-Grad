@@ -12,7 +12,7 @@ export default function Tokenomics() {
     >
       <div className="flex flex-col">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">
-          Innovate, Govern, Grow - Unleash the Potential with CG Token
+          Learn, Earn, Grow - Unleash the Potential with CG Token
         </div>
         <div className="relative z-10 pt-4 text-center text-3xl font-bold md:text-5xl">
           CG Tokenomics

@@ -8,7 +8,7 @@ import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 
 export default function Timer() {
-  const [timer, setTimer] = useState(Date.now() + 5000000)
+  const [timer, setTimer] = useState(1704306600000)
 
   const renderer = ({
     days,

@@ -23,7 +23,7 @@ const Community = () => {
           of the blockchain industry.
         </div>
         <a
-          href="https://discord.gg/M9dNdA4FWW"
+          href="https://discord.gg/GQJTSFdTwh"
           target="_blank"
           rel="noreferrer noopener"
           className="flex min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
@@ -73,7 +73,7 @@ const Community = () => {
         </div>
         <div className="relative z-1 mt-16 grid w-full grid-cols-1 gap-4 mmd:grid-cols-3">
           <a
-            href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+            href="https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw"
             target="_blank"
             rel="noreferrer noopener"
             className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
@@ -85,7 +85,7 @@ const Community = () => {
             <FaXTwitter className="!text-4xl !text-white md:!text-7xl" />
           </a>
           <a
-            href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+            href="https://t.me/cryptogradportal"
             target="_blank"
             rel="noreferrer noopener"
             className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
@@ -97,7 +97,7 @@ const Community = () => {
             <FaTelegramPlane className="!text-4xl !text-[#229ED9] md:!text-7xl" />
           </a>
           <a
-            href="https://discord.gg/M9dNdA4FWW"
+            href="https://discord.gg/GQJTSFdTwh"
             target="_blank"
             rel="noreferrer noopener"
             className="flex w-full flex-col items-center justify-between gap-6 rounded-2xl bg-themeNavBlack p-8 md:h-64 md:items-start"
@@ -105,8 +105,8 @@ const Community = () => {
             <div className="flex flex-col items-center text-center md:items-start md:text-left">
               <div className="text-xl font-semibold md:text-3xl">Discord</div>
               <div className="text-sm font-light">
-                Technical support, signals, investor . <br /> backroom and much
-                more...
+                Access AI bots, Trading Signals, Whale Rooms, Community, and
+                much more...
               </div>
             </div>
             <FaDiscord className="!text-4xl !text-[#5865F2] md:!text-7xl" />

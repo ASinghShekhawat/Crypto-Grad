@@ -1,6 +1,7 @@
 'use client'
 
 import { Disclosure, Transition } from '@headlessui/react'
+import Link from 'next/link'
 import { IoIosAdd, IoIosRemove } from 'react-icons/io'
 
 const FooterAccordion = ({
@@ -11,6 +12,7 @@ const FooterAccordion = ({
   menuItems: {
     title: string
     url: string
+    target: boolean
   }[]
 }) => {
   return (
@@ -40,13 +42,14 @@ const FooterAccordion = ({
           >
             <Disclosure.Panel className="flex w-full flex-col gap-2 rounded-md py-1 text-sm backdrop-blur-md">
               {menuItems.map((item, i) => (
-                <a
+                <Link
+                  target={item.target ? '_blank' : '_self'}
                   key={i}
                   href={item.url}
                   className="flex w-full items-center rounded-md px-2 py-1 text-sm transition-all hover:text-themeVioletText"
                 >
                   {item.title}
-                </a>
+                </Link>
               ))}
             </Disclosure.Panel>
           </Transition>

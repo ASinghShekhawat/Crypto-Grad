@@ -38,7 +38,7 @@ export default function StakingBenefits({
         </div>
         <div className="flex flex-col items-center justify-between overflow-hidden rounded-lg bg-themeBgBlack pt-8">
           <Image
-            src="/Homepage/Hero/stake3.png"
+            src="/Homepage/Hero/stake3.svg"
             alt=""
             width={1219}
             height={634}

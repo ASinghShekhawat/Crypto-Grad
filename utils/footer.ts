@@ -22,18 +22,22 @@ export const footerLinks = [
       {
         title: 'ChatGenius',
         url: '#',
+        target: false
       },
       {
         title: 'TradeAnalyzer',
         url: '#',
+        target: false
       },
       {
         title: 'ContractInsight',
         url: '#',
+        target: false
       },
       {
         title: 'CryptoBuzz',
         url: '#',
+        target: false
       },
     ],
   },
@@ -42,15 +46,18 @@ export const footerLinks = [
     links: [
       {
         title: 'Discord',
-        url: '#',
+        url: 'https://discord.gg/GQJTSFdTwh',
+        target: true
       },
       {
         title: 'Telegram',
-        url: '#',
+        url: 'https://t.me/cryptogradportal',
+        target: true
       },
       {
         title: 'Twitter',
-        url: '#',
+        url: 'https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw',
+        target: true
       },
     ],
   },
@@ -60,10 +67,12 @@ export const footerLinks = [
       {
         title: 'Blogs',
         url: '#',
+        target: false
       },
       {
         title: 'Podcasts',
         url: '#',
+        target: false
       },
     ],
   },
@@ -73,10 +82,12 @@ export const footerLinks = [
       {
         title: 'Send A Message',
         url: '#',
+        target: false
       },
       {
         title: 'Schedule A Call',
         url: '#',
+        target: false
       },
     ],
   },
@@ -86,22 +97,27 @@ export const footerLinks = [
       {
         title: 'Terms & Conditions',
         url: '#',
+        target: false
       },
       {
         title: 'Privacy Policy',
         url: '/help/privacy-policy',
+        target: false
       },
       {
         title: 'Cookie Policy',
         url: '/help/privacy-policy',
+        target: false
       },
       {
         title: 'Safe Harbour & Disclaimer',
         url: '/help/disclaimer',
+        target: false
       },
       {
         title: 'FAQ',
         url: '/help/FAQ',
+        target: false
       },
     ],
   },

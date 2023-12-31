@@ -24,36 +24,28 @@ import TabInfo from '@/components/shared/TabInfo'
 export default function Home() {
   return (
     <Page className="!p-0">
-      <div className="from-[#6754f81c] to-transparent md:bg-gradient-to-tl">
-        <HeroSection />
-        <TabInfo />
-        <BackedBy />
-      </div>
-      <div className="from-[#6754f81c] to-transparent md:bg-gradient-to-bl">
-        <StakingBenefits />
-        <LargeToken />
-        <AiSection />
-      </div>
-      <div className="from-[#6754f81c] to-transparent md:bg-gradient-to-tl">
-        {/* <Section3 /> */}
-        {/* <NftCollection /> */}
-        <AiSection5 />
-        <Discord />
-        {/* ! Discord */}
-        {/* <LiveEducator /> */}
-        {/* <Experience /> */}
-        <Membership />
-      </div>
-      <div className="from-[#6754f81c] to-transparent md:bg-gradient-to-bl">
-        {/* <NeverMissABeat />
+      <HeroSection />
+      <TabInfo />
+      <BackedBy />
+      <StakingBenefits />
+      <LargeToken />
+      <AiSection />
+      {/* <Section3 /> */}
+      {/* <NftCollection /> */}
+      <AiSection5 />
+      <Discord />
+      {/* ! Discord */}
+      {/* <LiveEducator /> */}
+      {/* <Experience /> */}
+      <Membership />
+      {/* <NeverMissABeat />
         <NativeToken />
         <CgBenefits />
         <Waitlist />
         <PartneredNfts /> */}
-        <Roadmap />
-        <Growth />
-        <Community />
-      </div>
+      <Roadmap />
+      <Growth />
+      <Community />
     </Page>
   )
 }

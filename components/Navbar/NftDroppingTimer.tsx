@@ -8,7 +8,7 @@ import { makeMeTwoDigits } from '@/utils/numberFix'
 import { useRouter } from 'next/navigation'
 
 const NftDroppingTimer = () => {
-  const [timer, setTimer] = useState(Date.now() + 500000000)
+  const [timer, setTimer] = useState(1704306600000)
   const navigate = useRouter()
 
   useEffect(() => {}, [])

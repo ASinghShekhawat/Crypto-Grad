@@ -9,6 +9,7 @@ import {
 import localFont from 'next/font/local'
 import FooterAccordion from './FooterAccordion'
 import { FaTelegram, FaTelegramPlane } from 'react-icons/fa'
+import Link from 'next/link'
 
 const larsseit = localFont({
   src: '../../fonts/Larsseit.otf',
@@ -35,9 +36,13 @@ const Footer = () => {
             <div className="text-xl font-medium">{column.column}</div>
             <div className="flex flex-col gap-3">
               {column.links.map((link) => (
-                <a href={link.url} key={link.title}>
+                <Link
+                  target={link.target ? '_blank' : '_self'}
+                  href={link.url}
+                  key={link.title}
+                >
                   {link.title}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -56,7 +61,7 @@ const Footer = () => {
             <span className="text-xl font-medium">Follow Us On</span>
             <div className="flex items-center gap-2 md:gap-4">
               <a
-                href="https://discord.gg/M9dNdA4FWW"
+                href="https://discord.gg/GQJTSFdTwh"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -70,14 +75,14 @@ const Footer = () => {
                 <RiLinkedinBoxFill className="!text-4xl" />
               </a> */}
               <a
-                href="https://twitter.com/cgradofficial"
+                href="https://t.me/cryptogradportal"
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 <FaTelegramPlane className="!text-4xl" />
               </a>
               <a
-                href="https://twitter.com/cgradofficial"
+                href="https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw"
                 target="_blank"
                 rel="noreferrer noopener"
               >

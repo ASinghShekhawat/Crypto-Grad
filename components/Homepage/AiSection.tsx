@@ -17,7 +17,7 @@ const AiSection = () => {
           Something Beyond Human Limits
         </div>
         <div className="mt-2 whitespace-nowrap text-3xl font-bold md:text-5xl">
-          Your AI, 🧠 <br /> Your trading partner
+          Your AI 🧠 <br /> Your trading partner
         </div>
       </div>
       <AiSectionImage />

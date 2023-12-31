@@ -10,13 +10,19 @@ export default function TabInfo() {
         >
           Chat Genius
         </button>
-        <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
+        <button
+          className={`rounded-full px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base`}
+        >
           Trade Analyzer
         </button>
-        <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
+        <button
+          className={`rounded-full px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base`}
+        >
           Contract Insight
         </button>
-        <button className={`rounded-full px-2.5 py-2 text-xs md:text-base`}>
+        <button
+          className={`rounded-full px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base`}
+        >
           Crypto Buzz
         </button>
       </div>

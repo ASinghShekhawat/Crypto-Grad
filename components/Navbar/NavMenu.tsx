@@ -73,7 +73,7 @@ const navMenuDropdowns = [
         target: false,
       },
       {
-        title: 'Mint',
+        title: 'CG NFTs',
         path: '/mint',
         target: false,
       },
@@ -84,12 +84,12 @@ const navMenuDropdowns = [
     menuItems: [
       {
         title: 'Discord',
-        path: 'https://discord.gg/M9dNdA4FWW',
+        path: 'https://discord.gg/GQJTSFdTwh',
         target: true,
       },
       {
         title: 'Telegram',
-        path: 'https://discord.gg/M9dNdA4FWW',
+        path: 'https://t.me/cryptogradportal',
         target: true,
       },
       // {
@@ -99,7 +99,7 @@ const navMenuDropdowns = [
       // },
       {
         title: 'Twitter',
-        path: 'https://twitter.com/cgradofficial',
+        path: 'https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw',
         target: true,
       },
     ],
@@ -139,22 +139,6 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
                 menuItems={item.menuItems}
               />
             ))}
-          <Link
-            href="/"
-            className={`transition-all hover:text-themeVioletText ${
-              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-            }`}
-          >
-            Swap
-          </Link>
-          <Link
-            href="/"
-            className={`transition-all hover:text-themeVioletText ${
-              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-            }`}
-          >
-            CG NFTs
-          </Link>
         </>
       )}
 

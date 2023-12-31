@@ -10,7 +10,7 @@ import { makeMeTwoDigits } from '@/utils/numberFix'
 import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from 'react-icons/fa6'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -19,7 +19,7 @@ export default function DashboardHome() {
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
   const [referralId, setReferralId] = useState('ajp98a3p9h')
-  const [timer, setTimer] = useState(Date.now() + 5000000)
+  const [timer, setTimer] = useState(1704306600000)
 
   const renderer = ({
     days,
@@ -198,7 +198,7 @@ export default function DashboardHome() {
         <div className="overflow-x-scroll md:overflow-auto">
           <div className="relative z-1 grid w-full min-w-[800px] grid-cols-3 gap-4 md:min-w-0">
             <a
-              href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+              href="https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw"
               target="_blank"
               rel="noreferrer noopener"
               className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
@@ -210,7 +210,7 @@ export default function DashboardHome() {
               <FaXTwitter className="!text-4xl !text-white md:!text-7xl" />
             </a>
             <a
-              href="https://help.twitter.com/en/safety-and-security/privacy-controls-for-tailored-ads"
+              href="https://t.me/cryptogradportal"
               target="_blank"
               rel="noreferrer noopener"
               className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
@@ -224,7 +224,7 @@ export default function DashboardHome() {
               <FaTelegramPlane className="!text-4xl !text-[#229ED9] md:!text-7xl" />
             </a>
             <a
-              href="https://discord.gg/M9dNdA4FWW"
+              href="https://discord.gg/GQJTSFdTwh"
               target="_blank"
               rel="noreferrer noopener"
               className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
@@ -232,7 +232,7 @@ export default function DashboardHome() {
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Discord</div>
                 <div className="text-sm font-light">
-                  Technical support, signals, investor . <br /> backroom and
+                  Access AI bots, Trading Signals, Whale <br /> Rooms, Community, and
                   much more...
                 </div>
               </div>
