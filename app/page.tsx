@@ -2,6 +2,7 @@ import AiSection from '@/components/Homepage/AiSection'
 import AiSection5 from '@/components/Homepage/AiSection5'
 // import CgBenefits from '@/components/Homepage/CgBenefits'
 import Community from '@/components/Homepage/Community'
+import Discord from '@/components/Homepage/Discord'
 // import Experience from '@/components/Homepage/Experience'
 import Growth from '@/components/Homepage/Growth'
 import HeroSection from '@/components/Homepage/HeroSection'
@@ -37,6 +38,7 @@ export default function Home() {
         {/* <Section3 /> */}
         {/* <NftCollection /> */}
         <AiSection5 />
+        <Discord />
         {/* ! Discord */}
         {/* <LiveEducator /> */}
         {/* <Experience /> */}

@@ -11,7 +11,7 @@ const Brand = () => {
         alt="brand-logo"
       />
       <div className="text-lg font-semibold relative">
-        Cryptograd <span className="text-[0.4rem] absolute -top-2 -right-5">TM</span>
+        Cryptograd <span className="text-[0.4rem] absolute -top-2 -right-3">TM</span>
       </div>
     </Link>
   )
