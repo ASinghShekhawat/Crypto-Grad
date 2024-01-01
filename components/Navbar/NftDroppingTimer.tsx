@@ -1,4 +1,5 @@
 'use client'
+
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Button from '../shared/Button'
 import { ButtonType } from '@/types/buttton'

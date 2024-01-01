@@ -15,7 +15,6 @@ export default function Dashboard({
         <DashboardHome />
       )}
       {searchParams.tab === 'transactions' && <Transactions />}
-      {searchParams.tab === 'transactions' && <Transactions />}
       {searchParams.tab === 'refer' && <ReferAndEarn />}
       {searchParams.tab === 'leaderboards' && <Leaderboard />}
     </div>
