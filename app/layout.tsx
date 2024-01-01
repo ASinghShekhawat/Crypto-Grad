@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <Providers>
           <div className="relative mx-auto flex w-full flex-col">
-            <NftDroppingNav />
+            {/* <NftDroppingNav /> */}
             <Navbar />
             {children}
             <Footer />
