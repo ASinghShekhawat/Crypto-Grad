@@ -53,7 +53,12 @@ export const WalletProvider = ({ children }: Children) => {
   const router = useRouter()
 
   const connectWallet = () => {
-    open()
+    console.log("Connecting...")
+    try {
+      open()
+    } catch (error) {
+      console.log(error)
+    }
     // setDialog(true)
   }
 
