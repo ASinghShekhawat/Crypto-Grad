@@ -102,7 +102,7 @@ const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
           )
         ) : (
           <>
-            <button onClick={() => {}}>Log In</button>
+            {/* <button onClick={() => {}}>Log In</button> */}
             <Button
               // loading={loading}
               onClick={connectWallet}
