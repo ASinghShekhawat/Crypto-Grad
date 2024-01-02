@@ -35,7 +35,7 @@ const NftDroppingTimer = () => {
               Buy Now
             </Button>
           </div>
-          <NftDroppedDialog />
+          {/* <NftDroppedDialog /> */}
         </>
       )
     } else {

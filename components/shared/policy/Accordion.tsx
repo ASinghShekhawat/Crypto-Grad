@@ -30,12 +30,9 @@ export default function Accordion({
             <Disclosure.Button
               onClick={() => {
                 if (!open) {
-                  // On the first click, the panel is opened but the "open" prop's value is still false. Therefore the falsey verification
-                  // This will make so the panel close itself when we click it while open
                   close()
                 }
 
-                // Now we call the function to close the other opened panels (if any)
                 togglePanels({ ...panel, key: index })
               }}
               className="flex w-full items-center justify-between text-xl font-semibold"
