@@ -165,13 +165,13 @@ export const ico = {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "referrer",
                     "type": "address"
@@ -189,7 +189,7 @@ export const ico = {
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "token",
                     "type": "address"
@@ -205,6 +205,25 @@ export const ico = {
             "type": "event"
         },
         {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "referrer",
+                    "type": "address"
+                }
+            ],
+            "name": "ReferralAdded",
+            "type": "event"
+        },
+        {
             "inputs": [],
             "name": "renounceOwnership",
             "outputs": [],
@@ -215,13 +234,13 @@ export const ico = {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "token",
                     "type": "address"
@@ -864,5 +883,5 @@ export const ico = {
             "type": "function"
         }
     ],
-    address: "0xd444bcB7Cc92923d64343e49490018807b406AFe"
+    address: "0xCb1c622E3F69cB6c86DA5e288D5007a200E4A608"
 }

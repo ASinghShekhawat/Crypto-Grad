@@ -2,13 +2,17 @@
 
 import { makeMeTwoDigits } from '@/utils/numberFix'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 
 export default function Timer() {
-  const [timer, setTimer] = useState(1704306600000)
+  const [timer, setTimer] = useState(Date.now()+5000)
+
+  useEffect(()=>{
+    setTimer(1704643516000)
+  },[])
 
   const renderer = ({
     days,

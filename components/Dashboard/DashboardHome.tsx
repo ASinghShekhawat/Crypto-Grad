@@ -60,7 +60,7 @@ export default function DashboardHome() {
 
   const getETHUSDPrice = async() => {
     const tokenPrice = await getETHPrice()
-    setUsdEth(Number((1/tokenPrice).toFixed(4)))
+    setUsdEth(Number((1/tokenPrice.ETH).toFixed(4)))
   }
 
   useEffect(()=>{
@@ -141,7 +141,7 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-2">
           <span>Your contribution in</span>
           <span className="text-2xl font-bold">
-            ${contributon} <span className="text-base text-white/80">USD</span>
+            ${(balance * saleValue).toFixed(4)} <span className="text-base text-white/80">USD</span>
           </span>
         </div>
       </div>

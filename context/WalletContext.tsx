@@ -74,7 +74,7 @@ export const WalletProvider = ({ children }: Children) => {
       localStorage.setItem("accessToken", res.data.authToken);
       localStorage.setItem("referralId", res.data.referralId);
       localStorage.setItem("walletAddress", walletAddress);
-      localStorage.setItem("referrer", res.data?.referredBy)
+      localStorage.setItem("referrer", JSON.stringify(res.data?.referredBy))
       setIsLoggedIn(true);
       setLoading(false)
     } catch (err) {

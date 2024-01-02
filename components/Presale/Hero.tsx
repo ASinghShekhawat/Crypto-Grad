@@ -14,6 +14,7 @@ import {
   buyToken,
   endSaleTime,
   getDecimals,
+  getETHPrice,
   getEventValue,
   getTokenAmount,
 } from '@/services/web3Helper'
@@ -21,7 +22,7 @@ import { useAccount } from 'wagmi'
 import { useSearchParams } from 'next/navigation'
 import { addTransaction } from '@/services/transaction'
 import { addComission } from '@/services/comission'
-import { userWalletByRefId } from '@/services/user'
+import { addReferral, userWalletByRefId } from '@/services/user'
 
 export default function Hero() {
   const [timer, setTimer] = useState(Date.now() + 5000)
@@ -40,6 +41,19 @@ export default function Hero() {
     setPrice(price)
   }
 
+  useEffect(()=>{
+    setTimer(1704643516000)
+  },[])
+
+  const getETHUSDPrice = async(name: string) => {
+    const tokenPrice = await getETHPrice()
+    setCurrencyValue(Number((name === "ETH"? tokenPrice[0]: name === "USDT"? tokenPrice[1]: tokenPrice[2]).toFixed(4)))
+  }
+
+  useEffect(()=>{
+    getETHUSDPrice(currency?.name as any)
+  },[currency])
+
   const getEndDate = async () => {
     const endDateTimeStamp = await endSaleTime()
     setTimer(endDateTimeStamp * 1000)
@@ -55,10 +69,6 @@ export default function Hero() {
     if (isConnected) getWalletType()
   }, [address])
 
-  useEffect(() => {
-    setTimer(1706725800000)
-  }, [])
-
   const buyCGTokens = async () => {
     const refId = search.get('ref')
     const user: any = refId && (await userWalletByRefId(refId))
@@ -69,6 +79,7 @@ export default function Hero() {
       currency?.address
     )
     const tokenBought = await getEventValue(res, 'TokensBought')
+    const referralAdded = await getEventValue(res, 'ReferralAdded')
     const referalIncomeDistributed = await getEventValue(
       res,
       'ReferalIncomeDistributed'
@@ -81,6 +92,9 @@ export default function Hero() {
       depositWallet: walletType,
     }
     await addTransaction(transactionObj)
+    if(referralAdded){
+      await addReferral()
+    }
     if (referalIncomeDistributed) {
       for (let i = 0; i < referalIncomeDistributed?.length; i++) {
         const obj = referalIncomeDistributed[i]
@@ -100,16 +114,15 @@ export default function Hero() {
   }
 
   useEffect(() => {
-    getEndDate()
-  }, [])
-
-  const getCurrencyValue = () => {
-    setCurrencyValue(1)
-  }
+    if(isConnected){
+      console.log({isConnected})
+      getEndDate()
+    }
+  }, [address])
 
   useEffect(() => {
     getTokenPrice()
-  }, [currency, amount])
+  }, [currency, amount, address])
 
   useEffect(() => {
     setCurrency(currencies[0])
