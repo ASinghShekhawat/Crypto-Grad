@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const NftDroppingNav = () => {
   return (
-    <div className="flex h-fit items-center justify-center gap-2 bg-gradient-to-r from-themeViolet to-themeBlue px-4 py-1 md:gap-4 mmd:px-16">
+    <div className="relative z-10 flex h-fit items-center justify-center gap-2 bg-gradient-to-r from-themeViolet to-themeBlue px-4 py-1 md:gap-4 mmd:px-16">
       {/* <Image
         src="/Navbar/nft-wait-head.png"
         className="h-full object-contain object-left"
