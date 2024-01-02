@@ -29,44 +29,44 @@ const navMenuDropdowns = [
   //     },
   //   ],
   // },
-  {
-    title: 'CG AI',
-    menuItems: [
-      {
-        title: 'ChatGenius ',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'TradeAnalyzer',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'ContractInsight',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'CryptoBuzz ',
-        path: '/',
-        target: false,
-      },
-    ],
-  },
+  // {
+  //   title: 'CG AI',
+  //   menuItems: [
+  //     {
+  //       title: 'ChatGenius ',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'TradeAnalyzer',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'ContractInsight',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //     {
+  //       title: 'CryptoBuzz ',
+  //       path: '/',
+  //       target: false,
+  //     },
+  //   ],
+  // },
   {
     title: 'Dapps',
     menuItems: [
-      {
-        title: 'Blogs',
-        path: '/',
-        target: false,
-      },
-      {
-        title: 'News',
-        path: '/',
-        target: false,
-      },
+      // {
+      //   title: 'Blogs',
+      //   path: '/',
+      //   target: false,
+      // },
+      // {
+      //   title: 'News',
+      //   path: '/',
+      //   target: false,
+      // },
       {
         title: 'Swap',
         path: '/',
@@ -74,6 +74,31 @@ const navMenuDropdowns = [
       },
       {
         title: 'CG NFTs',
+        path: '/mint',
+        target: false,
+      },
+    ],
+  },
+  {
+    title: 'Market Updates',
+    menuItems: [
+      // {
+      //   title: 'Blogs',
+      //   path: '/',
+      //   target: false,
+      // },
+      // {
+      //   title: 'News',
+      //   path: '/',
+      //   target: false,
+      // },
+      {
+        title: 'News',
+        path: '/',
+        target: false,
+      },
+      {
+        title: 'Blogs',
         path: '/mint',
         target: false,
       },
@@ -113,34 +138,9 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
         drawer ? 'flex-col' : 'flex-row'
       } items-center gap-4 font-medium`}
     >
-      {pathname === '/' && (
-        <>
-          <Link
-            href="/presale"
-            className={`transition-all hover:text-themeVioletText ${
-              drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
-            }`}
-          >
-            Pre-Sale
-          </Link>
-          {!drawer &&
-            navMenuDropdowns.map((item) => (
-              <NavDropdown
-                key={item.title}
-                title={item.title}
-                menuItems={item.menuItems}
-              />
-            ))}
-          {drawer &&
-            navMenuDropdowns.map((item) => (
-              <NavAccordion
-                key={item.title}
-                title={item.title}
-                menuItems={item.menuItems}
-              />
-            ))}
-        </>
-      )}
+      {/* {pathname === '/' && (
+        
+      )} */}
 
       {/* <Link
         href="/"
@@ -150,7 +150,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
       >
         Market
       </Link> */}
-      {pathname.includes('/presale') && (
+      {pathname.includes('/presale') ? (
         <>
           <Link
             href="/"
@@ -193,6 +193,35 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
             FAQ
           </Link>
         </>
+      ) : (
+        pathname !== '/dashboard' && (
+          <>
+            <Link
+              href="/presale"
+              className={`transition-all hover:text-themeVioletText ${
+                drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
+              }`}
+            >
+              Pre-Sale
+            </Link>
+            {!drawer &&
+              navMenuDropdowns.map((item) => (
+                <NavDropdown
+                  key={item.title}
+                  title={item.title}
+                  menuItems={item.menuItems}
+                />
+              ))}
+            {drawer &&
+              navMenuDropdowns.map((item) => (
+                <NavAccordion
+                  key={item.title}
+                  title={item.title}
+                  menuItems={item.menuItems}
+                />
+              ))}
+          </>
+        )
       )}
     </div>
   )

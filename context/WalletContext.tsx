@@ -62,12 +62,8 @@ export const WalletProvider = ({ children }: Children) => {
   const [referralId, setReferralId] = useState("");
 
   const connectWallet = () => {
-    console.log("Connecting...")
-    try {
-      open()
-    } catch (error) {
-      console.log(error)
-    }
+    console.log('wllet')
+    open()
     // setDialog(true)
   }
 

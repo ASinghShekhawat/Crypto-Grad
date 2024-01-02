@@ -1,4 +1,5 @@
 'use client'
+
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Button from '../shared/Button'
 import { ButtonType } from '@/types/buttton'
@@ -8,10 +9,12 @@ import { makeMeTwoDigits } from '@/utils/numberFix'
 import { useRouter } from 'next/navigation'
 
 const NftDroppingTimer = () => {
-  const [timer, setTimer] = useState(1704306600000)
+  const [timer, setTimer] = useState(Date.now() + 5000)
   const navigate = useRouter()
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    setTimer(1704306600000)
+  }, [])
 
   const renderer = ({
     days,
