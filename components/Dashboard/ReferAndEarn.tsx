@@ -90,7 +90,7 @@ export default function ReferAndEarn() {
             Refer To Earn More!
           </div>
         </div>
-        <div className="flex flex-col justify-between gap-8 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack p-4 pt-4">
+        <div className="flex flex-col justify-between gap-8 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
           <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
             <div>
               Your <br />
@@ -104,7 +104,7 @@ export default function ReferAndEarn() {
             Refer now & unlock level 1
           </button>
         </div>
-        <div className="flex flex-col justify-between gap-8 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack p-4 pt-4">
+        <div className="flex flex-col justify-between gap-8 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
           <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
             <div>
               Want Learn more & <br />

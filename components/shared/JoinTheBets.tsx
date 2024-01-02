@@ -4,11 +4,13 @@ import Button from '../shared/Button'
 import { ChangeEvent, FormEvent, useState } from 'react'
 import WaitlistDialogJoin from '../Homepage/WaitlistDialogJoin'
 import WaitlistDialogRank from '../Homepage/WaitlistDialogRank'
+import { useRouter } from 'next/navigation'
 
 const JoinTheBeta = ({ buttonText }: { buttonText?: string }) => {
   const [openJoin, setOpenJoin] = useState(false)
   const [openRank, setOpenRank] = useState(false)
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
   const [info, setInfo] = useState({
     name: '',
     email: '',
@@ -33,7 +35,7 @@ const JoinTheBeta = ({ buttonText }: { buttonText?: string }) => {
   return (
     <>
       {/* <Button onClick={() => setOpenJoin(true)} className='!h-12 min-h-[2.5rem]'>Join the Beta</Button> */}
-      <Button className="!h-12 min-h-[2.5rem]">
+      <Button onClick={() => router.push('/presale')} className="!h-12 min-h-[2.5rem]">
         {buttonText ? buttonText : 'Get Started'}
       </Button>
       <WaitlistDialogJoin

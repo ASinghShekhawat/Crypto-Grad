@@ -4,7 +4,7 @@ import MembershipPlans from './MembershipPlans'
 
 const Membership = () => {
   return (
-    <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 pt-16 text-center md:py-20 mmd:px-16">
+    <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 pt-16 text-center md:py-20 mmd:px-8">
       <div className="relative z-1 text-lg font-medium text-themeBlue">
         Platform Goes Live Once Presale is Concluded
       </div>

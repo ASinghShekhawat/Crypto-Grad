@@ -14,10 +14,12 @@ const Navbar = () => {
       <div className="flex items-center gap-4">
         <Brand />
         {pathname.includes('/dashboard') && (
-          <div className="rounded-full bg-[#20222B] px-4 py-2 text-xs font-light">Private Sale</div>
+          <div className="rounded-full bg-[#20222B] px-4 py-2 text-xs font-light">
+            Private Sale
+          </div>
         )}
       </div>
-      {pathname.includes('/presale') && (
+      {pathname.includes('/presale') ? (
         <>
           <div className="hidden mmd:flex">
             <NavMenu pathname={pathname} />
@@ -26,12 +28,13 @@ const Navbar = () => {
             <ConnectWallet pathname={pathname} />
           </div>
         </>
-      )}
-      {pathname === '/' && (
-        <div className="hidden items-center gap-4 mmd:flex">
-          <NavMenu pathname={pathname} />
-          <ConnectWallet pathname={pathname} />
-        </div>
+      ) : (
+        pathname !== '/dashboard' && (
+          <div className="hidden items-center gap-4 mmd:flex">
+            <NavMenu pathname={pathname} />
+            <ConnectWallet pathname={pathname} />
+          </div>
+        )
       )}
       {!pathname.includes('/dashboard') && <Drawer />}
       {pathname.includes('/dashboard') && <DashboardDrawer />}

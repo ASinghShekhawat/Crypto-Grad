@@ -13,6 +13,8 @@ export default function LearnMoreDialog({
   setIsOpen: Dispatch<boolean>
 }) {
   const [comission, setComission] = useState(222)
+  const [referrals, setReferrals] = useState(5)
+  const [affiliateLevel, setAffiliateLevel] = useState(0)
 
   function closeModal() {
     setIsOpen(false)
@@ -58,7 +60,7 @@ export default function LearnMoreDialog({
                     <IoClose className="text-2xl transition-all hover:text-themeVioletText" />
                   </button>
                   <div className="grid grid-cols-1 gap-4 mmd:grid-cols-3">
-                    <div className="flex flex-col mmd:col-span-3 justify-between gap-4 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack pt-4">
+                    <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack pt-4 mmd:col-span-3">
                       <div className="flex items-center gap-4 px-4 text-xl font-semibold capitalize">
                         Total <br />
                         Commission Made
@@ -73,8 +75,59 @@ export default function LearnMoreDialog({
                         </span>
                       </div>
                       <div className="flex items-center justify-center bg-gradient-to-r from-themeViolet to-themeBorderBlue py-3 text-sm font-light">
-                      Refer to start your earning journey
+                        Refer to start your earning journey
                       </div>
+                    </div>
+                    <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
+                      <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
+                        <div>
+                          Total <br />
+                          Referrals
+                        </div>
+                        {referrals === 0 && (
+                          <span className="text-sm font-light text-white/80">
+                            Refer friends to start your earning journey
+                          </span>
+                        )}
+                      </div>
+                      {referrals === 0 && (
+                        <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+                          Invite friends
+                        </button>
+                      )}
+                      {referrals > 0 && (
+                        <div className="text-4xl font-semibold">
+                          {referrals}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
+                      <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
+                        <div>
+                          Your <br />
+                          Affiliate Level
+                        </div>
+                        <span className="text-sm font-light text-white/80">
+                          Start your journey to 7% more!
+                        </span>
+                      </div>
+                      <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+                        Refer now & unlock level 1
+                      </button>
+                    </div>
+                    <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
+                      <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
+                        <div>
+                          Your <br />
+                          Affiliate Level
+                        </div>
+                        <span className="text-sm font-light text-white/80">
+                          Start your journey to 7% more!
+                        </span>
+                      </div>
+                      <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+                        Refer now & unlock level 1
+                      </button>
                     </div>
                   </div>
                 </div>
