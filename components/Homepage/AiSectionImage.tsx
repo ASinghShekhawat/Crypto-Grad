@@ -7,7 +7,7 @@ import Animated from '../shared/Animated'
 
 const AiSectionImage = () => {
   return (
-    <div className="z-2 w-full scale-50 md:scale-100 mmd:scale-50 xl:scale-75 2xl:scale-100">
+    <div className="z-2 w-full scale-50 pr-8 md:scale-100 md:pr-0 mmd:scale-50 xl:scale-75 2xl:scale-100">
       <div className="relative mx-auto w-fit">
         <Image
           src="/Homepage/AiSection/section-2.png"

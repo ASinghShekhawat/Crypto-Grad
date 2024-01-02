@@ -12,7 +12,7 @@ export default function LearnMoreDialog({
   isOpen: boolean
   setIsOpen: Dispatch<boolean>
 }) {
-  const [comission, setComission] = useState(222)
+  const [comission, setComission] = useState(7)
   const [referrals, setReferrals] = useState(5)
   const [affiliateLevel, setAffiliateLevel] = useState(0)
 
@@ -104,16 +104,25 @@ export default function LearnMoreDialog({
                     <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
                       <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
                         <div>
-                          Your <br />
-                          Affiliate Level
+                          Avg. <br />
+                          Commission (%)
                         </div>
-                        <span className="text-sm font-light text-white/80">
-                          Start your journey to 7% more!
-                        </span>
+                        {comission === 0 && (
+                          <span className="text-sm font-light text-white/80">
+                            Start your journey to 7% more!
+                          </span>
+                        )}
                       </div>
-                      <button className="w-fit text-left text-sm text-themeBorderBlue underline">
-                        Refer now & unlock level 1
-                      </button>
+                      {comission === 0 && (
+                        <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+                          Refer & earn
+                        </button>
+                      )}
+                      {comission > 0 && (
+                        <div className="text-4xl font-semibold">
+                          {comission}%
+                        </div>
+                      )}
                     </div>
                     <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">
                       <div className="flex flex-col gap-2 text-xl font-semibold capitalize">
@@ -121,13 +130,22 @@ export default function LearnMoreDialog({
                           Your <br />
                           Affiliate Level
                         </div>
-                        <span className="text-sm font-light text-white/80">
-                          Start your journey to 7% more!
-                        </span>
+                        {affiliateLevel === 0 && (
+                          <span className="text-sm font-light text-white/80">
+                            Start your journey to 7% more!
+                          </span>
+                        )}
                       </div>
-                      <button className="w-fit text-left text-sm text-themeBorderBlue underline">
-                        Refer now & unlock level 1
-                      </button>
+                      {affiliateLevel === 0 && (
+                        <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+                          Refer now & unlock level 1
+                        </button>
+                      )}
+                      {affiliateLevel > 0 && (
+                        <div className="text-4xl font-semibold">
+                          {affiliateLevel}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

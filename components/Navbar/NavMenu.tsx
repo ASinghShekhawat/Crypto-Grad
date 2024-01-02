@@ -185,7 +185,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
             Refer & Earn
           </Link>
           <Link
-            href="/help/FAQ"
+            href="/presale#FAQ"
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}

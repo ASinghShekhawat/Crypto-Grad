@@ -10,7 +10,13 @@ import Button from '../shared/Button'
 import { Listbox, Transition } from '@headlessui/react'
 import { FaChevronDown } from 'react-icons/fa6'
 import useWallet from '@/hooks/useWallet'
-import { buyToken, endSaleTime, getDecimals, getEventValue, getTokenAmount } from '@/services/web3Helper'
+import {
+  buyToken,
+  endSaleTime,
+  getDecimals,
+  getEventValue,
+  getTokenAmount,
+} from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
 import { useSearchParams } from 'next/navigation'
 import { addTransaction } from '@/services/transaction'
@@ -18,65 +24,66 @@ import { addComission } from '@/services/comission'
 import { userWalletByRefId } from '@/services/user'
 
 export default function Hero() {
-  const [timer, setTimer] = useState(Date.now() + 5000000)
-  const [pledged, setPledged] = useState(23000)
+  const [timer, setTimer] = useState(Date.now() + 5000)
+  const [pledged, setPledged] = useState(0)
   const [currency, setCurrency] = useState<ICurrency | null>(null)
   const [amount, setAmount] = useState<number | undefined>(undefined)
   const [currencyValue, setCurrencyValue] = useState(0)
   const { isLoggedIn, connectWallet } = useWallet()
   const [price, setPrice] = useState<number>()
-  const [walletType, setWalletType] = useState("")
+  const [walletType, setWalletType] = useState('')
   const { address, isConnected } = useAccount()
-  const search = useSearchParams();
+  const search = useSearchParams()
 
-  const getTokenPrice = async() => {
+  const getTokenPrice = async () => {
     const price = await getTokenAmount(currency?.address, amount)
     setPrice(price)
   }
 
-  const getEndDate = async() => {
+  const getEndDate = async () => {
     const endDateTimeStamp = await endSaleTime()
-    setTimer(endDateTimeStamp*1000)
+    setTimer(endDateTimeStamp * 1000)
   }
 
   const getWalletType = () => {
-    const wallet = localStorage.getItem("wagmi.wallet")
-    if(wallet === "walletConnect")
-      setWalletType("Mobile Wallet")
-    else 
-      setWalletType("Browser Wallet")
+    const wallet = localStorage.getItem('wagmi.wallet')
+    if (wallet === 'walletConnect') setWalletType('Mobile Wallet')
+    else setWalletType('Browser Wallet')
   }
 
-  useEffect(()=>{
-    if(isConnected)
-      getWalletType()
-  },[address])
+  useEffect(() => {
+    if (isConnected) getWalletType()
+  }, [address])
 
-  const buyCGTokens = async() => {
-    const refId = search.get("ref");
-    const user:any = refId && await userWalletByRefId(refId)
-    const res = await buyToken(amount, address, user?.data?.walletAddress, currency?.address);
-    const tokenBought = await getEventValue(res, "TokensBought")
-    const referalIncomeDistributed = await getEventValue(res, "ReferalIncomeDistributed")
+  useEffect(() => {
+    setTimer(1706725800000)
+  }, [])
+
+  const buyCGTokens = async () => {
+    const refId = search.get('ref')
+    const user: any = refId && (await userWalletByRefId(refId))
+    const res = await buyToken(
+      amount,
+      address,
+      user?.data?.walletAddress,
+      currency?.address
+    )
+    const tokenBought = await getEventValue(res, 'TokensBought')
+    const referalIncomeDistributed = await getEventValue(
+      res,
+      'ReferalIncomeDistributed'
+    )
     const transactionObj = {
-      baseAmount:
-      Number(tokenBought.usdAmount) /
-        Math.pow(10, 18),
-      tokenQuantity:
-      Number(tokenBought.tokenAmount) /
-        Math.pow(10, 18),
+      baseAmount: Number(tokenBought.usdAmount) / Math.pow(10, 18),
+      tokenQuantity: Number(tokenBought.tokenAmount) / Math.pow(10, 18),
       transactionHash: res?.transactionHash,
       token: tokenBought.token,
-      depositWallet : walletType
-    };
+      depositWallet: walletType,
+    }
     await addTransaction(transactionObj)
-    if(referalIncomeDistributed){
-      for (
-        let i = 0;
-        i < referalIncomeDistributed?.length;
-        i++
-      ) {
-        const obj = referalIncomeDistributed[i];
+    if (referalIncomeDistributed) {
+      for (let i = 0; i < referalIncomeDistributed?.length; i++) {
+        const obj = referalIncomeDistributed[i]
         const decimals = await getDecimals(obj.token)
         const commisonObj = {
           receivingUser: obj.referrer,
@@ -85,16 +92,16 @@ export default function Hero() {
           comissionAmount: Number(obj.referalAmount) / Math.pow(10, decimals),
           baseAmount: Number(obj.amountPurchased),
           transactionHash: res?.transactionHash,
-          token: obj.token
-        };
+          token: obj.token,
+        }
         await addComission(commisonObj)
       }
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getEndDate()
-  },[])
+  }, [])
 
   const getCurrencyValue = () => {
     setCurrencyValue(1)
@@ -157,8 +164,8 @@ export default function Hero() {
           Secure Your Tokens Now!
         </div>
         <div className="z-10 text-center font-light text-white/80">
-          All facilitated by a single game-changing platform. Experience the
-          revolution of blockchain in an unparalleled way.
+          All facilitated by a single game-changing platform. Experience
+          cryptocurrency education in an unparalleled way.
         </div>
         <div className="flex w-full justify-center">
           <Button className="mt-4 h-12 w-fit !font-normal">
@@ -175,7 +182,8 @@ export default function Hero() {
             <div className="text-sm font-medium">Presale ends in:</div>
             <Countdown date={timer} renderer={renderer} />
             <div className="text-sm">
-              ${pledged.toLocaleString('en-US')} Pledged of $50,000 Goal
+              ${pledged.toLocaleString('en-US')} Pledged of $
+              {(2000000).toLocaleString('en-US')} Goal
             </div>
           </div>
           <div className="flex flex-col gap-1">
@@ -278,17 +286,19 @@ export default function Hero() {
                 height={2000}
                 className="h-6 w-6 object-contain"
               />
-              <div className="w-full text-base font-medium">
-                {price}
-              </div>
+              <div className="w-full text-base font-medium">{price}</div>
               <div>CG</div>
             </div>
           </div>
-          {
-          !isLoggedIn ? 
-          <Button className="h-12 !font-normal" onClick={connectWallet}>Connect Your Wallet</Button>
-          :<Button className="h-12 !font-normal" onClick={buyCGTokens}>Buy Tokens</Button>
-          }
+          {!isLoggedIn ? (
+            <Button className="h-12 !font-normal" onClick={connectWallet}>
+              Connect Your Wallet
+            </Button>
+          ) : (
+            <Button className="h-12 !font-normal" onClick={buyCGTokens}>
+              Buy Tokens
+            </Button>
+          )}
         </div>
       </div>
     </Animated>
