@@ -114,6 +114,17 @@ export const getTokenAmount = async (address: any, amount:any) => {
   return Number(price)
 };
 
+export const referalIncome = async (address: any) => {
+  const price = await readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "referalIncome",
+    args: [address]
+  });
+
+  return Number(price)/Math.pow(10,18)
+};
+
 export const getTokenBalance = async (
   userAddress: string
 ) => {

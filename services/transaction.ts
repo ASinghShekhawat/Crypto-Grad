@@ -22,14 +22,16 @@ export const addTransaction = async (transactionObj : {
   return res;
 };
 
-export const userTransactions = async () => {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}/tx/user-transactions`,
+export const userTransactions = async (skip:number) => {
+    const res = await axios.post(
+      `${process.env.NEXT_PUBLIC_API_URL}/tx/user-transactions`,{
+          skip
+        },
         {
             headers: {
             Authorization : `Bearer ${getToken()}`
             }
         }
     );
-    return res;
+    return res.data;
 }

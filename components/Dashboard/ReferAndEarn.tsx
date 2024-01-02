@@ -1,7 +1,7 @@
 'use client'
 
 import { MdOutlineInfo } from 'react-icons/md'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaRegCopy } from 'react-icons/fa'
 import Image from 'next/image'
 import Button from '../shared/Button'
@@ -10,14 +10,18 @@ import { Pagination } from '@mui/material'
 import Link from 'next/link'
 import GlossaryDialog from './GlossaryDialog'
 import LearnMoreDialog from './LearnMoreDialog'
+import { referalIncome } from '@/services/web3Helper'
+import { useAccount } from 'wagmi'
 
 export default function ReferAndEarn() {
-  const [comission, setComission] = useState(1111)
+  const { address } = useAccount()
+  const [comission, setComission] = useState(0)
   const [totalData, setTotalData] = useState(5000)
   const [totalPages, setTotalPages] = useState(500)
   const [current, setCurrent] = useState(2)
   const [glossary, setGlossary] = useState(false)
   const [learnMore, setLearnMore] = useState(false)
+  const [referralId, setReferralId] = useState<string| null>()
   const [reportData, setReportData] = useState([
     {
       timestamp: '05-09-2023 09:32 AM UTC',
@@ -50,6 +54,20 @@ export default function ReferAndEarn() {
       status: 'pending',
     },
   ])
+
+  const getReferralIncome = async() => {
+    const referralIncome = await referalIncome(address)
+    setComission(referralIncome)
+  }
+
+  useEffect(()=>{
+    getReferralIncome()
+  },[address])
+
+  useEffect(()=>{
+    setReferralId(localStorage.getItem('referralId'))
+  },[])
+
   return (
     <>
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
@@ -58,7 +76,12 @@ export default function ReferAndEarn() {
             Refer a friend and earn upto{' '}
             <span className="text-themeBorderBlue">15% comission</span>
           </div>
-          <button className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1">
+          <button className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1" 
+          onClick={() =>
+            navigator.clipboard.writeText(
+              `${window.location.host}/presale?ref=${referralId}`
+            )
+          }>
             Copy Invite Code <FaRegCopy />
           </button>
         </div>
@@ -83,7 +106,7 @@ export default function ReferAndEarn() {
           <div className="flex items-center gap-4 px-4">
             <span className="text-5xl font-bold">
               {comission}
-              <span className="text-base font-light text-white/60"> USDT</span>
+              <span className="text-base font-light text-white/60"> USD</span>
             </span>
           </div>
           <div className="flex items-center justify-center bg-gradient-to-r from-themeViolet to-themeBorderBlue py-3 text-sm font-light">

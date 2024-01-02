@@ -21,3 +21,13 @@ export const currencies: ICurrency[] = [
     address: "0x3C07166583E410477680fa56f0789B2dEB0B9C35"
   },
 ]
+
+export const getName = (token: string) => {
+  let name = "";
+  currencies.map((value) =>{
+    if(value.address.toLowerCase() === token.toLowerCase()){
+      name = value.name
+    }
+  })
+  return name
+}
