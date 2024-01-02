@@ -11,7 +11,7 @@ import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import { cgBougth, endSaleTime, getAmountRaised } from '@/services/web3Helper'
+import { cgBougth, endSaleTime, getAmountRaised, getETHPrice, getTokenPrice } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
 import { useRouter } from 'next/navigation'
 
@@ -53,10 +53,22 @@ export default function DashboardHome() {
     setRaised(Number(amountRaised.toFixed(4)))
   }
 
-  useEffect(() => {
+  const getCGTokenPrice = async() => {
+    const tokenPrice = await getTokenPrice()
+    setSaleValue(Number(tokenPrice.toFixed(4)))
+  }
+
+  const getETHUSDPrice = async() => {
+    const tokenPrice = await getETHPrice()
+    setUsdEth(Number((1/tokenPrice.ETH).toFixed(4)))
+  }
+
+  useEffect(()=>{
     getAmountRaisedAndTotal()
     getEndTimeStamp()
-  }, [])
+    getCGTokenPrice()
+    getETHUSDPrice()
+  },[])
 
   useEffect(() => {
     initialze()
@@ -129,7 +141,7 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-2">
           <span>Your contribution in</span>
           <span className="text-2xl font-bold">
-            ${contributon} <span className="text-base text-white/80">USD</span>
+            ${(balance * saleValue).toFixed(4)} <span className="text-base text-white/80">USD</span>
           </span>
         </div>
       </div>

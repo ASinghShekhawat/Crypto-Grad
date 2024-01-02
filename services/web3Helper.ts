@@ -6,7 +6,7 @@ import Web3 from "web3";
 
 import { readContract, writeContract } from '@wagmi/core'
 import { waitForTransaction } from "wagmi/actions";
-import {createPublicClientLocal, publicClient } from "./web3Service";
+import {createPublicClientLocal } from "./web3Service";
 import { ico } from "@/utils/icoDetails";
 import { tokenAbi } from "@/utils/token-abi";
 import { decodeEventLog, parseEther, zeroAddress } from "viem";
@@ -25,9 +25,8 @@ const executeWriteFunction = async (txObj:any, userAddress:string) => {
   } catch (error) {
     throw error
   }
-  return await publicClient.waitForTransactionReceipt({
-    hash: hash.hash,
-    pollingInterval:20000
+  return await waitForTransaction({
+    hash: hash.hash
   })
 }
 
@@ -76,9 +75,33 @@ export const getAmountRaised = async () => {
     functionName: "amountRaised",
     args: []
   });
-  
-  return  Number(amountRaised)/Math.pow(10,26) // 26=>18
+  return  Number(amountRaised)/Math.pow(10,18)
 };
+
+export const getTokenPrice = async () => {
+  const tokenPrice = await readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "tokenPrice",
+    args: []
+  });
+  
+  return  Number(tokenPrice)/Math.pow(10,8)
+};
+
+export const getETHPrice = async () => {
+  const tokenPrice:any = await readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "getPrice",
+    args: []
+  });
+  
+  return [
+    Number(tokenPrice[0])/Math.pow(10,8),
+    Number(tokenPrice[1])/Math.pow(10,8),
+    Number(tokenPrice[2])/Math.pow(10,8),
+  ]};
 
 export const getTokenAmount = async (address: any, amount:any) => {
   const price = await readContract({
@@ -139,6 +162,7 @@ export const estimateFees = async (
   const tokenAddresss = tokenType.toUpperCase() === "USDT" ? tokens.usdt : tokens.usdc;
   const web3 = new Web3()
   const amountInWei = web3.utils.toWei(amount?.toString(),"ether")
+  const publicClient = createPublicClientLocal()
   const gasPrice = await publicClient.getGasPrice() 
   try {
     const fees = await publicClient.estimateContractGas({
@@ -370,21 +394,27 @@ return Number(phase1StartTime)
 };
 
 export const getEventValue = async (result: any, eventName:string) => {
-  let tokenBought :any;
-  for(let i=0; i< result.logs.length; i++){
-    try {
-      const log = decodeEventLog({
-        abi: ico.abi,
-        data: result.logs[i].data,
-        topics: result.logs[i].topics
-      })
-      if(log.eventName === eventName){
-        tokenBought = log.args;
+  console.log({eventName})
+  try {
+    let tokenBought :any;
+    console.log({result})
+    for(let i=0; i< result.logs.length; i++){
+      try {
+        const log = decodeEventLog({
+          abi: ico.abi,
+          data: result.logs[i].data,
+          topics: result.logs[i].topics
+        })
+        console.log({log})
+        if(log.eventName === eventName){
+          tokenBought = log.args;
+        }
+      } catch (error) {
+        console.log({error})
       }
-    
-    } catch (error) {
-      console.log("error")
     }
+    return tokenBought;
+  } catch (error) {
+    console.log({error})
   }
-  return tokenBought;
 }

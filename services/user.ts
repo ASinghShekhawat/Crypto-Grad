@@ -29,6 +29,19 @@ export const userWalletByRefId = async (referral: string) => {
   return res;
 }
 
+export const addReferral = async () => {
+  const res = await axios.post(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/add-referrel`,
+        {},
+        {
+            headers: {
+              Authorization : `Bearer ${getToken()}`
+            }
+        }
+  );
+  return res;
+};
+
 export const userWalletByUserId = async (userId: string) => {
   const res = await axios.post(
     `${process.env.NEXT_PUBLIC_API_URL}/user/user-by-user-id`,
