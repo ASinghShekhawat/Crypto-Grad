@@ -13,6 +13,7 @@ import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { cgBougth, endSaleTime, getAmountRaised } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
+import { useRouter } from 'next/navigation'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -20,49 +21,47 @@ export default function DashboardHome() {
   const [raised, setRaised] = useState(10000)
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
-  const [referralId, setReferralId] = useState('abcdefgh')
+  const [referralId, setReferralId] = useState('awda')
   const [timer, setTimer] = useState(1704306600000)
   const { address } = useAccount()
   const [referrer, setReferrer] = useState<any>()
-  const [walletType, setWalletType] = useState("")
+  const [walletType, setWalletType] = useState('')
+  const router = useRouter()
 
   const initialze = () => {
     const referralId = localStorage.getItem('referralId')
     referralId && setReferralId(referralId)
     const referrer = localStorage.getItem('referrer')
-    if(referrer !== "undefined")
-      referrer && setReferrer(JSON.parse(referrer))
-    const wallet = localStorage.getItem("wagmi.wallet")
-    if(wallet === "walletConnect")
-      setWalletType("Mobile Wallet")
-    else 
-      setWalletType("Browser Wallet")
+    if (referrer !== 'undefined') referrer && setReferrer(JSON.parse(referrer))
+    const wallet = localStorage.getItem('wagmi.wallet')
+    if (wallet === 'walletConnect') setWalletType('Mobile Wallet')
+    else setWalletType('Browser Wallet')
   }
 
-  const fetchTotalTokenBought = async() => {
+  const fetchTotalTokenBought = async () => {
     const tokenAmount = await cgBougth(address)
     setBalance(Number(tokenAmount))
   }
 
-  const getEndTimeStamp = async() => {
+  const getEndTimeStamp = async () => {
     const endTime = await endSaleTime()
-    setTimer(endTime*1000)
+    setTimer(endTime * 1000)
   }
 
-  const getAmountRaisedAndTotal = async() => {
+  const getAmountRaisedAndTotal = async () => {
     const amountRaised = await getAmountRaised()
     setRaised(Number(amountRaised.toFixed(4)))
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getAmountRaisedAndTotal()
     getEndTimeStamp()
-  },[])
+  }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     initialze()
     fetchTotalTokenBought()
-  },[address])
+  }, [address])
 
   const renderer = ({
     days,
@@ -145,14 +144,18 @@ export default function DashboardHome() {
           <div className="text-3xl font-medium">1 CG = {saleValue} USD</div>
           <span className="text-base text-white/80">1 USD = {usdEth} ETH</span>
         </div>
-        <Button className="h-12 w-fit">Buy Token</Button>
+        <Button onClick={() => router.push('/presale')} className="h-12 w-fit">
+          Buy Token
+        </Button>
       </div>
       <div className="row-start-6 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-2">
         <div className="flex flex-col gap-2 text-xl font-semibold">
           Account Info
           <span className="text-sm font-light text-white/80">
-            Invited by {' '}
-            {referrer?.walletAddress? trimString(referrer?.walletAddress as any): "No Referrer"}
+            Invited by{' '}
+            {referrer?.walletAddress
+              ? trimString(referrer?.walletAddress as any)
+              : 'No Referrer'}
           </span>
         </div>
         <div className="flex flex-col gap-2">
@@ -163,7 +166,7 @@ export default function DashboardHome() {
             {walletType}
             <span className="text-base font-light text-white/80">
               {' '}
-              {address? trimString(address as any) : ""}
+              {address ? trimString(address as any) : ''}
             </span>
           </div>
         </div>
@@ -221,11 +224,27 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-4">
           <div className="flex h-12 w-full items-center justify-between rounded-lg bg-[#070B16] px-4">
             {referralId}
-            <button className="flex items-center gap-2 text-sm font-light text-white/60">
+            <button
+              onClick={() =>
+                navigator.clipboard.writeText(
+                  `${window.location.host}/presale?ref=${referralId}`
+                )
+              }
+              className="flex items-center gap-2 text-sm font-light text-white/60"
+            >
               Copy <FaRegCopy />
             </button>
           </div>
-          <Button className="h-12 w-fit md:!px-12">Invite a Friend</Button>
+          <Button
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `${window.location.host}/presale?ref=${referralId}`
+              )
+            }
+            className="h-12 w-fit md:!px-12"
+          >
+            Invite a Friend
+          </Button>
           <span className="text-xs font-light text-white/60">or</span>
           <button className="flex items-center gap-2 text-left text-themeBorderBlue">
             Estimate Referral Earnings <GoArrowRight />
@@ -276,8 +295,8 @@ export default function DashboardHome() {
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Discord</div>
                 <div className="text-sm font-light">
-                  Access AI bots, Trading Signals, Whale <br /> Rooms, Community, and
-                  much more...
+                  Access AI bots, Trading Signals, Whale <br /> Rooms,
+                  Community, and much more...
                 </div>
               </div>
               <FaDiscord className="!text-4xl !text-[#5865F2] md:!text-7xl" />
