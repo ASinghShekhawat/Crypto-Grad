@@ -11,7 +11,7 @@ import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import { cgBougth, endSaleTime, getAmountRaised } from '@/services/web3Helper'
+import { cgBougth, endSaleTime, getAmountRaised, getETHPrice, getTokenPrice } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
 
 export default function DashboardHome() {
@@ -54,9 +54,21 @@ export default function DashboardHome() {
     setRaised(Number(amountRaised.toFixed(4)))
   }
 
+  const getCGTokenPrice = async() => {
+    const tokenPrice = await getTokenPrice()
+    setSaleValue(Number(tokenPrice.toFixed(4)))
+  }
+
+  const getETHUSDPrice = async() => {
+    const tokenPrice = await getETHPrice()
+    setUsdEth(Number((1/tokenPrice).toFixed(4)))
+  }
+
   useEffect(()=>{
     getAmountRaisedAndTotal()
     getEndTimeStamp()
+    getCGTokenPrice()
+    getETHUSDPrice()
   },[])
 
   useEffect(()=>{

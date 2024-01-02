@@ -77,7 +77,29 @@ export const getAmountRaised = async () => {
     args: []
   });
   
-  return  Number(amountRaised)/Math.pow(10,26) // 26=>18
+  return  Number(amountRaised)/Math.pow(10,26) // 26=>18 // TODO
+};
+
+export const getTokenPrice = async () => {
+  const tokenPrice = await readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "tokenPrice",
+    args: []
+  });
+  
+  return  Number(tokenPrice)/Math.pow(10,8)
+};
+
+export const getETHPrice = async () => {
+  const tokenPrice:any = await readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "getPrice",
+    args: []
+  });
+  
+  return Number(tokenPrice[0])/Math.pow(10,8)
 };
 
 export const getTokenAmount = async (address: any, amount:any) => {
