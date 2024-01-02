@@ -6,12 +6,26 @@ import { IDrawerGeneric } from '@/types/navbar'
 import ConnectWalletDialog from './ConnectWalletDialog'
 import useWallet from '@/hooks/useWallet'
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useAccount } from 'wagmi'
+import { useSearchParams } from 'next/navigation'
 
 const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
   const { dialog, setDialog, connectWallet, logout } = useWallet()
   const { address, isConnected } = useAccount()
+  const {loginUser} = useWallet()
+  const search = useSearchParams();
+
+  useEffect(()=>{
+    const refId = search.get("ref");
+    if(isConnected == true && address ){
+      if(refId)
+      loginUser(address, refId)
+      else
+      loginUser(address)
+    }
+  },[address])
+  
   return (
     <>
       <div

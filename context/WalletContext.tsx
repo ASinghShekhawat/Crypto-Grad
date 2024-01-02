@@ -5,16 +5,22 @@ import {
   defaultWagmiConfig,
   useWeb3Modal,
 } from '@web3modal/wagmi/react'
-import { WagmiConfig, useAccount } from 'wagmi'
-import { mainnet } from 'wagmi/chains'
+import { WagmiConfig } from 'wagmi'
 import { disconnect } from '@wagmi/core'
 import { useRouter } from 'next/navigation'
+import { login } from '@/services/user'
+import { goerli, mainnet } from 'viem/chains'
+import { chain } from '@/services/web3Service'
 
 export interface IWalletContext {
-  dialog: boolean
-  setDialog: Dispatch<boolean>
-  connectWallet: () => void
-  logout: () => void
+  isLoggedIn: boolean;
+  loading: boolean;
+  referralId: string;
+  dialog: boolean;
+  loginUser : (walletAddress:string, referralId?:string,) =>Promise<void>;
+  setDialog: Dispatch<boolean>;
+  connectWallet: () => void;
+  logout: () => void;
 }
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!
@@ -26,8 +32,8 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 }
 
-const chains = [mainnet]
-const defaultChain = mainnet
+const chains = [mainnet, goerli, ]
+const defaultChain = chain
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 const themeVariables = {
   '--w3m-font-family': 'DM Sans, sans-serif',
@@ -51,6 +57,9 @@ export const WalletProvider = ({ children }: Children) => {
   const [dialog, setDialog] = useState(false)
   const { open } = useWeb3Modal()
   const router = useRouter()
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [referralId, setReferralId] = useState("");
 
   const connectWallet = () => {
     console.log("Connecting...")
@@ -62,8 +71,28 @@ export const WalletProvider = ({ children }: Children) => {
     // setDialog(true)
   }
 
+  const loginUser = async (walletAddress: string, referralId?: string) => {
+    try {
+      const res = await login(walletAddress, referralId);
+      setReferralId(res.data.referralId);
+      localStorage.setItem("accessToken", res.data.authToken);
+      localStorage.setItem("referralId", res.data.referralId);
+      localStorage.setItem("walletAddress", walletAddress);
+      localStorage.setItem("referrer", res.data?.referredBy)
+      setIsLoggedIn(true);
+      setLoading(false)
+    } catch (err) {
+      console.log({err})
+      setLoading(false)
+      throw err
+    }
+  };
+
   const logout = () => {
     disconnect()
+    localStorage.clear();
+    setIsLoggedIn(false);
+    setLoading(false);
     router.push('/')
   }
 
@@ -74,7 +103,11 @@ export const WalletProvider = ({ children }: Children) => {
           dialog,
           setDialog,
           connectWallet,
+          loginUser,
           logout,
+          isLoggedIn,
+          loading,
+          referralId,
         }}
       >
         {children}
