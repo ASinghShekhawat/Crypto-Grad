@@ -1,16 +1,18 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { MdOutlineInfo } from 'react-icons/md'
 import Button from '../shared/Button'
 import { LuPen } from 'react-icons/lu'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
-import { makeMeTwoDigits } from '@/utils/numberFix'
+import { makeMeTwoDigits, trimString } from '@/utils/numberFix'
 import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
+import { cgBougth, endSaleTime, getAmountRaised } from '@/services/web3Helper'
+import { useAccount } from 'wagmi'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -18,8 +20,49 @@ export default function DashboardHome() {
   const [raised, setRaised] = useState(10000)
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
-  const [referralId, setReferralId] = useState('ajp98a3p9h')
+  const [referralId, setReferralId] = useState('abcdefgh')
   const [timer, setTimer] = useState(1704306600000)
+  const { address } = useAccount()
+  const [referrer, setReferrer] = useState<any>()
+  const [walletType, setWalletType] = useState("")
+
+  const initialze = () => {
+    const referralId = localStorage.getItem('referralId')
+    referralId && setReferralId(referralId)
+    const referrer = localStorage.getItem('referrer')
+    if(referrer !== "undefined")
+      referrer && setReferrer(JSON.parse(referrer))
+    const wallet = localStorage.getItem("wagmi.wallet")
+    if(wallet === "walletConnect")
+      setWalletType("Mobile Wallet")
+    else 
+      setWalletType("Browser Wallet")
+  }
+
+  const fetchTotalTokenBought = async() => {
+    const tokenAmount = await cgBougth(address)
+    setBalance(Number(tokenAmount))
+  }
+
+  const getEndTimeStamp = async() => {
+    const endTime = await endSaleTime()
+    setTimer(endTime*1000)
+  }
+
+  const getAmountRaisedAndTotal = async() => {
+    const amountRaised = await getAmountRaised()
+    setRaised(Number(amountRaised.toFixed(4)))
+  }
+
+  useEffect(()=>{
+    getAmountRaisedAndTotal()
+    getEndTimeStamp()
+  },[])
+
+  useEffect(()=>{
+    initialze()
+    fetchTotalTokenBought()
+  },[address])
 
   const renderer = ({
     days,
@@ -108,7 +151,8 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-2 text-xl font-semibold">
           Account Info
           <span className="text-sm font-light text-white/80">
-            Invited by (0xabc...1234)
+            Invited by {' '}
+            {referrer?.walletAddress? trimString(referrer?.walletAddress as any): "No Referrer"}
           </span>
         </div>
         <div className="flex flex-col gap-2">
@@ -116,10 +160,10 @@ export default function DashboardHome() {
             Receiving Wallet <LuPen className="text-sm" />
           </span>
           <div className="text-2xl font-medium">
-            Trust Wallet
+            {walletType}
             <span className="text-base font-light text-white/80">
               {' '}
-              (0xabc...1234)
+              {address? trimString(address as any) : ""}
             </span>
           </div>
         </div>

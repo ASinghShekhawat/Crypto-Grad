@@ -9,6 +9,13 @@ import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 import { Listbox, Transition } from '@headlessui/react'
 import { FaChevronDown } from 'react-icons/fa6'
+import useWallet from '@/hooks/useWallet'
+import { buyToken, endSaleTime, getDecimals, getEventValue, getTokenAmount } from '@/services/web3Helper'
+import { useAccount } from 'wagmi'
+import { useSearchParams } from 'next/navigation'
+import { addTransaction } from '@/services/transaction'
+import { addComission } from '@/services/comission'
+import { userWalletByRefId } from '@/services/user'
 
 export default function Hero() {
   const [timer, setTimer] = useState(Date.now() + 5000000)
@@ -16,14 +23,86 @@ export default function Hero() {
   const [currency, setCurrency] = useState<ICurrency | null>(null)
   const [amount, setAmount] = useState<number | undefined>(undefined)
   const [currencyValue, setCurrencyValue] = useState(0)
+  const { isLoggedIn, connectWallet } = useWallet()
+  const [price, setPrice] = useState<number>()
+  const [walletType, setWalletType] = useState("")
+  const { address, isConnected } = useAccount()
+  const search = useSearchParams();
+
+  const getTokenPrice = async() => {
+    const price = await getTokenAmount(currency?.address, amount)
+    setPrice(price)
+  }
+
+  const getEndDate = async() => {
+    const endDateTimeStamp = await endSaleTime()
+    setTimer(endDateTimeStamp*1000)
+  }
+
+  const getWalletType = () => {
+    const wallet = localStorage.getItem("wagmi.wallet")
+    if(wallet === "walletConnect")
+      setWalletType("Mobile Wallet")
+    else 
+      setWalletType("Browser Wallet")
+  }
+
+  useEffect(()=>{
+    if(isConnected)
+      getWalletType()
+  },[address])
+
+  const buyCGTokens = async() => {
+    const refId = search.get("ref");
+    const user:any = refId && await userWalletByRefId(refId)
+    const res = await buyToken(amount, address, user?.data?.walletAddress, currency?.address);
+    const tokenBought = await getEventValue(res, "TokensBought")
+    const referalIncomeDistributed = await getEventValue(res, "ReferalIncomeDistributed")
+    const transactionObj = {
+      baseAmount:
+      Number(tokenBought.usdAmount) /
+        Math.pow(10, 18),
+      tokenQuantity:
+      Number(tokenBought.tokenAmount) /
+        Math.pow(10, 18),
+      transactionHash: res?.transactionHash,
+      token: tokenBought.token,
+      depositWallet : walletType
+    };
+    await addTransaction(transactionObj)
+    if(referalIncomeDistributed){
+      for (
+        let i = 0;
+        i < referalIncomeDistributed?.length;
+        i++
+      ) {
+        const obj = referalIncomeDistributed[i];
+        const decimals = await getDecimals(obj.token)
+        const commisonObj = {
+          receivingUser: obj.referrer,
+          level: Number(obj.level),
+          comissionedFrom: obj.user,
+          comissionAmount: Number(obj.referalAmount) / Math.pow(10, decimals),
+          baseAmount: Number(obj.amountPurchased),
+          transactionHash: res?.transactionHash,
+          token: obj.token
+        };
+        await addComission(commisonObj)
+      }
+    }
+  }
+
+  useEffect(()=>{
+    getEndDate()
+  },[])
 
   const getCurrencyValue = () => {
     setCurrencyValue(1)
   }
 
   useEffect(() => {
-    getCurrencyValue()
-  }, [currency])
+    getTokenPrice()
+  }, [currency, amount])
 
   useEffect(() => {
     setCurrency(currencies[0])
@@ -200,14 +279,16 @@ export default function Hero() {
                 className="h-6 w-6 object-contain"
               />
               <div className="w-full text-base font-medium">
-                {(isNaN(Number(amount)) ? 0 : Number(amount)) *
-                  currencyValue *
-                  3.75}
+                {price}
               </div>
               <div>CG</div>
             </div>
           </div>
-          <Button className="h-12 !font-normal">Connect Your Wallet</Button>
+          {
+          !isLoggedIn ? 
+          <Button className="h-12 !font-normal" onClick={connectWallet}>Connect Your Wallet</Button>
+          :<Button className="h-12 !font-normal" onClick={buyCGTokens}>Buy Tokens</Button>
+          }
         </div>
       </div>
     </Animated>
