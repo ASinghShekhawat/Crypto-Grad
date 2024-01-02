@@ -1,17 +1,24 @@
 'use client'
 
 import { Dialog, Transition } from '@headlessui/react'
-import Image from 'next/image'
 import { Dispatch, Fragment } from 'react'
 import Button from '../shared/Button'
-import { IoClose } from 'react-icons/io5'
+import { IoClose, IoCloseCircle } from 'react-icons/io5'
+import { IoCheckmarkDoneCircle } from 'react-icons/io5'
 
-export default function NftDroppedDialog({
+export enum DialogType {
+  SUCCESS,
+  FAILED,
+}
+
+export default function ResponseDialog({
   isOpen,
   setIsOpen,
+  type,
 }: {
   isOpen: boolean
   setIsOpen: Dispatch<boolean>
+  type: DialogType
 }) {
   function closeModal() {
     setIsOpen(false)
@@ -44,13 +51,6 @@ export default function NftDroppedDialog({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="relative w-full max-w-lg transform overflow-hidden rounded-2xl bg-themeDialogBlack p-6 text-left align-middle shadow-xl transition-all">
-                <Image
-                  src="/Navbar/nft-dropped.png"
-                  width={948}
-                  height={370}
-                  alt="nft-dropped"
-                  className="object-contain"
-                />
                 <button
                   onClick={closeModal}
                   className="absolute right-4 top-4 rounded-full border-none p-2 outline-none hover:bg-themeBgBlack"
@@ -58,13 +58,22 @@ export default function NftDroppedDialog({
                   <IoClose className="text-2xl transition-all hover:text-themeVioletText " />
                 </button>
                 <div className="flex flex-col items-center justify-center gap-6">
+                  {type === DialogType.SUCCESS ? (
+                    <IoCheckmarkDoneCircle className="text-7xl text-green-500" />
+                  ) : (
+                    <IoCloseCircle className="text-7xl text-red-500" />
+                  )}
                   <div className="flex flex-col items-center justify-center text-center">
-                    <div className="text-2xl font-semibold">NFTs Dropped!</div>
+                    <div className="text-2xl font-semibold">
+                      {type === DialogType.SUCCESS
+                        ? 'Transaction Successful'
+                        : 'Transaction Failed'}
+                    </div>
                     <div className="text-sm font-extralight">
-                      And get an early access to the exciting world of crypto!
+                      {/* And get an early access to the exciting world of crypto! */}
                     </div>
                   </div>
-                  <Button>Claim Now</Button>
+                  <Button onClick={closeModal}>Done</Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
