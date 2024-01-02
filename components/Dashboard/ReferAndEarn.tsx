@@ -17,7 +17,7 @@ export default function ReferAndEarn() {
   const [totalPages, setTotalPages] = useState(500)
   const [current, setCurrent] = useState(2)
   const [glossary, setGlossary] = useState(false)
-  const [learnMore, setLearnMore] = useState(true)
+  const [learnMore, setLearnMore] = useState(false)
   const [reportData, setReportData] = useState([
     {
       timestamp: '05-09-2023 09:32 AM UTC',
