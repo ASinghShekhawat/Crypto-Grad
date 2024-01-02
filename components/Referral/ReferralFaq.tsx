@@ -37,7 +37,7 @@ const FAQ = [
   },
 ]
 
-export default function PresaleFaq() {
+export default function ReferralFaq() {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState<any>(null)
 
   function togglePanels(newPanel: any) {

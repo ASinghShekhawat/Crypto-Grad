@@ -33,6 +33,7 @@ export default function Hero() {
   const [price, setPrice] = useState<number>()
   const [walletType, setWalletType] = useState('')
   const { address, isConnected } = useAccount()
+  const [loading, setLoading] = useState(false)
   const search = useSearchParams()
 
   const getTokenPrice = async () => {
@@ -62,6 +63,7 @@ export default function Hero() {
   const buyCGTokens = async () => {
     const refId = search.get('ref')
     const user: any = refId && (await userWalletByRefId(refId))
+    setLoading(true)
     const res = await buyToken(
       amount,
       address,
@@ -97,6 +99,7 @@ export default function Hero() {
         await addComission(commisonObj)
       }
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -295,7 +298,11 @@ export default function Hero() {
               Connect Your Wallet
             </Button>
           ) : (
-            <Button className="h-12 !font-normal" onClick={buyCGTokens}>
+            <Button
+              loading={loading}
+              className="h-12 !font-normal"
+              onClick={buyCGTokens}
+            >
               Buy Tokens
             </Button>
           )}
