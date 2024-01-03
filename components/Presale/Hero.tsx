@@ -37,6 +37,8 @@ export default function Hero() {
   const { address, isConnected } = useAccount()
   const [loading, setLoading] = useState(false)
   const [dialog, setDialog] = useState(false)
+  const [error, setError] = useState(false)
+  const [errorStat, setErrorStat] = useState(false)
   const [dialogType, setDialogType] = useState(DialogType.SUCCESS)
   const search = useSearchParams()
 
@@ -83,6 +85,10 @@ export default function Hero() {
   }, [address])
 
   const buyCGTokens = async () => {
+    if (Number(amount) < 500 || Number(amount) > 50000) {
+      setError(true)
+      setErrorStat(true)
+    }
     try {
       const refId = search.get('ref')
       const user: any = refId && (await userWalletByRefId(refId))
@@ -241,13 +247,19 @@ export default function Hero() {
                   type="number"
                   placeholder="100"
                   value={amount}
-                  onChange={(e) =>
+                  onChange={(e) => {
+                    setErrorStat(false)
                     setAmount(
                       !e.target.value ? undefined : Number(e.target.value)
                     )
-                  }
+                  }}
                   className="w-full border-none bg-inherit text-base font-medium focus:outline-none"
                 />
+                {error && errorStat && (
+                  <span className="text-xs font-semibold">
+                    * Amount cannot be less than 500 or greater than 50,000
+                  </span>
+                )}
                 <Listbox value={currency} onChange={setCurrency}>
                   {({ open }) => (
                     <div className="relative mt-1">
