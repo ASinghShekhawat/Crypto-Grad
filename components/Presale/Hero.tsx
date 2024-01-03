@@ -88,6 +88,7 @@ export default function Hero() {
     if (Number(amount) < 500 || Number(amount) > 50000) {
       setError(true)
       setErrorStat(true)
+      return
     }
     try {
       const refId = search.get('ref')
