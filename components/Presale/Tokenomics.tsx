@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import Animated from '../shared/Animated'
-import Button from '../shared/Button'
 import { FiArrowUpRight } from 'react-icons/fi'
-import { ButtonType } from '@/types/buttton'
 
 export default function Tokenomics() {
   return (
@@ -21,8 +19,8 @@ export default function Tokenomics() {
       <Image
         src="/Presale/tokenomics.png"
         alt=""
-        width={1074}
-        height={603}
+        width={1116}
+        height={814}
         className="hidden md:block"
       />
       <Image
