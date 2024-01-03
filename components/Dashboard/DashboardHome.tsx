@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MdOutlineInfo } from 'react-icons/md'
 import Button from '../shared/Button'
 import { LuPen } from 'react-icons/lu'
@@ -17,7 +17,6 @@ import { useRouter } from 'next/navigation'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
-  const [contributon, setContribution] = useState(0)
   const [raised, setRaised] = useState(10000)
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
@@ -60,7 +59,7 @@ export default function DashboardHome() {
 
   const getETHUSDPrice = async() => {
     const tokenPrice = await getETHPrice()
-    setUsdEth(Number((1/tokenPrice.ETH).toFixed(4)))
+    setUsdEth(Number((1/tokenPrice[0]).toFixed(4)))
   }
 
   useEffect(()=>{
