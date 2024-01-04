@@ -25,9 +25,9 @@ export interface IWalletContext {
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!
 
 const metadata = {
-  name: 'Web3Modal',
+  name: 'Cryptograd AI',
   description: 'cryptograd.ai',
-  url: 'https://web3modal.com',
+  url: 'https://cryptograd.ai',
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 }
 

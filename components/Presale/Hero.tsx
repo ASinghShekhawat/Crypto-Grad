@@ -57,9 +57,9 @@ export default function Hero() {
     setAmountRaised(Number(price))
   }
 
-  useEffect(() => {
-    setTimer(1704627525000)
-  }, [])
+  // useEffect(() => {
+  //   setTimer(1704627525000)
+  // }, [])
 
   const getETHUSDPrice = async (name: string) => {
     const tokenPrice = await getETHPrice()
