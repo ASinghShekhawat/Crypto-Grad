@@ -15,10 +15,12 @@ export default function ResponseDialog({
   isOpen,
   setIsOpen,
   type,
+  call,
 }: {
   isOpen: boolean
   setIsOpen: Dispatch<boolean>
   type: DialogType
+  call: () => void
 }) {
   function closeModal() {
     setIsOpen(false)
@@ -73,7 +75,14 @@ export default function ResponseDialog({
                       {/* And get an early access to the exciting world of crypto! */}
                     </div>
                   </div>
-                  <Button onClick={closeModal}>Done</Button>
+                  <Button
+                    onClick={() => {
+                      call()
+                      closeModal()
+                    }}
+                  >
+                    Done
+                  </Button>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
