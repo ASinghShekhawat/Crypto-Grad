@@ -242,7 +242,7 @@ export default function Hero() {
           </div>
           <div className="flex w-full justify-center">
             <Button className="mt-4 h-12 w-fit !font-normal">
-              Buy & Stake Now
+              Buy Now
             </Button>
           </div>
         </div>

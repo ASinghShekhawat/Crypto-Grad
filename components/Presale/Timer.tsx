@@ -96,7 +96,7 @@ export default function Timer() {
         Lets get going with the Presale!
       </div>
       <Button className="relative z-1 h-12 !font-light capitalize">
-        buy & Stake Now
+        Buy Now
       </Button>
     </Animated>
   )

@@ -30,10 +30,14 @@ const Navbar = () => {
         </>
       ) : (
         pathname !== '/dashboard' && (
-          <div className="hidden items-center gap-4 mmd:flex">
-            <NavMenu pathname={pathname} />
-            <ConnectWallet pathname={pathname} />
-          </div>
+          <>
+            <div className="hidden mmd:flex">
+              <NavMenu pathname={pathname} />
+            </div>
+            <div className="hidden mmd:flex">
+              <ConnectWallet pathname={pathname} />
+            </div>
+          </>
         )
       )}
       {!pathname.includes('/dashboard') && <Drawer />}

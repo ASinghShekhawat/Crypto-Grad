@@ -6,13 +6,14 @@ const CgToken = () => {
     <Animated className="relative z-1 flex w-full flex-col items-center px-4 md:min-w-fit md:py-20 mmd:flex-row mmd:px-16">
       <div className="flex w-full flex-col items-start gap-8">
         <div className="w-fit rounded-full border border-themeBorderBlue/25 bg-gradient-to-b from-white/5 to-white/0 px-3 py-1 backdrop-blur-lg">
-          what is CG Token?
+          What is CG Token?
         </div>
         <div className="mt-2 text-3xl font-bold md:text-5xl">CG Tokens</div>
         <div className="font-light text-white/80">
-          Discover CG Token: Where Cutting-Edge AI Meets Blockchain Excellence.
-          Join Our Thriving Community and Discover the Power of AI-Driven Crypto
-          Mastery Today
+          Discover CG Token: Where Cutting-Edge AI Meets Blockchain{' '}
+          <br className="hidden mmd:block" /> Excellence. Join Our Thriving
+          Community and Discover the <br className="hidden mmd:block" /> Power
+          of AI-Driven Crypto Mastery Today
         </div>
         <div className="flex flex-col gap-4">
           <div className="text-sm text-white/50">Launching soon on...</div>

@@ -14,7 +14,7 @@ export default function ExtendedTab() {
           Secure Exclusive Platform Access
         </div>
       </div>
-      <Button className="h-12 w-fit !font-normal">Buy & Stake Now</Button>
+      <Button className="h-12 w-fit !font-normal">Buy Now</Button>
       <TabInfo />
     </Animated>
   )

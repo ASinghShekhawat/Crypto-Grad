@@ -16,7 +16,7 @@ const AiSection5 = () => {
           <div>📈 Explore Live Market Data like Never Before</div>
           <div>✨ Turn Ideas into Decisions </div>
         </div>
-        <Button className="h-12 w-fit text-xl">Get Started</Button>
+        {/* <Button className="h-12 w-fit text-xl">Get Started</Button> */}
       </div>
     </Animated>
   )

@@ -16,7 +16,7 @@ const AiSection = () => {
         <div className="relative z-1 text-lg font-medium text-themeBlue">
           Something Beyond Human Limits
         </div>
-        <div className="mt-2 whitespace-nowrap text-3xl font-bold md:text-5xl">
+        <div className="mt-2 whitespace-nowrap text-center text-3xl font-bold md:text-5xl mmd:text-left">
           Your AI 🧠 <br /> Your trading partner
         </div>
       </div>
