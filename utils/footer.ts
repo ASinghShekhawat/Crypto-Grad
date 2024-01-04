@@ -115,6 +115,11 @@ export const footerLinks = [
         target: false
       },
       {
+        title: 'BitGenix is coming',
+        url: '#',
+        target: false
+      },
+      {
         title: 'FAQ',
         url: '/help/FAQ',
         target: false

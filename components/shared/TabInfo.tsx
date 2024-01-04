@@ -26,7 +26,7 @@ export default function TabInfo() {
           Trade Analyzer
         </button>
         <button
-          onClick={() => setTab('insight')}
+          // onClick={() => setTab('insight')}
           className={`rounded-full px-2.5 py-2 text-xs transition-all ${
             tab === 'insight' && 'bg-themeBlackDeep'
           } hover:bg-themeBlackDeep md:text-base`}
@@ -34,7 +34,7 @@ export default function TabInfo() {
           Contract Insight
         </button>
         <button
-          onClick={() => setTab('buzz')}
+          // onClick={() => setTab('buzz')}
           className={`rounded-full px-2.5 py-2 text-xs transition-all ${
             tab === 'buzz' && 'bg-themeBlackDeep'
           } hover:bg-themeBlackDeep md:text-base`}

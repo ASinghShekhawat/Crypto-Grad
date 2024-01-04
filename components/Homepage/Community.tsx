@@ -7,7 +7,7 @@ import { FaXTwitter } from 'react-icons/fa6'
 const Community = () => {
   return (
     <div className="relative overflow-hidden">
-      <Animated className="relative flex w-full flex-col items-center justify-center overflow-x-clip px-4 !pb-32 text-center md:py-20 mmd:px-16">
+      <Animated className="relative z-1 flex w-full flex-col items-center justify-center overflow-x-clip px-4 !pb-32 text-center md:py-20 mmd:px-16">
         <div className="relative z-1 text-lg font-medium text-themeBlue">
           CryptoGrad Incubator Lab
         </div>
@@ -26,7 +26,7 @@ const Community = () => {
           href="https://discord.gg/GQJTSFdTwh"
           target="_blank"
           rel="noreferrer noopener"
-          className="flex min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
+          className="flex min-h-[2.5rem] cursor-pointer items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
         >
           <FaDiscord className="!text-xl" /> Open Discord
         </a>

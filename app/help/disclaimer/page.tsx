@@ -6,47 +6,48 @@ const Disclaimer = () => {
           Safe Harbour & Disclaimer
         </h1>
         <div className="text-center text-xs text-themeLightGrey">
-          Last Update: 15th December, 2023
+          Last Update: 26th December, 2023
         </div>
       </div>
       <div className="flex flex-col gap-4">
         <p>
-          The content on this website, provided by BitGenix FinTech Pvt Ltd
-          (CIN: U67100MH2022PTC387023), including all data, materials, and other
-          information, is solely for informational purposes. It is not to be
-          considered as a replacement for professional financial, legal, or tax
-          advice. Users should consult independent legal or financial
-          professionals before acting on any information from this site.
+          The information presented on this website by CryptoGrad is intended
+          solely for informational purposes. It is not a substitute for
+          professional advice in financial, legal, or tax matters. Users are
+          strongly encouraged to consult independent financial or legal
+          professionals before making any decisions based on the information
+          obtained from this site.
         </p>
         <p>
-          BitGenix does not guarantee the accuracy, completeness, or timeliness
-          of the content on this website. Please note that cryptocurrencies and
-          virtual assets have a speculative nature, are volatile, and come with
-          inherent inv
+          CryptoGrad makes no guarantees regarding the accuracy, completeness,
+          or timeliness of the content provided on this website. It is crucial
+          to recognise that cryptocurrencies and virtual assets are inherently
+          speculative, volatile, and subject to market risks.
         </p>
         <p>
-          Neither BitGenix FinTech Pvt Ltd, its affiliates, nor any of their
-          officers, directors, employees, agents, or representatives shall be
-          liable for decisions or actions taken based on this site&apos;s content or
-          any resulting damages.
+          CryptoGrad, its affiliates, and their officers, directors, employees,
+          agents, or representatives disclaim any liability for decisions or
+          actions taken based on the content of this site, and they are not
+          responsible for any resulting damages.
         </p>
         <p>
-          Third-party links are for convenience and informational purposes;
-          BitGenix does not endorse or approve them.
+          Third-party links provided on this website are for convenience and
+          informational purposes only. CryptoGrad does not endorse or approve
+          these links.
         </p>
         <p>
-          The website might feature forward-looking statements grounded in
-          current projections and assumptions. Actual outcomes could
-          significantly vary due to multiple factors.
+          Forward-looking statements featured on this website are based on
+          current projections and assumptions. Actual outcomes may vary
+          significantly due to various factors.
         </p>
         <p>
-          Third-party links are for convenience and informational purposes;
-          BitGenix does not endorse or approve them.
+          Perform your own research and seek professional guidance before making
+          financial decisions. By using this website, you acknowledge and accept
+          this disclaimer.
         </p>
         <p>
-          Always perform personal research and seek professional guidance before
-          making financial decisions. By using this website, you acknowledge and
-          accept this disclaimer.
+          CryptoGrad retains the right to update or modify this disclaimer as
+          needed.
         </p>
       </div>
     </div>

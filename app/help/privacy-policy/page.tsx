@@ -1,22 +1,21 @@
 const PrivacyPolicy = () => {
   return (
-    <div className="mx-auto flex max-w-[960px] flex-col items-center gap-12 px-4 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24 relative">
+    <div className="relative mx-auto flex max-w-[960px] flex-col items-center gap-12 px-4 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pb-32 mmd:pt-24">
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="text-center text-4xl font-semibold md:text-5xl">
           Privacy Policy
         </h1>
         <div className="text-center text-xs text-themeLightGrey">
-          Last Update: 15th December, 2023
+          Last Update: 26th December, 2023
         </div>
       </div>
       <div className="flex flex-col gap-4">
         <p>
-          BitGenix recognises the importance of maintaining your privacy. We
-          value your privacy and appreciate your trust in us. This Policy
-          describes how we treat user information we collect on www.bitgenix.io
-          and other offline sources. This Privacy Policy applies to current and
-          former visitors to our website and to our online customers. By
-          visiting and/or using our website, you agree to this Privacy Policy.
+          At CryptoGrad, we are committed to safeguarding the privacy of our
+          users. This Privacy Policy outlines how we collect, use, disclose, and
+          protect your personal information. By using CryptoGrad's services and
+          visiting our website, you consent to the practices described in this
+          policy.
         </p>
         <p>
           bitgenix.io is a property of BitGenix PTE. LTD, having office at 50
@@ -37,27 +36,56 @@ const PrivacyPolicy = () => {
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">1. Personal Information</h3>
           <p>
-            We may collect personal information that can be used to identify
-            you, such as your name, email address, phone number, postal address,
-            and IP address.
+            We collect information you provide, including but not limited to
+            your name, email address, contact number, mailing address, and any
+            other data you willingly share with us during interactions with our
+            platform.
+          </p>
+          <ul className="flex list-inside list-disc flex-col gap-4">
+            <li>
+              : We may collect data about your interactions with our website,
+              such as IP addresses, browser types, and pages visited. This helps
+              us enhance user experience and analyze trends.
+            </li>
+            <li>
+              Payment Information: When you engage in transactions on our
+              platform, we may collect payment-related information, including
+              bank details or credit card information, to process payments
+              securely.
+            </li>
+            <li>
+              Educational Data: During your learning activities on CryptoGrad,
+              we may collect information related to your educational progress,
+              course completion, and performance metrics to tailor our services
+              to your needs.
+            </li>
+          </ul>
+        </div>
+        <div className="flex w-full flex-col gap-4">
+          <h3 className="text-2xl">2. Website Usage Information</h3>
+          <ul className="flex list-inside list-disc flex-col gap-4">
+            <li>
+              We may collect data about your interactions with our website, such
+              as IP addresses, browser types, and pages visited. This helps us
+              enhance user experience and analyze trends.
+            </li>
+          </ul>
+        </div>
+        <div className="flex w-full flex-col gap-4">
+          <h3 className="text-2xl">3. Payment Information</h3>
+          <p>
+            When you engage in transactions on our platform, we may collect
+            payment-related information, including wallet addresses, bank
+            details, or credit card information, to process payments securely.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
-          <h3 className="text-2xl">2. Information You Post</h3>
+          <h3 className="text-2xl">4. Educational Data</h3>
           <p>
-            We collect information you post in a public space on our website or
-            on a third-party social media site.
-          </p>
-        </div>
-        <div className="flex w-full flex-col gap-4">
-          <h3 className="text-2xl">3. Other Information</h3>
-          <p>
-            If you use our website, we may collect information about your IP
-            address and the browser you&apos;re using. We might look at what site you
-            came from, duration of time spent on our website, pages accessed or
-            what site you visit when you leave us. We might also collect the
-            type of mobile device you are using, or the version of the operating
-            system your computer or device is running.
+            During your learning activities on CryptoGrad, we may collect
+            information related to your educational progress, course completion,
+            trading data, and performance metrics to tailor our services to your
+            needs.
           </p>
         </div>
       </div>
@@ -73,28 +101,25 @@ const PrivacyPolicy = () => {
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">1. Directly from You</h3>
           <p>
-            We may collect personal information directly from you when you
-            provide it to us through our Site, such as when you fill out a
-            contact form or sign up for our newsletter.
+            We may collect information directly when you provide it during
+            account registration, course enrollment, and other interactions with
+            our platform.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">2. Automated Collection</h3>
           <p>
-            We may use cookies, web beacons, and other tracking technologies to
-            collect information about your use of our Site. Cookies are small
-            text files that are stored on your device or browser that allow us
-            to recognize your device or browser and track your activities on our
-            Site. Web beacons are small, transparent images that are embedded in
-            web pages or emails that allow us to track your interactions with
-            our Site or emails.
+            We may use cookies and similar technologies to gather information
+            about your usage patterns, preferences, and website interactions.
+            You can manage cookie preferences through your browser settings.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">3. Third-Party Sources</h3>
           <p>
-            We may collect information about you from third-party sources, such
-            as social media platforms or marketing partners.
+            We may obtain information from third-party sources, such as
+            educational institutions or partners, to enhance our services and
+            validate your credentials.
           </p>
         </div>
       </div>
@@ -170,26 +195,25 @@ const PrivacyPolicy = () => {
           <h3 className="text-2xl">1. Service Providers</h3>
           <p>
             We may share your information with third-party service providers
-            that help us operate our Site, such as web hosting providers, email
-            service providers, and marketing partners.
+            assisting in platform operations.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">2. Business Partners</h3>
           <p>
-            We may share your information with business partners with whom we
-            jointly offer products or services.
+            We may share your information with Collaborators involved in
+            providing courses and educational content.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
           <h3 className="text-2xl">3. Legal Requirements</h3>
           <p>
-            We may disclose your information when required by law or in response
-            to a court order or other legal process.
+            We may disclose your information when required due to disclosure in
+            response to legal processes or government requests.
           </p>
         </div>
         <div className="flex w-full flex-col gap-4">
-          <h3 className="text-2xl">4. Merger or Acquisition</h3>
+          <h3 className="text-2xl">4. Business Transaction</h3>
           <p>
             We may disclose your information in connection with a merger,
             acquisition, or sale of all or a portion of our assets.
@@ -211,10 +235,9 @@ const PrivacyPolicy = () => {
       <div className="flex w-full flex-col gap-4">
         <h2 className="text-3xl font-medium md:text-4xl">Security</h2>
         <p>
-          We take reasonable measures to protect your personal information from
-          unauthorised access, use, or disclosure. However, no method of
-          transmission over the internet or method of electronic storage is
-          completely secure.
+          We implement reasonable security measures to protect your personal
+          information from unauthorized access, disclosure, alteration, and
+          destruction.
         </p>
       </div>
       <div className="flex w-full flex-col gap-4">
@@ -222,12 +245,11 @@ const PrivacyPolicy = () => {
           Changes to this Policy
         </h2>
         <p>
-          We may update this Policy from time to time by posting a new version
-          on our Site. The effective date of the current version will be noted
-          at the top of this Policy.
+          We reserve the right to update this Privacy Policy. The latest version
+          will be posted on our website with the effective date.
         </p>
       </div>
-      <div className="flex w-full flex-col gap-4">
+      {/* <div className="flex w-full flex-col gap-4">
         <h2 className="text-3xl font-medium md:text-4xl">Contact Us</h2>
         <p>
           If you have any questions or concerns about this Policy, please
@@ -236,7 +258,7 @@ const PrivacyPolicy = () => {
             compliance@bitgenix.io
           </a>
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }
