@@ -878,5 +878,5 @@ export const ico = {
             "type": "function"
         }
     ],
-    address: "0xcB5bCbA4CEEcbe3E23fb8f2f7180e226ae705e06"
+    address: "0x1401fF27EF9BDB99097dB0E32f9842118D32B752"
 }
