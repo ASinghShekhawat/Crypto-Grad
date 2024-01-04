@@ -21,7 +21,7 @@ export default function Toast({
     // navigator.clipboard.writeText(
     //   `${window.location.origin}/?ref=${referralId}`
     // );
-    copy(`${window.location.origin}/?ref=${refId}`)
+    copy(`${window.location.origin}/presale/?ref=${refId}`)
     setTimeout(() => {
       setIsAlertVisible(false)
     }, 3000)

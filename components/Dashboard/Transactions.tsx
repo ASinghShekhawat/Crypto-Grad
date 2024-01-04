@@ -73,6 +73,7 @@ export default function Transactions() {
                   .format('DD-MM-YYYY hh:mm A z')}
               </div>
               <a
+                target="_blank"
                 rel="noreferrer noopener"
                 href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data.depositWallet}`}
                 className="truncate"
@@ -82,6 +83,7 @@ export default function Transactions() {
               <div className="truncate">{data.tokenQuantity}</div>
               <div className="truncate">{getName(data.token)}</div>
               <a
+                target="_blank"
                 rel="noreferrer noopener"
                 href={`${process.env.NEXT_PUBLIC_EXPLORER}tx/${data.transactionHash}`}
                 className="truncate"

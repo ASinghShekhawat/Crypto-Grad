@@ -21,7 +21,7 @@ import {
   getTokenAmount,
 } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { addTransaction } from '@/services/transaction'
 import { addComission } from '@/services/comission'
 import { addReferral, userWalletByRefId } from '@/services/user'
@@ -43,6 +43,7 @@ export default function Hero() {
   const [errorStat, setErrorStat] = useState(false)
   const [dialogType, setDialogType] = useState(DialogType.SUCCESS)
   const search = useSearchParams()
+  const router = useRouter()
   const [amountRaised, setAmountRaised] = useState<number>(0)
 
   const getTokenPrice = async () => {
@@ -378,7 +379,7 @@ export default function Hero() {
           </div>
         </div>
       </Animated>
-      <ResponseDialog isOpen={dialog} setIsOpen={setDialog} type={dialogType} />
+      <ResponseDialog call={()=>{router.push('/presale')}} isOpen={dialog} setIsOpen={setDialog} type={dialogType} />
     </>
   )
 }

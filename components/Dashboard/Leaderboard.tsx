@@ -110,6 +110,7 @@ export default function Leaderboard() {
         <div className="grid w-full grid-cols-8 gap-2 border-b border-themeTextGrey p-4 font-semibold">
           <span className="col-span-1 truncate">{rank}</span>
           <a
+            target="_blank"
             rel="noreferrer noopener"
             href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${user?.walletAddress}`}
             className="col-span-3 truncate"
@@ -126,7 +127,7 @@ export default function Leaderboard() {
           <Toast
             refId={referralId}
             disabled={referralId ? false : true}
-            className="h-12 bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg md:px-6 px-4 min-h-[2.5rem] font-semibold text-lg"
+            className="flex h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
           >
             Invite A friend
           </Toast>

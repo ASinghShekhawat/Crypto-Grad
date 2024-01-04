@@ -21,6 +21,7 @@ import {
 import { useAccount } from 'wagmi'
 import { useRouter } from 'next/navigation'
 import Toast from '../shared/Toast'
+import copy from 'copy-to-clipboard'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -33,6 +34,7 @@ export default function DashboardHome() {
   const [referrer, setReferrer] = useState<any>()
   const [walletType, setWalletType] = useState('')
   const router = useRouter()
+  const [isAlertVisible, setIsAlertVisible] = useState(false)
 
   const initialze = () => {
     const referralId = localStorage.getItem('referralId')
@@ -62,6 +64,17 @@ export default function DashboardHome() {
   const getCGTokenPrice = async () => {
     const tokenPrice = await getTokenPrice()
     setSaleValue(Number(tokenPrice.toFixed(4)))
+  }
+
+  const handleCopy = () => {
+    setIsAlertVisible(true)
+    // navigator.clipboard.writeText(
+    //   `${window.location.origin}/?ref=${referralId}`
+    // );
+    copy(`${window.location.origin}/presale/?ref=${referralId}`)
+    setTimeout(() => {
+      setIsAlertVisible(false)
+    }, 3000)
   }
 
   const getETHUSDPrice = async () => {
@@ -171,6 +184,7 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-2 text-xl font-semibold">
           Account Info
           <a
+            target="_blank"
             rel="noreferrer noopener"
             href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
             className="text-sm font-light text-white/80"
@@ -188,6 +202,7 @@ export default function DashboardHome() {
           <div className="text-2xl font-medium">
             {walletType}
             <a
+              target="_blank"
               rel="noreferrer noopener"
               href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
               className="text-base font-light text-white/80"
@@ -251,24 +266,21 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-4">
           <div className="flex h-12 w-full items-center justify-between rounded-lg bg-[#070B16] px-4">
             {referralId}
-            <Toast
-              refId={referralId}
+            <button
+              onClick={handleCopy}
               disabled={referralId ? false : true}
               className="flex items-center gap-2 text-sm font-light text-white/60"
             >
-              Copy <FaRegCopy />
-            </Toast>
+              {isAlertVisible ? 'Copied' : 'Copy'} <FaRegCopy />
+            </button>
           </div>
-          <Button
-            onClick={() =>
-              navigator.clipboard.writeText(
-                `${window.location.host}/presale?ref=${referralId}`
-              )
-            }
-            className="h-12 w-fit md:!px-12"
+          <Toast
+            refId={referralId}
+            disabled={referralId ? false : true}
+            className="flex h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
           >
             Invite a Friend
-          </Button>
+          </Toast>
           <span className="text-xs font-light text-white/60">or</span>
           <button
             onClick={() => router.push('/referral')}
