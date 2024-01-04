@@ -12,7 +12,7 @@ const FAQ = [
   {
     title: 'Why Choose Cryptograd?',
     content:
-      'Cryptograd stands out with its comprehensive platform, designed for all skill level traders. It provides a competitive edge with features like a chatbot, trade analyser, AI news, and smart contract analysis, all delivered responsibly and accurately. Join us for the future of crypto education and trading. How do I get access to what Cryptograd offers?',
+      'Cryptograd stands out with its comprehensive platform, designed for all skill level traders. It provides a competitive edge with features like a chatbot, trade analyser, AI news, and smart contract analysis, all delivered responsibly and accurately. Join us for the future of crypto education and trading.',
   },
   // {
   //   title: 'How do I get access to what Cryptograd offers?',
