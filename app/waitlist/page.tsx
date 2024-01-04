@@ -85,7 +85,7 @@ const WaitlistPage = () => {
                 <Countdown
                   key={k}
                   renderer={renderer}
-                  date={1704306600000}
+                  date={1704649455000}
                 />
               </div>
               <Button

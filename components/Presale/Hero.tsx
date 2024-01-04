@@ -13,8 +13,10 @@ import useWallet from '@/hooks/useWallet'
 import {
   buyToken,
   endSaleTime,
+  getAmountRaised,
   getDecimals,
   getETHPrice,
+  getEventReferralDistributed,
   getEventValue,
   getTokenAmount,
 } from '@/services/web3Helper'
@@ -39,14 +41,21 @@ export default function Hero() {
   const [dialog, setDialog] = useState(false)
   const [dialogType, setDialogType] = useState(DialogType.SUCCESS)
   const search = useSearchParams()
+  const [amountRaised, setAmountRaised] = useState<number>(0)
 
   const getTokenPrice = async () => {
+    if(!amount) return
     const price = await getTokenAmount(currency?.address, amount)
     setPrice(price)
   }
 
+  const fetchAmountRaised = async () => {
+    const price = await getAmountRaised()
+    setAmountRaised(Number(price))
+  }
+
   useEffect(() => {
-    setTimer(1704643516000)
+    setTimer(1704627525000)
   }, [])
 
   const getETHUSDPrice = async (name: string) => {
@@ -62,6 +71,10 @@ export default function Hero() {
       )
     )
   }
+
+  useEffect(() => {
+    fetchAmountRaised()
+  }, [loading])
 
   useEffect(() => {
     getETHUSDPrice(currency?.name as any)
@@ -84,6 +97,14 @@ export default function Hero() {
 
   const buyCGTokens = async () => {
     try {
+      const prices = await getETHPrice()
+      const tokenPrice =
+        currency?.address === currencies[0].address ? prices[0]
+          : currency?.address === currencies[1].address
+          ? prices[1]: prices[2]
+      console.log({amount: tokenPrice * Number(amount),value: amount, tokenPrice})
+      if (tokenPrice * Number(amount) < 5 || tokenPrice * Number(amount) > 5000000000000000)
+        throw new Error('Amount should be more then 5 and less then 50000') // TODO
       const refId = search.get('ref')
       const user: any = refId && (await userWalletByRefId(refId))
       setLoading(true)
@@ -95,10 +116,7 @@ export default function Hero() {
       )
       const tokenBought = await getEventValue(res, 'TokensBought')
       const referralAdded = await getEventValue(res, 'ReferralAdded')
-      const referalIncomeDistributed = await getEventValue(
-        res,
-        'ReferalIncomeDistributed'
-      )
+      const referalIncomeDistributed = await getEventReferralDistributed(res)
       const transactionObj = {
         baseAmount: Number(tokenBought.usdAmount) / Math.pow(10, 18),
         tokenQuantity: Number(tokenBought.tokenAmount) / Math.pow(10, 18),
@@ -110,26 +128,30 @@ export default function Hero() {
       if (referralAdded) {
         await addReferral()
       }
+      console.log({ referalIncomeDistributed })
       if (referalIncomeDistributed) {
-        for (let i = 0; i < referalIncomeDistributed?.length; i++) {
-          const obj = referalIncomeDistributed[i]
-          const decimals = await getDecimals(obj.token)
-          const commisonObj = {
-            receivingUser: obj.referrer,
-            level: Number(obj.level),
-            comissionedFrom: obj.user,
-            comissionAmount: Number(obj.referalAmount) / Math.pow(10, decimals),
-            baseAmount: Number(obj.amountPurchased),
-            transactionHash: res?.transactionHash,
-            token: obj.token,
+          for (let i = 0; i < referalIncomeDistributed?.length; i++) {
+            const obj = referalIncomeDistributed[i]
+            const decimals = await getDecimals(obj.token)
+            const commisonObj = {
+              receivingUser: obj.referrer,
+              level: Number(obj.level),
+              comissionedFrom: obj.user,
+              comissionAmount:
+                Number(obj.referalAmount) / Math.pow(10, decimals),
+              baseAmount: Number(obj.amountPurchased) / Math.pow(10, decimals),
+              transactionHash: res?.transactionHash,
+              token: obj.token,
+              usdPrice: tokenPrice
+            }
+            await addComission(commisonObj)
           }
-          await addComission(commisonObj)
-        }
       }
       setLoading(false)
       setDialogType(DialogType.SUCCESS)
       setDialog(true)
     } catch (error) {
+      console.log({ error })
       setDialogType(DialogType.FAILED)
       setDialog(true)
       setLoading(false)
@@ -219,7 +241,7 @@ export default function Hero() {
               <div className="text-sm font-medium">Presale ends in:</div>
               <Countdown date={timer} renderer={renderer} />
               <div className="text-sm">
-                ${pledged.toLocaleString('en-US')} Pledged of $
+                ${amountRaised.toLocaleString('en-US')} Pledged of $
                 {(2000000).toLocaleString('en-US')} Goal
               </div>
             </div>

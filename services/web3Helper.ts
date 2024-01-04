@@ -75,7 +75,7 @@ export const getAmountRaised = async () => {
     functionName: "amountRaised",
     args: []
   });
-  return  Number(amountRaised)/Math.pow(10,18)
+  return  (Number(amountRaised)/Math.pow(10,18)).toFixed(4)
 };
 
 export const getTokenPrice = async () => {
@@ -104,14 +104,32 @@ export const getETHPrice = async () => {
   ]};
 
 export const getTokenAmount = async (address: any, amount:any) => {
+  let amountToPass ;
+  if(currencies[0].address.toLowerCase() !== address?.toLowerCase()){
+    try {
+      const decimals:any = await readContract({
+        address: address,
+        abi: tokenAbi,
+        functionName: "decimals",
+        args: []
+      });
+      amountToPass = Number(decimals) === 18? parseEther(Number(amount).toFixed(18).toString()): amount * Math.pow(10, Number(decimals))
+    } catch (error) {
+      console.log({error})
+    }
+  } else{
+    amountToPass = parseEther(Number(amount).toFixed(18).toString())
+  }
+  console.log({amountToPass})
+
   const price = await readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "getTokenAmount",
-    args: [amount, address]
+    args: [amountToPass, address]
   });
 
-  return Number(price)
+  return Number((Number(price)/Math.pow(10,18)).toFixed(4))
 };
 
 export const referalIncome = async (address: any) => {
@@ -204,6 +222,8 @@ const approveToken = async (tokenAddress: any, address: string) => {
 };
 
 export const getDecimals = async(tokenAddress: string) => {
+  if(currencies[0].address.toLowerCase() === tokenAddress?.toLowerCase())
+    return 18
   const decimals:any = await readContract({
     address: tokenAddress as any,
     abi: tokenAbi,
@@ -281,53 +301,6 @@ export const cgBougth = async (address: any) => {
   return (Number(bnqBalance) / Math.pow(10, 18)).toFixed(4);
 };
 
-// export const claimAllVestingReward = async (address:any) => {
-//   try {
-//     await publicClient.estimateContractGas({
-//       address: vestingContractAddress,
-//       abi: vestingAbi,
-//       functionName: "withdrawTokens",
-//       account: address,
-//       args: []
-//     })
-//   } catch (error) {
-//     throw error
-//   }
-//   let hash: any;
-//   try {
-//      hash = await writeContract({
-//       address: vestingContractAddress,
-//       abi: vestingAbi,
-//       functionName: "withdrawTokens",
-//       args: []
-//     });
-//   } catch (error) {
-//     throw error
-//   }
-//   return await waitForTransaction({
-//     hash: hash.hash,
-//   })
-// };
-
-// export const getClaimPercent = async (address: string, useContractRead:any) => {
-//   const tokenVested = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "userVestedAmount",
-//     args: [address],
-//   });
-//   const tokenClaimed = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "userClaimedAmount",
-//     args: [address],
-//   });
-//   return {
-//     tokenVested: Number(tokenVested) / Math.pow(10, 18),
-//     tokenClaimed: Number(tokenClaimed) / Math.pow(10, 18),
-//   };
-// };
-
 export const getElegiebleAmout = async (address: string) => {
   const poolAndAmount = await readContract({
     address: ico.address as any,
@@ -338,69 +311,23 @@ export const getElegiebleAmout = async (address: string) => {
   return poolAndAmount
 };
 
-// export const getVestingDate = async () => {
-//   const presaleEndDate = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "preSaleEnd",
-//     args : []
-//   });
-//   const cliff = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "cliff",
-//     args : []
-//   });
-
-//   return (Number(presaleEndDate) + Number(cliff)) * 1000; // In mili seconds
-// };
-
-// export const getClaimableAmount = async (address: string) => {
-//   const unloackedAmount = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "getUserUnlockedAmount",
-//     args: [address]
-//   });
-//   const userVestedAmount = await readContract({
-//     address: vestingContractAddress,
-//     abi: vestingAbi,
-//     functionName: "userVestedAmount",
-//     args: [address]
-//   });
-//   return Number(unloackedAmount) - Number(userVestedAmount);
-// };
-
-// export const unloackedAmount = async (address: string) => {
-//     const claimableamount = await readContract({
-//         address: vestingContractAddress,
-//         abi: vestingAbi,
-//         functionName: "getUserUnlockedAmount",
-//         args: [address]
-//     });
-//   return Number(claimableamount) / Math.pow(10, 18);
-// };
-
-// export const endSeedSaleTime = async () => {
-//     const phase1StartTime = await readContract({
-//         address: vestingContractAddress,
-//         abi: vestingAbi,
-//         functionName: "phase1StartTime",
-//         args: []
-//     });
-//   return Number(phase1StartTime)
-// };
-
-
 export const endSaleTime = async () => {
-  console.log("{phase1StartTime}")
   const phase1StartTime = await readContract({
       address: ico.address as any,
       abi: ico.abi,
       functionName: "endTime",
       args: []
   });
-  console.log({phase1StartTime})
+return Number(phase1StartTime)
+};
+
+export const startSaleTime = async () => {
+  const phase1StartTime = await readContract({
+      address: ico.address as any,
+      abi: ico.abi,
+      functionName: "startime",
+      args: []
+  });
 return Number(phase1StartTime)
 };
 
@@ -427,5 +354,41 @@ export const getEventValue = async (result: any, eventName:string) => {
     return tokenBought;
   } catch (error) {
     console.log({error})
+  }
+}
+
+export const getEventReferralDistributed = async (result: any) => {
+  try {
+    let referalIncomeDistributed :any = [];
+    for(let i=0; i< result.logs.length; i++){
+      try {
+        const log = decodeEventLog({
+          abi: ico.abi,
+          data: result.logs[i].data,
+          topics: result.logs[i].topics
+        })
+        if(log.eventName === "ReferalIncomeDistributed"){
+          referalIncomeDistributed.push(log.args);
+        }
+      } catch (error) {
+        console.log({error})
+      }
+    }
+    return referalIncomeDistributed;
+  } catch (error) {
+    console.log({error})
+  }
+}
+export const claimToken = async(address :any) =>{
+  let txObj:any = {
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "claimReward",
+    args: [],
+  }
+  try {
+    return await executeWriteFunction(txObj, address)
+  } catch (error) {
+    throw error
   }
 }

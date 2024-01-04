@@ -21,7 +21,7 @@ export default function DashboardHome() {
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
   const [referralId, setReferralId] = useState('awda')
-  const [timer, setTimer] = useState(1704306600000)
+  const [timer, setTimer] = useState(1704649455000)
   const { address } = useAccount()
   const [referrer, setReferrer] = useState<any>()
   const [walletType, setWalletType] = useState('')
@@ -49,7 +49,7 @@ export default function DashboardHome() {
 
   const getAmountRaisedAndTotal = async () => {
     const amountRaised = await getAmountRaised()
-    setRaised(Number(amountRaised.toFixed(4)))
+    setRaised(Number(Number(amountRaised).toFixed(4)))
   }
 
   const getCGTokenPrice = async() => {
@@ -213,7 +213,7 @@ export default function DashboardHome() {
               className="absolute left-0 h-full bg-gradient-to-tr from-themeViolet to-themeBlue"
             ></div>
             <div className="text-xs font-light">
-              {(raised * 100) / 100000000}%
+              {((raised * 100) / 100000000).toFixed(2)}%
             </div>
           </div>
         </div>

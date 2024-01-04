@@ -10,63 +10,73 @@ import { Pagination } from '@mui/material'
 import Link from 'next/link'
 import GlossaryDialog from './GlossaryDialog'
 import LearnMoreDialog from './LearnMoreDialog'
-import { referalIncome } from '@/services/web3Helper'
+import { claimToken, referalIncome } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
+import { userCommission } from '@/services/comission'
+import { getUserRank } from '@/services/user'
+import { toOrdinal } from 'number-to-words'
 
 export default function ReferAndEarn() {
   const { address } = useAccount()
   const [comission, setComission] = useState(0)
   const [totalData, setTotalData] = useState(5000)
   const [totalPages, setTotalPages] = useState(500)
-  const [current, setCurrent] = useState(2)
+  const [current, setCurrent] = useState(1)
   const [glossary, setGlossary] = useState(false)
   const [learnMore, setLearnMore] = useState(false)
-  const [referralId, setReferralId] = useState<string| null>()
-  const [reportData, setReportData] = useState([
-    {
-      timestamp: '05-09-2023 09:32 AM UTC',
-      level: '3',
-      wallet: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      buyAmount: '0.30203',
-      commission: '0.11',
-      buyCurrency: 'BUSD',
-      hash: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      status: 'pending',
-    },
-    {
-      timestamp: '05-09-2023 09:32 AM UTC',
-      level: '3',
-      wallet: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      buyAmount: '0.30203',
-      commission: '0.11',
-      buyCurrency: 'BUSD',
-      hash: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      status: 'pending',
-    },
-    {
-      timestamp: '05-09-2023 09:32 AM UTC',
-      level: '3',
-      wallet: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      buyAmount: '0.30203',
-      commission: '0.11',
-      buyCurrency: 'BUSD',
-      hash: '0x9B619171354e571aaFd291c108ef2E0A90939FE4',
-      status: 'pending',
-    },
-  ])
+  const [referralId, setReferralId] = useState<string | null>()
+  const [reportData, setReportData] = useState<
+    [
+      {
+        transactionHash: string
+        createdAt: string
+        depositWallet: string
+        comissionAmount: number
+        baseAmount: number
+        level: number
+        comissionedFrom: any
+        isClaimed: boolean
+      },
+    ]
+  >()
+  const [rank, setRank] = useState<string>()
 
-  const getReferralIncome = async() => {
+  const getReferralIncome = async () => {
     const referralIncome = await referalIncome(address)
-    setComission(referralIncome)
+    setComission(Number(referralIncome.toFixed(4)))
   }
 
-  useEffect(()=>{
-    getReferralIncome()
-  },[address])
+  const getUserComission = async () => {
+    const comission: any = await userCommission(current)
+    setReportData(comission.receivingUserComission)
+    setTotalData(comission.total)
+    setTotalPages(comission.total / 10)
+  }
 
-  useEffect(()=>{
+  const claimUserToken = async () => {
+    return await claimToken(address)
+  }
+
+  const userRank = async () => {
+    const rank = await getUserRank()
+    setRank(toOrdinal(rank.rank))
+  }
+
+  useEffect(() => {
+    userRank()
+  }, [address])
+
+  useEffect(() => {
+    getUserComission()
+  }, [current])
+
+  useEffect(() => {
+    getReferralIncome()
+  }, [address])
+
+  useEffect(() => {
     setReferralId(localStorage.getItem('referralId'))
-  },[])
+  }, [])
 
   return (
     <>
@@ -76,12 +86,14 @@ export default function ReferAndEarn() {
             Refer a friend and earn upto{' '}
             <span className="text-themeBorderBlue">15% comission</span>
           </div>
-          <button className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1" 
-          onClick={() =>
-            navigator.clipboard.writeText(
-              `${window.location.host}/presale?ref=${referralId}`
-            )
-          }>
+          <button
+            className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1"
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `${window.location.host}/presale?ref=${referralId}`
+              )
+            }
+          >
             Copy Invite Code <FaRegCopy />
           </button>
         </div>
@@ -159,7 +171,7 @@ export default function ReferAndEarn() {
             />
             <div className="flex flex-col text-xl font-semibold capitalize">
               <div className="text-white/60">Your Referral Rank</div>
-              <span className="text-4xl font-bold">4th</span>
+              <span className="text-4xl font-bold">{rank}</span>
             </div>
           </div>
           <Link
@@ -203,31 +215,36 @@ export default function ReferAndEarn() {
               Status
             </div>
           </div>
-          {reportData.map((data, i) => (
-            <div
-              key={data.hash + 1}
-              className="grid min-w-[900px] grid-cols-7 gap-2 rounded-xl p-4 font-light md:min-w-0"
-            >
-              <div>{data.timestamp}</div>
-              <div className="truncate">Lvl {data.level}</div>
-              <div className="truncate">{data.buyAmount}</div>
-              <div className="truncate">{data.wallet}</div>
-              <div className="truncate">{data.commission}</div>
-              <div className="truncate">{data.hash}</div>
-              <div className="flex justify-center">
-                {data.status === 'pending' ? (
-                  <Button
-                    type={ButtonType.SECONDARY}
-                    className="text-sm font-light"
-                  >
-                    Claim
-                  </Button>
-                ) : (
-                  data.status
-                )}
+          {reportData &&
+            reportData.map((data, i) => (
+              <div
+                key={data.transactionHash + 1}
+                className="grid min-w-[900px] grid-cols-7 gap-2 rounded-xl p-4 font-light md:min-w-0"
+              >
+                <div>{new Date(data.createdAt).toString()}</div>
+                <div className="truncate">Lvl {data.level}</div>
+                <div className="truncate">
+                  {data.comissionedFrom.walletAddress}
+                </div>
+                <div className="truncate">{data.baseAmount}</div>
+                <div className="truncate">{data.comissionAmount}</div>
+                <div className="truncate">{data.transactionHash}</div>
+                <div className="flex justify-center">
+                  {data?.isClaimed || data?.isClaimed === false ? (
+                    <span onClick={claimUserToken}>
+                      <Button
+                        type={ButtonType.SECONDARY}
+                        className="text-sm font-light"
+                      >
+                        Claim
+                      </Button>
+                    </span>
+                  ) : (
+                    'Claimed'
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <div className="col-span-1 flex items-center justify-between gap-4 text-xs md:col-span-3">
@@ -239,7 +256,9 @@ export default function ReferAndEarn() {
             hideNextButton
           />
           <span>
-            Showing {} - {50} out of {totalData}
+            Showing {} -{' '}
+            {reportData ? (current - 1) * 10 + reportData?.length : 0} out of{' '}
+            {totalData}
           </span>
         </div>
       </div>

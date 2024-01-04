@@ -105,7 +105,7 @@ export const ico = {
             ],
             "name": "distributeRevenueEth",
             "outputs": [],
-            "stateMutability": "payable",
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -234,13 +234,13 @@ export const ico = {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
                     "name": "token",
                     "type": "address"
@@ -321,24 +321,6 @@ export const ico = {
             "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "min",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "max",
-                    "type": "uint256"
-                }
-            ],
-            "name": "updateMinMaxBuy",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "uint256",
                     "name": "_tokenSupply",
                     "type": "uint256"
                 }
@@ -362,6 +344,19 @@ export const ico = {
                 }
             ],
             "name": "updateTime",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_price",
+                    "type": "uint256"
+                }
+            ],
+            "name": "updateUnlockPrice",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -883,5 +878,5 @@ export const ico = {
             "type": "function"
         }
     ],
-    address: "0xCb1c622E3F69cB6c86DA5e288D5007a200E4A608"
+    address: "0xcB5bCbA4CEEcbe3E23fb8f2f7180e226ae705e06"
 }

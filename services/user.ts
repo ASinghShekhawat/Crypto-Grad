@@ -52,6 +52,20 @@ export const userWalletByUserId = async (userId: string) => {
   return res;
 }
 
+export const getUserDetails = async () => {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/user-details`,
+    {
+      headers: {
+        Authorization : `Bearer ${getToken()}`
+      }
+    }
+  );
+  return res.data;
+}
+
+
+
 export const userDirectPartners = async () => {
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_API_URL}/user/directPartners`,
@@ -76,16 +90,6 @@ export const totalTeamPartners = async () => {
   return res;
 }
 
-export const totalComission =async (address:string) => {
-  const res = await axios.post(
-    `${process.env.NEXT_PUBLIC_API_URL}/commission/user-commissions`,
-      {
-        walletAddress : address
-      }
-  );
-  return res.data;
-}
-
 export const userInfo =async (address:string) => {
   const res = await axios.post(
     `${process.env.NEXT_PUBLIC_API_URL}/user/userInfo`,
@@ -102,6 +106,25 @@ export const totalteamTurnOver =async (address:string) => {
       {
         walletAddress : address
       }
+  );
+  return res.data;
+}
+
+export const getUserRank =async () => {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/rank`,
+    {
+      headers: {
+        Authorization : `Bearer ${getToken()}`
+      }
+    }
+  );
+  return res.data;
+}
+
+export const getLeaderBoard =async () => {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/leader-board`
   );
   return res.data;
 }

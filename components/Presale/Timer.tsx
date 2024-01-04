@@ -11,7 +11,7 @@ export default function Timer() {
   const [timer, setTimer] = useState(Date.now()+5000)
 
   useEffect(()=>{
-    setTimer(1704643516000)
+    setTimer(1704627525000)
   },[])
 
   const renderer = ({

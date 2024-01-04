@@ -13,7 +13,7 @@ const NftDroppingTimer = () => {
   const navigate = useRouter()
 
   useEffect(() => {
-    setTimer(1704306600000)
+    setTimer(1704649455000)
   }, [])
 
   const renderer = ({
