@@ -241,12 +241,10 @@ export default function Hero() {
             cryptocurrency education in an unparalleled way.
           </div>
           <div className="flex w-full justify-center">
-            <Button className="mt-4 h-12 w-fit !font-normal">
-              Buy Now
-            </Button>
+            <Button className="mt-4 h-12 w-fit !font-normal">Buy Now</Button>
           </div>
         </div>
-        <div className="relative z-1 flex w-full items-center justify-center">
+        {/* <div className="relative z-1 flex w-full items-center justify-center">
           <div className="presaleCardBg relative mt-4 flex w-full flex-col gap-6 rounded-xl border border-[#6754F842] p-4 pt-6">
             <div className="absolute -top-4 w-fit rounded-full border border-themeBorderBlue/25 bg-gradient-to-b from-white/5 to-white/0 px-3 py-1 backdrop-blur-lg">
               Token Presale
@@ -383,6 +381,13 @@ export default function Hero() {
               </Button>
             )}
           </div>
+        </div> */}
+        <div className="relative flex w-full items-center justify-center">
+          <div className="absolute left-0 right-0 top-[10%] mx-auto flex w-fit flex-col items-center justify-center gap-2">
+            <span>Coming Soon</span>
+            <Countdown date={1706725800000} renderer={renderer} />
+          </div>
+          <Image src="/Presale/soon.svg" width={619} height={585} alt="" />
         </div>
       </Animated>
       <ResponseDialog
