@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
         <p>
           At CryptoGrad, we are committed to safeguarding the privacy of our
           users. This Privacy Policy outlines how we collect, use, disclose, and
-          protect your personal information. By using CryptoGrad's services and
+          protect your personal information. By using CryptoGrad&apos;s services and
           visiting our website, you consent to the practices described in this
           policy.
         </p>
