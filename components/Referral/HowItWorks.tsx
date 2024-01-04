@@ -39,8 +39,8 @@ export default function HowItWorks() {
             Earn Upto 15% Commission
           </div>
           <div className="text-center text-sm font-light md:max-w-[15rem]">
-            Stake patiently, unlock exclusives—NFTs, resources, courses, and
-            more. Elevate your rewards, embrace the extraordinary.
+            Stake patiently, unlock exclusives— CG AI tools, courses, community
+            and more. Elevate your rewards, embrace the extraordinary.
           </div>
         </div>
       </div>

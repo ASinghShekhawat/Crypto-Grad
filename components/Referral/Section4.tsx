@@ -7,12 +7,12 @@ export default function Section4() {
       <Section4Image />
       <div className="flex w-full flex-col items-center gap-4 mmd:items-start">
         <div className="relative z-10 mb-2 text-center text-3xl font-bold md:text-5xl mmd:text-left">
-          Who Is It For? - H1
+          Who Is It For?
         </div>
-        <div>🎓 College student willing to get a side income****</div>
-        <div>🧳 Employees willing to get a side income****</div>
-        <div>️🎙️ Influencers with mass following****</div>
-        <div>🏢 Syndicate leaders running syndicate***</div>
+        <div>🎓 Aspiring College Students Seeking Additional Income</div>
+        <div>🧳 Employees Eager to Supplement Their Income</div>
+        <div>️🎙️ Influencers Boasting a Massive Following</div>
+        <div>🏢 Syndicate leaders running syndicate</div>
       </div>
     </Animated>
   )
