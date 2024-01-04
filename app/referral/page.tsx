@@ -6,6 +6,7 @@ import Section5 from '@/components/Referral/Section5'
 import System from '@/components/Referral/System'
 import Page from '@/components/shared/Page'
 import ReferralFaq from '@/components/Referral/ReferralFaq'
+import LastSection from '@/components/Referral/LastSection'
 
 export default function ReferralPage() {
   return (
@@ -16,6 +17,7 @@ export default function ReferralPage() {
       <Section4 />
       <Section6 />
       <Section5 />
+      <LastSection />
       <ReferralFaq />
     </Page>
   )

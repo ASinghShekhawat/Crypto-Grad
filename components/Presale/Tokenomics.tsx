@@ -26,8 +26,8 @@ export default function Tokenomics() {
       <Image
         src="/Presale/tokenomics-mobile.png"
         alt=""
-        width={338}
-        height={307}
+        width={333}
+        height={303}
         className="md:hidden"
       />
       <a

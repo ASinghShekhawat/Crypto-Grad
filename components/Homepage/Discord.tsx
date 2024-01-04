@@ -18,13 +18,13 @@ const Discord = () => {
         </div>
         <Button className="h-12 w-fit text-xl">Get Started</Button>
       </div>
-      <div className='w-full'>
+      <div className='md:w-full w-3/4'>
         <Image
-          src="/Homepage/discord.png"
-          width={351}
-          height={552}
+          src="/Homepage/3.gif"
+          width={365}
+          height={894}
           alt=""
-          className="relative z-0 mx-auto px-12 pl-0 md:pl-12"
+          className="relative z-0 mx-auto px-12 py-8 md:pl-12"
         />
       </div>
     </Animated>

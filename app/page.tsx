@@ -33,7 +33,7 @@ export default function Home() {
       {/* <Section3 /> */}
       {/* <NftCollection /> */}
       <AiSection5 />
-      {/* <Discord /> */}
+      <Discord />
       {/* ! Discord */}
       {/* <LiveEducator /> */}
       {/* <Experience /> */}
