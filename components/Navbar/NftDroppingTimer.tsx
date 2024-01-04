@@ -7,13 +7,19 @@ import { useEffect, useState } from 'react'
 import NftDroppedDialog from './NftDroppedDialog'
 import { makeMeTwoDigits } from '@/utils/numberFix'
 import { useRouter } from 'next/navigation'
+import { endSaleTime } from '@/services/web3Helper'
 
 const NftDroppingTimer = () => {
   const [timer, setTimer] = useState(Date.now() + 5000)
   const navigate = useRouter()
 
+  const endSale = async () => {
+    const saleTime = await endSaleTime()
+    setTimer(saleTime * 1000)
+  }
+
   useEffect(() => {
-    setTimer(1704649455000)
+    endSale()
   }, [])
 
   const renderer = ({
@@ -27,7 +33,7 @@ const NftDroppingTimer = () => {
       return (
         <>
           <div className="flex w-fit items-center justify-center gap-2 text-xs md:gap-4 md:text-base">
-            <div className="font-semibold">Pre-Sale Started</div>
+            <div className="font-semibold">Pre-Sale Ended</div>
             <Button
               onClick={() => navigate.push('presale')}
               type={ButtonType.SECONDARY}
@@ -41,7 +47,7 @@ const NftDroppingTimer = () => {
     } else {
       return (
         <div className="flex w-fit items-center justify-center gap-2 text-xs opacity-80 md:gap-4 md:text-base">
-          <div className="font-semibold">Pre-Sale starts in</div>
+          <div className="font-semibold">Pre-Sale ends in</div>
           <div className="flex items-start gap-1">
             <div className="flex flex-col items-center justify-center">
               <span className="font-bold">{makeMeTwoDigits(days)}d</span>

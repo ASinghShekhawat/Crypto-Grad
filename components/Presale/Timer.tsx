@@ -6,13 +6,19 @@ import { useEffect, useState } from 'react'
 import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
+import { endSaleTime } from '@/services/web3Helper'
 
 export default function Timer() {
-  const [timer, setTimer] = useState(Date.now()+5000)
+  const [timer, setTimer] = useState(Date.now() + 5000)
 
-  useEffect(()=>{
-    setTimer(1704627525000)
-  },[])
+  const endSale = async () => {
+    const saleTime = await endSaleTime()
+    setTimer(saleTime * 1000)
+  }
+
+  useEffect(() => {
+    endSale()
+  }, [])
 
   const renderer = ({
     days,
@@ -28,28 +34,28 @@ export default function Timer() {
           <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(days)}
           </span>
-          <span className="md:pt-2 md:text-xl text-xs">Days</span>
+          <span className="text-xs md:pt-2 md:text-xl">Days</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
         <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
           <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(hours)}
           </span>
-          <span className="md:pt-2 md:text-xl text-xs">Hours</span>
+          <span className="text-xs md:pt-2 md:text-xl">Hours</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
         <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
           <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(minutes)}
           </span>
-          <span className="md:pt-2 md:text-xl text-xs">Mins</span>
+          <span className="text-xs md:pt-2 md:text-xl">Mins</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
         <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
           <span className="text-xl leading-7 md:text-6xl">
             {makeMeTwoDigits(seconds)}
           </span>
-          <span className="md:pt-2 md:text-xl text-xs">Secs</span>
+          <span className="text-xs md:pt-2 md:text-xl">Secs</span>
         </div>
       </div>
     )
