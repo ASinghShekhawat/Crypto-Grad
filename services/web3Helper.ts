@@ -32,13 +32,14 @@ const executeWriteFunction = async (txObj:any, userAddress:string) => {
 
 
 export const getUsdcAndUsdtTokenAddresses = async () => {
-  const usdt:any = readContract({
+  const publicClient = createPublicClientLocal()
+  const usdt:any = publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "usdt",
     args : []
   });
-  const usdc:any = readContract({
+  const usdc:any = publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "usdc",
@@ -48,7 +49,8 @@ export const getUsdcAndUsdtTokenAddresses = async () => {
 };
 
 export const maxSeedSaleBuyAmountUser = async (address:any) => {
-  const usdInvestedByUser:any = readContract({
+  const publicClient = createPublicClientLocal()
+  const usdInvestedByUser:any = publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "seedSaleUsdInvestedByUser",
@@ -58,7 +60,8 @@ export const maxSeedSaleBuyAmountUser = async (address:any) => {
 };
 
 export const preRegisterationUsdInvestedByUser = async (address:any) => {
-  const usdInvestedByUser:any = readContract({
+  const publicClient = createPublicClientLocal()
+  const usdInvestedByUser:any = publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "preRegisterationUsdInvestedByUser",
@@ -69,7 +72,8 @@ export const preRegisterationUsdInvestedByUser = async (address:any) => {
 
 
 export const getAmountRaised = async () => {
-  const amountRaised = await readContract({
+  const publicClient = createPublicClientLocal()
+  const amountRaised = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "amountRaised",
@@ -79,7 +83,8 @@ export const getAmountRaised = async () => {
 };
 
 export const getTokenPrice = async () => {
-  const tokenPrice = await readContract({
+  const publicClient = createPublicClientLocal()
+  const tokenPrice = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "tokenPrice",
@@ -90,7 +95,8 @@ export const getTokenPrice = async () => {
 };
 
 export const getETHPrice = async () => {
-  const tokenPrice:any = await readContract({
+  const publicClient = createPublicClientLocal()
+  const tokenPrice:any = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "getPrice",
@@ -105,9 +111,10 @@ export const getETHPrice = async () => {
 
 export const getTokenAmount = async (address: any, amount:any) => {
   let amountToPass ;
+  const publicClient = createPublicClientLocal()
   if(currencies[0].address.toLowerCase() !== address?.toLowerCase()){
     try {
-      const decimals:any = await readContract({
+      const decimals:any = await publicClient.readContract({
         address: address,
         abi: tokenAbi,
         functionName: "decimals",
@@ -120,9 +127,7 @@ export const getTokenAmount = async (address: any, amount:any) => {
   } else{
     amountToPass = parseEther(Number(amount).toFixed(18).toString())
   }
-  console.log({amountToPass})
-
-  const price = await readContract({
+  const price = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "getTokenAmount",
@@ -133,7 +138,8 @@ export const getTokenAmount = async (address: any, amount:any) => {
 };
 
 export const referalIncome = async (address: any) => {
-  const price = await readContract({
+  const publicClient = createPublicClientLocal()
+  const price = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "referalIncome",
@@ -146,26 +152,27 @@ export const referalIncome = async (address: any) => {
 export const getTokenBalance = async (
   userAddress: string
 ) => {
+  const publicClient = createPublicClientLocal()
   const tokenAddresses: any = await getUsdcAndUsdtTokenAddresses();
-  const usdtBalance = await readContract({
+  const usdtBalance = await publicClient.readContract({
     address: tokenAddresses.usdt,
     abi: tokenAbi,
     functionName: "balanceOf",
     args: [userAddress],
   });
-  const usdcBalance = await readContract({
+  const usdcBalance = await publicClient.readContract({
     address: tokenAddresses.usdc,
     abi: tokenAbi,
     functionName: "balanceOf",
     args: [userAddress],
   });
-  const usdtDecimals:any = await readContract({
+  const usdtDecimals:any = await publicClient.readContract({
     address: tokenAddresses.usdt,
     abi: tokenAbi,
     functionName: "decimals",
     args: []
   });
-  const usdcDecimals:any = await readContract({
+  const usdcDecimals:any = await publicClient.readContract({
     address: tokenAddresses.usdc,
     abi: tokenAbi,
     functionName: "decimals",
@@ -224,7 +231,8 @@ const approveToken = async (tokenAddress: any, address: string) => {
 export const getDecimals = async(tokenAddress: string) => {
   if(currencies[0].address.toLowerCase() === tokenAddress?.toLowerCase())
     return 18
-  const decimals:any = await readContract({
+    const publicClient = createPublicClientLocal()
+  const decimals:any = await publicClient.readContract({
     address: tokenAddress as any,
     abi: tokenAbi,
     functionName: "decimals",
@@ -242,7 +250,8 @@ export const buyToken = async (
   let amountInWei;
 
   if (token !== currencies[0].address){
-    const decimals:any = await readContract({
+    const publicClient = createPublicClientLocal()
+    const decimals:any = await publicClient.readContract({
       address: token as any,
       abi: tokenAbi,
       functionName: "decimals",
@@ -282,7 +291,8 @@ export const allowance = async (
   token: string,
   address: string
 ) => {
-  const allowance = await readContract({
+  const publicClient = createPublicClientLocal()
+  const allowance = await publicClient.readContract({
     address: token as any,
     abi: tokenAbi,
     functionName: "allowance",
@@ -292,7 +302,8 @@ export const allowance = async (
 };
 
 export const cgBougth = async (address: any) => {
-  const bnqBalance = await readContract({
+  const publicClient = createPublicClientLocal()
+  const bnqBalance = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "tokenBoughtUser",
@@ -302,7 +313,8 @@ export const cgBougth = async (address: any) => {
 };
 
 export const getElegiebleAmout = async (address: string) => {
-  const poolAndAmount = await readContract({
+  const publicClient = createPublicClientLocal()
+  const poolAndAmount = await publicClient.readContract({
     address: ico.address as any,
     abi: ico.abi,
     functionName: "getPoolAndAmount",
@@ -312,7 +324,8 @@ export const getElegiebleAmout = async (address: string) => {
 };
 
 export const endSaleTime = async () => {
-  const phase1StartTime = await readContract({
+  const publicClient = createPublicClientLocal()
+  const phase1StartTime = await publicClient.readContract({
       address: ico.address as any,
       abi: ico.abi,
       functionName: "endTime",
@@ -322,7 +335,8 @@ return Number(phase1StartTime)
 };
 
 export const startSaleTime = async () => {
-  const phase1StartTime = await readContract({
+  const publicClient = createPublicClientLocal()
+  const phase1StartTime = await publicClient.readContract({
       address: ico.address as any,
       abi: ico.abi,
       functionName: "startime",
