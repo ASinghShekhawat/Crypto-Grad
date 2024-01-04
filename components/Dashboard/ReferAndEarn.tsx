@@ -21,6 +21,7 @@ export default function ReferAndEarn() {
   const { address } = useAccount()
   const [comission, setComission] = useState(0)
   const [totalData, setTotalData] = useState(5000)
+  const [loading, setLoading] = useState(false)
   const [totalPages, setTotalPages] = useState(500)
   const [current, setCurrent] = useState(1)
   const [glossary, setGlossary] = useState(false)
@@ -55,7 +56,13 @@ export default function ReferAndEarn() {
   }
 
   const claimUserToken = async () => {
-    return await claimToken(address)
+    setLoading(true)
+    try {
+      claimToken(address)
+      setLoading(false)
+    } catch (error) {
+      setLoading(false)
+    }
   }
 
   const userRank = async () => {
@@ -187,7 +194,12 @@ export default function ReferAndEarn() {
         </div>
         <div className="mt-4 flex items-center justify-between text-3xl font-bold md:col-span-3">
           H1 for the referral data
-          <Button type={ButtonType.SECONDARY} className="text-sm font-light">
+          <Button
+            onClick={claimUserToken}
+            loading={loading}
+            type={ButtonType.SECONDARY}
+            className="text-sm font-light"
+          >
             Claim
           </Button>
         </div>
