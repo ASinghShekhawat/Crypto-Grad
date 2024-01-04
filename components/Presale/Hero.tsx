@@ -99,11 +99,6 @@ export default function Hero() {
   }, [address])
 
   const buyCGTokens = async () => {
-    if (Number(price) < 500 || Number(price) > 50000) {
-      setError(true)
-      setErrorStat(true)
-      return
-    }
     try {
       const prices = await getETHPrice()
       const tokenPrice =
@@ -120,8 +115,11 @@ export default function Hero() {
       if (
         tokenPrice * Number(amount) < 5 ||
         tokenPrice * Number(amount) > 5000000000000000
-      )
+      ) {
+        setError(true)
+        setErrorStat(true)
         throw new Error('Amount should be more then 5 and less then 50000') // TODO
+      }
       const refId = search.get('ref')
       const user: any = refId && (await userWalletByRefId(refId))
       setLoading(true)
