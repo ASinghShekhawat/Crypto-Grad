@@ -40,9 +40,14 @@ const CHART_DATA = [
 
 export default function SystemChart() {
   return (
-    <div className="relative flex h-[400px] items-end scale-[0.55] md:scale-100 justify-center gap-8">
+    <div className="relative flex h-[400px] scale-[0.55] items-end justify-center gap-8 md:scale-100">
       {CHART_DATA.map((chart) => (
-        <ChartBar value={chart.value} height={chart.height} tag={chart.tag} />
+        <ChartBar
+          key={chart.value}
+          value={chart.value}
+          height={chart.height}
+          tag={chart.tag}
+        />
       ))}
     </div>
   )
