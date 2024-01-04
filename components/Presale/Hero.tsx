@@ -47,7 +47,7 @@ export default function Hero() {
   const [amountRaised, setAmountRaised] = useState<number>(0)
 
   const getTokenPrice = async () => {
-    if(!amount) return
+    if (!amount) return
     const price = await getTokenAmount(currency?.address, amount)
     setPrice(price)
   }
@@ -68,8 +68,8 @@ export default function Hero() {
         (name === 'ETH'
           ? tokenPrice[0]
           : name === 'USDT'
-          ? tokenPrice[1]
-          : tokenPrice[2]
+            ? tokenPrice[1]
+            : tokenPrice[2]
         ).toFixed(4)
       )
     )
@@ -99,7 +99,7 @@ export default function Hero() {
   }, [address])
 
   const buyCGTokens = async () => {
-    if (Number(amount) < 500 || Number(amount) > 50000) {
+    if (Number(price) < 500 || Number(price) > 50000) {
       setError(true)
       setErrorStat(true)
       return
@@ -107,11 +107,20 @@ export default function Hero() {
     try {
       const prices = await getETHPrice()
       const tokenPrice =
-        currency?.address === currencies[0].address ? prices[0]
+        currency?.address === currencies[0].address
+          ? prices[0]
           : currency?.address === currencies[1].address
-          ? prices[1]: prices[2]
-      console.log({amount: tokenPrice * Number(amount),value: amount, tokenPrice})
-      if (tokenPrice * Number(amount) < 5 || tokenPrice * Number(amount) > 5000000000000000)
+            ? prices[1]
+            : prices[2]
+      console.log({
+        amount: tokenPrice * Number(amount),
+        value: amount,
+        tokenPrice,
+      })
+      if (
+        tokenPrice * Number(amount) < 5 ||
+        tokenPrice * Number(amount) > 5000000000000000
+      )
         throw new Error('Amount should be more then 5 and less then 50000') // TODO
       const refId = search.get('ref')
       const user: any = refId && (await userWalletByRefId(refId))
@@ -138,22 +147,21 @@ export default function Hero() {
       }
       console.log({ referalIncomeDistributed })
       if (referalIncomeDistributed) {
-          for (let i = 0; i < referalIncomeDistributed?.length; i++) {
-            const obj = referalIncomeDistributed[i]
-            const decimals = await getDecimals(obj.token)
-            const commisonObj = {
-              receivingUser: obj.referrer,
-              level: Number(obj.level),
-              comissionedFrom: obj.user,
-              comissionAmount:
-                Number(obj.referalAmount) / Math.pow(10, decimals),
-              baseAmount: Number(obj.amountPurchased) / Math.pow(10, decimals),
-              transactionHash: res?.transactionHash,
-              token: obj.token,
-              usdPrice: tokenPrice
-            }
-            await addComission(commisonObj)
+        for (let i = 0; i < referalIncomeDistributed?.length; i++) {
+          const obj = referalIncomeDistributed[i]
+          const decimals = await getDecimals(obj.token)
+          const commisonObj = {
+            receivingUser: obj.referrer,
+            level: Number(obj.level),
+            comissionedFrom: obj.user,
+            comissionAmount: Number(obj.referalAmount) / Math.pow(10, decimals),
+            baseAmount: Number(obj.amountPurchased) / Math.pow(10, decimals),
+            transactionHash: res?.transactionHash,
+            token: obj.token,
+            usdPrice: tokenPrice,
           }
+          await addComission(commisonObj)
+        }
       }
       setLoading(false)
       setDialogType(DialogType.SUCCESS)
@@ -279,11 +287,6 @@ export default function Hero() {
                   }}
                   className="w-full border-none bg-inherit text-base font-medium focus:outline-none"
                 />
-                {error && errorStat && (
-                  <span className="text-xs font-semibold">
-                    * Amount cannot be less than 500 or greater than 50,000
-                  </span>
-                )}
                 <Listbox value={currency} onChange={setCurrency}>
                   {({ open }) => (
                     <div className="relative mt-1">
@@ -362,6 +365,11 @@ export default function Hero() {
                 <div className="w-full text-base font-medium">{price}</div>
                 <div>CG</div>
               </div>
+              {error && errorStat && (
+                <span className="text-xs font-semibold text-red-400">
+                  * Amount cannot be less than 500 or greater than 50,000
+                </span>
+              )}
             </div>
             {!isLoggedIn ? (
               <Button className="h-12 !font-normal" onClick={connectWallet}>
@@ -379,7 +387,14 @@ export default function Hero() {
           </div>
         </div>
       </Animated>
-      <ResponseDialog call={()=>{router.push('/presale')}} isOpen={dialog} setIsOpen={setDialog} type={dialogType} />
+      <ResponseDialog
+        call={() => {
+          router.push('/presale')
+        }}
+        isOpen={dialog}
+        setIsOpen={setDialog}
+        type={dialogType}
+      />
     </>
   )
 }

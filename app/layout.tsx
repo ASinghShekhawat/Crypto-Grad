@@ -7,6 +7,7 @@ import Providers from './providers'
 import NftDroppingNav from '@/components/Navbar/NftDroppingNav'
 import Footer from '@/components/Footer/Footer'
 import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
+import Script from 'next/script'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -38,6 +39,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <Script
+          id="ms-clarity"
+          src="https://www.clarity.ms/tag/kglbyn6cj3"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={dmSans.className}>
         <NoSSrWrapper>
