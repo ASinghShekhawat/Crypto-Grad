@@ -15,6 +15,7 @@ import { useAccount } from 'wagmi'
 import { userCommission } from '@/services/comission'
 import { getUserRank } from '@/services/user'
 import { toOrdinal } from 'number-to-words'
+import Toast from '../shared/Toast'
 
 export default function ReferAndEarn() {
   const { address } = useAccount()
@@ -86,16 +87,13 @@ export default function ReferAndEarn() {
             Refer a friend and earn upto{' '}
             <span className="text-themeBorderBlue">15% comission</span>
           </div>
-          <button
+          <Toast
+            refId={referralId!}
+            disabled={referralId ? false : true}
             className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1"
-            onClick={() =>
-              navigator.clipboard.writeText(
-                `${window.location.host}/presale?ref=${referralId}`
-              )
-            }
           >
             Copy Invite Code <FaRegCopy />
-          </button>
+          </Toast>
         </div>
         <div className="flex flex-col gap-4 md:col-span-3">
           <div className="text-5xl font-bold capitalize">
@@ -149,17 +147,23 @@ export default function ReferAndEarn() {
               View your referral stats.
             </span>
           </div>
-          <button className="w-fit text-left text-sm text-themeBorderBlue underline">
+          <button
+            onClick={() => setLearnMore(true)}
+            className="w-fit text-left text-sm text-themeBorderBlue underline"
+          >
             Know More
           </button>
         </div>
-        <div className="flex items-center gap-2 text-xs font-light md:col-span-3 md:justify-end">
+        <button
+          onClick={() => setGlossary(true)}
+          className="flex items-center gap-2 text-xs font-light md:col-span-3 md:justify-end"
+        >
           <MdOutlineInfo className="text-xl" />
           Confused?
           <button className="text-themeBorderBlue underline">
             View Glossary
           </button>
-        </div>
+        </button>
         <div className="flex flex-col items-center justify-between gap-4 rounded-3xl bg-themeBgBlack p-4 md:col-span-3 md:flex-row">
           <div className="flex items-center gap-4">
             <Image
@@ -181,11 +185,14 @@ export default function ReferAndEarn() {
             View Leaderboard
           </Link>
         </div>
-        <div className="mt-4 text-3xl font-bold md:col-span-3">
+        <div className="mt-4 flex items-center justify-between text-3xl font-bold md:col-span-3">
           H1 for the referral data
+          <Button type={ButtonType.SECONDARY} className="text-sm font-light">
+            Claim
+          </Button>
         </div>
         <div className="flex flex-col overflow-x-scroll md:col-span-3 md:overflow-auto">
-          <div className="grid min-w-[900px] grid-cols-7 gap-2 rounded-xl bg-themeBgBlack p-4 font-semibold md:min-w-0">
+          <div className="grid min-w-[900px] grid-cols-6 gap-2 rounded-xl bg-themeBgBlack p-4 font-semibold md:min-w-0">
             <div>
               TX <br />
               Timestamp
@@ -210,16 +217,16 @@ export default function ReferAndEarn() {
               TX <br />
               Hash
             </div>
-            <div>
+            {/* <div>
               Commission <br />
               Status
-            </div>
+            </div> */}
           </div>
           {reportData &&
             reportData.map((data, i) => (
               <div
                 key={data.transactionHash + 1}
-                className="grid min-w-[900px] grid-cols-7 gap-2 rounded-xl p-4 font-light md:min-w-0"
+                className="grid min-w-[900px] grid-cols-6 gap-2 rounded-xl p-4 font-light md:min-w-0"
               >
                 <div>{new Date(data.createdAt).toString()}</div>
                 <div className="truncate">Lvl {data.level}</div>
@@ -228,8 +235,14 @@ export default function ReferAndEarn() {
                 </div>
                 <div className="truncate">{data.baseAmount}</div>
                 <div className="truncate">{data.comissionAmount}</div>
-                <div className="truncate">{data.transactionHash}</div>
-                <div className="flex justify-center">
+                <a
+                  rel="noreferrer noopener"
+                  href={`${process.env.NEXT_PUBLIC_EXPLORER}tx/${data.transactionHash}`}
+                  className="truncate"
+                >
+                  {data.transactionHash}
+                </a>
+                {/* <div className="flex justify-center">
                   {data?.isClaimed || data?.isClaimed === false ? (
                     <span onClick={claimUserToken}>
                       <Button
@@ -242,7 +255,7 @@ export default function ReferAndEarn() {
                   ) : (
                     'Claimed'
                   )}
-                </div>
+                </div> */}
               </div>
             ))}
         </div>

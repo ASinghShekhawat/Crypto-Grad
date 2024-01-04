@@ -56,7 +56,7 @@ export const WalletContext = createContext<IWalletContext | null>(null)
 export const WalletProvider = ({ children }: Children) => {
   const [dialog, setDialog] = useState(false)
   const { open } = useWeb3Modal()
-  const router = useRouter()
+  // const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [referralId, setReferralId] = useState("");
@@ -89,7 +89,7 @@ export const WalletProvider = ({ children }: Children) => {
     localStorage.clear();
     setIsLoggedIn(false);
     setLoading(false);
-    router.push('/')
+    // router.push('/')
   }
 
   return (

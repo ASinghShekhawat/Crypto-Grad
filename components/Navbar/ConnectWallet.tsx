@@ -39,14 +39,17 @@ const ConnectWallet = ({ drawer }: IDrawerGeneric) => {
               <div className="flex gap-2">
                 <Button
                   onClick={() => router.push('/dashboard?tab=dashboard')}
-                  className="text-sm w-full"
+                  className="w-full text-sm"
                 >
                   Dashboard
                 </Button>
                 <Button
                   type={ButtonType.SECONDARY}
                   className="text-sm"
-                  onClick={logout}
+                  onClick={() => {
+                    logout()
+                    router.push('/')
+                  }}
                 >
                   Logout
                 </Button>

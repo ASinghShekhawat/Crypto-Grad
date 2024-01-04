@@ -11,16 +11,23 @@ import { FaRegCopy } from 'react-icons/fa'
 import { GoArrowRight } from 'react-icons/go'
 import { FaDiscord, FaTwitter, FaTelegramPlane } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import { cgBougth, endSaleTime, getAmountRaised, getETHPrice, getTokenPrice } from '@/services/web3Helper'
+import {
+  cgBougth,
+  endSaleTime,
+  getAmountRaised,
+  getETHPrice,
+  getTokenPrice,
+} from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
 import { useRouter } from 'next/navigation'
+import Toast from '../shared/Toast'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
   const [raised, setRaised] = useState(10000)
   const [saleValue, setSaleValue] = useState(0.0011)
   const [usdEth, setUsdEth] = useState(0.0032)
-  const [referralId, setReferralId] = useState('awda')
+  const [referralId, setReferralId] = useState('')
   const [timer, setTimer] = useState(1704649455000)
   const { address } = useAccount()
   const [referrer, setReferrer] = useState<any>()
@@ -52,22 +59,22 @@ export default function DashboardHome() {
     setRaised(Number(Number(amountRaised).toFixed(4)))
   }
 
-  const getCGTokenPrice = async() => {
+  const getCGTokenPrice = async () => {
     const tokenPrice = await getTokenPrice()
     setSaleValue(Number(tokenPrice.toFixed(4)))
   }
 
-  const getETHUSDPrice = async() => {
+  const getETHUSDPrice = async () => {
     const tokenPrice = await getETHPrice()
-    setUsdEth(Number((1/tokenPrice[0]).toFixed(4)))
+    setUsdEth(Number((1 / tokenPrice[0]).toFixed(4)))
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getAmountRaisedAndTotal()
     getEndTimeStamp()
     getCGTokenPrice()
     getETHUSDPrice()
-  },[])
+  }, [])
 
   useEffect(() => {
     initialze()
@@ -140,7 +147,8 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-2">
           <span>Your contribution in</span>
           <span className="text-2xl font-bold">
-            ${(balance * saleValue).toFixed(4)} <span className="text-base text-white/80">USD</span>
+            ${(balance * saleValue).toFixed(4)}{' '}
+            <span className="text-base text-white/80">USD</span>
           </span>
         </div>
       </div>
@@ -162,12 +170,16 @@ export default function DashboardHome() {
       <div className="row-start-6 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-2">
         <div className="flex flex-col gap-2 text-xl font-semibold">
           Account Info
-          <span className="text-sm font-light text-white/80">
+          <a
+            rel="noreferrer noopener"
+            href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
+            className="text-sm font-light text-white/80"
+          >
             Invited by{' '}
             {referrer?.walletAddress
               ? trimString(referrer?.walletAddress as any)
               : 'No Referrer'}
-          </span>
+          </a>
         </div>
         <div className="flex flex-col gap-2">
           <span className="flex items-center gap-4 text-base font-light">
@@ -175,10 +187,14 @@ export default function DashboardHome() {
           </span>
           <div className="text-2xl font-medium">
             {walletType}
-            <span className="text-base font-light text-white/80">
+            <a
+              rel="noreferrer noopener"
+              href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
+              className="text-base font-light text-white/80"
+            >
               {' '}
               {address ? trimString(address as any) : ''}
-            </span>
+            </a>
           </div>
         </div>
       </div>
@@ -235,16 +251,13 @@ export default function DashboardHome() {
         <div className="flex flex-col gap-4">
           <div className="flex h-12 w-full items-center justify-between rounded-lg bg-[#070B16] px-4">
             {referralId}
-            <button
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  `${window.location.host}/presale?ref=${referralId}`
-                )
-              }
+            <Toast
+              refId={referralId}
+              disabled={referralId ? false : true}
               className="flex items-center gap-2 text-sm font-light text-white/60"
             >
               Copy <FaRegCopy />
-            </button>
+            </Toast>
           </div>
           <Button
             onClick={() =>
@@ -257,7 +270,10 @@ export default function DashboardHome() {
             Invite a Friend
           </Button>
           <span className="text-xs font-light text-white/60">or</span>
-          <button className="flex items-center gap-2 text-left text-themeBorderBlue">
+          <button
+            onClick={() => router.push('/referral')}
+            className="flex items-center gap-2 text-left text-themeBorderBlue"
+          >
             Estimate Referral Earnings <GoArrowRight />
           </button>
         </div>

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Button from '../shared/Button'
 import { useAccount } from 'wagmi'
 import { getLeaderBoard, getUserDetails, getUserRank } from '@/services/user'
+import Toast from '../shared/Toast'
 
 const SKIP = 10
 
@@ -16,13 +17,18 @@ export default function Leaderboard() {
   const [current, setCurrent] = useState(2)
   const [user, setUser] = useState<any>()
   const [rank, setRank] = useState<number>()
-  const [reportData, setReportData] = useState<[{
-    referrals: any,
-    walletAddress: string,
-    commission: number
-  }]>()
+  const [referralId, setReferralId] = useState('')
+  const [reportData, setReportData] = useState<
+    [
+      {
+        referrals: any
+        walletAddress: string
+        commission: number
+      },
+    ]
+  >()
 
-  const getUserInfo = async() => {
+  const getUserInfo = async () => {
     const user = await getUserDetails()
     setUser(user)
   }
@@ -32,19 +38,21 @@ export default function Leaderboard() {
     setRank(rank.rank)
   }
 
-  const leaderBoard = async() => {
+  const leaderBoard = async () => {
     const board = await getLeaderBoard()
     setReportData(board.rank)
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getUserInfo()
     userRank()
-  },[address])
+  }, [address])
 
-  useEffect(()=>{
+  useEffect(() => {
     leaderBoard()
-  },[])
+    const referralId = localStorage.getItem('referralId')
+    referralId && setReferralId(referralId)
+  }, [])
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -59,17 +67,28 @@ export default function Leaderboard() {
             <div className="col-span-2">Referrals</div>
             <div className="col-span-2">Earnings</div>
           </div>
-          {reportData && reportData?.map((data, i) => (
-            <div
-              key={i}
-              className="grid min-w-[700px] grid-cols-8 gap-2 rounded-xl p-4 font-light md:min-w-0"
-            >
-              <div className="col-span-1">{i+1}</div>
-              <div className="col-span-3 truncate">({data?.walletAddress})</div>
-              <div className="col-span-2 truncate">{data?.referrals?.length}</div>
-              <div className="col-span-2 truncate">{data?.commission?.toFixed(4)} USD</div>
-            </div>
-          ))}
+          {reportData &&
+            reportData?.map((data, i) => (
+              <div
+                key={i}
+                className="grid min-w-[700px] grid-cols-8 gap-2 rounded-xl p-4 font-light md:min-w-0"
+              >
+                <div className="col-span-1">{i + 1}</div>
+                <a
+                  rel="noreferrer noopener"
+                  href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data?.walletAddress}`}
+                  className="col-span-3 truncate"
+                >
+                  ({data?.walletAddress})
+                </a>
+                <div className="col-span-2 truncate">
+                  {data?.referrals?.length}
+                </div>
+                <div className="col-span-2 truncate">
+                  {data?.commission?.toFixed(4)} USD
+                </div>
+              </div>
+            ))}
         </div>
         {/* <div className="flex items-center justify-between gap-4 text-xs">
             <Pagination
@@ -90,13 +109,27 @@ export default function Leaderboard() {
       <div className="col-start-3 rounded-3xl bg-[#131722CC] md:row-start-2">
         <div className="grid w-full grid-cols-8 gap-2 border-b border-themeTextGrey p-4 font-semibold">
           <span className="col-span-1 truncate">{rank}</span>
-          <span className="col-span-3 truncate">You {user?.walletAddress}</span>
+          <a
+            rel="noreferrer noopener"
+            href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${user?.walletAddress}`}
+            className="col-span-3 truncate"
+          >
+            You {user?.walletAddress}
+          </a>
           <span className="col-span-2 truncate">{user?.referrals?.length}</span>
-          <span className="col-span-2 truncate">{user?.commission.toFixed(4)} USD</span>
+          <span className="col-span-2 truncate">
+            {user?.commission.toFixed(4)} USD
+          </span>
         </div>
         <div className="flex flex-col items-center justify-center gap-2 px-6 py-4">
           <span>Stand A Chance to win perks***</span>
-          <Button className="h-12">Invite A friend</Button>
+          <Toast
+            refId={referralId}
+            disabled={referralId ? false : true}
+            className="h-12 bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg md:px-6 px-4 min-h-[2.5rem] font-semibold text-lg"
+          >
+            Invite A friend
+          </Toast>
         </div>
       </div>
     </div>
