@@ -249,8 +249,8 @@ export default function DashboardHome() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center gap-4">
-          <div className="font-light text-white/80">Presale ends in:</div>
-          <Countdown date={timer} renderer={renderer} />
+          <div className="font-light text-white/80">Presale starts in:</div>
+          <Countdown date={1706725800000} renderer={renderer} />
         </div>
       </div>
       <div className="row-start-5 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-3">

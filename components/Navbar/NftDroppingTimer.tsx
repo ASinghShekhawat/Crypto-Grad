@@ -73,7 +73,7 @@ const NftDroppingTimer = () => {
       )
     }
   }
-  return <Countdown date={timer} renderer={renderer} />
+  return <Countdown date={1706725800000} renderer={renderer} />
 }
 
 export default NftDroppingTimer

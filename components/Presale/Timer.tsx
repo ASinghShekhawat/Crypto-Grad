@@ -91,7 +91,7 @@ export default function Timer() {
           Presale Countdown
         </div>
       </div>
-      <Countdown date={timer} renderer={renderer} />
+      <Countdown date={1706725800000} renderer={renderer} />
       <div className="relative z-1 text-lg">
         Lets get going with the Presale!
       </div>
