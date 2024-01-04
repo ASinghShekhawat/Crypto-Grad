@@ -6,6 +6,7 @@ import { DM_Sans } from 'next/font/google'
 import Providers from './providers'
 import NftDroppingNav from '@/components/Navbar/NftDroppingNav'
 import Footer from '@/components/Footer/Footer'
+import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -39,14 +40,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={dmSans.className}>
-        <Providers>
-          <div className="relative mx-auto flex w-full flex-col">
-            <NftDroppingNav />
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
-        </Providers>
+        <NoSSrWrapper>
+          <Providers>
+            <div className="relative mx-auto flex w-full flex-col">
+              <NftDroppingNav />
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </Providers>
+        </NoSSrWrapper>
       </body>
     </html>
   )
