@@ -7,7 +7,6 @@ import {
 } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
 import { disconnect } from '@wagmi/core'
-import { useRouter } from 'next/navigation'
 import { login } from '@/services/user'
 import { goerli, mainnet } from 'viem/chains'
 import { chain } from '@/services/web3Service'
@@ -27,7 +26,7 @@ const projectId = process.env.NEXT_PUBLIC_PROJECT_ID!
 
 const metadata = {
   name: 'Web3Modal',
-  description: 'Web3Modal Example',
+  description: 'cryptograd.ai',
   url: 'https://web3modal.com',
   icons: ['https://avatars.githubusercontent.com/u/37784886'],
 }
