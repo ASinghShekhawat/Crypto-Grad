@@ -47,7 +47,7 @@ const NftDroppingTimer = () => {
     } else {
       return (
         <div className="flex w-fit items-center justify-center gap-2 text-xs opacity-80 md:gap-4 md:text-base">
-          <div className="font-semibold">Pre-Sale ends in</div>
+          <div className="font-semibold">Pre-Sale starts in</div>
           <div className="flex items-start gap-1">
             <div className="flex flex-col items-center justify-center">
               <span className="font-bold">{makeMeTwoDigits(days)}d</span>
