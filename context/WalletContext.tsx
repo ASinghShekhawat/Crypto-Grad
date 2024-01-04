@@ -86,7 +86,10 @@ export const WalletProvider = ({ children }: Children) => {
 
   const logout = () => {
     disconnect()
-    localStorage.clear();
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("referralId");
+    localStorage.removeItem("walletAddress");
+    localStorage.removeItem("referrer")
     setIsLoggedIn(false);
     setLoading(false);
     // router.push('/')
