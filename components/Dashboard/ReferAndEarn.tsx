@@ -58,7 +58,7 @@ export default function ReferAndEarn() {
   const claimUserToken = async () => {
     setLoading(true)
     try {
-      claimToken(address)
+      await claimToken(address)
       setLoading(false)
     } catch (error) {
       setLoading(false)
