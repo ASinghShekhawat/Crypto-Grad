@@ -9,7 +9,7 @@ export default function Calculator({ className }: { className?: string }) {
   const [amount, setAmount] = useState<number | undefined>(undefined)
 
   useEffect(() => {
-    setCommission((friends ? friends : 0) * (amount ? amount : 0) * 0.03)
+    setCommission((friends ? friends : 0) * (amount ? amount : 0) * 0.07)
   }, [friends, amount])
   return (
     <div className="relative z-1 flex w-full flex-col items-center justify-center gap-4">

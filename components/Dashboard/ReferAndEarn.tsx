@@ -194,14 +194,18 @@ export default function ReferAndEarn() {
         </div>
         <div className="mt-4 flex items-center justify-between text-3xl font-bold md:col-span-3">
           H1 for the referral data
-          <Button
-            onClick={claimUserToken}
-            loading={loading}
-            type={ButtonType.SECONDARY}
-            className="text-sm font-light"
-          >
-            Claim
-          </Button>
+          {reportData && reportData?.length > 0 ? (
+            <Button
+              onClick={claimUserToken}
+              loading={loading}
+              type={ButtonType.SECONDARY}
+              className="text-sm font-light"
+            >
+              Claim
+            </Button>
+          ) : (
+            0
+          )}
         </div>
         <div className="flex flex-col overflow-x-scroll md:col-span-3 md:overflow-auto">
           <div className="grid min-w-[900px] grid-cols-6 gap-2 rounded-xl bg-themeBgBlack p-4 font-semibold md:min-w-0">

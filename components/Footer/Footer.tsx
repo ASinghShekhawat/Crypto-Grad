@@ -22,14 +22,14 @@ const Footer = () => {
       className={`bg-themeBgBlack px-8 py-8 mmd:px-16 mmd:pb-16 mmd:pt-20 ${larsseit.className}`}
     >
       <div
-        className={`flex w-full grid-cols-6 flex-col gap-12 mmd:mx-auto mmd:grid mmd:w-fit`}
+        className={`flex w-full grid-cols-7 flex-col gap-12 mmd:mx-auto mmd:grid mmd:w-fit`}
       >
         <Image
           src={'/cryptogradSmall.svg'}
           height={23}
           width={30}
           alt="brand-logo"
-          className="w-20 object-cover"
+          className="w-20 object-cover mmd:col-span-2"
         />
         {footerLinks.map((column) => (
           <div key={column.column} className="hidden flex-col gap-6 mmd:flex">
@@ -56,7 +56,7 @@ const Footer = () => {
             />
           ))}
         </div>
-        <div className="col-span-5 flex flex-col gap-8 pt-12 mmd:col-start-2 mmd:row-start-2 mmd:gap-16 mmd:pb-12 mmd:pt-20">
+        <div className="col-span-5 flex flex-col gap-8 pt-12 mmd:col-start-3 mmd:row-start-2 mmd:gap-16 mmd:pb-12 mmd:pt-20">
           <div className="flex items-center gap-4 md:gap-8">
             <span className="text-xl font-medium">Follow Us On</span>
             <div className="flex items-center gap-2 md:gap-4">

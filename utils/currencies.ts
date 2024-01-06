@@ -12,7 +12,7 @@ export const currencies: ICurrency[] = [
   },
   {
     name: 'USDT',
-    icon: '/crypto/BNB.png',
+    icon: '/crypto/USDT.png',
     address: "0xdd44427Fbe94Cf691C2715fD68EC8F14f55A96B3"
   },
   {
