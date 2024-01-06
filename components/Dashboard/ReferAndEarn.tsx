@@ -246,9 +246,14 @@ export default function ReferAndEarn() {
               >
                 <div>{new Date(data.createdAt).toString()}</div>
                 <div className="truncate">Lvl {data.level}</div>
-                <div className="truncate">
+                <a
+                  rel="noreferrer noopener"
+                  target="_blank"
+                  href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data.comissionedFrom.walletAddress}`}
+                  className="truncate"
+                >
                   {data.comissionedFrom.walletAddress}
-                </div>
+                </a>
                 <div className="truncate">{data.baseAmount}</div>
                 <div className="truncate">{data.comissionAmount}</div>
                 <a
