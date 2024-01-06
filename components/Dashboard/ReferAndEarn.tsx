@@ -253,6 +253,7 @@ export default function ReferAndEarn() {
                 <div className="truncate">{data.comissionAmount}</div>
                 <a
                   rel="noreferrer noopener"
+                  target="_blank"
                   href={`${process.env.NEXT_PUBLIC_EXPLORER}tx/${data.transactionHash}`}
                   className="truncate"
                 >

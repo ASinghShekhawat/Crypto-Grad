@@ -47,14 +47,14 @@ export default function Hero() {
   const [amountRaised, setAmountRaised] = useState<number>(0)
 
   const getTokenPrice = async () => {
-    if (!amount) return
+    if (!amount) return setPrice(0)
     const price = await getTokenAmount(currency?.address, amount)
     setPrice(price)
   }
 
   const fetchAmountRaised = async () => {
-    const price = await getAmountRaised()
-    setAmountRaised(Number(price))
+    const amt = await getAmountRaised()
+    setAmountRaised(Number(amt))
   }
 
   // useEffect(() => {
@@ -114,11 +114,12 @@ export default function Hero() {
       })
       if (
         tokenPrice * Number(amount) < 5 ||
-        tokenPrice * Number(amount) > 5000000000000000
+        tokenPrice * Number(amount) > 50000
       ) {
         setError(true)
         setErrorStat(true)
-        throw new Error('Amount should be more then 5 and less then 50000') // TODO
+        return
+        // throw new Error('Amount should be more then 5 and less then 50000') // TODO
       }
       const refId = search.get('ref')
       const user: any = refId && (await userWalletByRefId(refId))
@@ -358,12 +359,24 @@ export default function Hero() {
                   height={2000}
                   className="h-6 w-6 object-contain"
                 />
-                <div className="w-full text-base font-medium">{price}</div>
+                <input
+                  type="number"
+                  placeholder="100"
+                  value={price}
+                  onChange={(e) => {
+                    setErrorStat(false)
+                    setPrice(
+                      !e.target.value ? undefined : Number(e.target.value)
+                    )
+                  }}
+                  className="w-full border-none bg-inherit text-base font-medium focus:outline-none"
+                />
+                {/* <div className="w-full text-base font-medium">{price}</div> */}
                 <div>CG</div>
               </div>
               {error && errorStat && (
                 <span className="text-xs font-semibold text-red-400">
-                  * Amount cannot be less than 500 or greater than 50,000
+                  * Amount cannot be less than 5CG or greater than 50,000CG
                 </span>
               )}
             </div>

@@ -76,6 +76,7 @@ export default function Leaderboard() {
                 <div className="col-span-1">{i + 1}</div>
                 <a
                   rel="noreferrer noopener"
+                  target="_blank"
                   href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data?.walletAddress}`}
                   className="col-span-3 truncate"
                 >
