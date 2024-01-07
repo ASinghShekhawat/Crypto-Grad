@@ -363,12 +363,7 @@ export default function Hero() {
                   type="number"
                   placeholder="100"
                   value={price}
-                  onChange={(e) => {
-                    setErrorStat(false)
-                    setPrice(
-                      !e.target.value ? undefined : Number(e.target.value)
-                    )
-                  }}
+                  disabled={true}
                   className="w-full border-none bg-inherit text-base font-medium focus:outline-none"
                 />
                 {/* <div className="w-full text-base font-medium">{price}</div> */}
