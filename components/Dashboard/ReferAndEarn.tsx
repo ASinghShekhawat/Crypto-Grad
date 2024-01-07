@@ -10,16 +10,18 @@ import { Pagination } from '@mui/material'
 import Link from 'next/link'
 import GlossaryDialog from './GlossaryDialog'
 import LearnMoreDialog from './LearnMoreDialog'
-import { claimToken, referalIncome } from '@/services/web3Helper'
+import { claimToken, referalIncome, rewards } from '@/services/web3Helper'
 import { useAccount } from 'wagmi'
 import { userCommission } from '@/services/comission'
 import { getUserRank } from '@/services/user'
 import { toOrdinal } from 'number-to-words'
 import Toast from '../shared/Toast'
+import { currencies } from '@/utils/currencies'
 
 export default function ReferAndEarn() {
   const { address } = useAccount()
   const [comission, setComission] = useState(0)
+  const [reward, setReward] = useState(0)
   const [totalData, setTotalData] = useState(5000)
   const [loading, setLoading] = useState(false)
   const [totalPages, setTotalPages] = useState(500)
@@ -55,6 +57,13 @@ export default function ReferAndEarn() {
     setTotalPages(comission.total / 10)
   }
 
+  const getRewards = async() => {
+    let reward:any = await rewards(currencies[0].address, address);
+    reward += await rewards(currencies[1].address, address);
+    reward += await rewards(currencies[2].address, address);
+    setReward(reward)
+  }
+
   const claimUserToken = async () => {
     setLoading(true)
     try {
@@ -80,6 +89,7 @@ export default function ReferAndEarn() {
 
   useEffect(() => {
     getReferralIncome()
+    getRewards()
   }, [address])
 
   useEffect(() => {
@@ -199,6 +209,7 @@ export default function ReferAndEarn() {
               onClick={claimUserToken}
               loading={loading}
               type={ButtonType.SECONDARY}
+              disabled={reward === 0? false: true}
               className="text-sm font-light"
             >
               Claim
