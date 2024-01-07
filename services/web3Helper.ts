@@ -406,3 +406,14 @@ export const claimToken = async(address :any) =>{
     throw error
   }
 }
+
+export const rewards = async(address: string, userAddress:any) => {
+  const publicClient = createPublicClientLocal()
+  const rewards = await publicClient.readContract({
+    address: ico.address as any,
+    abi: ico.abi,
+    functionName: "userRewardBalance",
+    args: [userAddress, address]
+  });
+  return rewards
+}
