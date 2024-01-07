@@ -76,12 +76,24 @@ export default function TabInfo() {
         )}
         {tab === 'insight' && (
           <div className="absolute -bottom-[8.5%] left-0 right-0 mx-auto flex h-fit w-[80%] justify-center overflow-hidden rounded-t-2xl">
-            <Image src="/Homepage/4.gif" width={1280} height={604} alt="" />
+            <Image
+              className="w-full"
+              src="/Homepage/4.gif"
+              width={1280}
+              height={604}
+              alt=""
+            />
           </div>
         )}
         {tab === 'buzz' && (
           <div className="absolute -bottom-[2%] left-0 right-0 mx-auto flex h-fit w-[80%] justify-center overflow-hidden rounded-t-2xl">
-            <Image src="/Homepage/5.gif" width={1920} height={1080} alt="" />
+            <Image
+              className="w-full"
+              src="/Homepage/5.gif"
+              width={1920}
+              height={1080}
+              alt=""
+            />
           </div>
         )}
       </div>
