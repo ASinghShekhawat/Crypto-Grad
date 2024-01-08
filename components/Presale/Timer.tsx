@@ -7,6 +7,7 @@ import Countdown, { CountdownRenderProps } from 'react-countdown'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 import { endSaleTime } from '@/services/web3Helper'
+import Link from 'next/link'
 
 export default function Timer() {
   const [timer, setTimer] = useState(Date.now() + 5000)
@@ -95,9 +96,12 @@ export default function Timer() {
       <div className="relative z-1 text-lg">
         Lets get going with the Presale!
       </div>
-      <Button className="relative z-1 h-12 !font-light capitalize">
+      <Link
+        href="presale#buy"
+        className="flex !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
+      >
         Buy Now
-      </Button>
+      </Link>
     </Animated>
   )
 }

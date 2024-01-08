@@ -1,6 +1,5 @@
 import Animated from '../shared/Animated'
-import Button from '../shared/Button'
-import GrowthActions from './GrowthActions'
+import GrowthActions from './GrowthAction'
 import GrowthImage from './GrowthImage'
 
 const Growth = () => {
@@ -22,12 +21,7 @@ const Growth = () => {
           rewards. More friends mean more perks - tokens, NFTs, and discounts
           await. Let&apos;s grow and thrive together at Cryptoland!
         </div>
-        {/* <GrowthActions /> */}
-        <div className="flex justify-center md:justify-start">
-          <Button className="!text-base !font-light">
-            Connect Wallet & Generate Referal link
-          </Button>
-        </div>
+        <GrowthActions />
       </div>
       <GrowthImage />
     </Animated>

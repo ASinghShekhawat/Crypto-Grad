@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 import TabInfo from '../shared/TabInfo'
@@ -14,7 +15,13 @@ export default function ExtendedTab() {
           Secure Exclusive Platform Access
         </div>
       </div>
-      <Button className="h-12 w-fit !font-normal">Buy Now</Button>
+      <Link
+        href="presale#buy"
+        className="flex !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
+      >
+        Buy Now
+      </Link>
+
       <TabInfo />
     </Animated>
   )

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
+import Link from 'next/link'
 
 const Discord = () => {
   return (
@@ -16,9 +17,16 @@ const Discord = () => {
           </div>
           <div>✨ Enhance your crypto journey with multiple AI tools </div>
         </div>
-        <Button className="h-12 w-fit text-xl">Get Started</Button>
+        <Link
+          href="https://discord.gg/GQJTSFdTwh"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="flex !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
+        >
+          Get Started
+        </Link>
       </div>
-      <div className='md:w-full w-3/4'>
+      <div className="w-3/4 md:w-full">
         <Image
           src="/Homepage/3.gif"
           width={365}

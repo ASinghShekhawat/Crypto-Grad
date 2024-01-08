@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Animated from '../shared/Animated'
 import Button from '../shared/Button'
+import Link from 'next/link'
 
 const LargeToken = () => {
   return (
@@ -31,7 +32,7 @@ const LargeToken = () => {
           Community and Discover the Power <br className="hidden mmd:block" />{' '}
           of AI-Driven Crypto Mastery Today
         </div>
-        <Button className="!h-12 min-h-[2.5rem]">Buy Now</Button>
+        <Link href={'/presale'} className="!h-12 bg-gradient-to-r justify-center flex items-center gap-2 from-themeViolet to-themeBlue hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey transition-all duration-700 rounded-lg md:px-6 px-4 min-h-[2.5rem] font-semibold text-lg">Buy Now</Link>
       </div>
     </Animated>
   )
