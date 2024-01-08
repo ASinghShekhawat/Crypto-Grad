@@ -52,11 +52,18 @@ export default function TabInfo() {
         />
         {tab === 'chat' && (
           <div className="absolute bottom-0 left-0 right-0 mx-auto flex h-[81%] w-[80%] justify-center overflow-hidden rounded-t-2xl">
+            <Image
+              src="/Homepage/border.png"
+              alt=""
+              width={967}
+              height={665}
+              className="absolute left-0 right-0 top-[2.4%] w-full"
+            />
             <video
               autoPlay
               loop
               muted
-              className="mx-auto h-[110%] !w-[105%] max-w-none"
+              className="mx-auto mt-[3%] h-full !w-[95%] max-w-none"
             >
               <source src="/Homepage/1.mp4" type="video/mp4" />
             </video>
@@ -64,11 +71,18 @@ export default function TabInfo() {
         )}
         {tab === 'analyzer' && (
           <div className="absolute bottom-0 left-0 right-0 mx-auto flex h-[70%] w-[80%] justify-center overflow-hidden rounded-t-2xl">
+            <Image
+              src="/Homepage/border.png"
+              alt=""
+              width={967}
+              height={665}
+              className="absolute left-0 right-0 top-[3.5%] w-full"
+            />
             <video
               autoPlay
               loop
               muted
-              className="mx-auto h-[120%] !w-[105%] max-w-none"
+              className="mx-auto mt-[3%] h-full !w-[95%] max-w-none"
             >
               <source src="/Homepage/2.mp4" type="video/mp4" />
             </video>
