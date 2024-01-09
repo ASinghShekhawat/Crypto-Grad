@@ -51,7 +51,7 @@ export default function TabInfo() {
           alt=""
         />
         {tab === 'chat' && (
-          <div className="absolute bottom-0 left-0 right-0 mx-auto flex h-[81%] w-[80%] justify-center overflow-hidden rounded-t-2xl">
+          <div className="absolute bottom-0 left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
             <Image
               src="/Homepage/border.png"
               alt=""
@@ -63,14 +63,14 @@ export default function TabInfo() {
               autoPlay
               loop
               muted
-              className="mx-auto mt-[3%] h-full !w-[95%] max-w-none"
+              className="mx-auto mt-[5%] h-full !w-[95%] max-w-none"
             >
               <source src="/Homepage/1.mp4" type="video/mp4" />
             </video>
           </div>
         )}
         {tab === 'analyzer' && (
-          <div className="absolute bottom-0 left-0 right-0 mx-auto flex h-[70%] w-[80%] justify-center overflow-hidden rounded-t-2xl">
+          <div className="absolute bottom-0 left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
             <Image
               src="/Homepage/border.png"
               alt=""
@@ -82,33 +82,49 @@ export default function TabInfo() {
               autoPlay
               loop
               muted
-              className="mx-auto mt-[3%] h-full !w-[95%] max-w-none"
+              className="mx-auto mt-[5%] h-full !w-[94.1%] max-w-none"
             >
               <source src="/Homepage/2.mp4" type="video/mp4" />
             </video>
           </div>
         )}
         {tab === 'insight' && (
-          <div className="absolute -bottom-[8.5%] left-0 right-0 mx-auto flex h-fit w-[80%] justify-center overflow-hidden rounded-t-2xl">
-            <Image
-              className="w-full"
-              src="/Homepage/4.gif"
-              width={1280}
-              height={604}
-              alt=""
-            />
-          </div>
+          <div className="absolute bottom-0 left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
+          <Image
+            src="/Homepage/border.png"
+            alt=""
+            width={967}
+            height={665}
+            className="absolute left-0 right-0 top-[3.5%] w-full"
+          />
+          <video
+            autoPlay
+            loop
+            muted
+            className="mx-auto mt-[5%] h-full !w-[94.1%] max-w-none"
+          >
+            <source src="/Homepage/4.mp4" type="video/mp4" />
+          </video>
+        </div>
         )}
         {tab === 'buzz' && (
-          <div className="absolute -bottom-[2%] left-0 right-0 mx-auto flex h-fit w-[80%] justify-center overflow-hidden rounded-t-2xl">
-            <Image
-              className="w-full"
-              src="/Homepage/5.gif"
-              width={1920}
-              height={1080}
-              alt=""
-            />
-          </div>
+          <div className="absolute -bottom-[2%] left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
+          <Image
+            src="/Homepage/border.png"
+            alt=""
+            width={967}
+            height={665}
+            className="absolute left-0 right-0 top-[3.5%] w-full"
+          />
+          <video
+            autoPlay
+            loop
+            muted
+            className="mx-auto mt-[6%] relative h-full !w-[94.1%] max-w-none"
+          >
+            <source src="/Homepage/5.mp4" type="video/mp4" />
+          </video>
+        </div>
         )}
       </div>
     </Animated>
