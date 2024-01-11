@@ -69,7 +69,7 @@ const navMenuDropdowns = [
       // },
       {
         title: 'Swap',
-        path: '/',
+        path: '/swap',
         target: false,
       },
       {
