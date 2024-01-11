@@ -1,16 +1,26 @@
+'use client'
+
 import { ButtonType } from '@/types/buttton'
 import Image from 'next/image'
 import { BsArrowRight } from 'react-icons/bs'
 import { CgCheckO } from 'react-icons/cg'
 import Button from '../shared/Button'
+import { useRouter } from 'next/navigation'
 
 interface IMembershipNewCard {
   price: number
   apy: 2 | 4 | 7
   planType: 1 | 3 | 12
+  page?: boolean
 }
 
-const MembershipNewCard = ({ price, apy, planType }: IMembershipNewCard) => {
+const MembershipNewCard = ({
+  price,
+  apy,
+  planType,
+  page,
+}: IMembershipNewCard) => {
+  const router = useRouter()
   return (
     <div
       className={`flex h-full w-full flex-col items-center  gap-4 rounded-2xl bg-themeBgBlack p-5`}
@@ -45,6 +55,7 @@ const MembershipNewCard = ({ price, apy, planType }: IMembershipNewCard) => {
       </div>
       <Button
         className="w-full"
+        onClick={() => router.push(page ? '/stake' : '/membership')}
         type={planType === 3 ? ButtonType.PRIMARY : ButtonType.SECONDARY}
       >
         Get Started <BsArrowRight />

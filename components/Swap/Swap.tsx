@@ -43,7 +43,7 @@ export default function Swap({ className }: { className?: string }) {
   return (
     <>
       <div
-        className={`flex w-full flex-col gap-4 rounded-3xl bg-themeBlackBg p-6 md:w-[500px] ${className}`}
+        className={`flex w-full flex-col gap-4 rounded-xl bg-themeBlackBg p-6 md:w-[500px] md:rounded-3xl ${className}`}
       >
         <div className="flex items-center justify-between">
           <span className="text-xl font-bold">Swap</span>
