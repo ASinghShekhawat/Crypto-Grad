@@ -16,11 +16,13 @@ export default function ResponseDialog({
   setIsOpen,
   type,
   call,
+  message,
 }: {
   isOpen: boolean
   setIsOpen: Dispatch<boolean>
   type: DialogType
   call: () => void
+  message?: string
 }) {
   function closeModal() {
     setIsOpen(false)
@@ -71,9 +73,9 @@ export default function ResponseDialog({
                         ? 'Transaction Successful'
                         : 'Transaction Failed'}
                     </div>
-                    <div className="text-sm font-extralight">
-                      {/* And get an early access to the exciting world of crypto! */}
-                    </div>
+                    {message && (
+                      <div className="text-sm font-extralight">{message}</div>
+                    )}
                   </div>
                   <Button
                     onClick={() => {

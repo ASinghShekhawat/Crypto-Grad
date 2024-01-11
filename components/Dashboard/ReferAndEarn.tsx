@@ -16,7 +16,8 @@ import { userCommission } from '@/services/comission'
 import { getUserRank } from '@/services/user'
 import { toOrdinal } from 'number-to-words'
 import Toast from '../shared/Toast'
-import { currencies } from '@/utils/currencies'
+import { currencies, getName } from '@/utils/currencies'
+import ResponseDialog, { DialogType } from '../shared/ResponseDialog'
 
 export default function ReferAndEarn() {
   const { address } = useAccount()
@@ -29,12 +30,16 @@ export default function ReferAndEarn() {
   const [glossary, setGlossary] = useState(false)
   const [learnMore, setLearnMore] = useState(false)
   const [referralId, setReferralId] = useState<string | null>()
+  const [dialog, setDialog] = useState(false)
+  const [dialogType, setDialogType] = useState(DialogType.SUCCESS)
+  const [message, setMessage] = useState('')
   const [reportData, setReportData] = useState<
     [
       {
         transactionHash: string
         createdAt: string
         depositWallet: string
+        token: string
         comissionAmount: number
         baseAmount: number
         level: number
@@ -52,15 +57,16 @@ export default function ReferAndEarn() {
 
   const getUserComission = async () => {
     const comission: any = await userCommission(current)
+    console.log(comission.receivingUserComission)
     setReportData(comission.receivingUserComission)
     setTotalData(comission.total)
     setTotalPages(comission.total / 10)
   }
 
-  const getRewards = async() => {
-    let reward:any = await rewards(currencies[0].address, address);
-    reward += await rewards(currencies[1].address, address);
-    reward += await rewards(currencies[2].address, address);
+  const getRewards = async () => {
+    let reward: any = await rewards(currencies[0].address, address)
+    reward += await rewards(currencies[1].address, address)
+    reward += await rewards(currencies[2].address, address)
     setReward(reward)
   }
 
@@ -69,8 +75,13 @@ export default function ReferAndEarn() {
     try {
       await claimToken(address)
       setLoading(false)
+      setDialog(true)
+      setDialogType(DialogType.SUCCESS)
     } catch (error) {
       setLoading(false)
+      setDialog(true)
+      setDialogType(DialogType.FAILED)
+      setMessage('')
     }
   }
 
@@ -209,7 +220,7 @@ export default function ReferAndEarn() {
               onClick={claimUserToken}
               loading={loading}
               type={ButtonType.SECONDARY}
-              disabled={reward === 0? false: true}
+              // disabled={reward === 0 ? false : true}
               className="text-sm font-light"
             >
               Claim
@@ -234,7 +245,6 @@ export default function ReferAndEarn() {
             </div>
             <div>
               Buy Amount <br />
-              (CG Token)
             </div>
             <div>
               My <br />
@@ -265,8 +275,14 @@ export default function ReferAndEarn() {
                 >
                   {data.comissionedFrom.walletAddress}
                 </a>
-                <div className="truncate">{data.baseAmount}</div>
-                <div className="truncate">{data.comissionAmount}</div>
+                <div className="truncate">
+                  {Number(data.baseAmount).toLocaleString('en-US')}{' '}
+                  {getName(data.token)}
+                </div>
+                <div className="truncate">
+                  {Number(data.comissionAmount).toLocaleString('en-US')}{' '}
+                  {getName(data.token)}
+                </div>
                 <a
                   rel="noreferrer noopener"
                   target="_blank"
@@ -310,6 +326,13 @@ export default function ReferAndEarn() {
       </div>
       <GlossaryDialog isOpen={glossary} setIsOpen={setGlossary} />
       <LearnMoreDialog isOpen={learnMore} setIsOpen={setLearnMore} />
+      <ResponseDialog
+        call={() => setDialog(false)}
+        isOpen={dialog}
+        message={message}
+        setIsOpen={setDialog}
+        type={dialogType}
+      />
     </>
   )
 }
