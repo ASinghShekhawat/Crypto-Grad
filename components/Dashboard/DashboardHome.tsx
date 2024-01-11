@@ -187,7 +187,7 @@ export default function DashboardHome() {
             target="_blank"
             rel="noreferrer noopener"
             href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
-            className="text-sm font-light text-white/80"
+            className="text-sm font-light text-white/80 hover:text-themeBlue"
           >
             Invited by{' '}
             {referrer?.walletAddress
@@ -205,7 +205,7 @@ export default function DashboardHome() {
               target="_blank"
               rel="noreferrer noopener"
               href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${address}`}
-              className="text-base font-light text-white/80"
+              className="text-base font-light text-white/80 hover:text-themeBlue"
             >
               {' '}
               {address ? trimString(address as any) : ''}

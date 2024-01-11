@@ -78,7 +78,7 @@ export default function Leaderboard() {
                   rel="noreferrer noopener"
                   target="_blank"
                   href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data?.walletAddress}`}
-                  className="col-span-3 truncate"
+                  className="col-span-3 truncate hover:text-themeBlue"
                 >
                   ({data?.walletAddress})
                 </a>
@@ -114,7 +114,7 @@ export default function Leaderboard() {
             target="_blank"
             rel="noreferrer noopener"
             href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${user?.walletAddress}`}
-            className="col-span-3 truncate"
+            className="col-span-3 truncate hover:text-themeBlue"
           >
             You {user?.walletAddress}
           </a>

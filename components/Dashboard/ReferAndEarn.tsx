@@ -148,7 +148,8 @@ export default function ReferAndEarn() {
             </span>
           </div>
           <div className="flex items-center justify-center bg-gradient-to-r from-themeViolet to-themeBorderBlue py-3 text-sm font-light">
-            Refer To Earn More!
+            {/* Refer To Earn More! */}
+            Claim
           </div>
         </div>
         <div className="flex flex-col justify-between gap-8 overflow-hidden rounded-3xl bg-themeBgBlack p-4 pt-4">

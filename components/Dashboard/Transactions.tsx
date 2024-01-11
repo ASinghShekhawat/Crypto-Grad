@@ -76,7 +76,7 @@ export default function Transactions() {
                 target="_blank"
                 rel="noreferrer noopener"
                 href={`${process.env.NEXT_PUBLIC_EXPLORER}address/${data.depositWallet}`}
-                className="truncate"
+                className="truncate hover:text-themeBlue"
               >
                 {data.depositWallet}
               </a>
@@ -86,7 +86,7 @@ export default function Transactions() {
                 target="_blank"
                 rel="noreferrer noopener"
                 href={`${process.env.NEXT_PUBLIC_EXPLORER}tx/${data.transactionHash}`}
-                className="truncate"
+                className="truncate hover:text-themeBlue"
               >
                 {data.transactionHash}
               </a>
