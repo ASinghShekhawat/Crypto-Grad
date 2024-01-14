@@ -1,6 +1,6 @@
 export default function Dashboard() {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid gap-4 md:grid-cols-3">
       <div className="flex w-full flex-col justify-between gap-4 rounded-2xl border-2 border-themeBorderBlue bg-themeBgBlack p-4">
         <span className="text-sm font-light">
           Total <br />
