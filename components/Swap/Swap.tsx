@@ -43,7 +43,7 @@ export default function Swap({ className }: { className?: string }) {
   return (
     <>
       <div
-        className={`flex w-full flex-col gap-4 rounded-xl bg-themeBlackBg p-6 md:w-[500px] md:rounded-3xl ${className}`}
+        className={`flex w-full flex-col gap-4 rounded-xl bg-themeBlackBg p-4 md:w-[500px] md:rounded-3xl md:p-6 ${className}`}
       >
         <div className="flex items-center justify-between">
           <span className="text-xl font-bold">Swap</span>
@@ -55,7 +55,7 @@ export default function Swap({ className }: { className?: string }) {
           </button>
         </div>
         <div className="relative mb-2 flex flex-col gap-3">
-          <div className="flex items-center justify-between rounded-xl bg-themeWebBg py-4 pl-6 pr-4">
+          <div className="flex items-center justify-between rounded-xl bg-themeWebBg py-2 pl-3 pr-2 md:py-4 md:pl-6 md:pr-4">
             <input
               type="number"
               placeholder="0.00"
@@ -123,7 +123,7 @@ export default function Swap({ className }: { className?: string }) {
           <div className="absolute bottom-0 left-0 right-0 top-0 m-auto flex h-10 w-9 items-center justify-center rounded border-2 border-themeBlackBg bg-themeWebBg text-themeBorderBlue ">
             <IoArrowDown className="!text-2xl" />
           </div>
-          <div className="flex items-center justify-between rounded-xl bg-themeWebBg py-4 pl-6 pr-4">
+          <div className="flex items-center justify-between rounded-xl bg-themeWebBg py-2 pl-3 pr-2 md:py-4 md:pl-6 md:pr-4">
             <input
               type="number"
               placeholder="0.00"
