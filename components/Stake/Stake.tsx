@@ -150,12 +150,10 @@ export default function Stake() {
         </div>
         {tab === 'unstake' && (
           <p className="text-sm font-light text-white/40">
-            There is an 8 day cool off period when unstaking. After the cool off
-            period you can claim your tokens with no penalty. If you change the
-            amount you wish to unstake during the cool off period you need to
-            cancel and start again. If you wish to unstake immediately there is
-            a 7% transaction fee. Rewards can be claimed or staked immediately
-            with no penalty.
+            There is an 7 day free trial period when unstaking. Before this
+            period you can claim your tokens with no penalty. If you wish to
+            withdraw immediately there is a 40% transaction fee. Rewards can be
+            claimed or staked immediately with no penalty.
           </p>
         )}
       </div>
