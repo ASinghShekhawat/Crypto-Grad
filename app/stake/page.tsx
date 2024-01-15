@@ -29,10 +29,10 @@ export default function StakePage() {
         <div className="text-3xl font-semibold">Dashboard</div>
         <Dashboard />
       </div>
-      <div className="flex flex-col gap-4 md:row-span-2">
-        <div className="text-3xl font-semibold">Stake CG Token</div>
-        <Stake />
-      </div>
+      {/* <div className="flex flex-col gap-4 md:row-span-2">
+        <div className="text-3xl font-semibold">Stake CG Token</div> */}
+      <Stake />
+      {/* </div> */}
       <div className="row-start-2 flex flex-col gap-4 md:row-span-2 md:row-start-auto mmd:col-span-2">
         <div className="flex flex-col gap-2 text-3xl font-semibold md:flex-row md:items-end">
           <span>Perks of Staking</span>
