@@ -16,7 +16,7 @@ export default function Perks() {
         <div className="flex flex-col gap-2">
           <div className="text-xl font-medium">Access to CryptoGrad AI</div>
           <div className="text-white/60">
-            By staking CG tokens, you unlock access to CryptoGrad's AI tools,
+            By staking CG tokens, you unlock access to CryptoGrad&apos;s AI tools,
             ensuring comprehensive guidance throughout your blockchain journey
             to success.
           </div>
