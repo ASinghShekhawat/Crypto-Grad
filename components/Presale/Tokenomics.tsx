@@ -6,7 +6,7 @@ export default function Tokenomics() {
   return (
     <Animated
       id="tokenomics"
-      className="relative z-1 flex flex-col items-center justify-center gap-16 px-4 py-16 mmd:px-16"
+      className="relative z-1 flex flex-col items-center justify-center px-4 py-16 mmd:px-16"
     >
       <div className="flex flex-col">
         <div className="relative z-1 text-center text-lg font-medium text-themeBlue">

@@ -242,7 +242,7 @@ export default function Hero() {
             cryptocurrency education in an unparalleled way.
           </div>
           <div className="flex w-full justify-center">
-            <Button className="mt-4 h-12 w-fit !font-normal">Buy Now</Button>
+            <Button className="mt-4 h-12 w-fit !font-normal">Buy & Stake Now</Button>
           </div>
         </div>
         {/* <div className="relative z-1 flex w-full items-center justify-center">

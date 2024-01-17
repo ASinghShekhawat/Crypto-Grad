@@ -17,34 +17,34 @@ const CgToken = () => {
         </div>
         <div className="flex flex-col gap-4">
           <div className="text-sm text-white/50">Launching soon on...</div>
-          <div className="flex items-center gap-8 text-sm">
-            <div className="flex items-center gap-4">
+          <div className="flex items-center md:gap-8 gap-4 text-sm">
+            <div className="flex items-center md:gap-4 gap-1.5">
               <Image
                 src="/crypto/ETH.png"
                 alt=""
                 width={56}
                 height={56}
-                // className="h-12 w-12"
+                className="md:h-12 md:w-12 h-8 w-8"
               />
               <div>Ethereum</div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center md:gap-4 gap-1.5">
               <Image
                 src="/Presale/BinanceSmartChainBadge.png"
                 alt=""
                 width={56}
                 height={56}
-                // className="h-12 w-12"
+                className="md:h-12 md:w-12 h-8 w-8"
               />
               <div>Solana</div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center md:gap-4 gap-1.5">
               <Image
                 src="/Presale/UniswapBadge.png"
                 alt=""
                 width={56}
                 height={56}
-                // className="h-12 w-12"
+                className="md:h-12 md:w-12 h-8 w-8"
               />
               <div>
                 Revealing <br />

@@ -15,7 +15,7 @@ const Growth = () => {
         <div className="whitespace-nowrap pt-4 text-3xl font-bold md:text-5xl">
           Double the Joy: <br /> Refer & Earn!
         </div>
-        <div className="mb-8 mt-4 text-white/80 mmd:w-96">
+        <div className="mb-8 mt-6 font-light text-white/80 mmd:max-w-[28rem]">
           Double the joy by inviting friends to our presale! Share the
           excitement, expand our community, and enjoy exclusive referral
           rewards. More friends mean more perks - tokens, NFTs, and discounts

@@ -30,30 +30,30 @@ export default function Timer() {
   }: CountdownRenderProps) => {
     if (completed) return <>Presale Ended!</>
     return (
-      <div className="relative z-1 flex items-start gap-4 font-bold">
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
-          <span className="text-xl leading-7 md:text-6xl">
+      <div className="relative z-1 flex items-start md:gap-4 gap-2 font-bold">
+        <div className="flex aspect-square w-[3.7rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-3xl leading-7 md:text-6xl">
             {makeMeTwoDigits(days)}
           </span>
           <span className="text-xs md:pt-2 md:text-xl">Days</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
-          <span className="text-xl leading-7 md:text-6xl">
+        <div className="flex aspect-square w-[3.7rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-3xl leading-7 md:text-6xl">
             {makeMeTwoDigits(hours)}
           </span>
           <span className="text-xs md:pt-2 md:text-xl">Hours</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
-          <span className="text-xl leading-7 md:text-6xl">
+        <div className="flex aspect-square w-[3.7rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-3xl leading-7 md:text-6xl">
             {makeMeTwoDigits(minutes)}
           </span>
           <span className="text-xs md:pt-2 md:text-xl">Mins</span>
         </div>
         <span className="mt-2 text-xl md:text-6xl">:</span>
-        <div className="flex aspect-square w-[3rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
-          <span className="text-xl leading-7 md:text-6xl">
+        <div className="flex aspect-square w-[3.7rem] flex-col items-center justify-center rounded-xl border border-themeBorderBlue/25 px-3 py-4 md:w-[7.22rem] md:py-6">
+          <span className="text-3xl leading-7 md:text-6xl">
             {makeMeTwoDigits(seconds)}
           </span>
           <span className="text-xs md:pt-2 md:text-xl">Secs</span>
@@ -100,7 +100,7 @@ export default function Timer() {
         href="presale#buy"
         className="flex !h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
       >
-        Buy Now
+        Buy & Stake Now
       </Link>
     </Animated>
   )

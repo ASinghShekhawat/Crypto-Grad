@@ -25,7 +25,7 @@ export default function PresalePage() {
       <BackedBy />
       <CgToken />
       <ExtendedTab />
-      <StakingBenefits buttonText="Buy & Stake" />
+      <StakingBenefits buttonText="Buy & Stake Now" />
       <Tokenomics />
       <Roadmap />
       <Growth />
