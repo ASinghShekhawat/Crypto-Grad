@@ -23,7 +23,7 @@ export default function StakePage() {
   }, [])
 
   return (
-    <div className="grid grid-cols-1 gap-8 px-4 py-8 md:grid-cols-2 md:px-8 mmd:grid-cols-3">
+    <div className="grid grid-cols-1 gap-16 px-4 py-8 md:grid-cols-2 md:gap-8 md:px-8 mmd:grid-cols-3">
       {/* <div className="col-span-2 flex flex-col gap-8"> */}
       <div className="flex flex-col gap-4 md:row-span-1 mmd:col-span-2">
         <div className="text-3xl font-semibold">Dashboard</div>
@@ -64,7 +64,7 @@ export default function StakePage() {
         </div>
         <Link
           className="flex !h-12 min-h-[2.5rem] w-fit items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-themeViolet to-themeBlue px-4 text-lg font-semibold transition-all duration-700 hover:from-themeBlue hover:to-themeBlue disabled:!from-themeGrey disabled:!to-themeGrey disabled:text-themeTextGrey md:px-6"
-          href="https://discord.gg/M9dNdA4FWW"
+          href="https://t.me/cryptogradportal"
           target="_blank"
           rel="noreferrer noopener"
         >

@@ -22,6 +22,7 @@ import { useAccount } from 'wagmi'
 import { useRouter } from 'next/navigation'
 import Toast from '../shared/Toast'
 import copy from 'copy-to-clipboard'
+import Link from 'next/link'
 
 export default function DashboardHome() {
   const [balance, setBalance] = useState(0)
@@ -137,7 +138,7 @@ export default function DashboardHome() {
 
   return (
     <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
-      <div className="mb-6 text-5xl font-bold md:col-span-3">
+      <div className="mb-6 text-3xl font-bold md:col-span-3 md:text-5xl">
         Welcome, CryptoDozer!
       </div>
       <div className="row-start-2 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-2">
@@ -289,9 +290,9 @@ export default function DashboardHome() {
             Estimate Referral Earnings <GoArrowRight />
           </button>
         </div>
-        <span className="text-right font-light text-themeTextGrey">
+        <Link href="/help/terms-and-conditions" className="text-right font-light text-themeTextGrey">
           T&C apply<sup>*</sup>
-        </span>
+        </Link>
       </div>
       <div className="row-start-7 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:col-span-3 md:row-start-4">
         <div className="flex text-xl font-semibold capitalize">

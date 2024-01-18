@@ -12,7 +12,7 @@ const FAQ = [
   {
     title: 'Why Choose Cryptograd?',
     content:
-      'Cryptograd stands out with its comprehensive platform, designed for all skill level traders. It provides a competitive edge with features like a chatbot, trade analyser, AI news, and smart contract analysis, all delivered responsibly and accurately. Join us for the future of crypto education and trading. How do I get access to what Cryptograd offers?',
+      'Cryptograd stands out with its comprehensive platform, designed for all skill level traders. It provides a competitive edge with features like a chatbot, trade analyser, AI news, and smart contract analysis, all delivered responsibly and accurately. Join us for the future of crypto education and trading.',
   },
   // {
   //   title: 'How do I get access to what Cryptograd offers?',
@@ -37,7 +37,7 @@ const FAQ = [
   },
 ]
 
-export default function ReferralFaq() {
+export default function MembershipFaq() {
   const [activeDisclosurePanel, setActiveDisclosurePanel] = useState<any>(null)
 
   function togglePanels(newPanel: any) {
@@ -58,7 +58,7 @@ export default function ReferralFaq() {
   return (
     <div
       id="FAQ"
-      className="relative mx-auto flex w-full max-w-[960px] flex-col items-center gap-12 overflow-hidden px-4 pb-16 pt-20 mmd:gap-24 mmd:px-16 mmd:pt-32"
+      className="relative mx-auto flex w-full max-w-[960px] flex-col items-center gap-12 overflow-hidden px-4 pb-16 pt-8 mmd:gap-24 mmd:px-16 mmd:pt-24"
     >
       <h1 className="relative z-1 text-center text-4xl font-semibold md:text-5xl">
         Frequently Asked Questions

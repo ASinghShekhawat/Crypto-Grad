@@ -13,11 +13,14 @@ export default function StakeRewards() {
           <span className="text-sm font-light text-white/30">Rewards</span>
         </div>
       </div>
-      <div className="flex gap-4">
-        <Button className="h-12 w-full !text-sm !px-2" type={ButtonType.SECONDARY}>
+      <div className="flex flex-col gap-4 mmd:flex-row">
+        <Button
+          className="h-12 w-full !px-2 !text-sm"
+          type={ButtonType.SECONDARY}
+        >
           Claim Rewards
         </Button>
-        <Button className="h-12 w-full !text-sm !px-2">Stake Tokens</Button>
+        <Button className="h-12 w-full !px-2 !text-sm">Stake Tokens</Button>
       </div>
     </div>
   )

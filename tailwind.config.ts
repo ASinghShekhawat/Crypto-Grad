@@ -33,7 +33,11 @@ const config: Config = {
       },
       screens: {
         mmd: "992px",
-        mmmd:"1400px",
+        mmmd: "1400px",
+      },
+      blur: {
+        xs: "2px",
+        "2xs": "1px"
       },
       fontSize: {
         "2xs": "0.6rem"

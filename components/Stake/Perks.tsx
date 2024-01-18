@@ -4,8 +4,8 @@ import { MdLockOutline } from 'react-icons/md'
 export default function Perks() {
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack p-4">
-        <MdLockOutline className="absolute right-4 top-4 text-3xl text-white/30" />
+      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack px-4 py-8">
+        <MdLockOutline className="absolute right-2 top-2 text-2xl text-white/30" />
         <Image
           src="/WLpictures/coin.png"
           alt=""
@@ -22,8 +22,8 @@ export default function Perks() {
           </div>
         </div>
       </div>
-      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack p-4">
-        <MdLockOutline className="absolute right-4 top-4 text-3xl text-white/30" />
+      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack px-4 py-8">
+        <MdLockOutline className="absolute right-2 top-2 text-2xl text-white/30" />
         <Image
           src="/WLpictures/coin.png"
           alt=""
@@ -42,8 +42,8 @@ export default function Perks() {
           </div>
         </div>
       </div>
-      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack p-4">
-        <MdLockOutline className="absolute right-4 top-4 text-3xl text-white/30" />
+      <div className="relative flex items-center gap-4 rounded-lg bg-themeBgBlack px-4 py-8">
+        <MdLockOutline className="absolute right-2 top-2 text-2xl text-white/30" />
         <Image
           src="/WLpictures/coin.png"
           alt=""

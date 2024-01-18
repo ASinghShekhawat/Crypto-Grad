@@ -62,26 +62,27 @@ export default function GlossaryDialog({
                         Total Invites Sent
                       </div>
                       <div className="font-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus rerum debitis aliquam delectus enim ut numquam?
+                        Number of invitations dispatched to recipients. Tracks
+                        outreach activity for events or initiatives.
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
                       <div className="text-xl font-semibold">
-                        Total Invites Sent
+                        Average Commission %
                       </div>
                       <div className="font-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus rerum debitis aliquam delectus enim ut numquam?
+                        The average percentage of commission earned by referring
+                        users.
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
                       <div className="text-xl font-semibold">
-                        Total Invites Sent
+                        Your Affiliate Level
                       </div>
                       <div className="font-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus rerum debitis aliquam delectus enim ut numquam?
+                        Indicates the tier achieved in the affiliate program,
+                        tied to staking volume. Higher levels will offer
+                        increased average referral % commission
                       </div>
                     </div>
                   </div>

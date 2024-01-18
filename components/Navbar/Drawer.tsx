@@ -59,7 +59,7 @@ const Drawer = () => {
                   </button>
                 </Dialog.Title>
                 <Dialog.Description className="flex h-full flex-col justify-between gap-8">
-                  <NavMenu drawer pathname={pathname} />
+                  <NavMenu drawer pathname={pathname} setOpen={setOpen} />
                   <ConnectWallet drawer pathname={pathname} />
                 </Dialog.Description>
               </Dialog.Panel>

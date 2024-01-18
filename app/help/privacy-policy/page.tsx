@@ -17,12 +17,12 @@ const PrivacyPolicy = () => {
           visiting our website, you consent to the practices described in this
           policy.
         </p>
-        <p>
+        {/* <p>
           bitgenix.io is a property of BitGenix PTE. LTD, having office at 50
           Raffles Place #37-00, Singapore Land Tower, Singapore-048623 (together
           with its subsidiaries and other affiliates, referred to as “us”, “We”,
           “our” or “BitGenix”).
-        </p>
+        </p> */}
       </div>
       <div className="flex w-full flex-col gap-8">
         <div className="flex w-full flex-col gap-4">

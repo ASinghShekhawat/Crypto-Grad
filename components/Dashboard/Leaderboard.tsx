@@ -56,10 +56,10 @@ export default function Leaderboard() {
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-      <div className="mb-6 text-5xl font-bold md:col-span-2">
+      <div className="row-start-1 mb-6 text-3xl font-bold md:col-span-2 md:text-5xl">
         Referral Leaderboard H1
       </div>
-      <div className="flex flex-col gap-4 md:col-span-2">
+      <div className="col-span-1 col-start-1 row-start-2 flex flex-col gap-4 md:col-span-2">
         <div className="flex flex-col overflow-x-scroll md:overflow-auto">
           <div className="grid min-w-[700px] grid-cols-8 gap-2 rounded-xl bg-themeBgBlack p-4 font-semibold md:min-w-0">
             <div className="col-span-1">Rank</div>
@@ -104,10 +104,10 @@ export default function Leaderboard() {
             </span>
           </div> */}
       </div>
-      <div className="col-start-3 mb-6 h-12 text-xl font-semibold md:row-start-1">
+      <div className="row-start-3 mb-6 mt-6 flex h-12 items-center justify-center text-center text-xl font-semibold md:col-start-3 md:row-start-1 md:mt-0 md:block md:text-left">
         Your Rank
       </div>
-      <div className="col-start-3 rounded-3xl bg-[#131722CC] md:row-start-2">
+      <div className="row-start-4 h-fit rounded-3xl bg-[#131722CC] md:col-start-3 md:row-start-2">
         <div className="grid w-full grid-cols-8 gap-2 border-b border-themeTextGrey p-4 font-semibold">
           <span className="col-span-1 truncate">{rank}</span>
           <a

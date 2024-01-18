@@ -10,7 +10,7 @@ import LastSection from '@/components/Referral/LastSection'
 
 export default function ReferralPage() {
   return (
-    <Page className="relative !p-0">
+    <Page className="relative overflow-hidden !p-0">
       <Hero />
       <HowItWorks />
       <System />

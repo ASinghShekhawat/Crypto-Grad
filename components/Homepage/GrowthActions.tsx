@@ -8,7 +8,7 @@ const GrowthActions = () => {
   return (
     <div className="relative z-5 mt-8 flex items-center gap-2 md:gap-4">
       <a
-        href="https://discord.gg/M9dNdA4FWW"
+        href="https://discord.gg/GQJTSFdTwh"
         target="_blank"
         rel="noreferrer noopener"
         // onClick={() => {}}

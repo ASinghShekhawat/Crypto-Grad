@@ -39,11 +39,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <Script
-          id="ms-clarity"
-          src="https://www.clarity.ms/tag/kglbyn6cj3"
-          strategy="afterInteractive"
-        />
+        <Script src="/scripts/clarity.js" />
+        <Script src="/scripts/klaviyo.js" />
       </head>
       <body className={dmSans.className}>
         <NoSSrWrapper>

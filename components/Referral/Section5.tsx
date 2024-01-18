@@ -7,7 +7,14 @@ import Image from 'next/image'
 
 export default function Section5() {
   return (
-    <Animated className="flex flex-col items-center justify-center">
+    <Animated className="relative flex flex-col items-center justify-center">
+      <Image
+        src="/Homepage/LargeToken/largeToken.png"
+        alt=""
+        width={489}
+        height={492}
+        className="absolute -bottom-12 -left-48 hidden h-64 w-64 rotate-180 mmd:block"
+      />
       <div className="relative z-1 flex flex-col items-center justify-center px-4 pt-16 md:pt-32 mmd:px-16">
         <div className="relative z-10 pb-8 pt-4 text-center text-3xl font-bold md:text-5xl">
           Entering into CG Ecosystem
@@ -16,6 +23,9 @@ export default function Section5() {
           Stake the token for rewards, locking in gains and maximizing your
           investment potential. Your path to growth starts here!
         </div>
+        <Button type={ButtonType.SECONDARY} className="mt-8">
+          Know More
+        </Button>
         <div className="grid max-w-[1200px] grid-cols-1 gap-4 py-8 mmd:grid-cols-3">
           <div className="flex flex-col items-center justify-between rounded-lg bg-themeBgBlack pt-8">
             <Image
@@ -77,9 +87,6 @@ export default function Section5() {
           </div>
         </div>
       </div>
-      <Button type={ButtonType.SECONDARY} className="mt-8">
-        Know More
-      </Button>
     </Animated>
   )
 }

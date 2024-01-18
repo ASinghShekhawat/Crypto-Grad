@@ -96,7 +96,7 @@ export const footerLinks = [
     links: [
       {
         title: 'Terms & Conditions',
-        url: '#',
+        url: '/help/terms-and-conditions',
         target: false
       },
       {
@@ -114,11 +114,11 @@ export const footerLinks = [
         url: '/help/disclaimer',
         target: false
       },
-      {
-        title: 'BitGenix is coming',
-        url: '#',
-        target: false
-      },
+      // {
+      //   title: 'BitGenix is coming',
+      //   url: '#',
+      //   target: false
+      // },
       {
         title: 'FAQ',
         url: '/help/FAQ',

@@ -35,7 +35,7 @@ export default function Transactions() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="mb-6 text-5xl font-bold md:col-span-3">
+      <div className="mb-6 text-3xl font-bold md:col-span-3 md:text-5xl">
         Private Sale Transactions
       </div>
       <div className="flex flex-col overflow-x-scroll md:overflow-auto">

@@ -109,8 +109,8 @@ export default function ReferAndEarn() {
 
   return (
     <>
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="flex w-fit items-center gap-4 rounded-full bg-themeBgBlack p-1 pl-4 text-sm md:col-span-3">
+      <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
+        <div className="flex w-full flex-col gap-2 rounded-3xl bg-themeBgBlack p-4 text-sm md:col-span-3 md:w-fit md:flex-row md:items-center md:gap-4 md:rounded-full md:p-1 md:pl-4">
           <div>
             Refer a friend and earn upto{' '}
             <span className="text-themeBorderBlue">15% comission</span>
@@ -118,22 +118,22 @@ export default function ReferAndEarn() {
           <Toast
             refId={referralId!}
             disabled={referralId ? false : true}
-            className="flex items-center gap-2 rounded-full bg-themeBlackBg px-4 py-1"
+            className="flex w-fit items-center gap-2 rounded-full bg-themeBlackDeep px-4 py-2 text-white/50 md:py-1"
           >
             Copy Invite Code <FaRegCopy />
           </Toast>
         </div>
         <div className="flex flex-col gap-4 md:col-span-3">
-          <div className="text-5xl font-bold capitalize">
+          <div className="text-3xl font-bold capitalize md:text-5xl">
             H1 for the referral dashboard
           </div>
           <div className="text-white/80">
             All facilitated by a single game-changing platform. Experience the
             revolution of blockchain in an unparalleled way.
           </div>
-          <div className="flex gap-2 text-white/60">
+          <div className="flex gap-2 text-xs text-white/40">
             *Based on your level, view{' '}
-            <div className="underline">T&Cs for more details.</div>
+            <Link href="/help/terms-and-conditions" className="underline">T&Cs for more details.</Link>
           </div>
         </div>
         <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack pt-4">
@@ -193,8 +193,8 @@ export default function ReferAndEarn() {
             View Glossary
           </button>
         </button>
-        <div className="flex flex-col items-center justify-between gap-4 rounded-3xl bg-themeBgBlack p-4 md:col-span-3 md:flex-row">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col justify-between gap-4 rounded-3xl bg-themeBgBlack p-4 md:col-span-3 md:flex-row md:items-center">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center">
             <Image
               src="/Mint/crown.png"
               width={169}
@@ -209,7 +209,7 @@ export default function ReferAndEarn() {
           </div>
           <Link
             href="/dashboard?tab=leaderboards"
-            className="flex h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBorderBlue bg-themeBlack px-4 text-lg font-medium transition-all hover:text-themeVioletText md:px-6"
+            className="flex h-12 min-h-[2.5rem] w-fit items-center justify-center gap-2 rounded-lg border-2 border-themeBorderBlue bg-themeBlack px-4 text-lg font-medium transition-all hover:text-themeVioletText md:px-6"
           >
             View Leaderboard
           </Link>
@@ -309,7 +309,6 @@ export default function ReferAndEarn() {
               </div>
             ))}
         </div>
-
         <div className="col-span-1 flex items-center justify-between gap-4 text-xs md:col-span-3">
           <Pagination
             count={totalPages}

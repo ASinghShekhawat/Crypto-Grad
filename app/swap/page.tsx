@@ -10,7 +10,7 @@ export default function SwapPage() {
           width={800}
           height={737}
           alt=""
-          className="h-36 w-fit -rotate-12 object-contain mmd:h-48"
+          className="h-36 w-fit -rotate-12 object-contain mmd:h-48 opacity-60"
         />
       </div>
       <div
@@ -22,7 +22,7 @@ export default function SwapPage() {
           width={800}
           height={803}
           alt=""
-          className="h-36 w-fit rotate-12 object-contain mmd:h-48"
+          className="h-36 w-fit rotate-12 object-contain mmd:h-48 opacity-60"
         />
       </div>
       <Swap />

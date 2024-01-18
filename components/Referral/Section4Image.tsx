@@ -13,7 +13,7 @@ export default function Section4Image() {
       />
       <Animated
         delay={200}
-        className="absolute -left-12 top-0 !scale-50 rounded-lg border border-themeTextGrey/30 bg-themeBlack/75 px-4 py-2 backdrop-blur-lg md:left-[5%] md:top-[20%] md:scale-100 mmd:scale-75 xl:scale-100"
+        className="absolute -left-12 top-[22%] !scale-50 rounded-lg border border-themeTextGrey/30 bg-themeBlack/75 px-4 py-2 backdrop-blur-lg md:left-[5%] md:top-[20%] md:scale-100 mmd:scale-75 xl:scale-100"
       >
         🎓 Jenny, Student
       </Animated>

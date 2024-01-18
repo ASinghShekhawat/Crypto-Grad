@@ -5,7 +5,7 @@ import { Disclosure, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import { FaChevronDown } from 'react-icons/fa'
 
-const NavAccordion = ({ title, menuItems }: INavDropdown) => {
+const NavAccordion = ({ title, menuItems, setOpen }: INavDropdown) => {
   return (
     <Disclosure>
       {({ open }) => (
@@ -33,6 +33,7 @@ const NavAccordion = ({ title, menuItems }: INavDropdown) => {
                   key={i}
                   href={item.path}
                   target={item.target ? '_blank' : '_self'}
+                  onClick={() => !item.target && setOpen && setOpen(false)}
                   className="flex w-full items-center rounded-md px-2 py-1 text-sm transition-all hover:bg-themeBgBlack hover:text-themeVioletText"
                 >
                   {item.title}

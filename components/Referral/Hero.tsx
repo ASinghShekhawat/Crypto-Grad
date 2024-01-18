@@ -5,6 +5,7 @@ import Animated from '../shared/Animated'
 import Button from '../shared/Button'
 import Toast from '../shared/Toast'
 import Calculator from './Calculator'
+import Image from 'next/image'
 
 export default function Hero() {
   const [referralId, setReferralId] = useState('')
@@ -15,7 +16,35 @@ export default function Hero() {
   }, [])
 
   return (
-    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 bg-gradient-to-b from-[#6754f82b] via-transparent to-transparent px-4 pb-0 pt-16 md:from-transparent md:pt-24 mmd:flex-row mmd:px-16">
+    <Animated className="relative z-1 flex flex-col items-center justify-center gap-16 overflow-hidden bg-gradient-to-b from-[#6754f82b] via-transparent to-transparent px-4 pb-0 pt-16 md:from-transparent md:pt-24 mmd:flex-row mmd:px-16">
+      <Image
+        src="/Homepage/LargeToken/largeToken.png"
+        alt=""
+        width={489}
+        height={492}
+        className="blur-xs absolute -left-8 -top-8 hidden h-20 w-20 mmd:block"
+      />
+      <Image
+        src="/Homepage/LargeToken/largeToken.png"
+        alt=""
+        width={489}
+        height={492}
+        className="absolute -bottom-12 -right-48 hidden h-64 w-64 rotate-180 mmd:block"
+      />
+      <Image
+        src="/Homepage/LargeToken/largeToken.png"
+        alt=""
+        width={489}
+        height={492}
+        className="absolute -right-10 top-[40%] hidden h-16 w-16 mmd:block"
+      />
+      <Image
+        src="/Referral/ellipse-right.svg"
+        alt=""
+        width={526}
+        height={526}
+        className="blur-2xs absolute -left-[30%] -top-[90%] z-0 hidden h-[150%] w-full rotate-180 md:block"
+      />
       <div className="flex w-full flex-col text-left">
         <div className="relative z-10 mb-2 text-center text-3xl font-bold md:text-5xl">
           Refer & Earn
@@ -33,7 +62,7 @@ export default function Hero() {
           </Toast>
         </div>
       </div>
-      <Calculator />
+      <Calculator hero />
     </Animated>
   )
 }

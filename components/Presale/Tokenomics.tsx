@@ -31,7 +31,7 @@ export default function Tokenomics() {
         className="md:hidden"
       />
       <a
-        href="https://app.gitbook.com/invite/42NMOhVCI8zEWVh1qo3k/dLCemiOMlKmIGBcqFEWF"
+        href="https://cryptograd.gitbook.io/cryptograd/"
         target="_blank"
         rel="noreferrer noopener"
         className="flex h-12 min-h-[2.5rem] items-center justify-center gap-2 rounded-lg border-2 border-themeBorderBlue bg-themeBlack px-4 text-lg font-medium transition-all hover:text-themeVioletText md:px-6"

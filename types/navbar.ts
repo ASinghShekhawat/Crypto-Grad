@@ -1,3 +1,5 @@
+import { Dispatch } from "react"
+
 export interface INavDropdown {
   title: string
   menuItems: {
@@ -5,9 +7,11 @@ export interface INavDropdown {
     path: string
     target: boolean
   }[]
+  setOpen?: Dispatch<boolean>
 }
 
 export interface IDrawerGeneric {
   drawer?: boolean
   pathname: string
+  setOpen?: Dispatch<boolean>
 }

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
-const NavDropdown = ({ title, menuItems }: INavDropdown) => {
+const NavDropdown = ({ title, menuItems, setOpen }: INavDropdown) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -32,6 +32,7 @@ const NavDropdown = ({ title, menuItems }: INavDropdown) => {
                   <Link
                     href={item.path}
                     target={item.target ? '_blank' : '_self'}
+                    onClick={() => !item.target && setOpen && setOpen(false)}
                     className={`${
                       active ? 'bg-themeViolet text-white' : 'text-white'
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}

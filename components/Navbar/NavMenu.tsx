@@ -55,7 +55,7 @@ const navMenuDropdowns = [
   //   ],
   // },
   {
-    title: 'Dapps',
+    title: 'DApps',
     menuItems: [
       // {
       //   title: 'Blogs',
@@ -131,7 +131,7 @@ const navMenuDropdowns = [
   },
 ]
 
-const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
+const NavMenu = ({ drawer, pathname, setOpen }: IDrawerGeneric) => {
   return (
     <div
       className={`flex ${
@@ -154,6 +154,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
         <>
           <Link
             href="/"
+            onClick={() => setOpen && setOpen(false)}
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}
@@ -162,6 +163,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
           </Link>
           <Link
             href="/presale#tokenomics"
+            onClick={() => setOpen && setOpen(false)}
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}
@@ -170,6 +172,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
           </Link>
           <Link
             href="/presale#roadmap"
+            onClick={() => setOpen && setOpen(false)}
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}
@@ -178,6 +181,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
           </Link>
           <Link
             href="/presale#growth"
+            onClick={() => setOpen && setOpen(false)}
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}
@@ -186,6 +190,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
           </Link>
           <Link
             href="/presale#FAQ"
+            onClick={() => setOpen && setOpen(false)}
             className={`text-sm font-light transition-all hover:text-themeVioletText ${
               drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
             }`}
@@ -198,6 +203,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
           <>
             <Link
               href="/presale"
+              onClick={() => setOpen && setOpen(false)}
               className={`transition-all hover:text-themeVioletText ${
                 drawer && 'w-full rounded-md px-2 py-1 hover:bg-themeBgBlack'
               }`}
@@ -210,6 +216,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
                   key={item.title}
                   title={item.title}
                   menuItems={item.menuItems}
+                  setOpen={setOpen}
                 />
               ))}
             {drawer &&
@@ -218,6 +225,7 @@ const NavMenu = ({ drawer, pathname }: IDrawerGeneric) => {
                   key={item.title}
                   title={item.title}
                   menuItems={item.menuItems}
+                  setOpen={setOpen}
                 />
               ))}
           </>

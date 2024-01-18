@@ -1,15 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { sidebarItems } from '@/types/sidebar'
+import { Dialog, Transition } from '@headlessui/react'
+import Link from 'next/link'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { Fragment, useState } from 'react'
 import { HiOutlineMenu } from 'react-icons/hi'
 import { IoClose } from 'react-icons/io5'
-import { Dialog, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
 import Brand from '../Navbar/Brand'
 import ConnectWallet from '../Navbar/ConnectWallet'
-import { sidebarItems } from '@/types/sidebar'
-import Link from 'next/link'
 
 const DashboardDrawer = () => {
   const [open, setOpen] = useState(false)
@@ -66,11 +65,8 @@ const DashboardDrawer = () => {
                       <Link
                         key={item.path + i}
                         href={`/dashboard?tab=${item.path}`}
-                        className={`relative flex items-center gap-4 pl-6 ${
-                          params.get('tab') === item.path
-                            ? 'after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:rounded after:bg-themeViolet'
-                            : ''
-                        }`}
+                        onClick={() => setOpen && setOpen(false)}
+                        className={`relative flex items-center gap-4`}
                       >
                         {item.icon()}
                         {item.title}

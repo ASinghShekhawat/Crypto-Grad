@@ -29,7 +29,7 @@ const InviteFriendDialog = () => {
           <div className="flex justify-center gap-4 md:justify-start">
             <SocialIcon className="md:!h-8 md:!w-8" url="https://www.linkedin.com/company/cryptograd" />
             <SocialIcon className="md:!h-8 md:!w-8" url="https://twitter.com/cgradofficial" />
-            <SocialIcon className="md:!h-8 md:!w-8" url="https://discord.gg/M9dNdA4FWW" />
+            <SocialIcon className="md:!h-8 md:!w-8" url="https://discord.gg/GQJTSFdTwh" />
             <SocialIcon className="md:!h-8 md:!w-8" url="https://www.instagram.com/cryptogradofficial/" />
           </div>
         </div>
