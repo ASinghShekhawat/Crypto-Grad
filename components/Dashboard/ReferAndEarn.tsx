@@ -133,7 +133,9 @@ export default function ReferAndEarn() {
           </div>
           <div className="flex gap-2 text-xs text-white/40">
             *Based on your level, view{' '}
-            <Link href="/help/terms-and-conditions" className="underline">T&Cs for more details.</Link>
+            <Link href="/help/terms-and-conditions" className="underline">
+              T&Cs for more details.
+            </Link>
           </div>
         </div>
         <div className="flex flex-col justify-between gap-4 overflow-hidden rounded-3xl border-2 border-themeViolet bg-themeBgBlack pt-4">
@@ -193,7 +195,7 @@ export default function ReferAndEarn() {
             View Glossary
           </button>
         </button>
-        <div className="flex flex-col justify-between gap-4 rounded-3xl bg-themeBgBlack p-4 md:col-span-3 md:flex-row md:items-center">
+        <div className="flex flex-col justify-between gap-4 rounded-3xl bg-themeBgBlack p-4 pr-6 md:col-span-3 md:flex-row md:items-center">
           <div className="flex flex-col gap-4 md:flex-row md:items-center">
             <Image
               src="/Mint/crown.png"

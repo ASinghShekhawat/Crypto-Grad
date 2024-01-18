@@ -142,7 +142,7 @@ export default function DashboardHome() {
         Welcome, CryptoDozer!
       </div>
       <div className="row-start-2 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-2">
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <Image
             src="/Homepage/LargeToken/largeToken.png"
             alt=""
@@ -150,10 +150,12 @@ export default function DashboardHome() {
             height={492}
             className="h-12 w-fit object-contain"
           />
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
             <span className="text-xl font-semibold">Token Balance</span>
-            <div className="flex items-center gap-4">
-              <span className="text-5xl font-bold">{balance} CG</span>
+            <div className="flex items-center gap-2">
+              <span className="text-3xl font-bold mmd:text-4xl">
+                {balance} CG
+              </span>
               <MdOutlineInfo className="text-2xl !text-white/60" />
             </div>
           </div>
@@ -169,7 +171,7 @@ export default function DashboardHome() {
       <div className="row-start-3 flex flex-col justify-between gap-8 rounded-3xl bg-themeBgBlack p-4 md:row-start-2">
         <div className="flex items-center gap-4 text-xl font-semibold">
           Private Sale
-          <div className="rounded-full border border-[#41CB69] bg-black px-4 py-2 text-xs font-light">
+          <div className="rounded-full border border-[#41CB69] bg-black px-2 py-1 text-sm font-light">
             Running
           </div>
         </div>
@@ -290,7 +292,10 @@ export default function DashboardHome() {
             Estimate Referral Earnings <GoArrowRight />
           </button>
         </div>
-        <Link href="/help/terms-and-conditions" className="text-right font-light text-themeTextGrey">
+        <Link
+          href="/help/terms-and-conditions"
+          className="text-right font-light text-themeTextGrey"
+        >
           T&C apply<sup>*</sup>
         </Link>
       </div>
