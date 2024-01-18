@@ -29,7 +29,9 @@ const config: Config = {
         themePositionBg: "#2C2E34",
         themeWebBg: "#0d0d17",
         themeRed: "#C93030",
-        themeMintBg: "#14170D"
+        themeMintBg: "#14170D",
+        themeAiChatSidebarBgDark: "#121520",
+        themeAiChatSidebarBgLight: "#1E2029",
       },
       screens: {
         mmd: "992px",

@@ -1,11 +1,9 @@
 import Navbar from '@/components/Navbar/Navbar'
-import './globals.scss'
+import '../../../globals.scss'
 import 'swiper/css'
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
-import Providers from './providers'
-import NftDroppingNav from '@/components/Navbar/NftDroppingNav'
-import Footer from '@/components/Footer/Footer'
+import Providers from '../../../providers'
 import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 import Script from 'next/script'
 
@@ -26,8 +24,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Cryptograd',
-  description: 'Cryptograd',
+  title: 'Cryptograd AI',
+  description: 'Cryptograd AI',
 }
 
 export default function RootLayout({
@@ -46,10 +44,12 @@ export default function RootLayout({
         <NoSSrWrapper>
           <Providers>
             <div className="relative mx-auto flex w-full flex-col">
-              <NftDroppingNav />
               <Navbar />
-              {children}
-              <Footer />
+              <div className="pageHeight flex h-full w-full">
+                {/* <Sidebar /> */}
+                <div>ai-sidebar here</div>
+                {children}
+              </div>
             </div>
           </Providers>
         </NoSSrWrapper>
