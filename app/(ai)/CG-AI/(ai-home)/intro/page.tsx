@@ -1,0 +1,77 @@
+import Image from 'next/image'
+import Button from '@/components/shared/Button'
+import Link from 'next/link'
+
+export default function IntroPage() {
+  return (
+      <div className="flex w-full items-center px-24">
+        <div className="relative flex w-3/5 justify-center">
+          <Image
+            className="z-1 h-96 w-48"
+            src="/Homepage/AiSection/section-2.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+          {/* <Image
+            className="h-24 w-64 absolute left-96 top-8 z-2"
+            src="/landing/analysing-trades.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+          <Image
+            className="h-24 w-64 absolute left-0 top-16 z-2"
+            src="/landing/daily-nuggets.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+           <Image
+            className="h-24 w-32 absolute left-28 top-64 z-2"
+            src="/landing/volume.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+           <Image
+            className="h-56 w-56 absolute left-24 top-24 z-0"
+            src="/landing/fingerprint.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+           <Image
+            className="h-20 w-48 absolute right-8 top-64 z-2"
+            src="/landing/choose-trading.png"
+            alt=""
+            width={800}
+            height={800}
+          />
+           <Image
+            className="h-3 w-20 absolute right-40 top-44 z-2"
+            src="/landing/stop-generating.png"
+            alt=""
+            width={800}
+            height={800}
+          /> */}
+        </div>
+        <div className="flex w-2/5 flex-col gap-8">
+          <p className="text-5xl font-semibold leading-[130%]">
+            Welcome to <br />
+            CryptoGrad AI
+          </p>
+          <p className="text-xl font-normal leading-[140%] text-white/80">
+            Explore crypto education with the power of AI
+          </p>
+          <Button className="w-fit">
+            <Link
+              href="/CG-AI/landing"
+            >
+              Get Started
+            </Link>
+          </Button>
+        </div>
+      </div>
+  )
+}

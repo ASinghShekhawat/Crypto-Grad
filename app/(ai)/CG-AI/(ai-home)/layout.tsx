@@ -1,3 +1,5 @@
+'use-client'
+
 import Navbar from '@/components/Navbar/Navbar'
 import '../../../globals.scss'
 import 'swiper/css'
@@ -6,7 +8,8 @@ import { DM_Sans } from 'next/font/google'
 import Providers from '../../../providers'
 import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 import Script from 'next/script'
-
+import Image from 'next/image'
+import Sidebar from '@/components/Dashboard/Sidebar'
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: [
@@ -44,10 +47,19 @@ export default function RootLayout({
         <NoSSrWrapper>
           <Providers>
             <div className="relative mx-auto flex w-full flex-col">
-              <Navbar />
+              <div className="flex h-24 w-full items-center justify-center bg-[#131722CC]">
+                <Image
+                  className="h-8 w-48"
+                  src="/landing/cryptograd-name.png"
+                  alt=""
+                  width={800}
+                  height={800}
+                />
+              </div>
+              {/* <Navbar /> */}
               <div className="pageHeight flex h-full w-full">
-                {/* <Sidebar /> */}
-                <div>ai-sidebar here</div>
+                <Sidebar />
+                {/* <div>ai-sidebar here</div> */}
                 {children}
               </div>
             </div>
