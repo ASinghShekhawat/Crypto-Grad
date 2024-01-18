@@ -89,7 +89,7 @@ export default function TabInfo() {
           </div>
         )}
         {tab === 'insight' && (
-          <div className="absolute bottom-0 left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
+          <div className="absolute -bottom-[3%] left-0 right-0 mx-auto flex w-[80%] justify-center overflow-hidden rounded-t-2xl">
           <Image
             src="/Homepage/border.png"
             alt=""
@@ -101,9 +101,9 @@ export default function TabInfo() {
             autoPlay
             loop
             muted
-            className="mx-auto mt-[5%] h-full !w-[94.1%] max-w-none"
+            className="mx-auto mt-[6%] h-full !w-[94.1%] max-w-none"
           >
-            <source src="/Homepage/4.mp4" type="video/mp4" />
+            <source src="/Homepage/4-new.mp4" type="video/mp4" />
           </video>
         </div>
         )}
