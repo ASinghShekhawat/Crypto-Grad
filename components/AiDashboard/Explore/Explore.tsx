@@ -139,12 +139,13 @@ export default function Explore() {
       </div>
       <div className="flex w-full overflow-x-scroll mmd:justify-center mmd:overflow-auto">
         <div className="relative z-1 mt-16 grid w-full min-w-[59rem] grid-cols-6 gap-4 md:w-fit mmd:min-w-0">
-          {cardData.filter((item) => (tab === 'all' || item.type === tab)).map((item) => (
+          {cardData.filter((item) => (tab === 'all' || item.type === tab)).map((item,index) => (
             <ExploreCard
               name={item.name}
               icon={item.icon}
               text={item.text}
               type={item.type}
+              key={index}
             />
           ))}
         </div>

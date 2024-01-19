@@ -38,17 +38,17 @@ export const aiSidebarItems = [
     icon: () => <BiCompass />,
   },
   {
-    path: 'landing',
+    path: 'dashboard',
     title: 'AI Dashboard',
     icon: () => <BiGridAlt />,
   },
   {
-    path: 'landing',
+    path: 'chat',
     title: 'AI Chat',
     icon: () => <BiMessageRoundedDetail />,
   },
   {
-    path: 'landing',
+    path: 'tasks',
     title: 'AI Tasks',
     icon: () => <BiNotepad />,
   },
