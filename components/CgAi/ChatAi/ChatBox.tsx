@@ -8,6 +8,10 @@ import { LuPlay } from 'react-icons/lu'
 import ChatboxHeader from './ChatboxHeader'
 import Chat from './Chat'
 import OpenAI from 'openai'
+import { IMessage } from '@/types/iMessage'
+import Button from '@/components/shared/Button'
+import { ButtonType } from '@/types/buttton'
+import { FiStopCircle } from 'react-icons/fi'
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -21,15 +25,27 @@ export default function ChatBox({
   params: ChatParams
   searchParams: { [key: string]: string | undefined }
 }) {
-  const [started, setStarted] = useState(true)
-  const [messages, setMessages] = useState<any[]>([])
+  const [started, setStarted] = useState(false)
+  const [messages, setMessages] = useState<IMessage[]>([])
   const [message, setMessage] = useState('')
+  const [responding, setResponding] = useState(false)
+  const [cancelled, setCancelled] = useState(false)
   const router = useRouter()
+
+  const stopResponding = () => {
+    // setCancelled(true)
+    // setResponding(false)
+  }
 
   const sendMessage = async (e: FormEvent) => {
     e.preventDefault()
     if (!message) return
-    const userMessageTemp = [...messages, { role: 'user', content: message }]
+    setCancelled(false)
+    setResponding(true)
+    const userMessageTemp: IMessage[] = [
+      ...messages,
+      { role: 'user', content: message },
+    ]
     setMessages(userMessageTemp)
     setMessage('')
 
@@ -40,20 +56,23 @@ export default function ChatBox({
         stream: true,
       })
 
-      const assistantMessageTemp = [
+      const assistantMessageTemp: IMessage[] = [
         ...userMessageTemp,
         { role: 'assistant', content: '' },
       ]
 
       setMessages(assistantMessageTemp)
       for await (const chunk of stream) {
+        // if (cancelled) 
         const tempArr = [...assistantMessageTemp]
         const lastItem = tempArr.length - 1
         tempArr[lastItem].content += chunk.choices[0]?.delta?.content || ''
         setMessages([...tempArr])
       }
+      setResponding(false)
     } catch (error) {
       console.error('Error:', error)
+      setResponding(false)
     }
   }
 
@@ -69,6 +88,10 @@ export default function ChatBox({
       }
     }
   }, [params])
+
+  useEffect(() => {
+    if (messages.length > 0) setStarted(true)
+  }, [messages])
   return (
     <div className="fixedHeight flex w-full flex-col overflow-hidden">
       <ChatboxHeader
@@ -78,7 +101,7 @@ export default function ChatBox({
         started={started}
       />
 
-      <div className="flex h-full flex-col justify-between gap-4 px-4 pb-4 md:pb-8">
+      <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden px-4 pb-4 md:pb-8">
         <Chat
           chatId={params.chatId}
           searchtab={searchParams.tab}
@@ -86,8 +109,17 @@ export default function ChatBox({
           started={started}
           messages={messages}
         />
+        {responding && (
+          <Button
+            onClick={stopResponding}
+            type={ButtonType.SECONDARY}
+            className="absolute bottom-32 left-0 right-0 mx-auto h-12 w-fit !rounded-xl"
+          >
+            <FiStopCircle className="text-3xl text-themeBlue" /> Stop Responding
+          </Button>
+        )}
 
-        <div className="flex h-fit w-full flex-col items-center justify-center overflow-hidden">
+        <div className="flex min-h-[6rem] w-full flex-col items-center justify-end overflow-hidden">
           <form
             onSubmit={sendMessage}
             className="flex w-full items-center justify-between rounded-lg bg-[#131722] p-4"

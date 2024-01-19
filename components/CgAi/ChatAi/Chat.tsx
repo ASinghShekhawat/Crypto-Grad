@@ -1,6 +1,8 @@
 'use client'
 
+import { IMessage } from '@/types/iMessage'
 import UserMessage from './UserMessage'
+import AssistantMessage from './AssistantMessage'
 
 const DefaultOptions = {
   'chat-genius': [
@@ -232,7 +234,7 @@ export default function Chat({
   chatId: string
   searchtab?: string
   started: boolean
-  messages: any[]
+  messages: IMessage[]
 }) {
   return !started ? (
     <div className="grid grid-cols-3 gap-4">
@@ -256,11 +258,15 @@ export default function Chat({
       ))}
     </div>
   ) : (
-    <div className="flex flex-col gap-4 pt-4">
+    <div className="mt-4 flex flex-grow flex-col gap-4 overflow-y-scroll">
       {messages.map((message, i) => (
         <>
-          <UserMessage key={i} message={message.content} />
-          {/* <div key={i}>{message.content}</div> */}
+          {message.role === 'user' && (
+            <UserMessage key={i} message={message.content} />
+          )}
+          {message.role === 'assistant' && (
+            <AssistantMessage key={i} message={message.content} />
+          )}
         </>
       ))}
     </div>
