@@ -93,7 +93,7 @@ export default function ChatBox({
     if (messages.length > 0) setStarted(true)
   }, [messages])
   return (
-    <div className="fixedHeight flex w-full flex-col overflow-hidden">
+    <div className="fixedHeightMob flex w-full flex-col overflow-hidden">
       <ChatboxHeader
         chatId={params.chatId}
         searchtab={searchParams.tab}
@@ -122,7 +122,7 @@ export default function ChatBox({
         <div className="flex min-h-[6rem] w-full flex-col items-center justify-end overflow-hidden">
           <form
             onSubmit={sendMessage}
-            className="flex w-full items-center justify-between rounded-lg bg-[#131722] p-4"
+            className="flex w-full items-center justify-between rounded-lg bg-themeNavBlack p-4"
           >
             <input
               type="text"

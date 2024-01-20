@@ -21,23 +21,23 @@ export default function ChatboxHeader({
   started: boolean
 }) {
   return !started ? (
-    <div className="flex items-center justify-between px-4 py-4 md:py-8">
+    <div className="flex flex-col gap-4 justify-between px-4 py-4 md:flex-row md:items-center md:py-8">
       <div className="text-3xl font-semibold capitalize md:text-5xl">
         {chatType.split('-').join(' ')}
       </div>
       {(chatType === 'chat-genius' || chatType === 'trade-analyser') && (
-        <div className="flex w-full items-center justify-between rounded-full bg-themeBlackBg p-2 font-light md:w-fit md:justify-center">
+        <div className="flex w-fit items-center justify-between rounded-full bg-themeBlackBg p-2 font-light md:w-fit md:justify-center">
           <Link
             href={`/CG-AI/chat/${chatType}/${chatId}?tab=beginner`}
             className={`rounded-full ${
               searchtab === 'beginner' && 'bg-themeBlackDeep'
-            } px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base`}
+            } px-2.5 py-2 text-sm transition-all hover:bg-themeBlackDeep md:text-base`}
           >
             Beginner
           </Link>
           <Link
             href={`/CG-AI/chat/${chatType}/${chatId}?tab=intermediate`}
-            className={`rounded-full px-2.5 py-2 text-xs transition-all ${
+            className={`rounded-full px-2.5 py-2 text-sm transition-all ${
               searchtab === 'intermediate' && 'bg-themeBlackDeep'
             } hover:bg-themeBlackDeep md:text-base`}
           >
@@ -45,7 +45,7 @@ export default function ChatboxHeader({
           </Link>
           <Link
             href={`/CG-AI/chat/${chatType}/${chatId}?tab=advanced`}
-            className={`rounded-full px-2.5 py-2 text-xs transition-all ${
+            className={`rounded-full px-2.5 py-2 text-sm transition-all ${
               searchtab === 'advanced' && 'bg-themeBlackDeep'
             } hover:bg-themeBlackDeep md:text-base`}
           >

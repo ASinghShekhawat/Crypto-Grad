@@ -62,7 +62,7 @@ export default function ChatSidebar() {
   } = useParams()
 
   return (
-    <div className="fixedHeight flex min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC]">
+    <div className="fixedHeight hidden min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC] mmd:flex">
       <Link
         href="/CG-AI/chat/chat-genius/new"
         className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgDark p-4 text-lg ${

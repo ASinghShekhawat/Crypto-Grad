@@ -9,7 +9,7 @@ import { FaRegCopy } from 'react-icons/fa6'
 
 export default function AssistantMessage({ message }: { message: string }) {
   return (
-    <div className="flex items-start gap-4 bg-[#131722] p-4">
+    <div className="flex items-start gap-4 bg-themeNavBlack p-4">
       <Image
         src="/CgAi/ChatAi/cgLogoBlue.svg"
         width={40}

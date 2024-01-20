@@ -46,7 +46,6 @@ export default function RootLayout({
             <div className="relative mx-auto flex w-full flex-col">
               <Navbar />
               <div className="pageHeight flex h-full w-full">
-                <ChatSidebar />
                 {children}
               </div>
             </div>
