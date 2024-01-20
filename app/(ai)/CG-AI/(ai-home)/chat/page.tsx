@@ -1,6 +1,6 @@
 import Chat from '@/components/AiDashboard/Chat/Chat'
 
-const DashboardPage = () => {
+const ChatPage = () => {
   return (
     <div>
       <Chat />
@@ -8,4 +8,4 @@ const DashboardPage = () => {
   )
 }
 
-export default DashboardPage
+export default ChatPage

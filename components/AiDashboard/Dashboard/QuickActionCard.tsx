@@ -13,7 +13,6 @@ const QuickActionCard = ({
   color,
   key,
 }: IQuickActionCard) => {
-  console.log(key, 'lop')
   const textColorClass =
     icon === '/CgAi/ChatAi/chartUp.png' ? 'bg-[#1C55D5]' : icon === '/CgAi/ChatAi/settings.png' ? 'bg-[#5218FE]' : 'bg-[#B418FE]'
   return (

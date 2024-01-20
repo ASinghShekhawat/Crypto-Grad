@@ -15,7 +15,7 @@ const TrendsCard = ({
     ? 'text-[#41CB69]'
     : 'text-[#CC2B2D]'
   return (
-    <div className={`col-span-2 w-72 flex cursor-pointer flex-col justify-between gap-4 rounded-2xl bg-[#25252E] p-4`}>
+    <div className={`col-span-2 flex cursor-pointer flex-col justify-between gap-4 rounded-2xl bg-[#25252E] p-4`}>
       <div className="flex gap-4">
         <Image
           className="h-8 w-8 "

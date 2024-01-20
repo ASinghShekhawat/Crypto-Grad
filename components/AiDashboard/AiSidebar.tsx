@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation'
 export default function AiSidebar() {
   const params = useSearchParams()
   const path = usePathname()
-  console.log(path, 'tabb')
   return (
     <div className="hidden w-[300px] flex-col gap-5 bg-[#131722CC] py-12 mmd:flex">
       {aiSidebarItems.map((item, i) => (

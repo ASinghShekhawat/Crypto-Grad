@@ -114,14 +114,14 @@ export default function Explore() {
               onClick={() => setTab('all')}
               className={`rounded-full ${
                 tab === 'All' && 'bg-themeBlackDeep'
-              } px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base`}
+              } px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base ${tab === 'all' && 'bg-themeBlackDeep'}`}
             >
               All
             </button>
             <button
               onClick={() => setTab('CryptoGrad')}
               className={`rounded-full px-2.5 py-2 text-xs transition-all ${
-                tab === 'analyzer' && 'bg-themeBlackDeep'
+                tab === 'CryptoGrad' && 'bg-themeBlackDeep'
               } hover:bg-themeBlackDeep md:text-base`}
             >
               CryptoGrad
@@ -129,7 +129,7 @@ export default function Explore() {
             <button
               onClick={() => setTab('CEX Partners')}
               className={`rounded-full px-2.5 py-2 text-xs transition-all ${
-                tab === 'insight' && 'bg-themeBlackDeep'
+                tab === 'CEX Partners' && 'bg-themeBlackDeep'
               } hover:bg-themeBlackDeep md:text-base`}
             >
               CEX Partners
