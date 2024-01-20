@@ -54,7 +54,7 @@ const Dashboard = () => {
   const exploreOptions = [
     {
       header: 'Chat Genius',
-      name: 'Your AI crypto chatbot for questions, market insights, and trading tips',
+      name: `Your AI crypto chatbot for questions, market insights, and trading tips`,
       availability: 'Get Started',
     },
     {
@@ -118,7 +118,7 @@ const Dashboard = () => {
       <div className="flex flex-col gap-8">
         <p className="text-3xl font-semibold leading-[130%]">Explore CG AI</p>
         <div className="flex gap-4 overflow-x-scroll mmd:justify-center mmd:overflow-auto">
-          <div className="grid w-full min-w-[59rem] grid-cols-6 gap-4 md:w-fit mmd:min-w-0">
+          <div className="grid w-full grid-cols-6 gap-4 md:w-fit mmd:min-w-0">
             {exploreOptions.map((item, index) => (
               <ExploreCard
                 name={item.name}
@@ -130,16 +130,16 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 rounded-xl bg-[#5E5AFF] px-8 py-12">
-        <p className="text-3xl font-semibold leading-[130%]">
-          Suggest a new feature or provide feedback to us
+      <div className="flex flex-col gap-8 rounded-xl bg-[#5E5AFF] px-4 py-8 md:px-8 md:py-12">
+        <p className="text-base font-semibold leading-[130%] md:text-3xl">
+          Suggest a new feature or Provide feedback to us
         </p>
 
         <div className="flex h-full w-full gap-2">
-          <div className="flex h-14 w-1/4 items-center justify-center rounded-lg bg-[#FDFDFD] text-2xl font-bold text-[#0D0D17]">
+          <div className="flex h-14 w-1/2 items-center justify-center rounded-lg bg-[#FDFDFD] px-2 py-8 text-sm font-bold text-[#0D0D17] md:text-2xl">
             Share A Review
           </div>
-          <div className="flex h-14 w-1/4 items-center justify-center rounded-lg border text-2xl font-bold text-[#FDFDFD]">
+          <div className="flex h-14 w-1/2 items-center justify-center rounded-lg border px-2 py-8 text-sm font-bold text-[#FDFDFD] md:text-2xl">
             Suggest Feature
           </div>
         </div>
@@ -149,12 +149,12 @@ const Dashboard = () => {
           Join the Community
         </div>
         <div className="overflow-x-scroll md:overflow-auto">
-          <div className="relative z-1 grid w-full min-w-[800px] grid-cols-3 gap-4 md:min-w-0">
+          <div className="relative z-1 grid w-full grid-cols-3 gap-4 md:min-w-0">
             <a
               href="https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Twitter</div>
@@ -166,7 +166,7 @@ const Dashboard = () => {
               href="https://t.me/cryptogradportal"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">
@@ -180,7 +180,7 @@ const Dashboard = () => {
               href="https://discord.gg/GQJTSFdTwh"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Discord</div>

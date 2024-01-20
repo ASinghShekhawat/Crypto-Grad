@@ -7,7 +7,7 @@ interface ITaskCard {
 const TaskCard = ({ name, icon, description }: ITaskCard) => {
   return (
     <div
-      className={`col-span-4 flex h-44 cursor-pointer flex-col justify-around rounded-2xl bg-[#25252E] px-4 opacity-[0.9] md:col-span-2`}
+      className={`col-span-4 md:col-span-2 flex h-44 cursor-pointer flex-col justify-around rounded-2xl bg-[#25252E] px-4 opacity-[0.9]`}
     >
       <p className="text-xl font-medium leading-[140%] text-white/80">{name}</p>
       {description !== '' && icon !== '' ? (

@@ -7,7 +7,7 @@ interface IExploreCard {
 const ExploreCard = ({ name, header, availability }: IExploreCard) => {
   return (
     <div
-      className={`col-span-3 flex cursor-pointer flex-col justify-between gap-4 rounded-2xl bg-[#25252E] p-8`}
+      className={`col-span-6 md:col-span-3 flex cursor-pointer flex-col justify-between gap-4 rounded-2xl bg-[#25252E] p-8`}
     >
       <div className="text-md w-fit rounded-full border border-[#6754F8] bg-black px-4 py-2 font-light">
         {header}

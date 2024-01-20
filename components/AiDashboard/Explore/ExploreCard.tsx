@@ -8,7 +8,7 @@ interface IExploreCard {
 const ExploreCard = ({ name, icon, text, type }: IExploreCard) => {
   return (
     <div
-      className={`relative col-span-2 flex h-full flex-col items-center gap-4 rounded-2xl bg-themeBgBlack py-5 hover:bg-themeBorderBlue`}
+      className={`relative col-span-6 md:col-span-2 flex h-full flex-col items-center gap-4 rounded-2xl bg-themeBgBlack py-5 hover:bg-themeBorderBlue`}
     >
      
       <div className="flex w-4/5 flex-col gap-4">

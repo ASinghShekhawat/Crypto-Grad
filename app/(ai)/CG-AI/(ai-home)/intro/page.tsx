@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Button from '@/components/shared/Button'
 import Link from 'next/link'
 import Animated from '@/components/shared/Animated'
-import AiSectionImage from '@/components/Homepage/AiSectionImage'
+import AiIntroImage from '@/components/Homepage/AiIntroImage'
 export default function IntroPage() {
   return (
-    <div className="flex w-full items-center gap-16 flex-col md:flex-row">
+    <div className="flex w-full pt-16 items-center gap-20 flex-col md:flex-row">
       <Animated className="relative z-1 flex w-1/2 flex-col items-center">
         <Image
           src="/effects/ai-eff-1.svg"
@@ -15,13 +15,12 @@ export default function IntroPage() {
           height={640}
         />
         <div>
-          <AiSectionImage />
+          <AiIntroImage />
         </div>
       </Animated>
       <div className="flex flex-col gap-8 w-1/2">
-        <p className="text-5xl font-semibold leading-[130%]">
-          Welcome to <br />
-          CryptoGrad AI
+        <p className="text-base md:text-5xl font-semibold leading-[130%]">
+          Welcome to CryptoGrad AI
         </p>
         <p className="text-xl font-normal leading-[140%] text-white/80">
           Explore crypto education with the power of AI

@@ -10,10 +10,13 @@ import {TaskData} from './TaskData'
 export default function Tasks() {
   const [tab, setTab] = useState('chat')
   return (
-    <div className="flex w-full flex-col gap-4 p-8">
+    <div className="flex w-full flex-col gap-4 p-4 md:p-8">
       <div className="flex w-full flex-col justify-between gap-8 md:flex-row">
-        <p className="text-xl font-semibold leading-[130%] md:block md:text-5xl ">
+        <p className="text-xl font-semibold leading-[130%] md:block md:text-5xl hidden">
           AI Tasks
+        </p>
+        <p className="text-xl font-semibold leading-[130%] md:hidden md:text-5xl block">
+          AI Tasks on Fingertips
         </p>
         <Animated className="relative z-5 flex flex-col gap-16">
           <div className="flex w-full items-center justify-between rounded-full bg-themeBlackBg p-2 font-light md:w-fit md:justify-center">
@@ -53,7 +56,7 @@ export default function Tasks() {
         </Animated>
       </div>
       <div className="flex w-full overflow-x-scroll mmd:overflow-auto ">
-        <div className="relative z-1 grid w-full min-w-[59rem] grid-cols-8 gap-4 mmd:min-w-0">
+        <div className="relative z-1 grid w-full grid-cols-8 gap-4 mmd:min-w-0">
           {
             TaskData
             .filter((item) => tab === item.type)
