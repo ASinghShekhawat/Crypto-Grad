@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Button from '@/components/shared/Button'
 import Link from 'next/link'
 import Animated from '@/components/shared/Animated'
-import AiIntroImage from '@/components/Homepage/AiIntroImage'
+import AiIntroImage from '@/components/AiDashboard/AiIntroImage'
+import AiIntroMiniImage from '@/components/AiDashboard/AiIntroMiniImage'
 export default function IntroPage() {
   return (
     <div className="flex w-full pt-16 items-center gap-20 flex-col md:flex-row">
@@ -14,8 +15,11 @@ export default function IntroPage() {
           width={435}
           height={640}
         />
-        <div>
+        <div className='hidden md:block'>
           <AiIntroImage />
+        </div>
+        <div className='block md:hidden'>
+          <AiIntroMiniImage />
         </div>
       </Animated>
       <div className="flex flex-col gap-8 w-1/2">

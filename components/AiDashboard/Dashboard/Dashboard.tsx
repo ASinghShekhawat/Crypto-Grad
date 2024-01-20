@@ -1,9 +1,11 @@
+'use client'
 import Image from 'next/image'
 import TrendsCard from './TrendsCard'
 import QuickActionCard from './QuickActionCard'
 import ExploreCard from './ExploreCard'
 import { FaDiscord, FaTelegramPlane } from 'react-icons/fa'
 import { RxTwitterLogo } from 'react-icons/rx'
+import LineChart from '@/components/charts/LineChart'
 const Dashboard = () => {
   const trends = [
     {
@@ -15,19 +17,19 @@ const Dashboard = () => {
     {
       name: 'Boe',
       subDomain: 'Boeing Co',
-      increement: '-0.80',
+      increement: '-0.8',
       percent: '(-0.37%)',
     },
     {
       name: 'Boe',
       subDomain: 'Boeing Co',
-      increement: '-0.80',
+      increement: '-0.8',
       percent: '(-0.37%)',
     },
     {
       name: 'Boe',
       subDomain: 'Boeing Co',
-      increement: '-0.80',
+      increement: '-0.8',
       percent: '(-0.37%)',
     },
   ]
@@ -154,7 +156,7 @@ const Dashboard = () => {
               href="https://x.com/cryptogradai?s=21&t=U-ORYT37jBeGPFBfoHU1Gw"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="col-span-3 flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:col-span-1 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Twitter</div>
@@ -166,7 +168,7 @@ const Dashboard = () => {
               href="https://t.me/cryptogradportal"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="col-span-3 flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:col-span-1 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">
@@ -180,7 +182,7 @@ const Dashboard = () => {
               href="https://discord.gg/GQJTSFdTwh"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex h-56 w-full flex-col col-span-3 md:col-span-1 justify-between rounded-2xl bg-themeWebBg p-8 md:h-64"
+              className="col-span-3 flex h-56 w-full flex-col justify-between rounded-2xl bg-themeWebBg p-8 md:col-span-1 md:h-64"
             >
               <div className="flex flex-col items-start text-left">
                 <div className="text-xl font-semibold md:text-3xl">Discord</div>
