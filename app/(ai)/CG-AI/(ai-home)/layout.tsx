@@ -11,6 +11,8 @@ import Image from 'next/image'
 import Sidebar from '@/components/Dashboard/Sidebar'
 import AiSidebar from '@/components/AiDashboard/AiSidebar'
 import { usePathname } from 'next/navigation'
+import MainNavbar from '@/components/CgAi/ChatAi/MainNavbar'
+
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -66,7 +68,7 @@ export default function RootLayout({
               </div>
             ) : (
               <div className="relative mx-auto flex w-full flex-col">
-                <Navbar />
+                <MainNavbar />
                 <div className="pageHeight flex h-full w-full">
                   <AiSidebar />
                   {/* <div>ai-sidebar here</div> */}
