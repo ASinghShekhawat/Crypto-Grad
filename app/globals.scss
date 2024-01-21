@@ -36,12 +36,12 @@ body {
   }
 }
 
-.pageHeight {
-  min-height: calc(100vh - 5rem);
-  @media screen and (max-width: 992px) {
-    min-height: calc(100vh - 4rem);
-  }
-}
+// .pageHeight {
+//   min-height: calc(100vh - 5rem);
+//   @media screen and (max-width: 992px) {
+//     min-height: calc(100vh - 4rem);
+//   }
+// }
 
 .fixedHeight {
   max-height: calc(100vh - 5rem);

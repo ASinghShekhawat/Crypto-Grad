@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '@/components/Navbar/Navbar'
 import '../../../globals.scss'
 import 'swiper/css'
@@ -6,7 +7,12 @@ import { DM_Sans } from 'next/font/google'
 import Providers from '../../../providers'
 import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 import Script from 'next/script'
+import Image from 'next/image'
+import Sidebar from '@/components/Dashboard/Sidebar'
+import AiSidebar from '@/components/AiDashboard/AiSidebar'
+import { usePathname } from 'next/navigation'
 import MainNavbar from '@/components/CgAi/ChatAi/MainNavbar'
+
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -24,16 +30,18 @@ const dmSans = DM_Sans({
   ],
 })
 
-export const metadata: Metadata = {
-  title: 'Cryptograd AI',
-  description: 'Cryptograd AI',
-}
+// export const metadata: Metadata = {
+//   title: 'Cryptograd AI',
+//   description: 'Cryptograd AI',
+// }
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const path = usePathname()
+  console.log(path)
   return (
     <html lang="en">
       <head>
@@ -43,14 +51,31 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <NoSSrWrapper>
           <Providers>
-            <div className="relative mx-auto flex w-full flex-col">
-              <MainNavbar />
-              <div className="pageHeight flex h-full w-full">
-                {/* <Sidebar /> */}
-                <div>ai-sidebar here</div>
-                {children}
+            {path.includes('intro') || path.includes('landing') ? (
+              <div className='h-full w-full'>
+                <div className="flex h-16 md:h-24 w-full items-center justify-center bg-[#131722CC] border-b-[0.4px] border-b-[#fdfdfd99]">
+                  <Image
+                    className="h-8 w-48"
+                    src="/landing/cryptograd-name.png"
+                    alt=""
+                    width={800}
+                    height={800}
+                  />
+                </div>
+                <div className="flex h-full w-full justify-center items-center p-6 md:p-12">
+                  {children}
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="relative mx-auto flex w-full flex-col">
+                <MainNavbar />
+                <div className="pageHeight flex h-full w-full">
+                  <AiSidebar />
+                  {/* <div>ai-sidebar here</div> */}
+                  {children}
+                </div>
+              </div>
+            )}
           </Providers>
         </NoSSrWrapper>
       </body>
