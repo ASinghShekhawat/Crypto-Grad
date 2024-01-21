@@ -13,7 +13,7 @@ export default function StickyReferral() {
   }, [])
   return (
     search.get('tab') === 'refer' && (
-      <div className="sticky bottom-0 left-0 right-0 flex w-full flex-col justify-between md:gap-4 gap-2 bg-[#131722] p-4 md:flex-row">
+      <div className="sticky bottom-0 left-0 right-0 flex w-full flex-col justify-between md:gap-4 gap-2 bg-themeNavBlack p-4 md:flex-row">
         <div className="text-lg font-semibold md:text-xl">
           Refer a friend and earn upto <br />{' '}
           <span className="text-themeBorderBlue">15% comission</span>

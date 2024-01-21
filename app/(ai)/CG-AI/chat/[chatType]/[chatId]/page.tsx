@@ -1,14 +1,12 @@
+import ChatBox from '@/components/CgAi/ChatAi/ChatBox'
+import { ChatParams } from '@/types/chatParams'
+
 export default function AiChatPage({
   params,
+  searchParams,
 }: {
-  params: {
-    chatType:
-      | 'chat-genius'
-      | 'trade-analyser'
-      | 'contract-insight'
-      | 'crypto-buzz'
-    chatId: string
-  }
+  params: ChatParams
+  searchParams: { [key: string]: string | undefined }
 }) {
-  return <div>{params.chatType}</div>
+  return <ChatBox params={params} searchParams={searchParams} />
 }

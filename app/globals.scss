@@ -49,6 +49,9 @@ body {
     max-height: none;
   }
 }
+.fixedHeightMob {
+  max-height: calc(100vh - 5rem);
+}
 
 .nunito {
   font-family: 'Nunito', sans-serif;

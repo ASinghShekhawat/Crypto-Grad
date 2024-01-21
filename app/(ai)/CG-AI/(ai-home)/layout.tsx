@@ -45,7 +45,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <Script src="/scripts/clarity.js" />
-        <Script src="/scripts/klaviyo.js" />
       </head>
       <body className={dmSans.className}>
         <NoSSrWrapper>

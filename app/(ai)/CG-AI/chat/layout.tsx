@@ -39,7 +39,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <Script src="/scripts/clarity.js" />
-        <Script src="/scripts/klaviyo.js" />
       </head>
       <body className={dmSans.className}>
         <NoSSrWrapper>
@@ -47,7 +46,6 @@ export default function RootLayout({
             <div className="relative mx-auto flex w-full flex-col">
               <Navbar />
               <div className="pageHeight flex h-full w-full">
-                <ChatSidebar />
                 {children}
               </div>
             </div>

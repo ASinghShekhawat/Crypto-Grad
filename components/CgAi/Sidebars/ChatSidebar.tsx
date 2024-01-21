@@ -62,10 +62,10 @@ export default function ChatSidebar() {
   } = useParams()
 
   return (
-    <div className="fixedHeight flex min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC]">
+    <div className="fixedHeight hidden min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC] mmd:flex">
       <Link
         href="/CG-AI/chat/chat-genius/new"
-        className={`bg-themeAiChatSidebarBgDark relative flex items-center gap-2 p-4 text-lg ${
+        className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgDark p-4 text-lg ${
           params.chatType === 'chat-genius'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
             : 'text-white/80'
@@ -76,7 +76,7 @@ export default function ChatSidebar() {
       </Link>
       <Link
         href="/CG-AI/chat/trade-analyser/new"
-        className={`bg-themeAiChatSidebarBgLight relative flex items-center gap-2 p-4 text-lg ${
+        className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgLight p-4 text-lg ${
           params.chatType === 'trade-analyser'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
             : 'text-white/80'
@@ -87,7 +87,7 @@ export default function ChatSidebar() {
       </Link>
       <Link
         href="/CG-AI/chat/contract-insight/new"
-        className={`bg-themeAiChatSidebarBgDark relative flex items-center gap-2 p-4 text-lg ${
+        className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgDark p-4 text-lg ${
           params.chatType === 'contract-insight'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
             : 'text-white/80'
@@ -98,7 +98,7 @@ export default function ChatSidebar() {
       </Link>
       <Link
         href="/CG-AI/chat/crypto-buzz/new"
-        className={`bg-themeAiChatSidebarBgLight relative flex items-center gap-2 p-4 text-lg ${
+        className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgLight p-4 text-lg ${
           params.chatType === 'crypto-buzz'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
             : 'text-white/80'
@@ -119,7 +119,7 @@ export default function ChatSidebar() {
             <Link
               key={item.id}
               href={`/CG-AI/chat/${item.chatType}/${item.id}`}
-              className="even:bg-themeAiChatSidebarBgLight odd:bg-themeAiChatSidebarBgDark px-4 py-2"
+              className="px-4 py-2 odd:bg-themeAiChatSidebarBgDark even:bg-themeAiChatSidebarBgLight"
             >
               {item.title}
             </Link>
@@ -131,7 +131,7 @@ export default function ChatSidebar() {
             <Link
               key={item.id}
               href={`/CG-AI/chat/${item.chatType}/${item.id}`}
-              className="even:bg-themeAiChatSidebarBgLight odd:bg-themeAiChatSidebarBgDark px-4 py-2"
+              className="px-4 py-2 odd:bg-themeAiChatSidebarBgDark even:bg-themeAiChatSidebarBgLight"
             >
               {item.title}
             </Link>
