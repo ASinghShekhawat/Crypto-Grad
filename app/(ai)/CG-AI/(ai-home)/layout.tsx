@@ -6,6 +6,7 @@ import { DM_Sans } from 'next/font/google'
 import Providers from '../../../providers'
 import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 import Script from 'next/script'
+import MainNavbar from '@/components/CgAi/ChatAi/MainNavbar'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -43,7 +44,7 @@ export default function RootLayout({
         <NoSSrWrapper>
           <Providers>
             <div className="relative mx-auto flex w-full flex-col">
-              <Navbar />
+              <MainNavbar />
               <div className="pageHeight flex h-full w-full">
                 {/* <Sidebar /> */}
                 <div>ai-sidebar here</div>
