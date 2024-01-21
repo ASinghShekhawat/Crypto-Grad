@@ -6,8 +6,8 @@ import AiIntroImage from '@/components/AiDashboard/AiIntroImage'
 import AiIntroMiniImage from '@/components/AiDashboard/AiIntroMiniImage'
 export default function IntroPage() {
   return (
-    <div className="flex w-full pt-16 items-center gap-20 flex-col md:flex-row">
-      <Animated className="relative z-1 flex w-1/2 flex-col items-center">
+    <div className="pageHeight flex w-full flex-col items-center px-4 py-16 md:px-8 mmd:flex-row">
+      <Animated className="relative z-1 flex w-full flex-col items-center">
         <Image
           src="/effects/ai-eff-1.svg"
           className="absolute right-0 z-0"
@@ -15,15 +15,15 @@ export default function IntroPage() {
           width={435}
           height={640}
         />
-        <div className='hidden md:block'>
+        <div className="hidden mmd:block">
           <AiIntroImage />
         </div>
-        <div className='block md:hidden'>
+        <div className="block mmd:hidden">
           <AiIntroMiniImage />
         </div>
       </Animated>
-      <div className="flex flex-col gap-8 w-1/2">
-        <p className="text-base md:text-5xl font-semibold leading-[130%]">
+      <div className="flex w-full flex-col gap-8">
+        <p className="text-base font-semibold leading-[130%] md:text-5xl">
           Welcome to CryptoGrad AI
         </p>
         <p className="text-xl font-normal leading-[140%] text-white/80">

@@ -12,7 +12,7 @@ import Sidebar from '@/components/Dashboard/Sidebar'
 import AiSidebar from '@/components/AiDashboard/AiSidebar'
 import { usePathname } from 'next/navigation'
 import MainNavbar from '@/components/CgAi/ChatAi/MainNavbar'
-
+import Brand from '@/components/Navbar/Brand'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -51,31 +51,21 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <NoSSrWrapper>
           <Providers>
-            {path.includes('intro') || path.includes('landing') ? (
-              <div className='h-full w-full'>
-                <div className="flex h-16 md:h-24 w-full items-center justify-center bg-[#131722CC] border-b-[0.4px] border-b-[#fdfdfd99]">
-                  <Image
-                    className="h-8 w-48"
-                    src="/landing/cryptograd-name.png"
-                    alt=""
-                    width={800}
-                    height={800}
-                  />
+            <div className="relative mx-auto flex w-full flex-col">
+              {path.includes('intro') || path.includes('landing') ? (
+                <div className="flex h-16 w-full items-center justify-center border-b-[0.4px] border-b-[#fdfdfd99] bg-[#131722CC] md:h-24">
+                  <Brand />
                 </div>
-                <div className="flex h-full w-full justify-center items-center p-6 md:p-12">
-                  {children}
-                </div>
-              </div>
-            ) : (
-              <div className="relative mx-auto flex w-full flex-col">
+              ) : (
                 <MainNavbar />
-                <div className="pageHeight flex h-full w-full">
+              )}
+              <div className="pageHeight flex h-full w-full">
+                {!path.includes('intro') && !path.includes('landing') && (
                   <AiSidebar />
-                  {/* <div>ai-sidebar here</div> */}
-                  {children}
-                </div>
+                )}
+                {children}
               </div>
-            )}
+            </div>
           </Providers>
         </NoSSrWrapper>
       </body>
