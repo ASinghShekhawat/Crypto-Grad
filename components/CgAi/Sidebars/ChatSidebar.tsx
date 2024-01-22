@@ -64,7 +64,7 @@ export default function ChatSidebar() {
   return (
     <div className="fixedHeight hidden min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC] mmd:flex">
       <Link
-        href="/CG-AI/chat/chat-genius/new"
+        href="/CG-AI/chat/chat-genius/newChat"
         className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgDark p-4 text-lg ${
           params.chatType === 'chat-genius'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
@@ -75,7 +75,7 @@ export default function ChatSidebar() {
         Chat Genius
       </Link>
       <Link
-        href="/CG-AI/chat/trade-analyser/new"
+        href="/CG-AI/chat/trade-analyser/newChat"
         className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgLight p-4 text-lg ${
           params.chatType === 'trade-analyser'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
@@ -86,7 +86,7 @@ export default function ChatSidebar() {
         Trade Analyser
       </Link>
       <Link
-        href="/CG-AI/chat/contract-insight/new"
+        href="/CG-AI/chat/contract-insight/newChat"
         className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgDark p-4 text-lg ${
           params.chatType === 'contract-insight'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
@@ -97,7 +97,7 @@ export default function ChatSidebar() {
         Contract Insight
       </Link>
       <Link
-        href="/CG-AI/chat/crypto-buzz/new"
+        href="/CG-AI/chat/crypto-buzz/newChat"
         className={`relative flex items-center gap-2 bg-themeAiChatSidebarBgLight p-4 text-lg ${
           params.chatType === 'crypto-buzz'
             ? 'font-medium text-white after:absolute after:bottom-0 after:left-0 after:top-0 after:h-full after:w-2 after:bg-themeBorderBlue'
