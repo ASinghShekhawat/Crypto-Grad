@@ -15,10 +15,10 @@ export default function IntroPage() {
           width={435}
           height={640}
         />
-        <div className='hidden md:block'>
+        <div className="hidden mmd:block">
           <AiIntroImage />
         </div>
-        <div className='block md:hidden'>
+        <div className="block mmd:hidden">
           <AiIntroMiniImage />
         </div>
       </Animated>
