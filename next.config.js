@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.pexels.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cryptograd-ai-image-upload.s3.ap-south-1.amazonaws.com',
+      },
     ],
   },
 }

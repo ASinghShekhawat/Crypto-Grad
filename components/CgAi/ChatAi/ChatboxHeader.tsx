@@ -21,7 +21,7 @@ export default function ChatboxHeader({
   started: boolean
 }) {
   return !started ? (
-    <div className="flex flex-col gap-4 justify-between px-4 py-4 md:flex-row md:items-center md:py-8">
+    <div className="flex flex-col justify-between gap-4 px-4 py-4 md:flex-row md:items-center md:py-8">
       <div className="text-3xl font-semibold capitalize md:text-5xl">
         {chatType.split('-').join(' ')}
       </div>
@@ -72,7 +72,7 @@ export default function ChatboxHeader({
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 flex w-56 origin-top-right flex-col divide-y divide-themeGrey rounded-lg bg-[#22222C] shadow-lg ring-1 ring-black/5 focus:outline-none">
+          <Menu.Items className="absolute right-0 z-5 mt-2 flex w-56 origin-top-right flex-col divide-y divide-themeGrey rounded-lg bg-[#22222C] shadow-lg ring-1 ring-black/5 focus:outline-none">
             <Menu.Item>
               <button className="w-full px-3 py-2 text-left transition-all hover:bg-black/20">
                 New Chat

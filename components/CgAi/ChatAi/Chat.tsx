@@ -261,7 +261,7 @@ export default function Chat({
     <div className="mt-4 flex flex-grow flex-col gap-4 overflow-y-scroll">
       {messages.map((message, i) => {
         if (message.role === 'user')
-          return <UserMessage key={i} message={message.content} />
+          return <UserMessage key={i} message={message} />
         if (message.role === 'assistant')
           return <AssistantMessage key={i} message={message.content} />
       })}

@@ -48,6 +48,7 @@ body {
   height: 100%;
   display: block;
 }
+
 .fixedHeight {
   max-height: calc(100vh - 5rem);
   @media screen and (max-width: 992px) {
@@ -56,6 +57,9 @@ body {
 }
 .fixedHeightMob {
   max-height: calc(100vh - 5rem);
+  @media screen and (max-width: 992px) {
+    max-height: calc(100vh - 4rem);
+  }
 }
 
 .nunito {
