@@ -25,7 +25,7 @@ const MarketTrendingNews = () => {
               width={800}
             />
             <p className="text-sm font-medium leading-[140%] text-gray-400 ">
-              Author's name
+              Author&apos;s name
             </p>
           </div>
           <div className="flex justify-between gap-1 items-center">
@@ -73,7 +73,7 @@ const MarketTrendingNews = () => {
               width={800}
             />
             <p className="text-sm font-medium leading-[140%] text-gray-400 ">
-              Author's name
+              Author&apos;s name
             </p>
           </div>
           <div className="flex justify-between gap-1 items-center">
@@ -121,7 +121,7 @@ const MarketTrendingNews = () => {
               width={800}
             />
             <p className="text-sm font-medium leading-[140%] text-gray-400 ">
-              Author's name
+              Author&apos;s name
             </p>
           </div>
           <div className="flex justify-between gap-1 items-center">
