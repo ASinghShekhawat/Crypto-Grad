@@ -7,7 +7,7 @@ import Animated from '../shared/Animated'
 const AiIntroMiniImage = () => {
   return (
     <div className="z-2 w-full">
-      <div className="relative w-full ">
+      <div className="relative w-full">
 
         {/* <Animated delay={200} className="absolute -left-[45%] top-0 pt-16">
           <div className="z-1 flex w-fit flex-col gap-2 rounded-2xl border border-themeTextGrey bg-themeNavBlack/40 p-4 text-xs backdrop-blur-sm">
@@ -70,7 +70,14 @@ const AiIntroMiniImage = () => {
           width={500}
           height={579}
           alt=""
-          className="z-1 h-72 w-full px-12"
+          className="z-1 h-72 w-full px-12 absolute"
+        />
+         <Image
+          src="/landing/fingerprint.png"
+          width={500}
+          height={579}
+          alt=""
+          className="z-0 h-36 w-full px-12 -left-[20%] top-[5%]"
         />
         {/* <Animated delay={600} className="absolute -right-[59%] top-[55%] pt-16">
           <div className="flex w-fit flex-col items-center gap-2 rounded-2xl border border-themeTextGrey bg-themeNavBlack/40 p-4 text-center text-xs backdrop-blur-sm">
