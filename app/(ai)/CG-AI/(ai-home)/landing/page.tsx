@@ -3,10 +3,5 @@ import Button from '@/components/shared/Button'
 import UnlockPower from '@/components/Landing/UnlockPower'
 
 export default function LandingPage() {
-   
-  return (
-    <div>
-      <UnlockPower />
-    </div>
-  )
+  return <UnlockPower />
 }

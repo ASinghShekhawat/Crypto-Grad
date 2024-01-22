@@ -1,11 +1,7 @@
 import Blog from '@/components/AiDashboard/Blog/Blog'
 
 const BlogPage = () => {
-  return (
-    <div>
-      <Blog />
-    </div>
-  )
+  return <Blog />
 }
 
 export default BlogPage

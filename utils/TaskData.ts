@@ -289,7 +289,7 @@ export const TaskData = [
 
     },
     {
-        name: 'Summarise today’s crypto news',
+        name: "Summarise today's crypto news",
         icon: '',
         description: '',
         type: 'crypto'

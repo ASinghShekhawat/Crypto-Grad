@@ -18,7 +18,7 @@ export default function FunctionalNav({
   const { address, isConnected } = useAccount()
   const [userTokens, setUserTokens] = useState(0)
   return (
-    <div className="flex h-full items-center gap-6">
+    <div className="hidden h-full items-center gap-6 mmd:flex">
       <Button type={ButtonType.SECONDARY} className="py-2">
         <span>Tokens</span>
         <span>{userTokens}</span>
@@ -49,6 +49,7 @@ export default function FunctionalNav({
           height={2000}
           className="h-8 w-8"
         />
+        <span className="h-4 border border-white/20"></span>
         <span className="text-white/40">
           {address?.substring(0, 5)}...
           {address?.substring(address?.length - 4, address?.length)}

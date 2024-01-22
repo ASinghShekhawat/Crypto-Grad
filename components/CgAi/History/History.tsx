@@ -60,6 +60,7 @@ export default function History({ params }: { params: { timeline: string } }) {
       <div className="flex flex-col">
         {data.map((item) => (
           <button
+            key={item.id}
             onClick={() => handleSelect(item.id)}
             className="relative p-4 pr-6 text-left odd:bg-themeAiChatSidebarBgLight even:bg-themeAiChatSidebarBgDark"
           >

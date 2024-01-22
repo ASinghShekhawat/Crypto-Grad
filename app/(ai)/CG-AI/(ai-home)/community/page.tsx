@@ -1,11 +1,7 @@
 import Community from '@/components/AiDashboard/Community/Community'
 
 const CommunityPage = () => {
-  return (
-    <div>
-      <Community />
-    </div>
-  )
+  return <Community />
 }
 
 export default CommunityPage

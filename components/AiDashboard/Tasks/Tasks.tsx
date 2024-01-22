@@ -1,21 +1,19 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
-import Button from '@/components/shared/Button'
 import Animated from '@/components/shared/Animated'
 import TaskCard from './TaskCard'
-import {TaskData} from './TaskData'
+import { TaskData } from '@/utils/TaskData'
 
 export default function Tasks() {
   const [tab, setTab] = useState('chat')
   return (
     <div className="flex w-full flex-col gap-4 p-4 md:p-8">
       <div className="flex w-full flex-col justify-between gap-8 md:flex-row">
-        <p className="text-xl font-semibold leading-[130%] md:block md:text-5xl hidden">
+        <p className="hidden text-xl font-semibold leading-[130%] md:block md:text-5xl">
           AI Tasks
         </p>
-        <p className="text-xl font-semibold leading-[130%] md:hidden md:text-5xl block">
+        <p className="block text-xl font-semibold leading-[130%] md:hidden md:text-5xl">
           AI Tasks on Fingertips
         </p>
         <Animated className="relative z-5 flex flex-col gap-16">
@@ -24,7 +22,9 @@ export default function Tasks() {
               onClick={() => setTab('chat')}
               className={`rounded-full ${
                 tab === 'All' && 'bg-themeBlackDeep'
-              } px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base ${tab === 'chat' && 'bg-themeBlackDeep'}`}
+              } px-2.5 py-2 text-xs transition-all hover:bg-themeBlackDeep md:text-base ${
+                tab === 'chat' && 'bg-themeBlackDeep'
+              }`}
             >
               Chat Genius
             </button>
@@ -57,17 +57,14 @@ export default function Tasks() {
       </div>
       <div className="flex w-full overflow-x-scroll mmd:overflow-auto ">
         <div className="relative z-1 grid w-full grid-cols-8 gap-4 mmd:min-w-0">
-          {
-            TaskData
-            .filter((item) => tab === item.type)
-            .map((item, index) => (
-              <TaskCard
-                name={item.name}
-                icon={item.icon}
-                key={index}
-                description={item.description}
-              />
-            ))}
+          {TaskData.filter((item) => tab === item.type).map((item, index) => (
+            <TaskCard
+              name={item.name}
+              icon={item.icon}
+              key={index}
+              description={item.description}
+            />
+          ))}
         </div>
       </div>
     </div>

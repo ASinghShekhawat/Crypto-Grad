@@ -1,11 +1,7 @@
 import Contact from '@/components/AiDashboard/Contact/Contact'
 
 const ContactPage = () => {
-  return (
-    <div>
-      <Contact />
-    </div>
-  )
+  return <Contact />
 }
 
 export default ContactPage
