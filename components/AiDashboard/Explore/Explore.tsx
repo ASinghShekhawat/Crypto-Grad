@@ -102,10 +102,10 @@ export default function Explore() {
           embark on your crypto journey. Welcome to a vibrant ecosystem designed
           to empower and enrich your crypto experience.
         </p>
-        <div className="relative h-12 w-1/2 items-center justify-between rounded-sm border border-solid border-white border-opacity-30 bg-[#070B16]">
+        <div className="relative h-12 w-1/2 items-center justify-between border rounded-md border-[#FFFFFF4D]">
           <input
             type="text"
-            className="h-full w-full bg-[#070B16] px-4"
+            className="h-full w-full bg-[#070B16] bg-opacity-[none] px-4"
             placeholder="Search Ecosystem"
           />
           <div className="absolute right-2 top-1/2 -translate-y-1/2 transform">

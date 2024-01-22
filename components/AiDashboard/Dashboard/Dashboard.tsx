@@ -6,7 +6,10 @@ import ExploreCard from './ExploreCard'
 import { FaDiscord, FaTelegramPlane } from 'react-icons/fa'
 import { RxTwitterLogo } from 'react-icons/rx'
 import LineChart from '@/components/charts/LineChart'
+import { useState } from 'react'
+import ExploreNew from './ExploreNew'
 const Dashboard = () => {
+  const [showCoin, setShowCoin] = useState(false)
   const trends = [
     {
       name: 'Boe',
@@ -79,7 +82,7 @@ const Dashboard = () => {
   return (
     <div className="flex w-full flex-col gap-16 px-8 py-16">
       <div className="flex gap-4 overflow-x-scroll mmd:justify-center mmd:overflow-auto ">
-        <div className="grid w-full min-w-[59rem] grid-cols-8 gap-4 mmd:min-w-0 ">
+        <div className="grid w-full min-w-[59rem] grid-cols-8 gap-4 mmd:min-w-0">
           {trends.map((item, index) => (
             <TrendsCard
               key={index}
@@ -91,7 +94,7 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-8">
         <p className="text-3xl font-semibold leading-[130%]">Getting Started</p>
         <Image
           src="/CgAi/ChatAi/gettingStarted.png"
