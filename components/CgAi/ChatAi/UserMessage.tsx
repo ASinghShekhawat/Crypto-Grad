@@ -1,7 +1,16 @@
-import Image from 'next/image'
+'use client'
+
+import { memo, useCallback } from 'react'
 import { FaUserLarge } from 'react-icons/fa6'
 
-export default function UserMessage({ message }: { message: string }) {
+export default memo(function UserMessage({ message }: { message: any }) {
+  const processMessage = useCallback(() => {
+    let msg = ''
+    message.forEach((item: any) => {
+      msg += item.text.value
+    })
+    return msg
+  }, [message])
   return (
     <div className="flex items-start gap-4 rounded-xl p-4">
       {/* <Image src="/" width={} height={} alt="" className='' /> */}
@@ -10,8 +19,8 @@ export default function UserMessage({ message }: { message: string }) {
       </div>
       <div className="flex w-full flex-col gap-1">
         <div className="text-sm text-white/40">RIYA</div>
-        <div className="w-full whitespace-pre-wrap">{message}</div>
+        <div className="w-full whitespace-pre-wrap">{processMessage()}</div>
       </div>
     </div>
   )
-}
+})

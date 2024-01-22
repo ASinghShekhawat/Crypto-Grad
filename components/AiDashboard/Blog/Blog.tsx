@@ -159,8 +159,8 @@ const Blog = () => {
                 className="object-cover"
               />
             </div>
-            {selectedInfo.body.map((para) => (
-              <p>{para}</p>
+            {selectedInfo.body.map((para, i) => (
+              <p key={i}>{para}</p>
             ))}
           </div>
         </div>

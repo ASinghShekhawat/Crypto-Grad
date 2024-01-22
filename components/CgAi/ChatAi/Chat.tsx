@@ -1,8 +1,8 @@
 'use client'
 
-import { IMessage } from '@/types/iMessage'
 import UserMessage from './UserMessage'
 import AssistantMessage from './AssistantMessage'
+import OpenAI from 'openai'
 
 const DefaultOptions = {
   'chat-genius': [
@@ -234,7 +234,7 @@ export default function Chat({
   chatId: string
   searchtab?: string
   started: boolean
-  messages: IMessage[]
+  messages: OpenAI.Beta.Threads.Messages.ThreadMessage[]
 }) {
   return !started ? (
     <div className="grid gap-4 md:grid-cols-3">
@@ -259,16 +259,12 @@ export default function Chat({
     </div>
   ) : (
     <div className="mt-4 flex flex-grow flex-col gap-4 overflow-y-scroll">
-      {messages.map((message, i) => (
-        <>
-          {message.role === 'user' && (
-            <UserMessage key={i} message={message.content} />
-          )}
-          {message.role === 'assistant' && (
-            <AssistantMessage key={i} message={message.content} />
-          )}
-        </>
-      ))}
+      {messages.map((message, i) => {
+        if (message.role === 'user')
+          return <UserMessage key={i} message={message.content} />
+        if (message.role === 'assistant')
+          return <AssistantMessage key={i} message={message.content} />
+      })}
     </div>
   )
 }

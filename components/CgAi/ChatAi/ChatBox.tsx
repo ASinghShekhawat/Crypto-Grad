@@ -12,6 +12,7 @@ import { IMessage } from '@/types/iMessage'
 import Button from '@/components/shared/Button'
 import { ButtonType } from '@/types/buttton'
 import { FiStopCircle } from 'react-icons/fi'
+import { CgSpinner } from 'react-icons/cg'
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -26,10 +27,13 @@ export default function ChatBox({
   searchParams: { [key: string]: string | undefined }
 }) {
   const [started, setStarted] = useState(false)
-  const [messages, setMessages] = useState<IMessage[]>([])
+  const [messages, setMessages] = useState<
+    OpenAI.Beta.Threads.Messages.ThreadMessage[]
+  >([])
   const [message, setMessage] = useState('')
   const [responding, setResponding] = useState(false)
   const [cancelled, setCancelled] = useState(false)
+  const [threadId, setThreadId] = useState('')
   const router = useRouter()
 
   const stopResponding = () => {
@@ -37,43 +41,58 @@ export default function ChatBox({
     // setResponding(false)
   }
 
+  const initiateChat = async () => {
+    if (params.chatId === 'newChat') {
+      const { id } = await openai.beta.threads.create()
+      setThreadId(id)
+    } else {
+      setThreadId(params.chatId)
+      const messagesAll = await openai.beta.threads.messages.list(
+        params.chatId,
+        {
+          stream: false,
+        }
+      )
+      setMessages([...messagesAll.data.reverse()])
+    }
+  }
+
   const sendMessage = async (e: FormEvent) => {
     e.preventDefault()
     if (!message) return
     setCancelled(false)
     setResponding(true)
-    const userMessageTemp: IMessage[] = [
-      ...messages,
-      { role: 'user', content: message },
-    ]
-    setMessages(userMessageTemp)
     setMessage('')
 
-    try {
-      const stream = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
-        messages: userMessageTemp,
-        stream: true,
-      })
+    const userMessage = await openai.beta.threads.messages.create(threadId, {
+      role: 'user',
+      content: message,
+    })
 
-      const assistantMessageTemp: IMessage[] = [
-        ...userMessageTemp,
-        { role: 'assistant', content: '' },
-      ]
+    console.log(userMessage)
+    const tempArr = [...messages, userMessage]
+    setMessages([...tempArr])
 
-      setMessages(assistantMessageTemp)
-      for await (const chunk of stream) {
-        // if (cancelled) 
-        const tempArr = [...assistantMessageTemp]
-        const lastItem = tempArr.length - 1
-        tempArr[lastItem].content += chunk.choices[0]?.delta?.content || ''
-        setMessages([...tempArr])
+    const run = await openai.beta.threads.runs.create(threadId, {
+      assistant_id: 'asst_RfeviGBPxZ9nIxsv27yFvsiU',
+    })
+
+    while (true) {
+      const status = await openai.beta.threads.runs.retrieve(threadId, run.id)
+      if (status.status === 'completed') break
+      else if (status.status === 'failed') {
+        setResponding(false)
+        console.log('error', status)
+        break
       }
-      setResponding(false)
-    } catch (error) {
-      console.error('Error:', error)
-      setResponding(false)
     }
+
+    const messagesAll = await openai.beta.threads.messages.list(threadId, {
+      stream: false,
+    })
+
+    setMessages([...tempArr, messagesAll.data[0]])
+    setResponding(false)
   }
 
   useEffect(() => {
@@ -92,6 +111,11 @@ export default function ChatBox({
   useEffect(() => {
     if (messages.length > 0) setStarted(true)
   }, [messages])
+
+  useEffect(() => {
+    initiateChat()
+  }, [])
+
   return (
     <div className="fixedHeightMob flex w-full flex-col overflow-hidden">
       <ChatboxHeader
@@ -131,8 +155,11 @@ export default function ChatBox({
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-            <button className="text-2xl text-themeBorderBlue">
-              <LuPlay />
+            <button
+              disabled={responding}
+              className="text-2xl text-themeBorderBlue"
+            >
+              {responding ? <CgSpinner className="animate-spin" /> : <LuPlay />}
             </button>
           </form>
           <div className="mt-2 text-center text-sm text-white/40">
