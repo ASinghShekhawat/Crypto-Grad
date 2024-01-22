@@ -8,6 +8,7 @@ import NoSSrWrapper from '@/components/shared/NoSSrWrapper'
 import Script from 'next/script'
 import ChatSidebar from '@/components/CgAi/Sidebars/ChatSidebar'
 import MainNavbar from '@/components/CgAi/ChatAi/MainNavbar'
+import { HistoryProvider } from '@/context/HistoryContext'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -44,10 +45,12 @@ export default function RootLayout({
       <body className={dmSans.className}>
         <NoSSrWrapper>
           <Providers>
-            <div className="relative mx-auto flex w-full flex-col">
-              <MainNavbar />
-              <div className="pageHeight flex h-full w-full">{children}</div>
-            </div>
+            <HistoryProvider>
+              <div className="relative mx-auto flex w-full flex-col">
+                <MainNavbar />
+                <div className="pageHeight flex h-full w-full">{children}</div>
+              </div>
+            </HistoryProvider>
           </Providers>
         </NoSSrWrapper>
       </body>

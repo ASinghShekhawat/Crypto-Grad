@@ -15,6 +15,7 @@ import { FiStopCircle } from 'react-icons/fi'
 import { CgSpinner } from 'react-icons/cg'
 import Image from 'next/image'
 import { uploadImage } from '@/services/file'
+import useChat from '@/hooks/useChat'
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -40,6 +41,7 @@ export default function ChatBox({
   const [threadId, setThreadId] = useState('')
   const [imageUploading, setImageUploading] = useState(false)
   const [url, setUrl] = useState('')
+  const { addChat } = useChat()
   const router = useRouter()
   const imageInputRef = useRef<any>()
 
@@ -110,7 +112,7 @@ export default function ChatBox({
       setMessages([...tempArr])
 
       const run = await openai.beta.threads.runs.create(threadId, {
-        assistant_id: process.env.CHAT_GENIUS_ASSISTANT_ID!,
+        assistant_id: process.env.NEXT_PUBLIC_CHAT_GENIUS_ASSISTANT_ID!,
       })
 
       while (true) {
@@ -126,6 +128,13 @@ export default function ChatBox({
       const messagesAll = await openai.beta.threads.messages.list(threadId, {
         stream: false,
       })
+      if (tempArr.length === 1) {
+        await addChat({
+          threadId,
+          title: message.length > 50 ? message.substring(0, 50) : message,
+          chatType: params.chatType,
+        })
+      }
 
       setMessages([...tempArr, messagesAll.data[0]])
       setResponding(false)

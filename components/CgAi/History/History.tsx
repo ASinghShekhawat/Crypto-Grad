@@ -1,38 +1,14 @@
 'use client'
 
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { IoSearch } from 'react-icons/io5'
 import { FaRegCircle, FaRegCheckCircle } from 'react-icons/fa'
+import useChat from '@/hooks/useChat'
 
 export default function History({ params }: { params: { timeline: string } }) {
   const [search, setSearch] = useState('')
-  const [data, setData] = useState<any[]>([
-    {
-      id: '984fj',
-      title: 'Lorem ipsum dolor',
-      message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum.',
-    },
-    {
-      id: '98d4fj',
-      title: 'Lorem ipsum dolor',
-      message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum.',
-    },
-    {
-      id: '9384fj',
-      title: 'Lorem ipsum dolor',
-      message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum.',
-    },
-    {
-      id: '984fwj',
-      title: 'Lorem ipsum dolor',
-      message:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum.',
-    },
-  ])
   const [selected, setSelected] = useState<string[]>([])
+  const { allChat } = useChat()
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value)
@@ -58,16 +34,16 @@ export default function History({ params }: { params: { timeline: string } }) {
         <IoSearch className="text-white/40" />
       </div>
       <div className="flex flex-col">
-        {data.map((item) => (
+        {allChat.map((item) => (
           <button
-            key={item.id}
-            onClick={() => handleSelect(item.id)}
+            key={item.threadId}
+            onClick={() => handleSelect(item.threadId)}
             className="relative p-4 pr-6 text-left odd:bg-themeAiChatSidebarBgLight even:bg-themeAiChatSidebarBgDark"
           >
             <div>{item.title}</div>
-            <div className="mt-2 truncate text-white/40">{item.message}</div>
+            <div className="mt-2 truncate text-white/40">{item.title}</div>
             <div className="absolute right-2 top-1/2 -translate-y-1/2 text-2xl text-themeBorderBlue md:bottom-auto md:top-2 md:translate-y-0">
-              {selected.find((elem) => elem === item.id) ? (
+              {selected.find((elem) => elem === item.threadId) ? (
                 <FaRegCheckCircle />
               ) : (
                 <FaRegCircle />

@@ -1,30 +1,16 @@
 'use client'
 
 import Button from '@/components/shared/Button'
+import { IChat } from '@/context/HistoryContext'
+import useChat from '@/hooks/useChat'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams, useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { IoMdAdd } from 'react-icons/io'
 
 export default function ChatSidebar() {
-  const [weekChat, setWeekChat] = useState([
-    {
-      id: 'jafo8j49pfhao87w4fh78hfaw78fboa7w4bf',
-      title: 'Trading Candlesticks',
-      chatType: 'trade-analyser',
-    },
-    {
-      id: 'aoifjejfoase83hf938h9h9aw78fboa7w4bf',
-      title: 'Trade Analysis',
-      chatType: 'trade-analyser',
-    },
-    {
-      id: 'aoifyhjfoase83hf938h9h9aw78fboa7w4bf',
-      title: 'How to get into hyped',
-      chatType: 'crypto-buzz',
-    },
-  ])
+  const [weekChat, setWeekChat] = useState<IChat[]>([])
   const [monthChat, setMonthChat] = useState([
     {
       id: 'jafo8j49pfhao87w4fh78hfaw78fboa7w4bf',
@@ -60,7 +46,20 @@ export default function ChatSidebar() {
       | 'contract-insight'
       | 'crypto-buzz'
   } = useParams()
+  const { allChat } = useChat()
   const router = useRouter()
+
+  // const spreadChat = useCallback(() => {
+  //   allChat.forEach(fai)
+  // },[allChat])
+
+  // useEffect(() => {
+  //   spreadChat()
+  // },[spreadChat])
+
+  useEffect(() => {
+    setWeekChat([...allChat])
+  }, [allChat])
 
   return (
     <div className="fixedHeight hidden min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC] mmd:flex">
@@ -121,15 +120,15 @@ export default function ChatSidebar() {
           <span className="p-4 text-white/30">Previous 7 Days</span>
           {weekChat.map((item) => (
             <Link
-              key={item.id}
-              href={`/CG-AI/chat/${item.chatType}/${item.id}`}
-              className="px-4 py-2 odd:bg-themeAiChatSidebarBgDark even:bg-themeAiChatSidebarBgLight"
+              key={item.threadId}
+              href={`/CG-AI/chat/${item.chatType}/${item.threadId}`}
+              className="truncate px-4 py-2 odd:bg-themeAiChatSidebarBgDark even:bg-themeAiChatSidebarBgLight"
             >
               {item.title}
             </Link>
           ))}
         </div>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <span className="p-4 text-white/30">This Month</span>
           {monthChat.map((item) => (
             <Link
@@ -140,7 +139,7 @@ export default function ChatSidebar() {
               {item.title}
             </Link>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )

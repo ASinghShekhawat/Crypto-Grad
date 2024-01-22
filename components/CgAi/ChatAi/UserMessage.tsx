@@ -4,6 +4,7 @@ import Image from 'next/image'
 import OpenAI from 'openai'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { FaUserLarge } from 'react-icons/fa6'
+import { useAccount } from 'wagmi'
 
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -13,6 +14,7 @@ const openai = new OpenAI({
 export default memo(function UserMessage({ message }: { message: any }) {
   const [imageUrl, setImageUrl] = useState('')
   const [parsed, setParsed] = useState('')
+  const { address } = useAccount()
 
   const processMessage = useCallback(() => {
     if (message.content.length <= 0) return
@@ -42,11 +44,16 @@ export default memo(function UserMessage({ message }: { message: any }) {
         <FaUserLarge className="md:text-2xl" />
       </div>
       <div className="flex w-full flex-col gap-1">
-        <div className="text-sm text-white/40">RIYA</div>
-        <div className="w-full whitespace-pre-wrap">{parsed}</div>
-        <div className="relative aspect-video md:w-[300px] z-0">
-          <Image src={imageUrl} fill alt="" className="object-cover" />
+        <div className="text-sm text-white/40">
+          {address?.substring(0, 5)}...
+          {address?.substring(address?.length - 4, address?.length)}
         </div>
+        <div className="w-full whitespace-pre-wrap">{parsed}</div>
+        {imageUrl && (
+          <div className="relative z-0 aspect-video md:w-[300px]">
+            <Image src={imageUrl} fill alt="" className="object-cover" />
+          </div>
+        )}
       </div>
     </div>
   )
