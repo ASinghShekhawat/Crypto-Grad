@@ -3,7 +3,7 @@
 import Button from '@/components/shared/Button'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { IoMdAdd } from 'react-icons/io'
 
@@ -60,6 +60,7 @@ export default function ChatSidebar() {
       | 'contract-insight'
       | 'crypto-buzz'
   } = useParams()
+  const router = useRouter()
 
   return (
     <div className="fixedHeight hidden min-h-full w-[300px] flex-col overflow-hidden bg-[#131722CC] mmd:flex">
@@ -108,7 +109,10 @@ export default function ChatSidebar() {
         Crypto Buzz
       </Link>
       <div className="mt-4 flex flex-col gap-4 border-t-2 border-white/30 py-4">
-        <Button className="mx-4 w-fit !rounded-full">
+        <Button
+          onClick={() => router.push(`/CG-AI/chat/${params.chatType}/newChat`)}
+          className="mx-4 w-fit !rounded-full"
+        >
           <IoMdAdd className="text-3xl" /> New Chat
         </Button>
       </div>
