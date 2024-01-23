@@ -10,13 +10,14 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import { useState } from 'react'
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 import Button from '@/components/shared/Button'
 import MarketLowerPanel from './atoms/MarketsLowerPanel'
 import MarketTrendingNews from './atoms/MarketsTrendingNews'
-const Markets = () => {
+
+const Markets = ({ pair }: { pair: string }) => {
   const [tab, setTab] = useState(0)
   const trends = [
     {
@@ -91,7 +92,7 @@ const Markets = () => {
     <div className="flex w-full flex-col gap-16 px-8 py-16">
       <p className="text-4xl font-semibold leading-[130%]">Bitcoin</p>
       <div className="flex flex-col gap-2">
-        <div className="flex md:w-[40%] justify-between">
+        <div className="flex justify-between md:w-[40%]">
           <div className="flex gap-1">
             <Image
               src="/CgAi/ChatAi/bitcoin.png"
@@ -146,18 +147,20 @@ const Markets = () => {
           </Box>
           <p className="text-xs text-white/80">High: $41,627.96</p>
           <Select
-          labelId="demo-customized-select-label"
-          id="demo-customized-select"
-          defaultValue={10}
-          className='w-20 h-5'
-        >
-          <MenuItem value={10} className='text-normal text-base'>24h</MenuItem>
-          <MenuItem value={20}>12h</MenuItem>
-          <MenuItem value={30}>6h</MenuItem>
-        </Select>
+            labelId="demo-customized-select-label"
+            id="demo-customized-select"
+            defaultValue={10}
+            className="h-5 w-20"
+          >
+            <MenuItem value={10} className="text-normal text-base">
+              24h
+            </MenuItem>
+            <MenuItem value={20}>12h</MenuItem>
+            <MenuItem value={30}>6h</MenuItem>
+          </Select>
         </div>
       </div>
-      <div className="h-12 w-full gap-2 border-b border-b-[#969696] overflow-x-auto">
+      <div className="h-12 w-full gap-2 overflow-x-auto border-b border-b-[#969696]">
         <div className="flex w-3/5 gap-4 md:justify-between">
           <div
             className={`cursor-pointer text-base opacity-[0.8] ${
@@ -209,9 +212,9 @@ const Markets = () => {
           </div>
         </div>
       </div>
-      <div className='grid grid-cols-5 gap-4'>
-      <MarketLowerPanel />
-      <MarketTrendingNews />
+      <div className="grid grid-cols-5 gap-4">
+        <MarketLowerPanel pair={pair} />
+        <MarketTrendingNews />
       </div>
     </div>
   )
